@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>de.winkler.betoffice</groupId>
+    <artifactId>betoffice-maven-parent</artifactId>
+    <version>1.2.4-SNAPSHOT</version>
+  </parent>
+
+  <groupId>de.betoffice</groupId>
+  <artifactId>betoffice-openligadb</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>betoffice-exchange</name>
+  <description>Betoffice openligadb connector</description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>src</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>install</phase>
+            <goals>
+              <goal>assembly</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>make-site</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>site</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.1</version>
+        <executions>
+          <execution>
+            <id>ftp</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <ftp server="${site.ftp.server}"
+                  remotedir="${site.ftp.remotedir.betoffice-exchange}"
+                  userid="${site.ftp.user}"
+                  password="${site.ftp.password}">
+                  <fileset dir="${project.build.directory}/site" />
+                </ftp>
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant-commons-net</artifactId>
+            <version>1.6.5</version>
+          </dependency>
+          <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>1.4.1</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>de.winkler.betoffice</groupId>
+      <artifactId>betoffice-storage</artifactId>
+      <version>1.3.2</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  
+  <repositories>
+    <repository>
+      <id>awtools</id>
+      <name>Andre Winklers AWTools Repository</name>
+      <url>http://maven2.gluehloch.de</url>
+    </repository>
+  </repositories>  
+</project>
