@@ -1,6 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -19,6 +18,9 @@
 
   <build>
     <plugins>
+      <!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+        <configuration> <source>1.7</source> <target>1.7</target> </configuration> 
+        </plugin> -->
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
@@ -66,8 +68,7 @@
               <tasks>
                 <ftp server="${site.ftp.server}"
                   remotedir="${site.ftp.remotedir.betoffice-exchange}"
-                  userid="${site.ftp.user}"
-                  password="${site.ftp.password}">
+                  userid="${site.ftp.user}" password="${site.ftp.password}">
                   <fileset dir="${project.build.directory}/site" />
                 </ftp>
               </tasks>
@@ -87,8 +88,65 @@
           </dependency>
         </dependencies>
       </plugin>
+      <!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxb2-maven-plugin</artifactId> 
+        <version>1.6</version> <executions> <execution> <id>xjc</id> <goals> <goal>xjc</goal> 
+        </goals> </execution> </executions> <configuration> <wsdl>true</wsdl> <xmlschema>true</xmlschema> 
+        <outputDirectory>target/generated-sources/jaxb</outputDirectory> <packageName>de.betoffice.openligadb</packageName> 
+        <schemaDirectory>src/main/xsd</schemaDirectory> <schemaFiles>openligadb.wsdl</schemaFiles> 
+        <strict>false</strict> </configuration> </plugin> -->
+
+      <plugin>
+        <groupId>org.apache.axis2</groupId>
+        <artifactId>axis2-wsdl2code-maven-plugin</artifactId>
+        <version>1.6.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>wsdl2code</goal>
+            </goals>
+            <configuration>
+              <packageName>de.betoffice.openligadb</packageName>
+              <wsdlFile>src/main/xsd/openligadb.wsdl</wsdlFile>
+              <databindingName>xmlbeans</databindingName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- mvn axis2-wsdl2code:wsdl2code -->
 
     </plugins>
+    <pluginManagement>
+      <plugins>
+        <!--This plugin's configuration is used to store Eclipse m2e settings 
+          only. It has no influence on the Maven build itself. -->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.axis2</groupId>
+                    <artifactId>
+                      axis2-wsdl2code-maven-plugin
+                    </artifactId>
+                    <versionRange>[1.6.2,)</versionRange>
+                    <goals>
+                      <goal>wsdl2code</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 
   <dependencies>
@@ -98,13 +156,75 @@
       <version>1.3.2</version>
       <scope>compile</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-jaxws-api</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-jaxws</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+<dependency>
+    <groupId>org.apache.axis2</groupId>
+    <artifactId>axis2-kernel</artifactId>
+    <version>1.6.2</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.axis2</groupId>
+    <artifactId>axis2-transport-http</artifactId>
+    <version>1.6.2</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.axis2</groupId>
+    <artifactId>axis2-transport-local</artifactId>
+    <version>1.6.2</version>
+</dependency>
+
+    <dependency>
+      <groupId>org.apache.ws.commons.axiom</groupId>
+      <artifactId>axiom-api</artifactId>
+      <version>1.2.14</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.ws.commons.axiom</groupId>
+      <artifactId>axiom-impl</artifactId>
+      <version>1.2.14</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.xmlbeans</groupId>
+      <artifactId>xmlbeans</artifactId>
+      <version>2.6.0</version>
+    </dependency>
+
   </dependencies>
-  
+
   <repositories>
+    <repository>
+      <id>central</id>
+      <url>http://repo.maven.apache.org/maven2/</url>
+    </repository>
+    <repository>
+      <id>central2</id>
+      <url>http://mvnrepository.com/artifact/</url>
+    </repository>
     <repository>
       <id>awtools</id>
       <name>Andre Winklers AWTools Repository</name>
       <url>http://maven2.gluehloch.de</url>
     </repository>
-  </repositories>  
+  </repositories>
 </project>
