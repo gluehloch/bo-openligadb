@@ -17,22 +17,28 @@ public class OpenligadbTest {
     @Test
     public void testws() throws RemoteException {
         SportsdataStub stub = new SportsdataStub();
+
+        GetAvailGroups getAvailGroups = GetAvailGroups.Factory.newInstance();
+        getAvailGroups.setLeagueSaison("2014");
+        getAvailGroups.setLeagueShortcut("bl1");
+
         GetAvailGroupsDocument getAvailGroupsDocument = GetAvailGroupsDocument.Factory
                 .newInstance();
-        GetAvailGroups getAvailGroups = GetAvailGroups.Factory.newInstance();
         getAvailGroupsDocument.setGetAvailGroups(getAvailGroups);
-        
-        getAvailGroups.setLeagueSaison("2014");
-        getAvailGroups.setLeagueShortcut("bl");
-        GetAvailGroupsResponseDocument getAvailGroupsResponseDocument = stub.getAvailGroups(getAvailGroupsDocument);
-        
-         GetAvailGroupsResponse getAvailGroupsResponse = getAvailGroupsResponseDocument.getGetAvailGroupsResponse();
-         ArrayOfGroup getAvailGroupsResult = getAvailGroupsResponse.getGetAvailGroupsResult();
-         
-         Group[] groupArray = getAvailGroupsResult.getGroupArray();
-         
-         for (Group group : groupArray) {
-             System.out.println("Group: " + group.getGroupID() + ", " + group.getGroupName());
-         }
+
+        GetAvailGroupsResponseDocument getAvailGroupsResponseDocument = stub
+                .getAvailGroups(getAvailGroupsDocument);
+
+        GetAvailGroupsResponse getAvailGroupsResponse = getAvailGroupsResponseDocument
+                .getGetAvailGroupsResponse();
+        ArrayOfGroup getAvailGroupsResult = getAvailGroupsResponse
+                .getGetAvailGroupsResult();
+
+        Group[] groupArray = getAvailGroupsResult.getGroupArray();
+
+        for (Group group : groupArray) {
+            System.out.println("Group: " + group.getGroupID() + ", "
+                    + group.getGroupName());
+        }
     }
 }
