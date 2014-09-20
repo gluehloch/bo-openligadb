@@ -10,7 +10,7 @@ INSERT INTO bo_teamalias(bo_aliasname, bo_team_ref) VALUES('TSG 1899 Hoffenheim'
 UPDATE bo_team SET bo_openligaid = 123 WHERE id = 1170;
 
 -- FC Augsburg
-UPDATE bo_team SET bo_openligaid = 123 WHERE id = 1178;
+UPDATE bo_team SET bo_openligaid = 95 WHERE id = 1178;
 
 -- Hannover 96
 UPDATE bo_team SET bo_openligaid = 55 WHERE id = 1162;
@@ -37,6 +37,7 @@ UPDATE bo_team SET bo_openligaid = 65 WHERE id = 1148;
 
 -- Hamburger SV
 UPDATE bo_team SET bo_openligaid = 100 WHERE id = 1151;
+INSERT INTO bo_teamalias(bo_aliasname, bo_team_ref) VALUES('HSV', 1151);
 
 -- Borussia Dortmund
 UPDATE bo_team SET bo_openligaid = 7 WHERE id = 1142;
