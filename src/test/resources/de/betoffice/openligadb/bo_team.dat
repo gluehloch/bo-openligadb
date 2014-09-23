@@ -1,0 +1,131 @@
+### TAB bo_team
+### id | bo_name | bo_longname | bo_logo | bo_teamtype | bo_openligaid
+27 | Frankreich | Frankreich | frankreich.gif | 1 | null
+28 | Senegal | Senegal | senegal.gif | 1 | null
+29 | Uruguay | Uruguay | uruguay.gif | 1 | null
+30 | Dänemark | Dänemark | daenemark.gif | 1 | null
+31 | Paraguay | Paraguay | paraguay.gif | 1 | null
+32 | Südafrika | Südafrika | suedafrika.gif | 1 | null
+33 | Spanien | Spanien | spanien.gif | 1 | null
+34 | Slowenien | Slowenien | slowenien.gif | 1 | null
+35 | Brasilien | Brasilien | brasilien.gif | 1 | null
+36 | Türkei | Türkei | tuerkei.gif | 1 | null
+37 | China VR | China VR | china.gif | 1 | null
+38 | Costa Rica | Costa Rica | costarica.gif | 1 | null
+39 | Rep.Korea | Rep.Korea | suedkorea.gif | 1 | null
+40 | Polen | Polen | polen.gif | 1 | null
+41 | USA | USA | usa.gif | 1 | null
+42 | Portugal | Portugal | portugal.gif | 1 | null
+43 | Irland | Irland | irland.gif | 1 | null
+44 | Kamerun | Kamerun | kamerun.gif | 1 | null
+45 | Deutschland | Deutschland | dfb.gif | 1 | null
+46 | Saudi Arabien | Saudi Arabien | saudiarabien.gif | 1 | null
+47 | England | England | england.gif | 1 | null
+48 | Schweden | Schweden | schweden.gif | 1 | null
+49 | Argentinien | Argentinien | argentinien.gif | 1 | null
+50 | Nigeria | Nigeria | nigeria.gif | 1 | null
+51 | Kroatien | Kroatien | kroatien.gif | 1 | null
+52 | Mexiko | Mexiko | mexiko.gif | 1 | null
+53 | Ecuador | Ecuador | ecuador.gif | 1 | null
+54 | Italien | Italien | italien.gif | 1 | null
+55 | Japan | Japan | japan.gif | 1 | null
+56 | Belgien | Belgien | belgien.gif | 1 | null
+57 | Russland | Russland | russland.gif | 1 | null
+58 | Tunesien | Tunesien | tunesien.gif | 1 | null
+907 | Griechenland | Griechenland | greece.gif | 1 | null
+911 | Schweiz | Schweiz | swiss.gif | 1 | null
+919 | Bulgarien | Bulgarien | bulgary.gif | 1 | null
+922 | Tschechien | Tschechien | czech.gif | 1 | null
+923 | Lettland | Lettland | lettland.gif | 1 | null
+924 | Niederlande | Niederlande | netherland | 1 | null
+1131 | [noch_nicht_bekannt] | [noch_nicht_bekannt] | unbekannt.gif | 1 | null
+1132 | Trinidad Tabago | Trinidad und Tabago | trinidadtabago.gif | 1 | null
+1133 | Elfenbeinküste | Elfenbeinküste | elfenbeinkueste.gif | 1 | null
+1134 | Serbien Montenegro | Serbien und Montenegro | serbienmontenegro.gif | 1 | null
+1135 | Iran | Iran | iran.gif | 1 | null
+1136 | Angola | Angola | angola.gif | 1 | null
+1137 | Ghana | Ghana | ghana.gif | 1 | null
+1138 | Australien | Australien | australien.gif | 1 | null
+1139 | Togo | Togo | togo.gif | 1 | null
+1140 | Ukraine | Ukraine | ukraine.gif | 1 | null
+1141 | FC Bayern München | FC Bayern München | bayern.gif | 0 | 40
+1142 | Borussia Dortmund | Borussia Dortmund | bvb.gif | 0 | 7
+1143 | Bayer 04 Leverkusen | Bayer 04 Leverkusen | leverkusen.gif | 0 | 6
+1144 | SC Freiburg | SC Freiburg | freiburg.gif | 0 | 112
+1145 | SV Werder Bremen | SV Werder Bremen | bremen.gif | 0 | 134
+1146 | 1.FC Kaiserslautern | 1.FC Kaiserslautern | lautern.gif | 0 | null
+1147 | VfL Wolfsburg | VfL Wolfsburg | wolfsburg.gif | 0 | 131
+1148 | 1.FC Köln | 1.FC Köln | koeln.gif | 0 | 65
+1149 | Hansa Rostock | Hansa Rostock | rostock.gif | 0 | null
+1150 | TSV 1860 München | TSV 1860 München | 1860.bmp | 0 | null
+1151 | Hamburger SV | Hamburger SV | hsv.gif | 0 | 100
+1152 | Energie Cottbus | Energie Cottbus | cottbus.gif | 0 | null
+1153 | VfB Stuttgart | VfB Stuttgart | stuttgart.gif | 0 | 16
+1154 | SpVgg Unterhaching | SpVgg Unterhaching | haching.gif | 0 | null
+1155 | Eintracht Frankfurt | Eintracht Frankfurt | frankfurt.gif | 0 | 91
+1156 | VfL Bochum | VfL Bochum | bochum.gif | 0 | null
+1157 | Hertha BSC Berlin | Hertha BSC Berlin | hertha.gif | 0 | 54
+1158 | St. Pauli | St. Pauli | stpauli.gif | 0 | null
+1159 | 1.FC Nürnberg | 1.FC Nürnberg | nuernberg.gif | 0 | null
+1160 | Borussia MGladbach | Borussia Mönchen Gladbach | gladbach.gif | 0 | 87
+1161 | FC Schalke 04 | FC Schalke 04 | schalke.gif | 0 | 9
+1162 | Hannover 96 | Hannover 96 | hannover96.gif | 0 | 55
+1163 | Arminia Bielefeld | Arminia Bielefeld | arminiabielefeld.gif | 0 | null
+1164 | FSV Mainz 05 | FSV Mainz 05 | mainz.gif | 0 | 81
+1165 | MSV Duisburg | MSV Duisburg | duisburg.gif | 0 | null
+1166 | Alemannia Aachen | Alemannia Aachen | achen.gif | 0 | null
+1167 | Karlsruher SC | Karlsruher SC | ksc.gif | 0 | null
+1168 | Österreich | Österreich | oesterreich.gif | 1 | null
+1169 | Rumänien | Rumänien | rumaenien.gif | 1 | null
+1170 | 1899 Hoffenheim | 1899 Hoffenheim | hoffenheim.gif | 0 | 123
+1171 | Serbien | Serbien | serbien.gif | 1 | null
+1172 | Algerien | Algerien | algerien.gif | 1 | null
+1173 | Neuseeland | Neuseeland | neuseeland.gif | 1 | null
+1174 | Slowakei | Slowakei | slowakei.gif | 1 | null
+1175 | Nordkorea | Nordkorea | nordkorea.gif | 1 | null
+1176 | Honduras | Honduras | honduras.gif | 1 | null
+1177 | Chile | Chile | chile.gif | 1 | null
+1178 | FC Augsburg | FC Augsburg | augsburg.gif | 0 | 95
+1179 | Fortuna Düsseldorf | Fortuna Düsseldorf | fortuna.gif | 0 | null
+1180 | SpVgg Greuther Fürth | SpVgg Greuther Fürth | fuerth.gif | 0 | null
+1181 | Eintracht Braunschweig | Eintracht Braunschweig | braunschweig.gif | 0 | null
+1182 | Kolumbien | Kolumbien | kolumbien.gif | 1 | null
+1183 | Bosnien-Herzegowina | Bosnien-Herzegowina | bosnien.gif | 1 | null
+1184 | SC Paderborn 07 | SC Paderborn 07 | Paderborn | 0 | 31
+
+### TAB bo_teamalias
+### id | bo_aliasname | bo_team_ref
+1 | 1. FC Kaiserslautern | 1146
+2 | 1. FC Köln | 1148
+3 | 1. FC Nürnberg | 1159
+4 | Bayern München | 1141
+5 | VfL Wolfsburg | 1147
+6 | Borussia Mönchengladbach | 1160
+7 | 1899 Hoffenheim | 1170
+8 | Werder Bremen | 1145
+9 | SC Freiburg | 1144
+10 | FC St. Pauli | 1158
+11 | Hannover 96 | 1162
+12 | Eintracht Frankfurt | 1155
+13 | Hamburger SV | 1151
+14 | FSV Mainz 05 | 1164
+15 | VfB Stuttgart | 1153
+16 | Borussia Dortmund | 1142
+17 | Bayer Leverkusen | 1143
+18 | Schalke 04 | 1161
+19 | FC Augsburg | 1178
+20 | Hertha BSC Berlin | 1157
+21 | Fortuna Düsseldorf | 1179
+22 | SpVgg Greuther Fürth | 1180
+23 | Eintracht Braunschweig | 1181
+24 | Hertha BSC | 1157
+25 | SC Paderborn | 1184
+26 | FC Bayern München | 1141
+27 | TSG 1899 Hoffenheim | 1170
+28 | FC Schalke 04 | 1161
+29 | SV Werder Bremen | 1145
+30 | BVB | 1142
+31 | SC Paderborn 07 | 1184
+32 | 1. FSV Mainz 05 | 1164
+33 | HSV | 1151
+
