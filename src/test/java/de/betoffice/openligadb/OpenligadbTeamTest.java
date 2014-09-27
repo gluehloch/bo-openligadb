@@ -23,6 +23,7 @@
 
 package de.betoffice.openligadb;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -42,12 +43,7 @@ import de.betoffice.database.data.DeleteDatabase;
 import de.dbload.Dbload;
 import de.msiggi.sportsdata.webservices.ArrayOfGoal;
 import de.msiggi.sportsdata.webservices.ArrayOfMatchResult;
-import de.msiggi.sportsdata.webservices.ArrayOfMatchdata;
 import de.msiggi.sportsdata.webservices.ArrayOfTeam;
-import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument;
-import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument.GetMatchdataByGroupLeagueSaison;
-import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonResponseDocument;
-import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonResponseDocument.GetMatchdataByGroupLeagueSaisonResponse;
 import de.msiggi.sportsdata.webservices.GetTeamsByLeagueSaisonDocument;
 import de.msiggi.sportsdata.webservices.GetTeamsByLeagueSaisonDocument.GetTeamsByLeagueSaison;
 import de.msiggi.sportsdata.webservices.GetTeamsByLeagueSaisonResponseDocument;
@@ -135,23 +131,38 @@ public class OpenligadbTeamTest extends
             }
         });
 
-        SportsdataStub stub = new SportsdataStub(
-                "http://localhost:8088/mockSportsdataSoap12");
-        GetMatchdataByGroupLeagueSaisonDocument getMatchdataByGroupLeagueSaison2 = GetMatchdataByGroupLeagueSaisonDocument.Factory
-                .newInstance();
-        GetMatchdataByGroupLeagueSaison addNewGetMatchdataByGroupLeagueSaison = getMatchdataByGroupLeagueSaison2
-                .addNewGetMatchdataByGroupLeagueSaison();
-        addNewGetMatchdataByGroupLeagueSaison.setGroupOrderID(1);
-        addNewGetMatchdataByGroupLeagueSaison.setGroupOrderID(2014);
-        addNewGetMatchdataByGroupLeagueSaison.setLeagueShortcut("bl1");
-        GetMatchdataByGroupLeagueSaisonResponseDocument matchdataByGroupLeagueSaison = stub
-                .getMatchdataByGroupLeagueSaison(getMatchdataByGroupLeagueSaison2);
-        GetMatchdataByGroupLeagueSaisonResponse getMatchdataByGroupLeagueSaisonResponse = matchdataByGroupLeagueSaison
-                .getGetMatchdataByGroupLeagueSaisonResponse();
-        ArrayOfMatchdata getMatchdataByGroupLeagueSaisonResult = getMatchdataByGroupLeagueSaisonResponse
-                .getGetMatchdataByGroupLeagueSaisonResult();
-        Matchdata[] matchdataArray = getMatchdataByGroupLeagueSaisonResult
-                .getMatchdataArray();
+        RoundFinder roundFinder = new RoundFinder();
+        // Matchdata[] matchdataArray = roundFinder.findMatches(
+        // "http://localhost:8088/mockSportsdataSoap12", "bl1", "2014", 1);
+        Matchdata[] matchdataArray = roundFinder.findMatches(null, "bl1",
+                "2014", 1);
+
+        assertThat(matchdataArray.length, is(9));
+
+        // SportsdataStub stub = new SportsdataStub(
+        // "http://localhost:8088/mockSportsdataSoap12");
+        // GetMatchdataByGroupLeagueSaisonDocument
+        // getMatchdataByGroupLeagueSaison2 =
+        // GetMatchdataByGroupLeagueSaisonDocument.Factory
+        // .newInstance();
+        // GetMatchdataByGroupLeagueSaison addNewGetMatchdataByGroupLeagueSaison
+        // = getMatchdataByGroupLeagueSaison2
+        // .addNewGetMatchdataByGroupLeagueSaison();
+        // addNewGetMatchdataByGroupLeagueSaison.setGroupOrderID(1);
+        // addNewGetMatchdataByGroupLeagueSaison.setLeagueSaison("2014");
+        // addNewGetMatchdataByGroupLeagueSaison.setLeagueShortcut("bl1");
+        // GetMatchdataByGroupLeagueSaisonResponseDocument
+        // matchdataByGroupLeagueSaison = stub
+        // .getMatchdataByGroupLeagueSaison(getMatchdataByGroupLeagueSaison2);
+        // GetMatchdataByGroupLeagueSaisonResponse
+        // getMatchdataByGroupLeagueSaisonResponse =
+        // matchdataByGroupLeagueSaison
+        // .getGetMatchdataByGroupLeagueSaisonResponse();
+        // ArrayOfMatchdata getMatchdataByGroupLeagueSaisonResult =
+        // getMatchdataByGroupLeagueSaisonResponse
+        // .getGetMatchdataByGroupLeagueSaisonResult();
+        // Matchdata[] matchdataArray = getMatchdataByGroupLeagueSaisonResult
+        // .getMatchdataArray();
         for (Matchdata matchdata : matchdataArray) {
             matchdata.getGroupID();
             matchdata.getIdTeam1();
@@ -159,13 +170,20 @@ public class OpenligadbTeamTest extends
             matchdata.getMatchIsFinished();
             ArrayOfMatchResult matchResults = matchdata.getMatchResults();
             for (MatchResult matchResult : matchResults.getMatchResultArray()) {
-                matchResult.getResultTypeId(); // 2: Nach 90 Minuten // 1: Nach 45 Minuten
+                matchResult.getResultTypeId(); // 2: Nach 90 Minuten // 1: Nach
+                                               // 45 Minuten
                 matchResult.getPointsTeam1(); // Tore Heimmannschaft
                 matchResult.getPointsTeam2(); // Tore Gastmannschaft
             }
             Location location = matchdata.getLocation();
+            location.getLocationID();
+
             ArrayOfGoal goals = matchdata.getGoals();
             for (Goal goal : goals.getGoalArray()) {
+                de.winkler.betoffice.storage.Goal boGoal = new de.winkler.betoffice.storage.Goal();
+                boGoal.getOpenligaid();
+
+                goal.getGoalID();
                 goal.getGoalComment();
                 goal.getGoalMatchMinute();
                 goal.getGoalGetterName();

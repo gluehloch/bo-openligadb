@@ -27,6 +27,8 @@ package de.betoffice.service;
 
 import java.io.File;
 
+import org.springframework.stereotype.Service;
+
 import de.betoffice.dfb.RoundInfo;
 import de.winkler.betoffice.storage.GameList;
 
