@@ -38,12 +38,23 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import de.betoffice.openligadb.SportsdataStub;
+import de.betoffice.database.data.DeleteDatabase;
 import de.dbload.Dbload;
+import de.msiggi.sportsdata.webservices.ArrayOfGoal;
+import de.msiggi.sportsdata.webservices.ArrayOfMatchResult;
+import de.msiggi.sportsdata.webservices.ArrayOfMatchdata;
 import de.msiggi.sportsdata.webservices.ArrayOfTeam;
+import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument;
+import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument.GetMatchdataByGroupLeagueSaison;
+import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonResponseDocument;
+import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonResponseDocument.GetMatchdataByGroupLeagueSaisonResponse;
 import de.msiggi.sportsdata.webservices.GetTeamsByLeagueSaisonDocument;
 import de.msiggi.sportsdata.webservices.GetTeamsByLeagueSaisonDocument.GetTeamsByLeagueSaison;
 import de.msiggi.sportsdata.webservices.GetTeamsByLeagueSaisonResponseDocument;
+import de.msiggi.sportsdata.webservices.Goal;
+import de.msiggi.sportsdata.webservices.Location;
+import de.msiggi.sportsdata.webservices.MatchResult;
+import de.msiggi.sportsdata.webservices.Matchdata;
 import de.msiggi.sportsdata.webservices.Team;
 import de.winkler.betoffice.service.MasterDataManagerService;
 
@@ -55,7 +66,7 @@ import de.winkler.betoffice.service.MasterDataManagerService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/betoffice-datasource.xml",
         "/betoffice-persistence.xml", "/test-mysql-piratestest.xml" })
-public class TeamVersusOpenligadbTeamTest extends
+public class OpenligadbTeamTest extends
         AbstractTransactionalJUnit4SpringContextTests {
 
     @Autowired
@@ -79,6 +90,7 @@ public class TeamVersusOpenligadbTeamTest extends
         sessionFactory.getCurrentSession().doWork(new Work() {
             @Override
             public void execute(Connection connection) throws SQLException {
+                DeleteDatabase.deleteDatabase(connection);
                 Dbload.read(connection, this.getClass(), "bo_team.dat");
             }
         });
@@ -101,12 +113,68 @@ public class TeamVersusOpenligadbTeamTest extends
                 .getGetTeamsByLeagueSaisonResult();
         Team[] teams = getTeamsByLeagueSaisonResult.getTeamArray();
         for (Team team : teams) {
-            System.out.print(team.getTeamID() + ": " + team.getTeamName());
-
             de.winkler.betoffice.storage.Team boTeam = masterDataManagerService
                     .findTeamByOpenligaid(team.getTeamID());
             assertThat(boTeam, notNullValue());
-            System.out.println(" " + boTeam);
+
+            System.out.println(boTeam.getId() + " | " + boTeam.getName()
+                    + " | " + boTeam.getLongName() + " | "
+                    + boTeam.getTeamType().ordinal() + " | "
+                    + boTeam.getOpenligaid());
+        }
+    }
+
+    @Test
+    public void testGetMatchesOfRound() throws Exception {
+        sessionFactory.getCurrentSession().doWork(new Work() {
+            @Override
+            public void execute(Connection connection) throws SQLException {
+                DeleteDatabase.deleteDatabase(connection);
+                Dbload.read(connection, this.getClass(),
+                        "bo_bundesliga_2014.dat");
+            }
+        });
+
+        SportsdataStub stub = new SportsdataStub(
+                "http://localhost:8088/mockSportsdataSoap12");
+        GetMatchdataByGroupLeagueSaisonDocument getMatchdataByGroupLeagueSaison2 = GetMatchdataByGroupLeagueSaisonDocument.Factory
+                .newInstance();
+        GetMatchdataByGroupLeagueSaison addNewGetMatchdataByGroupLeagueSaison = getMatchdataByGroupLeagueSaison2
+                .addNewGetMatchdataByGroupLeagueSaison();
+        addNewGetMatchdataByGroupLeagueSaison.setGroupOrderID(1);
+        addNewGetMatchdataByGroupLeagueSaison.setGroupOrderID(2014);
+        addNewGetMatchdataByGroupLeagueSaison.setLeagueShortcut("bl1");
+        GetMatchdataByGroupLeagueSaisonResponseDocument matchdataByGroupLeagueSaison = stub
+                .getMatchdataByGroupLeagueSaison(getMatchdataByGroupLeagueSaison2);
+        GetMatchdataByGroupLeagueSaisonResponse getMatchdataByGroupLeagueSaisonResponse = matchdataByGroupLeagueSaison
+                .getGetMatchdataByGroupLeagueSaisonResponse();
+        ArrayOfMatchdata getMatchdataByGroupLeagueSaisonResult = getMatchdataByGroupLeagueSaisonResponse
+                .getGetMatchdataByGroupLeagueSaisonResult();
+        Matchdata[] matchdataArray = getMatchdataByGroupLeagueSaisonResult
+                .getMatchdataArray();
+        for (Matchdata matchdata : matchdataArray) {
+            matchdata.getGroupID();
+            matchdata.getIdTeam1();
+            matchdata.getIdTeam2();
+            matchdata.getMatchIsFinished();
+            ArrayOfMatchResult matchResults = matchdata.getMatchResults();
+            for (MatchResult matchResult : matchResults.getMatchResultArray()) {
+                matchResult.getResultTypeId(); // 2: Nach 90 Minuten // 1: Nach 45 Minuten
+                matchResult.getPointsTeam1(); // Tore Heimmannschaft
+                matchResult.getPointsTeam2(); // Tore Gastmannschaft
+            }
+            Location location = matchdata.getLocation();
+            ArrayOfGoal goals = matchdata.getGoals();
+            for (Goal goal : goals.getGoalArray()) {
+                goal.getGoalComment();
+                goal.getGoalMatchMinute();
+                goal.getGoalGetterName();
+                goal.getGoalOvertime();
+                goal.getGoalOwnGoal();
+                goal.getGoalPenalty();
+                goal.getGoalScoreTeam1(); // Tore Heimmanschaft
+                goal.getGoalScoreTeam2(); // Tore Gastmannschaft
+            }
         }
     }
 

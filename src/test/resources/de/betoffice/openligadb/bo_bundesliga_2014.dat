@@ -1,0 +1,84 @@
+### TAB bo_team
+### id | bo_name | bo_longname | bo_teamtype | bo_openligaid
+1153 | VfB Stuttgart | VfB Stuttgart | 0 | 16
+1142 | Borussia Dortmund | Borussia Dortmund | 0 | 7
+1161 | FC Schalke 04 | FC Schalke 04 | 0 | 9
+1147 | VfL Wolfsburg | VfL Wolfsburg | 0 | 131
+1143 | Bayer 04 Leverkusen | Bayer 04 Leverkusen | 0 | 6
+1141 | FC Bayern München | FC Bayern München | 0 | 40
+1151 | Hamburger SV | Hamburger SV | 0 | 100
+1162 | Hannover 96 | Hannover 96 | 0 | 55
+1145 | SV Werder Bremen | SV Werder Bremen | 0 | 134
+1160 | Borussia MGladbach | Borussia Mönchen Gladbach | 0 | 87
+1144 | SC Freiburg | SC Freiburg | 0 | 112
+1164 | FSV Mainz 05 | FSV Mainz 05 | 0 | 81
+1155 | Eintracht Frankfurt | Eintracht Frankfurt | 0 | 91
+1157 | Hertha BSC Berlin | Hertha BSC Berlin | 0 | 54
+1148 | 1.FC Köln | 1.FC Köln | 0 | 65
+1178 | FC Augsburg | FC Augsburg | 0 | 95
+1184 | SC Paderborn 07 | SC Paderborn 07 | 0 | 31
+1170 | 1899 Hoffenheim | 1899 Hoffenheim | 0 | 123
+
+
+### TAB bo_teamalias
+### id | bo_aliasname | bo_team_ref
+2 | 1. FC Köln | 1148
+4 | Bayern München | 1141
+5 | VfL Wolfsburg | 1147
+6 | Borussia Mönchengladbach | 1160
+7 | 1899 Hoffenheim | 1170
+8 | Werder Bremen | 1145
+9 | SC Freiburg | 1144
+11 | Hannover 96 | 1162
+12 | Eintracht Frankfurt | 1155
+13 | Hamburger SV | 1151
+14 | FSV Mainz 05 | 1164
+15 | VfB Stuttgart | 1153
+16 | Borussia Dortmund | 1142
+17 | Bayer Leverkusen | 1143
+18 | Schalke 04 | 1161
+19 | FC Augsburg | 1178
+20 | Hertha BSC Berlin | 1157
+24 | Hertha BSC | 1157
+25 | SC Paderborn | 1184
+26 | FC Bayern München | 1141
+27 | TSG 1899 Hoffenheim | 1170
+28 | FC Schalke 04 | 1161
+29 | SV Werder Bremen | 1145
+30 | BVB | 1142
+31 | SC Paderborn 07 | 1184
+32 | 1. FSV Mainz 05 | 1164
+33 | HSV | 1151
+
+### TAB bo_grouptype
+### id | bo_name
+1 | 1. Liga
+
+### TAB bo_season
+### id | bo_year | bo_name    | bo_mode | bo_teamtype
+     1 | 2014    | Bundesliga | 0       | 0
+
+### TAB bo_group
+### id | bo_season_ref | bo_grouptype_ref
+     1 | 1             | 1
+
+### TAB bo_team_group
+### bo_group_ref | bo_team_ref
+ 1| 1153 
+ 1| 1142 
+ 1| 1161 
+ 1| 1147 
+ 1| 1143 
+ 1| 1141 
+ 1| 1151 
+ 1| 1162 
+ 1| 1145 
+ 1| 1160 
+ 1| 1144 
+ 1| 1164 
+ 1| 1155 
+ 1| 1157 
+ 1| 1148 
+ 1| 1178 
+ 1| 1184 
+ 1| 1170 
