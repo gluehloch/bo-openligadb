@@ -26,6 +26,7 @@ package de.betoffice.openligadb;
 import java.rmi.RemoteException;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Component;
 
 import de.msiggi.sportsdata.webservices.ArrayOfMatchdata;
 import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument;
@@ -39,7 +40,32 @@ import de.msiggi.sportsdata.webservices.Matchdata;
  * 
  * @author Andre Winkler
  */
-public class RoundFinder {
+@Component
+public class OpenligadbRoundFinder {
+
+    /**
+     * Find all matches of specfic league and group. Uses the default web
+     * service url of openligadb. Should be:
+     * <pre>
+     * http://www.openligadb.de/Webservices/Sportsdata.asmx
+     * </pre>
+     * 
+     * @param leagueShortcut
+     *            The openligadb league shortcut id.
+     * @param leagueSeason
+     *            The openligadb leagueSeason id.
+     * @param groupOrderID
+     *            The openligadb groupOrderId. The equivalent of betoffice round
+     *            index. Betoffice round index has a range from 0 to N-1. The
+     *            groupOrderId has a range from 1 to N.
+     * @return An array of matches for this group.
+     * @throws RemoteException
+     */
+    public Matchdata[] findMatches(String leagueShortcut, String leagueSeason,
+            int groupOrderId) throws RemoteException {
+
+        return findMatches(null, leagueShortcut, leagueSeason, groupOrderId);
+    }
 
     /**
      * Find all matches of specfic league and group.

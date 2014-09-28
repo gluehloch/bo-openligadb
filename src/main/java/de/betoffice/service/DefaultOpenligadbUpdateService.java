@@ -23,15 +23,21 @@
 
 package de.betoffice.service;
 
+import java.rmi.RemoteException;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import de.awtools.basic.LoggerFactory;
+import de.betoffice.openligadb.OpenligadbRoundFinder;
+import de.msiggi.sportsdata.webservices.Matchdata;
 import de.winkler.betoffice.dao.RoundDao;
 import de.winkler.betoffice.dao.SeasonDao;
+import de.winkler.betoffice.dao.TeamDao;
 import de.winkler.betoffice.storage.GameList;
 import de.winkler.betoffice.storage.Season;
+import de.winkler.betoffice.storage.Team;
 
 /**
  * The default implementation of {@link OpenligadbUpdateService}.
@@ -43,16 +49,43 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     private static final Logger LOG = LoggerFactory.make();
 
+    // -- teamDao -------------------------------------------------------------
+
+    private TeamDao teamDao;
+
+    @Autowired
+    public void setTeamDao(TeamDao _teamDao) {
+        teamDao = _teamDao;
+    }
+
     // -- seasonDao -----------------------------------------------------------
 
     private SeasonDao seasonDao;
 
     @Autowired
-    public void setSeasonDao(SeasonDao seasonDao) {
-        this.seasonDao = seasonDao;
+    public void setSeasonDao(SeasonDao _seasonDao) {
+        seasonDao = _seasonDao;
     }
 
+    // -- roundDao ------------------------------------------------------------
+
     private RoundDao roundDao;
+
+    @Autowired
+    public void setRoundDao(RoundDao _roundDao) {
+        roundDao = _roundDao;
+    }
+
+    // -- openligadbRoundFinder -----------------------------------------------
+
+    private OpenligadbRoundFinder openligadbRoundFinder;
+
+    @Autowired
+    public void setOpenligadbRoundFinder(
+            OpenligadbRoundFinder _openligadbRoundFinder) {
+
+        openligadbRoundFinder = _openligadbRoundFinder;
+    }
 
     // ------------------------------------------------------------------------
 
@@ -78,8 +111,34 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             // new round.
         } else {
             // The round is already there. May be i need an update here.
-            
+            try {
+                Matchdata[] matches = openligadbRoundFinder.findMatches(season
+                        .getChampionshipConfiguration()
+                        .getOpenligaLeagueShortcut(), season
+                        .getChampionshipConfiguration()
+                        .getOpenligaLeagueSeason(), roundIndex + 1);
+
+                for (Matchdata match : matches) {
+                    Team boHomeTeam = findBoTeam(match.getIdTeam1());
+                    Team boGuestTeam = findBoTeam(match.getIdTeam2());
+                }
+            } catch (RemoteException ex) {
+                // TODO Auto-generated catch block
+                ex.printStackTrace();
+            }
         }
+    }
+
+    private Team findBoTeam(long openligaTeamId) {
+        Team boHomeTeam = teamDao.findByOpenligaid(openligaTeamId);
+        if (boHomeTeam == null) {
+            String error = String
+                    .format("I did not a find a betoffice team for the openligadb team id [%d].",
+                            openligaTeamId);
+            LOG.error(error);
+            throw new IllegalStateException(error);
+        }
+        return boHomeTeam;
     }
 
 }

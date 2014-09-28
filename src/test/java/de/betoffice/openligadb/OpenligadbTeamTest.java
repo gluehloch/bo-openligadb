@@ -131,7 +131,7 @@ public class OpenligadbTeamTest extends
             }
         });
 
-        RoundFinder roundFinder = new RoundFinder();
+        OpenligadbRoundFinder roundFinder = new OpenligadbRoundFinder();
         // Matchdata[] matchdataArray = roundFinder.findMatches(
         // "http://localhost:8088/mockSportsdataSoap12", "bl1", "2014", 1);
         Matchdata[] matchdataArray = roundFinder.findMatches(null, "bl1",
@@ -139,30 +139,6 @@ public class OpenligadbTeamTest extends
 
         assertThat(matchdataArray.length, is(9));
 
-        // SportsdataStub stub = new SportsdataStub(
-        // "http://localhost:8088/mockSportsdataSoap12");
-        // GetMatchdataByGroupLeagueSaisonDocument
-        // getMatchdataByGroupLeagueSaison2 =
-        // GetMatchdataByGroupLeagueSaisonDocument.Factory
-        // .newInstance();
-        // GetMatchdataByGroupLeagueSaison addNewGetMatchdataByGroupLeagueSaison
-        // = getMatchdataByGroupLeagueSaison2
-        // .addNewGetMatchdataByGroupLeagueSaison();
-        // addNewGetMatchdataByGroupLeagueSaison.setGroupOrderID(1);
-        // addNewGetMatchdataByGroupLeagueSaison.setLeagueSaison("2014");
-        // addNewGetMatchdataByGroupLeagueSaison.setLeagueShortcut("bl1");
-        // GetMatchdataByGroupLeagueSaisonResponseDocument
-        // matchdataByGroupLeagueSaison = stub
-        // .getMatchdataByGroupLeagueSaison(getMatchdataByGroupLeagueSaison2);
-        // GetMatchdataByGroupLeagueSaisonResponse
-        // getMatchdataByGroupLeagueSaisonResponse =
-        // matchdataByGroupLeagueSaison
-        // .getGetMatchdataByGroupLeagueSaisonResponse();
-        // ArrayOfMatchdata getMatchdataByGroupLeagueSaisonResult =
-        // getMatchdataByGroupLeagueSaisonResponse
-        // .getGetMatchdataByGroupLeagueSaisonResult();
-        // Matchdata[] matchdataArray = getMatchdataByGroupLeagueSaisonResult
-        // .getMatchdataArray();
         for (Matchdata matchdata : matchdataArray) {
             matchdata.getGroupID();
             matchdata.getIdTeam1();

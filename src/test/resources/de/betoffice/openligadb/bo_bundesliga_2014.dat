@@ -55,8 +55,8 @@
 1 | 1. Liga
 
 ### TAB bo_season
-### id | bo_year | bo_name    | bo_mode | bo_teamtype
-     1 | 2014    | Bundesliga | 0       | 0
+### id | bo_year | bo_name    | bo_mode | bo_teamtype | bo_openligaleagueshortcut | bo_openligaleagueseason
+     1 | 2014    | Bundesliga | 0       | 0           | bl1                       | 2014
 
 ### TAB bo_group
 ### id | bo_season_ref | bo_grouptype_ref
