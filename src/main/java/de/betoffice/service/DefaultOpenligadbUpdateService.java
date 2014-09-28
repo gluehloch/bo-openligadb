@@ -28,16 +28,26 @@ import java.rmi.RemoteException;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import de.awtools.basic.LoggerFactory;
 import de.betoffice.openligadb.OpenligadbRoundFinder;
+import de.betoffice.openligadb.OpenligadbToBetofficeBuilder;
+import de.msiggi.sportsdata.webservices.Goal;
 import de.msiggi.sportsdata.webservices.Matchdata;
+import de.winkler.betoffice.dao.LocationDao;
+import de.winkler.betoffice.dao.MatchDao;
+import de.winkler.betoffice.dao.PlayerDao;
 import de.winkler.betoffice.dao.RoundDao;
 import de.winkler.betoffice.dao.SeasonDao;
 import de.winkler.betoffice.dao.TeamDao;
+import de.winkler.betoffice.storage.Game;
 import de.winkler.betoffice.storage.GameList;
+import de.winkler.betoffice.storage.Location;
+import de.winkler.betoffice.storage.Player;
 import de.winkler.betoffice.storage.Season;
 import de.winkler.betoffice.storage.Team;
+import de.winkler.betoffice.storage.enums.GoalType;
 
 /**
  * The default implementation of {@link OpenligadbUpdateService}.
@@ -76,6 +86,15 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         roundDao = _roundDao;
     }
 
+    // -- matchDao ------------------------------------------------------------
+
+    private MatchDao matchDao;
+
+    @Autowired
+    public void setMatchDao(MatchDao _matchDao) {
+        matchDao = _matchDao;
+    }
+
     // -- openligadbRoundFinder -----------------------------------------------
 
     private OpenligadbRoundFinder openligadbRoundFinder;
@@ -87,9 +106,31 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         openligadbRoundFinder = _openligadbRoundFinder;
     }
 
+    // -- locationDao ---------------------------------------------------------
+
+    private LocationDao locationDao;
+
+    @Autowired
+    public void setLocationDao(LocationDao _locationDao) {
+        locationDao = _locationDao;
+    }
+
+    // -- playerDao -----------------------------------------------------------
+
+    private PlayerDao playerDao;
+
+    public void setPlayerDao(PlayerDao _playerDao) {
+        playerDao = _playerDao;
+    }
+
+    // ----------------------------------------------------------- Utilities --
+
+    private final OpenligadbToBetofficeBuilder playerBuilder = new OpenligadbToBetofficeBuilder();
+
     // ------------------------------------------------------------------------
 
     @Override
+    @Transactional
     public void updateRound(long seasonId, int roundIndex) {
         if (roundIndex < 0) {
             String error = "Round index to small!";
@@ -121,6 +162,65 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 for (Matchdata match : matches) {
                     Team boHomeTeam = findBoTeam(match.getIdTeam1());
                     Team boGuestTeam = findBoTeam(match.getIdTeam2());
+
+                    Game boMatch = matchDao
+                            .find(round, boHomeTeam, boGuestTeam);
+
+                    if (boMatch == null) {
+                        // INSERT
+                        boMatch = OpenligadbToBetofficeBuilder.buildGame(
+                                match, boHomeTeam, boGuestTeam);
+
+                        OpenligadbToBetofficeBuilder.updateGameResult(boMatch,
+                                match);
+
+                        Location boLocation = locationDao
+                                .findByOpenligaid(match.getLocation()
+                                        .getLocationID());
+
+                        if (boLocation == null) {
+                            boLocation = new Location();
+                            boLocation.setCity(match.getLocation()
+                                    .getLocationCity());
+                            boLocation.setOpenligaid(Long.valueOf(match
+                                    .getLocation().getLocationID()));
+                            boLocation.setName(match.getLocation()
+                                    .getLocationStadium());
+                            boLocation.setGeodat(null);
+                            locationDao.save(boLocation);
+                        }
+                        boMatch.setLocation(boLocation);
+
+                        for (Goal goal : match.getGoals().getGoalArray()) {
+                            de.winkler.betoffice.storage.Goal boGoal = new de.winkler.betoffice.storage.Goal();
+                            boGoal.setOpenligaid(Long.valueOf(goal.getGoalID()));
+
+                            Player boPlayer = playerDao.findByOpenligaid(goal
+                                    .getGoalID());
+                            if (boPlayer == null) {
+                                boPlayer = playerBuilder.build(goal);
+                                boPlayer.getGoals().add(boGoal);
+                                playerDao.save(boPlayer);
+                            }
+                            boGoal.setPlayer(boPlayer);
+                            boGoal.setMinute(goal.getGoalMatchMinute());
+                            boGoal.setComment(goal.getGoalComment());
+
+                            if (goal.getGoalOvertime()) {
+                                boGoal.setGoalType(GoalType.OVERTIME);
+                            } else if (goal.getGoalOwnGoal()) {
+                                boGoal.setGoalType(GoalType.OWNGOAL);
+                            } else if (goal.getGoalPenalty()) {
+                                boGoal.setGoalType(GoalType.PENALTY);
+                            } else {
+                                boGoal.setGoalType(GoalType.REGULAR);
+                            }
+                        }
+
+                    } else {
+                        // UPDATE
+                        long openligaid = boMatch.getOpenligaid();
+                    }
                 }
             } catch (RemoteException ex) {
                 // TODO Auto-generated catch block
