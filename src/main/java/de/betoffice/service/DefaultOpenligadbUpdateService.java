@@ -5,17 +5,17 @@
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
  * MODIFICATION
- * 
+ *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation; either version 2 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
  * Place, Suite 330, Boston, MA 02111-1307 USA
@@ -31,10 +31,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.awtools.basic.LoggerFactory;
+import de.betoffice.openligadb.GoalBuilder;
+import de.betoffice.openligadb.LocationBuilder;
+import de.betoffice.openligadb.LocationSynchronize;
 import de.betoffice.openligadb.OpenligadbRoundFinder;
 import de.betoffice.openligadb.OpenligadbToBetofficeBuilder;
-import de.msiggi.sportsdata.webservices.Goal;
+import de.betoffice.openligadb.PlayerBuilder;
+import de.betoffice.openligadb.PlayerSynchronize;
 import de.msiggi.sportsdata.webservices.Matchdata;
+import de.winkler.betoffice.dao.GoalDao;
 import de.winkler.betoffice.dao.LocationDao;
 import de.winkler.betoffice.dao.MatchDao;
 import de.winkler.betoffice.dao.PlayerDao;
@@ -43,15 +48,15 @@ import de.winkler.betoffice.dao.SeasonDao;
 import de.winkler.betoffice.dao.TeamDao;
 import de.winkler.betoffice.storage.Game;
 import de.winkler.betoffice.storage.GameList;
+import de.winkler.betoffice.storage.Goal;
 import de.winkler.betoffice.storage.Location;
 import de.winkler.betoffice.storage.Player;
 import de.winkler.betoffice.storage.Season;
 import de.winkler.betoffice.storage.Team;
-import de.winkler.betoffice.storage.enums.GoalType;
 
 /**
  * The default implementation of {@link OpenligadbUpdateService}.
- * 
+ *
  * @author Andre Winkler
  */
 @Service("openligadbService")
@@ -119,13 +124,19 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     private PlayerDao playerDao;
 
+    @Autowired
     public void setPlayerDao(PlayerDao _playerDao) {
         playerDao = _playerDao;
     }
 
-    // ----------------------------------------------------------- Utilities --
+    // -- goalDao -------------------------------------------------------------
 
-    private final OpenligadbToBetofficeBuilder playerBuilder = new OpenligadbToBetofficeBuilder();
+    private GoalDao goalDao;
+
+    @Autowired
+    public void setGoalDao(GoalDao _goalDao) {
+        goalDao = _goalDao;
+    }
 
     // ------------------------------------------------------------------------
 
@@ -150,83 +161,61 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         if (round == null) {
             // There is no round with this index here. So it is time to create a
             // new round.
-        } else {
-            // The round is already there. May be i need an update here.
-            try {
-                Matchdata[] matches = openligadbRoundFinder.findMatches(season
-                        .getChampionshipConfiguration()
-                        .getOpenligaLeagueShortcut(), season
-                        .getChampionshipConfiguration()
-                        .getOpenligaLeagueSeason(), roundIndex + 1);
-
-                for (Matchdata match : matches) {
-                    Team boHomeTeam = findBoTeam(match.getIdTeam1());
-                    Team boGuestTeam = findBoTeam(match.getIdTeam2());
-
-                    Game boMatch = matchDao
-                            .find(round, boHomeTeam, boGuestTeam);
-
-                    if (boMatch == null) {
-                        // INSERT
-                        boMatch = OpenligadbToBetofficeBuilder.buildGame(
-                                match, boHomeTeam, boGuestTeam);
-
-                        OpenligadbToBetofficeBuilder.updateGameResult(boMatch,
-                                match);
-
-                        Location boLocation = locationDao
-                                .findByOpenligaid(match.getLocation()
-                                        .getLocationID());
-
-                        if (boLocation == null) {
-                            boLocation = new Location();
-                            boLocation.setCity(match.getLocation()
-                                    .getLocationCity());
-                            boLocation.setOpenligaid(Long.valueOf(match
-                                    .getLocation().getLocationID()));
-                            boLocation.setName(match.getLocation()
-                                    .getLocationStadium());
-                            boLocation.setGeodat(null);
-                            locationDao.save(boLocation);
-                        }
-                        boMatch.setLocation(boLocation);
-
-                        for (Goal goal : match.getGoals().getGoalArray()) {
-                            de.winkler.betoffice.storage.Goal boGoal = new de.winkler.betoffice.storage.Goal();
-                            boGoal.setOpenligaid(Long.valueOf(goal.getGoalID()));
-
-                            Player boPlayer = playerDao.findByOpenligaid(goal
-                                    .getGoalID());
-                            if (boPlayer == null) {
-                                boPlayer = playerBuilder.build(goal);
-                                boPlayer.getGoals().add(boGoal);
-                                playerDao.save(boPlayer);
-                            }
-                            boGoal.setPlayer(boPlayer);
-                            boGoal.setMinute(goal.getGoalMatchMinute());
-                            boGoal.setComment(goal.getGoalComment());
-
-                            if (goal.getGoalOvertime()) {
-                                boGoal.setGoalType(GoalType.OVERTIME);
-                            } else if (goal.getGoalOwnGoal()) {
-                                boGoal.setGoalType(GoalType.OWNGOAL);
-                            } else if (goal.getGoalPenalty()) {
-                                boGoal.setGoalType(GoalType.PENALTY);
-                            } else {
-                                boGoal.setGoalType(GoalType.REGULAR);
-                            }
-                        }
-
-                    } else {
-                        // UPDATE
-                        long openligaid = boMatch.getOpenligaid();
-                    }
-                }
-            } catch (RemoteException ex) {
-                // TODO Auto-generated catch block
-                ex.printStackTrace();
-            }
         }
+
+        // The round is already there. May be i need an update here.
+        try {
+            Matchdata[] matches = openligadbRoundFinder.findMatches(
+                    season.getChampionshipConfiguration()
+                            .getOpenligaLeagueShortcut(), season
+                            .getChampionshipConfiguration()
+                            .getOpenligaLeagueSeason(), roundIndex + 1);
+
+            new LocationSynchronize().sync(matches);
+            new PlayerSynchronize().sync(matches);
+
+            for (Matchdata match : matches) {
+                Team boHomeTeam = findBoTeam(match.getIdTeam1());
+                Team boGuestTeam = findBoTeam(match.getIdTeam2());
+
+                Game boMatch = matchDao.find(round, boHomeTeam, boGuestTeam);
+
+                if (boMatch == null) {
+                    // INSERT
+                    boMatch = OpenligadbToBetofficeBuilder.buildGame(match,
+                            boHomeTeam, boGuestTeam);
+
+                    OpenligadbToBetofficeBuilder.updateGameResult(boMatch,
+                            match);
+
+                    Location boLocation = locationDao.findByOpenligaid(match
+                            .getLocation().getLocationID());
+                    boMatch.setLocation(boLocation);
+
+                    for (de.msiggi.sportsdata.webservices.Goal goal : match
+                            .getGoals().getGoalArray()) {
+                        Goal boGoal = goalDao
+                                .findByOpenligaid(goal.getGoalID());
+                        if (boGoal == null) {
+                            boGoal = GoalBuilder.build(goal);
+                        }
+
+                        Player boPlayer = playerDao.findByOpenligaid(goal
+                                .getGoalID());
+                        boPlayer.getGoals().add(boGoal);
+                        playerDao.save(boPlayer);
+                    }
+
+                } else {
+                    // UPDATE
+                    long openligaid = boMatch.getOpenligaid();
+                }
+            }
+        } catch (RemoteException ex) {
+            // TODO Auto-generated catch block
+            ex.printStackTrace();
+        }
+
     }
 
     private Team findBoTeam(long openligaTeamId) {
