@@ -23,7 +23,7 @@
 
 package de.betoffice.service;
 
-import java.rmi.RemoteException;
+import java.util.Date;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +31,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.awtools.basic.LoggerFactory;
+import de.betoffice.openligadb.BestRoundDateFinder;
 import de.betoffice.openligadb.GoalBuilder;
-import de.betoffice.openligadb.LocationBuilder;
 import de.betoffice.openligadb.LocationSynchronize;
 import de.betoffice.openligadb.OpenligadbRoundFinder;
 import de.betoffice.openligadb.OpenligadbToBetofficeBuilder;
-import de.betoffice.openligadb.PlayerBuilder;
 import de.betoffice.openligadb.PlayerSynchronize;
 import de.msiggi.sportsdata.webservices.Matchdata;
 import de.winkler.betoffice.dao.GoalDao;
@@ -49,6 +48,7 @@ import de.winkler.betoffice.dao.TeamDao;
 import de.winkler.betoffice.storage.Game;
 import de.winkler.betoffice.storage.GameList;
 import de.winkler.betoffice.storage.Goal;
+import de.winkler.betoffice.storage.Group;
 import de.winkler.betoffice.storage.Location;
 import de.winkler.betoffice.storage.Player;
 import de.winkler.betoffice.storage.Season;
@@ -59,7 +59,7 @@ import de.winkler.betoffice.storage.Team;
  *
  * @author Andre Winkler
  */
-@Service("openligadbService")
+@Service("openligadbUpdateService")
 public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     private static final Logger LOG = LoggerFactory.make();
@@ -159,61 +159,86 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
         GameList round = roundDao.findRound(season, roundIndex);
         if (round == null) {
-            // There is no round with this index here. So it is time to create a
-            // new round.
+            Group bundesliga = season.getGroups().iterator().next();
+            round = new GameList();
+            round.setGroup(bundesliga);
+            round.setSeason(season);
+            season.addGameList(round);
+            roundDao.save(round);
         }
 
         // The round is already there. May be i need an update here.
-        try {
-            Matchdata[] matches = openligadbRoundFinder.findMatches(
-                    season.getChampionshipConfiguration()
-                            .getOpenligaLeagueShortcut(), season
-                            .getChampionshipConfiguration()
-                            .getOpenligaLeagueSeason(), roundIndex + 1);
+        Matchdata[] matches = openligadbRoundFinder
+                .findMatches(season.getChampionshipConfiguration()
+                        .getOpenligaLeagueShortcut(), season
+                        .getChampionshipConfiguration()
+                        .getOpenligaLeagueSeason(), roundIndex + 1);
 
-            new LocationSynchronize().sync(matches);
-            new PlayerSynchronize().sync(matches);
+        if (matches == null || matches.length == 0) {
+            String error = String
+                    .format("No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
+                            season.getChampionshipConfiguration()
+                                    .getOpenligaLeagueShortcut(), season
+                                    .getChampionshipConfiguration()
+                                    .getOpenligaLeagueSeason(), roundIndex + 1);
+            LOG.error(error);
+            throw new IllegalStateException(error);
+        }
 
-            for (Matchdata match : matches) {
-                Team boHomeTeam = findBoTeam(match.getIdTeam1());
-                Team boGuestTeam = findBoTeam(match.getIdTeam2());
+        if (round.getOpenligaid() == null) {
+            round.setOpenligaid(Long.valueOf(matches[0].getGroupID()));
+        } else {
+            long openligaGroupid = Long.valueOf(matches[0].getGroupID());
+            if (openligaGroupid != round.getOpenligaid()) {
+                String error = String
+                        .format("Openligadb groupId=[%d] and the stored groupId of betoffice GameList [%d] are different.",
+                                openligaGroupid, round.getOpenligaid());
+                LOG.error(error);
+                throw new IllegalStateException(error);
+            }
+        }
 
-                Game boMatch = matchDao.find(round, boHomeTeam, boGuestTeam);
+        BestRoundDateFinder bestRoundDateFinder = new BestRoundDateFinder();
+        Date bestRoundDate = bestRoundDateFinder.findBestRoundDate(matches);
+        round.setDateTime(bestRoundDate);
+        roundDao.save(round);
 
-                if (boMatch == null) {
-                    // INSERT
-                    boMatch = OpenligadbToBetofficeBuilder.buildGame(match,
-                            boHomeTeam, boGuestTeam);
+        new LocationSynchronize().sync(matches);
+        new PlayerSynchronize().sync(matches);
 
-                    OpenligadbToBetofficeBuilder.updateGameResult(boMatch,
-                            match);
+        for (Matchdata match : matches) {
+            Team boHomeTeam = findBoTeam(match.getIdTeam1());
+            Team boGuestTeam = findBoTeam(match.getIdTeam2());
 
-                    Location boLocation = locationDao.findByOpenligaid(match
-                            .getLocation().getLocationID());
-                    boMatch.setLocation(boLocation);
-
-                    for (de.msiggi.sportsdata.webservices.Goal goal : match
-                            .getGoals().getGoalArray()) {
-                        Goal boGoal = goalDao
-                                .findByOpenligaid(goal.getGoalID());
-                        if (boGoal == null) {
-                            boGoal = GoalBuilder.build(goal);
-                        }
-
-                        Player boPlayer = playerDao.findByOpenligaid(goal
-                                .getGoalID());
-                        boPlayer.getGoals().add(boGoal);
-                        playerDao.save(boPlayer);
-                    }
-
-                } else {
-                    // UPDATE
-                    long openligaid = boMatch.getOpenligaid();
+            Game boMatch = matchDao.find(round, boHomeTeam, boGuestTeam);
+            if (boMatch == null) {
+                boMatch = OpenligadbToBetofficeBuilder.buildGame(match,
+                        boHomeTeam, boGuestTeam);
+            } else {
+                if (boMatch.getOpenligaid() != match.getMatchID()) {
+                    String error = String
+                            .format("Openligadb matchId=[%d] and stored matchId of betoffice game [%d] are different.",
+                                    match.getMatchID(), boMatch.getOpenligaid());
+                    LOG.error(error);
+                    throw new IllegalStateException(error);
                 }
             }
-        } catch (RemoteException ex) {
-            // TODO Auto-generated catch block
-            ex.printStackTrace();
+
+            OpenligadbToBetofficeBuilder.updateGameResult(boMatch, match);
+
+            Location boLocation = locationDao.findByOpenligaid(match
+                    .getLocation().getLocationID());
+            boMatch.setLocation(boLocation);
+
+            goalDao.deleteAll(boMatch.getGoals());
+            for (de.msiggi.sportsdata.webservices.Goal goal : match.getGoals()
+                    .getGoalArray()) {
+
+                Goal boGoal = GoalBuilder.build(goal);
+                Player boPlayer = playerDao.findByOpenligaid(goal.getGoalID());
+                boPlayer.getGoals().add(boGoal);
+                playerDao.save(boPlayer);
+            }
         }
 
     }
