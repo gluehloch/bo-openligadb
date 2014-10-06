@@ -39,7 +39,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/betoffice-datasource.xml",
-        "/betoffice-persistence.xml", "/test-mysql-piratestest.xml" })
+        "/betoffice-persistence.xml", "/test-mysql-piratestest.xml", "/openligadbupdateservice.xml" })
 public class DefaultOpenligadbUpdateServiceTest {
 
     @Autowired
@@ -50,7 +50,7 @@ public class DefaultOpenligadbUpdateServiceTest {
 
     @Test
     public void testOpenligadbUpdateService() {
-        openligadbUpdateService.updateRound(22, 6);
+        openligadbUpdateService.updateRound(22, 1);
     }
 
 }

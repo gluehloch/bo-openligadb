@@ -46,8 +46,8 @@ public class BestRoundDateFinderTest {
     @Test
     public void testBestRoundDateFinder() throws RemoteException {
         OpenligadbRoundFinder finder = new OpenligadbRoundFinder();
-        Matchdata[] matches = finder.findMatches(
-                "http://localhost:8088/mockSportsdataSoap12", "bl1", "2014", 1);
+        finder.setWebserviceUrl("http://localhost:8088/mockSportsdataSoap12");
+        Matchdata[] matches = finder.findMatches("bl1", "2014", 1);
         BestRoundDateFinder dateFinder = new BestRoundDateFinder();
         Date bestDate = dateFinder.findBestRoundDate(matches);
         System.out.println("Best date: " + bestDate);

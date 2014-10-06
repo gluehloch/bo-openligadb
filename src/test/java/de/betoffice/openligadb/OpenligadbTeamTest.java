@@ -134,8 +134,7 @@ public class OpenligadbTeamTest extends
         OpenligadbRoundFinder roundFinder = new OpenligadbRoundFinder();
         // Matchdata[] matchdataArray = roundFinder.findMatches(
         // "http://localhost:8088/mockSportsdataSoap12", "bl1", "2014", 1);
-        Matchdata[] matchdataArray = roundFinder.findMatches(null, "bl1",
-                "2014", 1);
+        Matchdata[] matchdataArray = roundFinder.findMatches("bl1", "2014", 1);
 
         assertThat(matchdataArray.length, is(9));
 

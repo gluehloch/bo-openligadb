@@ -138,6 +138,24 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         goalDao = _goalDao;
     }
 
+    // -- locationSynchronize -------------------------------------------------
+    
+    private LocationSynchronize locationSynchronize;
+    
+    @Autowired
+    public void setLocationSynchronize(LocationSynchronize _locationSynchronize) {
+        locationSynchronize = _locationSynchronize;
+    }
+
+    // -- playerSynchronize ---------------------------------------------------
+    
+    private PlayerSynchronize playerSynchronize;
+    
+    @Autowired
+    public void setPlayerSynchronize(PlayerSynchronize _playerSynchronize) {
+        playerSynchronize = _playerSynchronize;
+    }
+
     // ------------------------------------------------------------------------
 
     @Override
@@ -203,8 +221,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         round.setDateTime(bestRoundDate);
         roundDao.save(round);
 
-        new LocationSynchronize().sync(matches);
-        new PlayerSynchronize().sync(matches);
+        locationSynchronize.sync(matches);
+        playerSynchronize.sync(matches);
 
         for (Matchdata match : matches) {
             Team boHomeTeam = findBoTeam(match.getIdTeam1());
@@ -235,7 +253,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     .getGoalArray()) {
 
                 Goal boGoal = GoalBuilder.build(goal);
-                Player boPlayer = playerDao.findByOpenligaid(goal.getGoalID());
+                Player boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
                 boPlayer.getGoals().add(boGoal);
                 playerDao.save(boPlayer);
             }

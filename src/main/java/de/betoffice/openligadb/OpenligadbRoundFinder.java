@@ -5,17 +5,17 @@
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
  * MODIFICATION
- *
+ * 
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation; either version 2 of the License, or (at your option) any later
  * version.
- *
+ * 
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- *
+ * 
  * You should have received a copy of the GNU General Public License along with
  * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
  * Place, Suite 330, Boston, MA 02111-1307 USA
@@ -47,30 +47,13 @@ public class OpenligadbRoundFinder {
 
     private static final Logger LOG = LoggerFactory.make();
 
+    private String webserviceUrl;
 
-    /**
-     * Find all matches of specfic league and group. Uses the default web
-     * service url of openligadb. Should be:
-     *
-     * <pre>
-     * http://www.openligadb.de/Webservices/Sportsdata.asmx
-     * </pre>
-     *
-     * @param leagueShortcut
-     *            The openligadb league shortcut id.
-     * @param leagueSeason
-     *            The openligadb leagueSeason id.
-     * @param groupOrderID
-     *            The openligadb groupOrderId. The equivalent of betoffice round
-     *            index. Betoffice round index has a range from 0 to N-1. The
-     *            groupOrderId has a range from 1 to N.
-     * @return An array of matches for this group.
-     */
-    public Matchdata[] findMatches(String leagueShortcut, String leagueSeason,
-            int groupOrderId) {
-
-        return findMatches(null, leagueShortcut, leagueSeason, groupOrderId);
+    public void setWebserviceUrl(String _webserviceUrl) {
+        webserviceUrl = _webserviceUrl;
     }
+
+    // ------------------------------------------------------------------------
 
     /**
      * Find all matches of specfic league and group.
@@ -88,8 +71,8 @@ public class OpenligadbRoundFinder {
      *            groupOrderId has a range from 1 to N.
      * @return An array of matches for this group. s
      */
-    public Matchdata[] findMatches(String webserviceUrl, String leagueShortcut,
-            String leagueSeason, int groupOrderId) {
+    public Matchdata[] findMatches(String leagueShortcut, String leagueSeason,
+            int groupOrderId) {
 
         try {
             SportsdataStub stub = new SportsdataStub(webserviceUrl);
@@ -98,6 +81,27 @@ public class OpenligadbRoundFinder {
             } else {
                 stub = new SportsdataStub(webserviceUrl);
             }
+
+            // GetMatchdataByLeagueSaisonDocument
+            // getMatchdataByLeagueSaisonDocument =
+            // GetMatchdataByLeagueSaisonDocument.Factory
+            // .newInstance();
+            // GetMatchdataByLeagueSaison getMatchdataByLeagueSaison =
+            // getMatchdataByLeagueSaisonDocument
+            // .getGetMatchdataByLeagueSaison();
+            // getMatchdataByLeagueSaison.setLeagueSaison(leagueSeason);
+            // getMatchdataByLeagueSaison.setLeagueShortcut(leagueShortcut);
+            // GetMatchdataByLeagueSaisonResponseDocument
+            // matchdataByLeagueSaison = stub
+            // .getMatchdataByLeagueSaison(getMatchdataByLeagueSaisonDocument);
+            // GetMatchdataByLeagueSaisonResponse
+            // getMatchdataByLeagueSaisonResponse = matchdataByLeagueSaison
+            // .getGetMatchdataByLeagueSaisonResponse();
+            // ArrayOfMatchdata getMatchdataByLeagueSaisonResult =
+            // getMatchdataByLeagueSaisonResponse
+            // .getGetMatchdataByLeagueSaisonResult();
+            // Matchdata[] matchdataArray = getMatchdataByLeagueSaisonResult
+            // .getMatchdataArray();
 
             GetMatchdataByGroupLeagueSaisonDocument getMatchdataByGroupLeagueSaison2 = GetMatchdataByGroupLeagueSaisonDocument.Factory
                     .newInstance();
