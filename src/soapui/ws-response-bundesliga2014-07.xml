@@ -1,0 +1,782 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <GetMatchdataByGroupLeagueSaisonResponse xmlns="http://msiggi.de/Sportsdata/Webservices">
+         <GetMatchdataByGroupLeagueSaisonResult>
+            <Matchdata>
+               <matchID>28044</matchID>
+               <matchDateTime>2014-10-03T20:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-03T18:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>Hertha BSC</nameTeam1>
+               <nameTeam2>VfB Stuttgart</nameTeam2>
+               <idTeam1>54</idTeam1>
+               <idTeam2>16</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/Hertha_BSC.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/VfB_Stuttgart.gif</iconUrlTeam2>
+               <pointsTeam1>3</pointsTeam1>
+               <pointsTeam2>2</pointsTeam2>
+               <lastUpdate>2014-10-03T22:42:09.777</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>3</pointsTeam1>
+                     <pointsTeam2>2</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>1</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31085</goalID>
+                     <goalMachID>28044</goalMachID>
+                     <goalScoreTeam1>0</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>5</goalMatchMinute>
+                     <goalGetterID>13579</goalGetterID>
+                     <goalGetterName>Leitner</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31086</goalID>
+                     <goalMachID>28044</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>22</goalMatchMinute>
+                     <goalGetterID>1211</goalGetterID>
+                     <goalGetterName>Kalou</goalGetterName>
+                     <goalPenalty>true</goalPenalty>
+                     <goalOwnGoal>false</goalOwnGoal>
+                     <goalOvertime>false</goalOvertime>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31087</goalID>
+                     <goalMachID>28044</goalMachID>
+                     <goalScoreTeam1>2</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>64</goalMatchMinute>
+                     <goalGetterID>1211</goalGetterID>
+                     <goalGetterName>Kalou</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31088</goalID>
+                     <goalMachID>28044</goalMachID>
+                     <goalScoreTeam1>3</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>74</goalMatchMinute>
+                     <goalGetterID>14421</goalGetterID>
+                     <goalGetterName>Beerens</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31089</goalID>
+                     <goalMachID>28044</goalMachID>
+                     <goalScoreTeam1>3</goalScoreTeam1>
+                     <goalScoreTeam2>2</goalScoreTeam2>
+                     <goalMatchMinute>83</goalMatchMinute>
+                     <goalGetterID>137</goalGetterID>
+                     <goalGetterName>Wagner</goalGetterName>
+                     <goalPenalty>false</goalPenalty>
+                     <goalOwnGoal>true</goalOwnGoal>
+                     <goalOvertime>false</goalOvertime>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+            <Matchdata>
+               <matchID>28045</matchID>
+               <matchDateTime>2014-10-04T15:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-04T13:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>Werder Bremen</nameTeam1>
+               <nameTeam2>SC Freiburg</nameTeam2>
+               <idTeam1>134</idTeam1>
+               <idTeam2>112</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/werder_bremen.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/SC_Freiburg.gif</iconUrlTeam2>
+               <pointsTeam1>1</pointsTeam1>
+               <pointsTeam2>1</pointsTeam2>
+               <lastUpdate>2014-10-04T17:20:47.697</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>1</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>1</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31108</goalID>
+                     <goalMachID>28045</goalMachID>
+                     <goalScoreTeam1>0</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>8</goalMatchMinute>
+                     <goalGetterID>14616</goalGetterID>
+                     <goalGetterName>Vladimir Darida</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31116</goalID>
+                     <goalMachID>28045</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>30</goalMatchMinute>
+                     <goalGetterID>14618</goalGetterID>
+                     <goalGetterName>Franco di Santo</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+            <Matchdata>
+               <matchID>28043</matchID>
+               <matchDateTime>2014-10-04T15:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-04T13:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>TSG 1899 Hoffenheim</nameTeam1>
+               <nameTeam2>FC Schalke 04</nameTeam2>
+               <idTeam1>123</idTeam1>
+               <idTeam2>9</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/TSG_Hoffenheim.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/FC_Schalke_04.gif</iconUrlTeam2>
+               <pointsTeam1>2</pointsTeam1>
+               <pointsTeam2>1</pointsTeam2>
+               <lastUpdate>2014-10-04T17:30:08.957</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>2</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>2</pointsTeam1>
+                     <pointsTeam2>0</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31110</goalID>
+                     <goalMachID>28043</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>0</goalScoreTeam2>
+                     <goalMatchMinute>13</goalMatchMinute>
+                     <goalGetterID>14564</goalGetterID>
+                     <goalGetterName>Tarik Elyounoussi</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31113</goalID>
+                     <goalMachID>28043</goalMachID>
+                     <goalScoreTeam1>2</goalScoreTeam1>
+                     <goalScoreTeam2>0</goalScoreTeam2>
+                     <goalMatchMinute>29</goalMatchMinute>
+                     <goalGetterID>1133</goalGetterID>
+                     <goalGetterName>Szalai</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31152</goalID>
+                     <goalMachID>28043</goalMachID>
+                     <goalScoreTeam1>2</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>83</goalMatchMinute>
+                     <goalGetterID>8225</goalGetterID>
+                     <goalGetterName>Klaas-Jan Huntelaar</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+            <Matchdata>
+               <matchID>28038</matchID>
+               <matchDateTime>2014-10-04T15:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-04T13:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>Bayern München</nameTeam1>
+               <nameTeam2>Hannover 96</nameTeam2>
+               <idTeam1>40</idTeam1>
+               <idTeam2>55</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/Bayern_Muenchen.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/Hannover_96.gif</iconUrlTeam2>
+               <pointsTeam1>4</pointsTeam1>
+               <pointsTeam2>0</pointsTeam2>
+               <lastUpdate>2014-10-04T17:31:22.92</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>4</pointsTeam1>
+                     <pointsTeam2>0</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>3</pointsTeam1>
+                     <pointsTeam2>0</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31107</goalID>
+                     <goalMachID>28038</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>0</goalScoreTeam2>
+                     <goalMatchMinute>6</goalMatchMinute>
+                     <goalGetterID>14563</goalGetterID>
+                     <goalGetterName>Robert Lewandowski</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31109</goalID>
+                     <goalMachID>28038</goalMachID>
+                     <goalScoreTeam1>2</goalScoreTeam1>
+                     <goalScoreTeam2>0</goalScoreTeam2>
+                     <goalMatchMinute>12</goalMatchMinute>
+                     <goalGetterID>1876</goalGetterID>
+                     <goalGetterName>Arjen Robben</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31128</goalID>
+                     <goalMachID>28038</goalMachID>
+                     <goalScoreTeam1>3</goalScoreTeam1>
+                     <goalScoreTeam2>0</goalScoreTeam2>
+                     <goalMatchMinute>38</goalMatchMinute>
+                     <goalGetterID>14563</goalGetterID>
+                     <goalGetterName>Robert Lewandowski</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31151</goalID>
+                     <goalMachID>28038</goalMachID>
+                     <goalScoreTeam1>4</goalScoreTeam1>
+                     <goalScoreTeam2>0</goalScoreTeam2>
+                     <goalMatchMinute>79</goalMatchMinute>
+                     <goalGetterID>1876</goalGetterID>
+                     <goalGetterName>Arjen Robben</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+            <Matchdata>
+               <matchID>28039</matchID>
+               <matchDateTime>2014-10-04T15:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-04T13:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>Borussia Dortmund</nameTeam1>
+               <nameTeam2>Hamburger SV</nameTeam2>
+               <idTeam1>7</idTeam1>
+               <idTeam2>100</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/Borussia_Dortmund.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/Hamburger_SV.gif</iconUrlTeam2>
+               <pointsTeam1>0</pointsTeam1>
+               <pointsTeam2>1</pointsTeam2>
+               <lastUpdate>2014-10-04T17:24:35.757</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>0</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>0</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31122</goalID>
+                     <goalMachID>28039</goalMachID>
+                     <goalScoreTeam1>0</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>35</goalMatchMinute>
+                     <goalGetterID>1757</goalGetterID>
+                     <goalGetterName>Lasogga</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+            <Matchdata>
+               <matchID>28040</matchID>
+               <matchDateTime>2014-10-04T15:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-04T13:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>Bayer 04 Leverkusen</nameTeam1>
+               <nameTeam2>SC Paderborn 07</nameTeam2>
+               <idTeam1>6</idTeam1>
+               <idTeam2>31</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/Bayer_Leverkusen.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/SC_Paderborn_07.gif</iconUrlTeam2>
+               <pointsTeam1>2</pointsTeam1>
+               <pointsTeam2>2</pointsTeam2>
+               <lastUpdate>2014-10-04T20:29:37.193</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>2</pointsTeam1>
+                     <pointsTeam2>2</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>1</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31111</goalID>
+                     <goalMachID>28040</goalMachID>
+                     <goalScoreTeam1>0</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>20</goalMatchMinute>
+                     <goalGetterID>14617</goalGetterID>
+                     <goalGetterName>Süleyman Koc</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31131</goalID>
+                     <goalMachID>28040</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>42</goalMatchMinute>
+                     <goalGetterID>935</goalGetterID>
+                     <goalGetterName>Bender</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31155</goalID>
+                     <goalMachID>28040</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>2</goalScoreTeam2>
+                     <goalMatchMinute>87</goalMatchMinute>
+                     <goalGetterID>14547</goalGetterID>
+                     <goalGetterName>Moritz Stoppelkamp</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31157</goalID>
+                     <goalMachID>28040</goalMachID>
+                     <goalScoreTeam1>2</goalScoreTeam1>
+                     <goalScoreTeam2>2</goalScoreTeam2>
+                     <goalMatchMinute>90</goalMatchMinute>
+                     <goalGetterID>1379</goalGetterID>
+                     <goalGetterName>Bellarabi</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+            <Matchdata>
+               <matchID>28046</matchID>
+               <matchDateTime>2014-10-04T18:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-04T16:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>Eintracht Frankfurt</nameTeam1>
+               <nameTeam2>1. FC Köln</nameTeam2>
+               <idTeam1>91</idTeam1>
+               <idTeam2>65</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/Eintracht_Frankfurt.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/1_FC_Koeln.gif</iconUrlTeam2>
+               <pointsTeam1>3</pointsTeam1>
+               <pointsTeam2>2</pointsTeam2>
+               <lastUpdate>2014-10-04T20:28:43.25</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>3</pointsTeam1>
+                     <pointsTeam2>2</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>1</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31158</goalID>
+                     <goalMachID>28046</goalMachID>
+                     <goalScoreTeam1>0</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>15</goalMatchMinute>
+                     <goalGetterID>14624</goalGetterID>
+                     <goalGetterName>Marcel Risse</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31161</goalID>
+                     <goalMachID>28046</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>44</goalMatchMinute>
+                     <goalGetterID>1002</goalGetterID>
+                     <goalGetterName>Alexander Meier</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31166</goalID>
+                     <goalMachID>28046</goalMachID>
+                     <goalScoreTeam1>2</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>54</goalMatchMinute>
+                     <goalGetterID>1002</goalGetterID>
+                     <goalGetterName>Alexander Meier</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31167</goalID>
+                     <goalMachID>28046</goalMachID>
+                     <goalScoreTeam1>2</goalScoreTeam1>
+                     <goalScoreTeam2>2</goalScoreTeam2>
+                     <goalMatchMinute>65</goalMatchMinute>
+                     <goalGetterID>14625</goalGetterID>
+                     <goalGetterName>Jonas Hector</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31168</goalID>
+                     <goalMachID>28046</goalMachID>
+                     <goalScoreTeam1>3</goalScoreTeam1>
+                     <goalScoreTeam2>2</goalScoreTeam2>
+                     <goalMatchMinute>79</goalMatchMinute>
+                     <goalGetterID>12862</goalGetterID>
+                     <goalGetterName>Wimmer</goalGetterName>
+                     <goalPenalty>false</goalPenalty>
+                     <goalOwnGoal>true</goalOwnGoal>
+                     <goalOvertime>false</goalOvertime>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+            <Matchdata>
+               <matchID>28041</matchID>
+               <matchDateTime>2014-10-05T15:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-05T13:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>VfL Wolfsburg</nameTeam1>
+               <nameTeam2>FC Augsburg</nameTeam2>
+               <idTeam1>131</idTeam1>
+               <idTeam2>95</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/VfL_Wolfsburg.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/FC_Augsburg.gif</iconUrlTeam2>
+               <pointsTeam1>1</pointsTeam1>
+               <pointsTeam2>0</pointsTeam2>
+               <lastUpdate>2014-10-05T18:59:46.133</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>1</pointsTeam1>
+                     <pointsTeam2>0</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>0</pointsTeam1>
+                     <pointsTeam2>0</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31252</goalID>
+                     <goalMachID>28041</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>0</goalScoreTeam2>
+                     <goalMatchMinute>58</goalMatchMinute>
+                     <goalGetterID>310</goalGetterID>
+                     <goalGetterName>Naldo</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+            <Matchdata>
+               <matchID>28042</matchID>
+               <matchDateTime>2014-10-05T17:30:00</matchDateTime>
+               <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+               <matchDateTimeUTC>2014-10-05T15:30:00Z</matchDateTimeUTC>
+               <groupID>14569</groupID>
+               <groupOrderID>7</groupOrderID>
+               <groupName>7. Spieltag</groupName>
+               <leagueID>720</leagueID>
+               <leagueName>1. Fußball-Bundesliga 2014/2015</leagueName>
+               <leagueSaison>2014</leagueSaison>
+               <leagueShortcut>bl1</leagueShortcut>
+               <nameTeam1>Borussia Mönchengladbach</nameTeam1>
+               <nameTeam2>1. FSV Mainz 05</nameTeam2>
+               <idTeam1>87</idTeam1>
+               <idTeam2>81</idTeam2>
+               <iconUrlTeam1>http://www.openligadb.de/images/teamicons/Bor_Moenchengladbach.gif</iconUrlTeam1>
+               <iconUrlTeam2>http://www.openligadb.de/images/teamicons/1_FSV_Mainz_05.gif</iconUrlTeam2>
+               <pointsTeam1>1</pointsTeam1>
+               <pointsTeam2>1</pointsTeam2>
+               <lastUpdate>2014-10-05T19:24:40.217</lastUpdate>
+               <matchIsFinished>true</matchIsFinished>
+               <matchResults>
+                  <matchResult>
+                     <resultName>Endergebnis</resultName>
+                     <pointsTeam1>1</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>1</resultOrderID>
+                     <resultTypeName>nach 90 Minuten</resultTypeName>
+                     <resultTypeId>2</resultTypeId>
+                  </matchResult>
+                  <matchResult>
+                     <resultName>Halbzeitergebnis</resultName>
+                     <pointsTeam1>1</pointsTeam1>
+                     <pointsTeam2>1</pointsTeam2>
+                     <resultOrderID>2</resultOrderID>
+                     <resultTypeName>Halbzeit</resultTypeName>
+                     <resultTypeId>1</resultTypeId>
+                  </matchResult>
+               </matchResults>
+               <goals>
+                  <Goal>
+                     <goalID>31259</goalID>
+                     <goalMachID>28042</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>0</goalScoreTeam2>
+                     <goalMatchMinute>15</goalMatchMinute>
+                     <goalGetterID>891</goalGetterID>
+                     <goalGetterName>Kruse</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+                  <Goal>
+                     <goalID>31260</goalID>
+                     <goalMachID>28042</goalMachID>
+                     <goalScoreTeam1>1</goalScoreTeam1>
+                     <goalScoreTeam2>1</goalScoreTeam2>
+                     <goalMatchMinute>31</goalMatchMinute>
+                     <goalGetterID>880</goalGetterID>
+                     <goalGetterName>Hofmann</goalGetterName>
+                     <goalPenalty xsi:nil="true"/>
+                     <goalOwnGoal xsi:nil="true"/>
+                     <goalOvertime xsi:nil="true"/>
+                     <goalComment/>
+                  </Goal>
+               </goals>
+               <location>
+                  <locationID>0</locationID>
+               </location>
+               <NumberOfViewers xsi:nil="true"/>
+            </Matchdata>
+         </GetMatchdataByGroupLeagueSaisonResult>
+      </GetMatchdataByGroupLeagueSaisonResponse>
+   </soap:Body>
+</soap:Envelope>

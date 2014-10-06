@@ -43,7 +43,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class DefaultOpenligadbUpdateServiceTest {
 
     @Autowired
-    private DefaultOpenligadbUpdateService openligadbUpdateService;
+    private OpenligadbUpdateService openligadbUpdateService;
 
     @Autowired
     private DataSource dataSource;
