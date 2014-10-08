@@ -24,12 +24,10 @@
 package de.betoffice.openligadb;
 
 import de.msiggi.sportsdata.webservices.ArrayOfMatchResult;
-import de.msiggi.sportsdata.webservices.Goal;
 import de.msiggi.sportsdata.webservices.MatchResult;
 import de.msiggi.sportsdata.webservices.Matchdata;
 import de.winkler.betoffice.storage.Game;
 import de.winkler.betoffice.storage.GameResult;
-import de.winkler.betoffice.storage.Player;
 import de.winkler.betoffice.storage.Team;
 
 /**
@@ -65,15 +63,15 @@ public class OpenligadbToBetofficeBuilder {
         ArrayOfMatchResult matchResults = matchData.getMatchResults();
         for (MatchResult matchResult : matchResults.getMatchResultArray()) {
             switch (matchResult.getResultTypeId()) {
-            case 1: // nach 90 Minuten
-                game.setResult(matchResult.getPointsTeam1(),
-                        matchResult.getPointsTeam2());
-                break;
-            case 2: // nach 45 Minuten
+            case 1: // nach 45 Minuten
                 GameResult result = new GameResult(
                         matchResult.getPointsTeam1(),
                         matchResult.getPointsTeam2());
                 game.setHalfTimeGoals(result);
+                break;
+            case 2: // nach 90 Minuten
+                game.setResult(matchResult.getPointsTeam1(),
+                        matchResult.getPointsTeam2());
                 break;
             default: // Undefined!
                 break;

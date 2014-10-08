@@ -24,6 +24,7 @@
 package de.betoffice.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -233,7 +234,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 boMatch = OpenligadbToBetofficeBuilder.buildGame(match,
                         boHomeTeam, boGuestTeam);
             } else {
-                if (boMatch.getOpenligaid() != match.getMatchID()) {
+                if (boMatch.getOpenligaid() == null) {
+                    boMatch.setOpenligaid(Long.valueOf(match.getMatchID()));
+                } else if (boMatch.getOpenligaid() != match.getMatchID()) {
                     String error = String
                             .format("Openligadb matchId=[%d] and stored matchId of betoffice game [%d] are different.",
                                     match.getMatchID(), boMatch.getOpenligaid());
@@ -248,15 +251,20 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     .getLocation().getLocationID());
             boMatch.setLocation(boLocation);
 
-            goalDao.deleteAll(boMatch.getGoals());
+            List<Goal> deleteMe = boMatch.removeAllGoals();
+            goalDao.deleteAll(deleteMe);
+            
             for (de.msiggi.sportsdata.webservices.Goal goal : match.getGoals()
                     .getGoalArray()) {
 
                 Goal boGoal = GoalBuilder.build(goal);
                 Player boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
-                boPlayer.getGoals().add(boGoal);
-                playerDao.save(boPlayer);
+                boGoal.setGame(boMatch);
+                boGoal.setPlayer(boPlayer);
+                goalDao.save(boGoal);
             }
+            
+            matchDao.save(boMatch);
         }
 
     }
