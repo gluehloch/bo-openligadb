@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<bean id="openligadbRoundFinder" class="de.betoffice.openligadb.OpenligadbRoundFinder">
-		<property name="webserviceUrl" value="http://localhost:8088/mockSportsdataSoap12" />
+		<!-- <property name="webserviceUrl" value="http://localhost:8088/mockSportsdataSoap12" />  -->
 	</bean>
 
 </beans>

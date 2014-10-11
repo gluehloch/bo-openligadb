@@ -32,7 +32,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.awtools.basic.LoggerFactory;
-import de.betoffice.openligadb.BestRoundDateFinder;
 import de.betoffice.openligadb.GoalBuilder;
 import de.betoffice.openligadb.LocationSynchronize;
 import de.betoffice.openligadb.OpenligadbRoundFinder;
@@ -162,6 +161,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     @Override
     @Transactional
     public void updateRound(long seasonId, int roundIndex) {
+        LOG.debug("Start the openligadb update service for season id=[{}] and roundIndex=[{}]", seasonId, roundIndex);
+        
         if (roundIndex < 0) {
             String error = "Round index to small!";
             LOG.error(error);
@@ -192,7 +193,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                         .getOpenligaLeagueShortcut(), season
                         .getChampionshipConfiguration()
                         .getOpenligaLeagueSeason(), roundIndex + 1);
-
+        
         if (matches == null || matches.length == 0) {
             String error = String
                     .format("No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
@@ -216,11 +217,6 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 throw new IllegalStateException(error);
             }
         }
-
-        BestRoundDateFinder bestRoundDateFinder = new BestRoundDateFinder();
-        Date bestRoundDate = bestRoundDateFinder.findBestRoundDate(matches);
-        round.setDateTime(bestRoundDate);
-        roundDao.save(round);
 
         locationSynchronize.sync(matches);
         playerSynchronize.sync(matches);
@@ -251,22 +247,25 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     .getLocation().getLocationID());
             boMatch.setLocation(boLocation);
 
-            List<Goal> deleteMe = boMatch.removeAllGoals();
-            goalDao.deleteAll(deleteMe);
-            
             for (de.msiggi.sportsdata.webservices.Goal goal : match.getGoals()
                     .getGoalArray()) {
 
-                Goal boGoal = GoalBuilder.build(goal);
-                Player boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
-                boGoal.setGame(boMatch);
-                boGoal.setPlayer(boPlayer);
-                goalDao.save(boGoal);
+                Goal boGoal = goalDao.findByOpenligaid(goal.getGoalID());
+                if (boGoal == null) {
+                    boGoal = GoalBuilder.build(goal);
+                    Player boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
+                    boGoal.setGame(boMatch);
+                    boGoal.setPlayer(boPlayer);
+                    goalDao.save(boGoal);
+                }
             }
             
             matchDao.save(boMatch);
         }
-
+        
+        Date bestRoundDate = round.findBestRoundDate();
+        round.setDateTime(bestRoundDate);
+        roundDao.save(round);
     }
 
     private Team findBoTeam(long openligaTeamId) {

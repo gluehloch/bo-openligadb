@@ -23,9 +23,12 @@
 
 package de.betoffice.openligadb;
 
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import de.awtools.basic.LoggerFactory;
 import de.msiggi.sportsdata.webservices.Goal;
 import de.msiggi.sportsdata.webservices.Matchdata;
 import de.winkler.betoffice.dao.PlayerDao;
@@ -38,6 +41,8 @@ import de.winkler.betoffice.storage.Player;
  */
 @Component
 public class PlayerSynchronize {
+
+    private static final Logger LOG = LoggerFactory.make();
 
     private PlayerDao playerDao;
 
@@ -54,17 +59,28 @@ public class PlayerSynchronize {
 
     public void sync(Matchdata match) {
         for (Goal goal : match.getGoals().getGoalArray()) {
-            Player boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
+            Player boPlayer = playerDao
+                    .findByOpenligaid(goal.getGoalGetterID());
             if (goal.getGoalGetterID() == 0) {
                 // The unknown goalgetter!
             } else {
                 if (boPlayer == null) {
                     boPlayer = PlayerBuilder.build(goal);
+                    playerDao.save(boPlayer);
+                } else {
+                    if (!StringUtils.equals(goal.getGoalGetterName(),
+                            boPlayer.getName())) {
+
+                        LOG.error(
+                                "Openligadb goalgetter name[{}] and "
+                                + "betoffice player name[{}] are different. "
+                                + "Problem found at openligadb match [{}]",
+                                new Object[] { goal.getGoalGetterName(),
+                                        boPlayer.getName(), match.getMatchID() });
+                    }
                 }
-                playerDao.save(boPlayer);
             }
         }
 
     }
-
 }

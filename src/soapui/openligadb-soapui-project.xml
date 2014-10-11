@@ -1509,7 +1509,7 @@
    <soap:Header/>
    <soap:Body>
       <web:GetMatchdataByGroupLeagueSaison>
-         <web:groupOrderID>6</web:groupOrderID>
+         <web:groupOrderID>2</web:groupOrderID>
          <!--Optional:-->
          <web:leagueShortcut>bl1</web:leagueShortcut>
          <!--Optional:-->
