@@ -5,17 +5,17 @@
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
  * MODIFICATION
- *
+ * 
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation; either version 2 of the License, or (at your option) any later
  * version.
- *
+ * 
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- *
+ * 
  * You should have received a copy of the GNU General Public License along with
  * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
  * Place, Suite 330, Boston, MA 02111-1307 USA
@@ -139,18 +139,18 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     }
 
     // -- locationSynchronize -------------------------------------------------
-    
+
     private LocationSynchronize locationSynchronize;
-    
+
     @Autowired
     public void setLocationSynchronize(LocationSynchronize _locationSynchronize) {
         locationSynchronize = _locationSynchronize;
     }
 
     // -- playerSynchronize ---------------------------------------------------
-    
+
     private PlayerSynchronize playerSynchronize;
-    
+
     @Autowired
     public void setPlayerSynchronize(PlayerSynchronize _playerSynchronize) {
         playerSynchronize = _playerSynchronize;
@@ -161,8 +161,10 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     @Override
     @Transactional
     public void updateRound(long seasonId, int roundIndex) {
-        LOG.debug("Start the openligadb update service for season id=[{}] and roundIndex=[{}]", seasonId, roundIndex);
-        
+        LOG.debug(
+                "Start the openligadb update service for season id=[{}] and roundIndex=[{}]",
+                seasonId, roundIndex);
+
         if (roundIndex < 0) {
             String error = "Round index to small!";
             LOG.error(error);
@@ -177,12 +179,14 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             throw new IllegalArgumentException(error);
         }
 
+        Group bundesliga = season.getGroups().iterator().next();
+
         GameList round = roundDao.findRound(season, roundIndex);
-        if (round == null) {
-            Group bundesliga = season.getGroups().iterator().next();
+        if (round == null) {            
             round = new GameList();
             round.setGroup(bundesliga);
             round.setSeason(season);
+            round.setDateTime(new Date()); // Placeholder
             season.addGameList(round);
             roundDao.save(round);
         }
@@ -193,7 +197,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                         .getOpenligaLeagueShortcut(), season
                         .getChampionshipConfiguration()
                         .getOpenligaLeagueSeason(), roundIndex + 1);
-        
+
         if (matches == null || matches.length == 0) {
             String error = String
                     .format("No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
@@ -221,6 +225,13 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         locationSynchronize.sync(matches);
         playerSynchronize.sync(matches);
 
+        if (matches.length == 0) {
+            LOG.info(
+                    "The openligadb has no matches for betoffice! "
+                    + "season id=[{}], roundIndex=[{}]",
+                    seasonId, roundIndex);
+        }
+
         for (Matchdata match : matches) {
             Team boHomeTeam = findBoTeam(match.getIdTeam1());
             Team boGuestTeam = findBoTeam(match.getIdTeam2());
@@ -229,6 +240,10 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             if (boMatch == null) {
                 boMatch = OpenligadbToBetofficeBuilder.buildGame(match,
                         boHomeTeam, boGuestTeam);
+                boMatch.setGroup(bundesliga);
+                boMatch.setOpenligaid(Long.valueOf(match.getMatchID()));
+                matchDao.save(boMatch);
+                round.addGame(boMatch);
             } else {
                 if (boMatch.getOpenligaid() == null) {
                     boMatch.setOpenligaid(Long.valueOf(match.getMatchID()));
@@ -253,16 +268,18 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 Goal boGoal = goalDao.findByOpenligaid(goal.getGoalID());
                 if (boGoal == null) {
                     boGoal = GoalBuilder.build(goal);
-                    Player boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
+                    Player boPlayer = playerDao.findByOpenligaid(goal
+                            .getGoalGetterID());
                     boGoal.setGame(boMatch);
+                    boMatch.addGoal(boGoal);
                     boGoal.setPlayer(boPlayer);
                     goalDao.save(boGoal);
                 }
             }
-            
+
             matchDao.save(boMatch);
         }
-        
+
         Date bestRoundDate = round.findBestRoundDate();
         round.setDateTime(bestRoundDate);
         roundDao.save(round);
