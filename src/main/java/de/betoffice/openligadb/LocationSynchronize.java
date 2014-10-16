@@ -23,9 +23,11 @@
 
 package de.betoffice.openligadb;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import de.awtools.basic.LoggerFactory;
 import de.msiggi.sportsdata.webservices.Matchdata;
 import de.winkler.betoffice.dao.LocationDao;
 import de.winkler.betoffice.storage.Location;
@@ -38,12 +40,18 @@ import de.winkler.betoffice.storage.Location;
 @Component
 public class LocationSynchronize {
 
+    private static final Logger LOG = LoggerFactory.make();
+
+    // ------------------------------------------------------------------------
+
     private LocationDao locationDao;
 
     @Autowired
     public void setLocationDao(LocationDao _locationDao) {
         locationDao = _locationDao;
     }
+
+    // ------------------------------------------------------------------------
 
     public void sync(Matchdata[] matches) {
         for (Matchdata match : matches) {
@@ -54,6 +62,9 @@ public class LocationSynchronize {
     public void sync(Matchdata match) {
         Location location = locationDao.findByOpenligaid(match.getLocation().getLocationID());
         if (location == null) {
+            if (match.getLocation().getLocationID() == 0) {
+                // The unknown location.
+            }
             location = LocationBuilder.build(match);
             locationDao.save(location);
         }
