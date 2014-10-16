@@ -5,17 +5,17 @@
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
  * MODIFICATION
- * 
+ *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation; either version 2 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
  * details.
- * 
+ *
  * You should have received a copy of the GNU General Public License along with
  * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
  * Place, Suite 330, Boston, MA 02111-1307 USA
@@ -33,6 +33,7 @@ import org.springframework.transaction.annotation.Transactional;
 import de.awtools.basic.LoggerFactory;
 import de.betoffice.openligadb.GoalBuilder;
 import de.betoffice.openligadb.LocationSynchronize;
+import de.betoffice.openligadb.OpenligadbConnectionException;
 import de.betoffice.openligadb.OpenligadbRoundFinder;
 import de.betoffice.openligadb.OpenligadbToBetofficeBuilder;
 import de.betoffice.openligadb.PlayerSynchronize;
@@ -181,7 +182,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         Group bundesliga = season.getGroups().iterator().next();
 
         GameList round = roundDao.findRound(season, roundIndex);
-        if (round == null) {            
+        if (round == null) {
             round = new GameList();
             round.setGroup(bundesliga);
             round.setSeason(season);
@@ -191,21 +192,28 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         }
 
         // The round is already there. May be i need an update here.
-        Matchdata[] matches = openligadbRoundFinder
-                .findMatches(season.getChampionshipConfiguration()
-                        .getOpenligaLeagueShortcut(), season
-                        .getChampionshipConfiguration()
-                        .getOpenligaLeagueSeason(), roundIndex + 1);
+        Matchdata[] matches = null;
+        try {
+            matches = openligadbRoundFinder.findMatches(
+                    season.getChampionshipConfiguration()
+                            .getOpenligaLeagueShortcut(), season
+                            .getChampionshipConfiguration()
+                            .getOpenligaLeagueSeason(), roundIndex + 1);
+        } catch (OpenligadbConnectionException ex) {
+            LOG.error("Aborting the update process! {}", ex.getMessage(), ex.getCause());
+            return;
+        }
 
         if (matches == null || matches.length == 0) {
             String error = String
-                    .format("No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
+                    .format("Aborting the update process! "
+                            + "No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
                             season.getChampionshipConfiguration()
                                     .getOpenligaLeagueShortcut(), season
                                     .getChampionshipConfiguration()
                                     .getOpenligaLeagueSeason(), roundIndex + 1);
             LOG.error(error);
-            throw new IllegalStateException(error);
+            return;
         }
 
         if (round.getOpenligaid() == null) {
@@ -225,10 +233,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         playerSynchronize.sync(matches);
 
         if (matches.length == 0) {
-            LOG.info(
-                    "The openligadb has no matches for betoffice! "
-                    + "season id=[{}], roundIndex=[{}]",
-                    seasonId, roundIndex);
+            LOG.info("The openligadb has no matches for betoffice! "
+                    + "season id=[{}], roundIndex=[{}]", seasonId, roundIndex);
         }
 
         for (Matchdata match : matches) {

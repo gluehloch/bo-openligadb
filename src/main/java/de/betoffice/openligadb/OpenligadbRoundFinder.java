@@ -70,9 +70,11 @@ public class OpenligadbRoundFinder {
      *            index. Betoffice round index has a range from 0 to N-1. The
      *            groupOrderId has a range from 1 to N.
      * @return An array of matches for this group. s
+     * @throws OpenligadbConnectionException
+     *             Connection and/or openligadb internal server problems
      */
     public Matchdata[] findMatches(String leagueShortcut, String leagueSeason,
-            int groupOrderId) {
+            int groupOrderId) throws OpenligadbConnectionException {
 
         try {
             SportsdataStub stub = new SportsdataStub(webserviceUrl);
@@ -102,8 +104,9 @@ public class OpenligadbRoundFinder {
                     .getMatchdataArray();
             return matchdataArray;
         } catch (RemoteException ex) {
-            LOG.error("Catched an RemoteException.", ex);
-            throw new RuntimeException(ex);
+            LOG.error("There is a problem with the openligadb webservice. "
+                    + "I catched a RemoteException: {}", ex.getMessage());
+            throw new OpenligadbConnectionException(ex.getMessage(), ex);
         }
     }
 
