@@ -53,16 +53,16 @@ public class DefaultOpenligadbUpdateServiceTest {
     @Rollback(false)
     public void testOpenligadbUpdateService() {
         openligadbUpdateService.updateRound(22, 0);
-//        openligadbUpdateService.updateRound(22, 1);
-//        openligadbUpdateService.updateRound(22, 2);
-//        openligadbUpdateService.updateRound(22, 3);
-//        openligadbUpdateService.updateRound(22, 4);
-//        openligadbUpdateService.updateRound(22, 5);
-//        openligadbUpdateService.updateRound(22, 6);
-//        openligadbUpdateService.updateRound(22, 7);
-//        openligadbUpdateService.updateRound(22, 8);
-//        openligadbUpdateService.updateRound(22, 9);
-//        openligadbUpdateService.updateRound(22, 10);
+        openligadbUpdateService.updateRound(22, 1);
+        openligadbUpdateService.updateRound(22, 2);
+        openligadbUpdateService.updateRound(22, 3);
+        openligadbUpdateService.updateRound(22, 4);
+        openligadbUpdateService.updateRound(22, 5);
+        openligadbUpdateService.updateRound(22, 6);
+        openligadbUpdateService.updateRound(22, 7);
+        openligadbUpdateService.updateRound(22, 8);
+        openligadbUpdateService.updateRound(22, 9);
+        openligadbUpdateService.updateRound(22, 10);
     }
 
 }
