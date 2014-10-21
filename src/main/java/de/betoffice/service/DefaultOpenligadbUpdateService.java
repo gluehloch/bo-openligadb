@@ -161,7 +161,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     @Override
     @Transactional
     public void updateRound(long seasonId, int roundIndex) {
-        LOG.debug(
+        LOG.info(
                 "Start the openligadb update service for season id=[{}] and roundIndex=[{}]",
                 seasonId, roundIndex);
 

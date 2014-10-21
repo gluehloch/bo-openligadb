@@ -62,33 +62,58 @@ public class PlayerSynchronize {
     }
 
     public void sync(Matchdata match) {
+        LOG.info("Player/Goalgetter sync: {}:{}",
+                new Object[] { match.getNameTeam1(), match.getNameTeam2() });
+
         for (Goal goal : match.getGoals().getGoalArray()) {
-            Player boPlayer = playerDao
-                    .findByOpenligaid(goal.getGoalGetterID());
 
             if (goal.getGoalGetterID() == 0) {
+
                 LOG.info(
                         "The goal with openligadb ID=[{}] does not define a goalgetter. "
                                 + "The goalgetter is undefined/unknown.",
                         goal.getGoalGetterID());
-            } else {
-                if (boPlayer == null) {
-                    boPlayer = PlayerBuilder.build(goal);
-                    playerDao.save(boPlayer);
-                } else {
-                    if (!StringUtils.equals(goal.getGoalGetterName(),
-                            boPlayer.getName())) {
 
-                        LOG.error(
-                                "Openligadb goalgetter name[{}] and "
-                                        + "betoffice player name[{}] are different. "
-                                        + "Problem found at openligadb match [{}]",
-                                new Object[] { goal.getGoalGetterName(),
-                                        boPlayer.getName(), match.getMatchID() });
-                    }
+            } else if (StringUtils.isEmpty(goal.getGoalGetterName())) {
+
+                LOG.info(
+                        "The goal with openligadb ID=[{}] contains empty values. "
+                                + " name=[{}]", goal.getGoalGetterID(),
+                        goal.getGoalGetterName());
+                
+                Player player = new Player();
+                player.setName("TODO: Find my name!");
+                player.setVorname("John");
+                player.setOpenligaid(Long.valueOf(goal.getGoalGetterID()));
+                playerDao.save(player);
+
+            } else {
+
+                Player player = playerDao.findByOpenligaid(goal
+                        .getGoalGetterID());
+
+                if (player == null) {
+
+                    player = PlayerBuilder.build(goal);
+                    playerDao.save(player);
+
+                } else if (!isEqual(player, goal)) {
+
+                    LOG.error(
+                            "Player problem: Openligadb goalgetter name[{}] and "
+                                    + "betoffice player name[{}] are different. "
+                                    + "Problem found at openligadb goal [{}]",
+                            new Object[] { goal.getGoalGetterName(),
+                                    player.getName(), goal.getGoalID() });
+
                 }
             }
         }
-
     }
+
+    private boolean isEqual(Player boPlayer, Goal goal) {
+        return StringUtils.equalsIgnoreCase(boPlayer.getName(),
+                goal.getGoalGetterName());
+    }
+
 }
