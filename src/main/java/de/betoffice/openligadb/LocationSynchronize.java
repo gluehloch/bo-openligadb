@@ -61,28 +61,54 @@ public class LocationSynchronize {
     }
 
     public void sync(Matchdata match) {
-        Location location = locationDao.findByOpenligaid(match.getLocation()
-                .getLocationID());
+        LOG.info("Location sync: {}:{}", new Object[] { match.getNameTeam1(),
+                match.getNameTeam2() });
 
-        if (location == null) {
-            if (match.getLocation().getLocationID() == 0) {
-                LOG.info(
-                        "The match with openligadb ID=[{}] does not define a location. "
-                                + "The location is undefined/unknown.",
-                        match.getMatchID());
-            } else {
+        if (match.getLocation().getLocationID() == 0) {
+
+            LOG.info(
+                    "The match with openligadb ID=[{}] does not define a knwon "
+                            + "location. The location is undefined/unknown.",
+                    match.getMatchID());
+
+        } else if (match.getLocation().getLocationStadium() == null
+                || match.getLocation().getLocationCity() == null) {
+
+            LOG.info(
+                    "The location with openligadb ID=[{}] contains null values. "
+                            + " city=[{}], stadium=[{}]", new Object[] {
+                            match.getLocation().getLocationID(),
+                            match.getLocation().getLocationCity(),
+                            match.getLocation().getLocationStadium() });
+        } else {
+
+            Location location = locationDao.findByOpenligaid(match
+                    .getLocation().getLocationID());
+
+            if (location == null) {
+
                 location = LocationBuilder.build(match);
                 locationDao.save(location);
-            }
-        } else {
-            if (!StringUtils.equals(location.getName(), match.getLocation()
-                    .getLocationStadium())) {
 
-                LOG.error("Openligadb location name[{}] is not equal to "
-                        + "betoffice location name[{}].", match.getLocation()
-                        .getLocationStadium(), location.getName());
+            } else if (!isEqual(location, match)) {
+
+                LOG.info(
+                        "Location problem: openligadb ID=[{}], name=[{}], city=[{}] is not equal to "
+                                + "betoffice location name=[{}], city=[{}].",
+                        new Object[] { match.getLocation().getLocationID(),
+                                match.getLocation().getLocationStadium(),
+                                location.getName(), location.getCity() });
             }
         }
+    }
+
+    private boolean isEqual(Location boLocation, Matchdata match) {
+        boolean name = StringUtils.equalsIgnoreCase(boLocation.getName(), match
+                .getLocation().getLocationStadium());
+        boolean city = StringUtils.equalsIgnoreCase(boLocation.getCity(), match
+                .getLocation().getLocationCity());
+
+        return name && city;
     }
 
 }
