@@ -62,7 +62,7 @@ public class PlayerSynchronize {
     }
 
     public void sync(Matchdata match) {
-        LOG.info("Player/Goalgetter sync: {}:{}",
+        LOG.info("Player/Goalgetter sync: {} - {}",
                 new Object[] { match.getNameTeam1(), match.getNameTeam2() });
 
         for (Goal goal : match.getGoals().getGoalArray()) {
