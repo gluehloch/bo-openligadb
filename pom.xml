@@ -17,9 +17,17 @@
   <description>Betoffice openligadb connector</description>
 
   <build>
+    <resources>
+      <resource>
+        <directory>${project.build.directory}/generated-sources/axis2/wsdl2code/resources</directory>
+        <includes>
+          <include>**/**</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
-      <!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
-        <configuration> <source>1.7</source> <target>1.7</target> </configuration> 
+      <!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId>
+        <configuration> <source>1.7</source> <target>1.7</target> </configuration>
         </plugin> -->
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -88,11 +96,11 @@
           </dependency>
         </dependencies>
       </plugin>
-      <!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxb2-maven-plugin</artifactId> 
-        <version>1.6</version> <executions> <execution> <id>xjc</id> <goals> <goal>xjc</goal> 
-        </goals> </execution> </executions> <configuration> <wsdl>true</wsdl> <xmlschema>true</xmlschema> 
-        <outputDirectory>target/generated-sources/jaxb</outputDirectory> <packageName>de.betoffice.openligadb</packageName> 
-        <schemaDirectory>src/main/xsd</schemaDirectory> <schemaFiles>openligadb.wsdl</schemaFiles> 
+      <!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>1.6</version> <executions> <execution> <id>xjc</id> <goals> <goal>xjc</goal>
+        </goals> </execution> </executions> <configuration> <wsdl>true</wsdl> <xmlschema>true</xmlschema>
+        <outputDirectory>target/generated-sources/jaxb</outputDirectory> <packageName>de.betoffice.openligadb</packageName>
+        <schemaDirectory>src/main/xsd</schemaDirectory> <schemaFiles>openligadb.wsdl</schemaFiles>
         <strict>false</strict> </configuration> </plugin> -->
 
       <plugin>
@@ -117,7 +125,7 @@
     </plugins>
     <pluginManagement>
       <plugins>
-        <!--This plugin's configuration is used to store Eclipse m2e settings 
+        <!--This plugin's configuration is used to store Eclipse m2e settings
           only. It has no influence on the Maven build itself. -->
         <plugin>
           <groupId>org.eclipse.m2e</groupId>

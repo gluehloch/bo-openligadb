@@ -191,7 +191,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             roundDao.save(round);
         }
 
-        // The round is already there. May be i need an update here.
+        // The round is persisted. May be i need an update here.
         Matchdata[] matches = null;
         try {
             matches = openligadbRoundFinder.findMatches(
