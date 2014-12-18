@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <properties>
+    <title>Change Notes</title>
+    <author email="andre.winkler@web.de">Andre Winkler</author>
+  </properties>
+  <body>
+
+    <release version="betoffice-openligadb 1.0.0" date="2014-11-01"
+      description="Start">
+      <action dev="andrewinkler" type="add" date="2014-11-01">
+        The new game data update service.
+      </action>
+    </release>
+
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The 'betoffice-openligadb' Project.
+    </legal>
+  </footer>
+</document>
