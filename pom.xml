@@ -26,9 +26,6 @@
       </resource>
     </resources>
     <plugins>
-      <!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId>
-        <configuration> <source>1.7</source> <target>1.7</target> </configuration>
-        </plugin> -->
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
@@ -47,55 +44,6 @@
         </executions>
       </plugin>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>make-site</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>site</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.1</version>
-        <executions>
-          <execution>
-            <id>ftp</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <configuration>
-              <tasks>
-                <ftp server="${site.ftp.server}"
-                  remotedir="${site.ftp.remotedir.betoffice-exchange}"
-                  userid="${site.ftp.user}" password="${site.ftp.password}">
-                  <fileset dir="${project.build.directory}/site" />
-                </ftp>
-              </tasks>
-            </configuration>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>ant</groupId>
-            <artifactId>ant-commons-net</artifactId>
-            <version>1.6.5</version>
-          </dependency>
-          <dependency>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-            <version>1.4.1</version>
-          </dependency>
-        </dependencies>
-      </plugin>
       <!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxb2-maven-plugin</artifactId>
         <version>1.6</version> <executions> <execution> <id>xjc</id> <goals> <goal>xjc</goal>
         </goals> </execution> </executions> <configuration> <wsdl>true</wsdl> <xmlschema>true</xmlschema>
@@ -232,11 +180,6 @@
     <repository>
       <id>central2</id>
       <url>http://mvnrepository.com/artifact/</url>
-    </repository>
-    <repository>
-      <id>awtools</id>
-      <name>Andre Winklers AWTools Repository</name>
-      <url>http://maven2.gluehloch.de</url>
     </repository>
   </repositories>
 
