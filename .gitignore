@@ -2,3 +2,7 @@ target
 bin
 *.log
 *.log*
+.classpath
+.project
+.settings
+

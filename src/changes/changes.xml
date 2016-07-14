@@ -6,8 +6,11 @@
   </properties>
   <body>
 
-    <release version="betoffice-openligadb 1.1.0" date="2015-??-??"
+    <release version="betoffice-openligadb 1.1.0" date="2016-??-??"
       description="Update">
+      <action dev="andrewinkler" type="update" date="2016-07-14">
+        Java 8. Hibernate 5. Springframework 4.
+      </action>
       <action dev="andrewinkler" type="update" date="2015-01-14">
         Removed some properties from the POM. Most of these things are
         described by the master POM.
