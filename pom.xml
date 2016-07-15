@@ -13,7 +13,7 @@
   <artifactId>betoffice-openligadb</artifactId>
   <packaging>jar</packaging>
   <version>1.1.0-SNPSHOT</version>
-  <name>betoffice-exchange</name>
+  <name>betoffice-openligadb</name>
   <description>Betoffice openligadb connector</description>
 
   <build>
