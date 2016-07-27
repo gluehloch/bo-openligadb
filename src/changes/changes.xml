@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <properties>
+    <title>Change Notes</title>
+    <author email="andre.winkler@web.de">Andre Winkler</author>
+  </properties>
+  <body>
+
+    <!-- RELEASED -->
+    <release version="betoffice-openligadb 1.1.0" date="2016-07-27"
+      description="Update">
+      <action dev="andrewinkler" type="update" date="2016-07-14">
+        Java 8. Hibernate 5. Springframework 4.
+      </action>
+      <action dev="andrewinkler" type="update" date="2015-01-14">
+        Removed some properties from the POM. Most of these things are
+        described by the master POM.
+      </action>
+    </release>
+
+    <release version="betoffice-openligadb 1.0.0" date="2014-11-01"
+      description="Start">
+      <action dev="andrewinkler" type="add" date="2014-11-01">
+        The new game data update service.
+      </action>
+    </release>
+
+  </body>
+  <footer>
+    <legal>
+      Copyright (c) @year@ The 'betoffice-openligadb' Project.
+    </legal>
+  </footer>
+</document>

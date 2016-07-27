@@ -1389,19 +1389,19 @@
          <web:leagueSaison>?</web:leagueSaison>
       </web:GetAvailGroups>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://msiggi.de/Sportsdata/Webservices/SportsdataSoap/GetAvailGroupsRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://msiggi.de/Sportsdata/Webservices/GetAvailLeagues" name="GetAvailLeagues" bindingOperationName="GetAvailLeagues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.openligadb.de/Webservices/Sportsdata.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://msiggi.de/Sportsdata/Webservices">
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://msiggi.de/Sportsdata/Webservices/SportsdataSoap/GetAvailGroupsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://msiggi.de/Sportsdata/Webservices/GetAvailLeagues" name="GetAvailLeagues" bindingOperationName="GetAvailLeagues" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.openligadb.de/Webservices/Sportsdata.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://msiggi.de/Sportsdata/Webservices">
    <soap:Header/>
    <soap:Body>
       <web:GetAvailLeagues/>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://msiggi.de/Sportsdata/Webservices/SportsdataSoap/GetAvailLeaguesRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://msiggi.de/Sportsdata/Webservices/GetAvailLeaguesBySports" name="GetAvailLeaguesBySports" bindingOperationName="GetAvailLeaguesBySports" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.openligadb.de/Webservices/Sportsdata.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://msiggi.de/Sportsdata/Webservices">
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://msiggi.de/Sportsdata/Webservices/SportsdataSoap/GetAvailLeaguesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://msiggi.de/Sportsdata/Webservices/GetAvailLeaguesBySports" name="GetAvailLeaguesBySports" bindingOperationName="GetAvailLeaguesBySports" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.openligadb.de/Webservices/Sportsdata.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://msiggi.de/Sportsdata/Webservices">
    <soap:Header/>
    <soap:Body>
       <web:GetAvailLeaguesBySports>
          <web:sportID>?</web:sportID>
       </web:GetAvailLeaguesBySports>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://msiggi.de/Sportsdata/Webservices/SportsdataSoap/GetAvailLeaguesBySportsRequest"/></con:call></con:operation><con:operation isOneWay="false" action="http://msiggi.de/Sportsdata/Webservices/GetAvailSports" name="GetAvailSports" bindingOperationName="GetAvailSports" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.openligadb.de/Webservices/Sportsdata.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://msiggi.de/Sportsdata/Webservices">
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://msiggi.de/Sportsdata/Webservices/SportsdataSoap/GetAvailLeaguesBySportsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://msiggi.de/Sportsdata/Webservices/GetAvailSports" name="GetAvailSports" bindingOperationName="GetAvailSports" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.openligadb.de/Webservices/Sportsdata.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://msiggi.de/Sportsdata/Webservices">
    <soap:Header/>
    <soap:Body>
       <web:GetAvailSports/>
@@ -15301,7 +15301,7 @@
          <web:GetTeamsByLeagueSaisonResult>
             <!--Zero or more repetitions:-->
             <web:Team>
-               <web:teamID>?</web:teamID>
+               <web:teamID>40</web:teamID>
                <!--Optional:-->
                <web:teamName>?</web:teamName>
                <!--Optional:-->

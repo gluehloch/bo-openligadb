@@ -65,7 +65,7 @@ public class OpenligadbRoundFinder {
      *            The openligadb league shortcut id.
      * @param leagueSeason
      *            The openligadb leagueSeason id.
-     * @param groupOrderID
+     * @param groupOrderId
      *            The openligadb groupOrderId. The equivalent of betoffice round
      *            index. Betoffice round index has a range from 0 to N-1. The
      *            groupOrderId has a range from 1 to N.
