@@ -6,7 +6,8 @@
   </properties>
   <body>
 
-    <release version="betoffice-openligadb 1.1.0" date="2016-??-??"
+    <!-- RELEASED -->
+    <release version="betoffice-openligadb 1.1.0" date="2016-07-27"
       description="Update">
       <action dev="andrewinkler" type="update" date="2016-07-14">
         Java 8. Hibernate 5. Springframework 4.
