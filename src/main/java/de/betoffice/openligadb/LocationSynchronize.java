@@ -23,6 +23,8 @@
 
 package de.betoffice.openligadb;
 
+import java.util.Optional;
+
 import org.codehaus.plexus.util.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,8 +63,8 @@ public class LocationSynchronize {
     }
 
     public void sync(Matchdata match) {
-        LOG.info("Location sync: {}:{}", new Object[] { match.getNameTeam1(),
-                match.getNameTeam2() });
+        LOG.info("Location sync: {}:{}",
+                new Object[] { match.getNameTeam1(), match.getNameTeam2() });
 
         if (match.getLocation().getLocationID() == 0) {
 
@@ -76,37 +78,38 @@ public class LocationSynchronize {
 
             LOG.info(
                     "The location with openligadb ID=[{}] contains null values. "
-                            + " city=[{}], stadium=[{}]", new Object[] {
-                            match.getLocation().getLocationID(),
+                            + " city=[{}], stadium=[{}]",
+                    new Object[] { match.getLocation().getLocationID(),
                             match.getLocation().getLocationCity(),
                             match.getLocation().getLocationStadium() });
         } else {
 
-            Location location = locationDao.findByOpenligaid(match
-                    .getLocation().getLocationID());
+            Optional<Location> location = locationDao
+                    .findByOpenligaid(match.getLocation().getLocationID());
 
-            if (location == null) {
+            if (!location.isPresent()) {
 
-                location = LocationBuilder.build(match);
-                locationDao.save(location);
+                Location matchLocation = LocationBuilder.build(match);
+                locationDao.save(matchLocation);
 
-            } else if (!isEqual(location, match)) {
+            } else if (!isEqual(location.get(), match)) {
 
                 LOG.info(
                         "Location problem: openligadb ID=[{}], name=[{}], city=[{}] is not equal to "
                                 + "betoffice location name=[{}], city=[{}].",
                         new Object[] { match.getLocation().getLocationID(),
                                 match.getLocation().getLocationStadium(),
-                                location.getName(), location.getCity() });
+                                location.get().getName(),
+                                location.get().getCity() });
             }
         }
     }
 
     private boolean isEqual(Location boLocation, Matchdata match) {
-        boolean name = StringUtils.equalsIgnoreCase(boLocation.getName(), match
-                .getLocation().getLocationStadium());
-        boolean city = StringUtils.equalsIgnoreCase(boLocation.getCity(), match
-                .getLocation().getLocationCity());
+        boolean name = StringUtils.equalsIgnoreCase(boLocation.getName(),
+                match.getLocation().getLocationStadium());
+        boolean city = StringUtils.equalsIgnoreCase(boLocation.getCity(),
+                match.getLocation().getLocationCity());
 
         return name && city;
     }
