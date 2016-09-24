@@ -247,53 +247,71 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam,
                     boGuestTeam);
 
-            if (boMatch.isPresent()) {
-                Game matchUnderWork = boMatch.get();
-                if (matchUnderWork.getOpenligaid() == null) {
-                    matchUnderWork.setOpenligaid(Long.valueOf(match.getMatchID()));
-                } else if (matchUnderWork.getOpenligaid() != match.getMatchID()) {
-                    String error = String.format(
-                            "Openligadb matchId=[%d] and stored matchId of betoffice game [%d] are different.",
-                            match.getMatchID(), matchUnderWork.getOpenligaid());
-                    LOG.error(error);
-                    throw new IllegalStateException(error);
-                }
-            } else {
-                Game newMatch = OpenligadbToBetofficeBuilder.buildGame(match,
-                        boHomeTeam, boGuestTeam);
-                newMatch.setGroup(bundesliga);
-                newMatch.setOpenligaid(Long.valueOf(match.getMatchID()));
-                matchDao.save(newMatch);
-                roundUnderWork.addGame(newMatch);
-            }
+            Game matchUnderWork = boMatch.isPresent()
+                    ? updateMatch(match, boMatch.get())
+                    : createMatch(bundesliga, roundUnderWork, match, boHomeTeam,
+                            boGuestTeam);
 
-            OpenligadbToBetofficeBuilder.updateGameResult(boMatch, match);
-
-            Location boLocation = locationDao
+            Optional<Location> boLocation = locationDao
                     .findByOpenligaid(match.getLocation().getLocationID());
-            boMatch.setLocation(boLocation);
+
+            if (boLocation.isPresent()) {
+                matchUnderWork.setLocation(boLocation.get());
+            } else {
+                Optional<Location> unknwonLocation = locationDao
+                        .findByOpenligaid(Location.UNKNOWN_LOCATION_ID);
+                matchUnderWork.setLocation(unknwonLocation.get());
+            }
 
             for (de.msiggi.sportsdata.webservices.Goal goal : match.getGoals()
                     .getGoalArray()) {
 
-                Goal boGoal = goalDao.findByOpenligaid(goal.getGoalID());
-                if (boGoal == null) {
-                    boGoal = GoalBuilder.build(goal);
-                    Player boPlayer = playerDao
+                Optional<Goal> boGoal = goalDao
+                        .findByOpenligaid(goal.getGoalID());
+                if (!boGoal.isPresent()) {
+                    Goal goalUnderWork = GoalBuilder.build(goal);
+                    Optional<Player> boPlayer = playerDao
                             .findByOpenligaid(goal.getGoalGetterID());
-                    boGoal.setGame(boMatch);
-                    boMatch.addGoal(boGoal);
-                    boGoal.setPlayer(boPlayer);
-                    goalDao.save(boGoal);
+                    goalUnderWork.setGame(matchUnderWork);
+                    matchUnderWork.addGoal(goalUnderWork);
+                    goalUnderWork.setPlayer(boPlayer.get());
+                    goalDao.save(goalUnderWork);
                 }
             }
 
-            matchDao.save(boMatch);
+            matchDao.save(matchUnderWork);
         }
 
-        Date bestRoundDate = round.findBestRoundDate();
-        round.setDateTime(bestRoundDate);
-        roundDao.save(round);
+        Date bestRoundDate = roundUnderWork.findBestRoundDate();
+        roundUnderWork.setDateTime(bestRoundDate);
+        roundDao.save(roundUnderWork);
+    }
+
+    private Game updateMatch(Matchdata match, Game matchUnderWork) {
+        if (matchUnderWork.getOpenligaid() == null) {
+            matchUnderWork.setOpenligaid(Long.valueOf(match.getMatchID()));
+        } else if (matchUnderWork.getOpenligaid() != match.getMatchID()) {
+            String error = String.format(
+                    "Openligadb matchId=[%d] and stored matchId of betoffice game [%d] are different.",
+                    match.getMatchID(), matchUnderWork.getOpenligaid());
+            LOG.error(error);
+            throw new IllegalStateException(error);
+        }
+        OpenligadbToBetofficeBuilder.updateGameResult(matchUnderWork, match);
+        return matchUnderWork;
+    }
+
+    private Game createMatch(Group bundesliga, GameList roundUnderWork,
+            Matchdata match, Team boHomeTeam, Team boGuestTeam) {
+
+        Game newMatch = OpenligadbToBetofficeBuilder.buildGame(match,
+                boHomeTeam, boGuestTeam);
+        newMatch.setGroup(bundesliga);
+        newMatch.setOpenligaid(Long.valueOf(match.getMatchID()));
+        matchDao.save(newMatch);
+        roundUnderWork.addGame(newMatch);
+        OpenligadbToBetofficeBuilder.updateGameResult(newMatch, match);
+        return newMatch;
     }
 
     private GameList createRound(Season season, Group bundesliga) {
@@ -307,15 +325,15 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     }
 
     private Team findBoTeam(long openligaTeamId) {
-        Team boHomeTeam = teamDao.findByOpenligaid(openligaTeamId);
-        if (boHomeTeam == null) {
+        Optional<Team> boHomeTeam = teamDao.findByOpenligaid(openligaTeamId);
+        if (!boHomeTeam.isPresent()) {
             String error = String.format(
                     "I did not a find a betoffice team for the openligadb team id [%d].",
                     openligaTeamId);
             LOG.error(error);
             throw new IllegalStateException(error);
         }
-        return boHomeTeam;
+        return boHomeTeam.get();
     }
 
 }
