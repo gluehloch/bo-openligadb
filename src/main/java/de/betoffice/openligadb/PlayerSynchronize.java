@@ -23,6 +23,8 @@
 
 package de.betoffice.openligadb;
 
+import java.util.Optional;
+
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,9 +80,9 @@ public class PlayerSynchronize {
 
                 LOG.info(
                         "The goal with openligadb ID=[{}] contains empty values. "
-                                + " name=[{}]", goal.getGoalGetterID(),
-                        goal.getGoalGetterName());
-                
+                                + " name=[{}]",
+                        goal.getGoalGetterID(), goal.getGoalGetterName());
+
                 Player player = new Player();
                 player.setName("TODO: Find my name!");
                 player.setVorname("John");
@@ -89,22 +91,22 @@ public class PlayerSynchronize {
 
             } else {
 
-                Player player = playerDao.findByOpenligaid(goal
-                        .getGoalGetterID());
+                Optional<Player> player = playerDao
+                        .findByOpenligaid(goal.getGoalGetterID());
 
                 if (player == null) {
 
-                    player = PlayerBuilder.build(goal);
-                    playerDao.save(player);
+                    Player newPlayer = PlayerBuilder.build(goal);
+                    playerDao.save(newPlayer);
 
-                } else if (!isEqual(player, goal)) {
+                } else if (!isEqual(player.get(), goal)) {
 
                     LOG.error(
                             "Player problem: Openligadb goalgetter name[{}] and "
                                     + "betoffice player name[{}] are different. "
                                     + "Problem found at openligadb goal [{}]",
                             new Object[] { goal.getGoalGetterName(),
-                                    player.getName(), goal.getGoalID() });
+                                    player.get().getName(), goal.getGoalID() });
 
                 }
             }

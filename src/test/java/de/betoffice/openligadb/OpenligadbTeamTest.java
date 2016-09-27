@@ -29,6 +29,7 @@ import static org.junit.Assert.assertThat;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Optional;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.jdbc.Work;
@@ -64,8 +65,8 @@ import de.winkler.betoffice.service.MasterDataManagerService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/betoffice-datasource.xml",
         "/betoffice-persistence.xml", "/test-mysql-piratestest.xml" })
-public class OpenligadbTeamTest extends
-        AbstractTransactionalJUnit4SpringContextTests {
+public class OpenligadbTeamTest
+        extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -111,14 +112,15 @@ public class OpenligadbTeamTest extends
                 .getGetTeamsByLeagueSaisonResult();
         Team[] teams = getTeamsByLeagueSaisonResult.getTeamArray();
         for (Team team : teams) {
-            de.winkler.betoffice.storage.Team boTeam = masterDataManagerService
+            Optional<de.winkler.betoffice.storage.Team> boTeam = masterDataManagerService
                     .findTeamByOpenligaid(team.getTeamID());
             assertThat(boTeam, notNullValue());
 
-            System.out.println(boTeam.getId() + " | " + boTeam.getName()
-                    + " | " + boTeam.getLongName() + " | "
-                    + boTeam.getTeamType().ordinal() + " | "
-                    + boTeam.getOpenligaid());
+            System.out.println(
+                    boTeam.get().getId() + " | " + boTeam.get().getName()
+                            + " | " + boTeam.get().getLongName() + " | "
+                            + boTeam.get().getTeamType().ordinal() + " | "
+                            + boTeam.get().getOpenligaid());
         }
     }
 

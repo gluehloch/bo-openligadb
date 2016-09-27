@@ -7,6 +7,13 @@
   <body>
 
     <!-- RELEASED -->
+    <release version="betoffice-openligadb 1.2.0" date="2016-09-26"
+      description="Update">
+      <action dev="andrewinkler" type="update" date="2016-09-26">
+        betoffice-storage-2.2.0 (Optionals).
+      </action>
+    </release>
+
     <release version="betoffice-openligadb 1.1.0" date="2016-07-27"
       description="Update">
       <action dev="andrewinkler" type="update" date="2016-07-14">
