@@ -48,6 +48,11 @@ public class OpenligadbToBetofficeBuilder {
         return boMatch;
     }
 
+    public static Game updateGameDate(Game game, Matchdata match) {
+        game.setDateTime(match.getMatchDateTime().getTime());
+        return game;
+    }
+    
     /**
      * Updates the match result.
      *
