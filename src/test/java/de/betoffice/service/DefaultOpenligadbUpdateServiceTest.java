@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2016 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -22,8 +22,6 @@
  */
 
 package de.betoffice.service;
-
-import javax.sql.DataSource;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -47,24 +45,21 @@ public class DefaultOpenligadbUpdateServiceTest {
     @Autowired
     private OpenligadbUpdateService openligadbUpdateService;
 
-    @Autowired
-    private DataSource dataSource;
-
     @Ignore
     @Test
     @Rollback(false)
     public void testOpenligadbUpdateService() {
-        openligadbUpdateService.updateRound(22, 0);
-        openligadbUpdateService.updateRound(22, 1);
-        openligadbUpdateService.updateRound(22, 2);
-        openligadbUpdateService.updateRound(22, 3);
-        openligadbUpdateService.updateRound(22, 4);
-        openligadbUpdateService.updateRound(22, 5);
-        openligadbUpdateService.updateRound(22, 6);
-        openligadbUpdateService.updateRound(22, 7);
-        openligadbUpdateService.updateRound(22, 8);
-        openligadbUpdateService.updateRound(22, 9);
-        openligadbUpdateService.updateRound(22, 10);
+        openligadbUpdateService.createOrUpdateRound(22, 0);
+        openligadbUpdateService.createOrUpdateRound(22, 1);
+        openligadbUpdateService.createOrUpdateRound(22, 2);
+        openligadbUpdateService.createOrUpdateRound(22, 3);
+        openligadbUpdateService.createOrUpdateRound(22, 4);
+        openligadbUpdateService.createOrUpdateRound(22, 5);
+        openligadbUpdateService.createOrUpdateRound(22, 6);
+        openligadbUpdateService.createOrUpdateRound(22, 7);
+        openligadbUpdateService.createOrUpdateRound(22, 8);
+        openligadbUpdateService.createOrUpdateRound(22, 9);
+        openligadbUpdateService.createOrUpdateRound(22, 10);
     }
 
 }

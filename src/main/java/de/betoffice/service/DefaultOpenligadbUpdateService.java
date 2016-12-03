@@ -163,6 +163,12 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     @Override
     @Transactional
     public void updateRound(long seasonId, int roundIndex) {
+        createOrUpdateRound(seasonId, roundIndex);
+    }
+
+    @Override
+    @Transactional
+    public void createOrUpdateRound(long seasonId, int roundIndex) {
         LOG.info(
                 "Start the openligadb update service for season id=[{}] and roundIndex=[{}]",
                 seasonId, roundIndex);
@@ -268,6 +274,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
                 Optional<Goal> boGoal = goalDao
                         .findByOpenligaid(goal.getGoalID());
+
                 if (!boGoal.isPresent()) {
                     Goal goalUnderWork = GoalBuilder.build(goal);
                     Optional<Player> boPlayer = playerDao
@@ -297,6 +304,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             LOG.error(error);
             throw new IllegalStateException(error);
         }
+        OpenligadbToBetofficeBuilder.updateGameDate(matchUnderWork, match);
         OpenligadbToBetofficeBuilder.updateGameResult(matchUnderWork, match);
         return matchUnderWork;
     }

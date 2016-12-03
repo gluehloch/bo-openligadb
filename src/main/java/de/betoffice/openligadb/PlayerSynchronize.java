@@ -94,7 +94,7 @@ public class PlayerSynchronize {
                 Optional<Player> player = playerDao
                         .findByOpenligaid(goal.getGoalGetterID());
 
-                if (player == null) {
+                if (!player.isPresent()) {
 
                     Player newPlayer = PlayerBuilder.build(goal);
                     playerDao.save(newPlayer);
