@@ -6,7 +6,7 @@
   </properties>
   <body>
 
-    <release version="betoffice-openligadb 1.3.0" date="2016-??-??"
+    <release version="betoffice-openligadb 1.3.0" date="2016-12-03"
       description="Update">
       <action dev="andrewinkler" type="update" date="2016-11-27">
         Game date and time will be updated if necessary.
