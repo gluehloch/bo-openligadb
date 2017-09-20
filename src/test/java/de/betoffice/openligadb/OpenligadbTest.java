@@ -23,6 +23,7 @@
 
 package de.betoffice.openligadb;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.msiggi.sportsdata.webservices.ArrayOfGroup;
@@ -39,6 +40,7 @@ import de.msiggi.sportsdata.webservices.Group;
  */
 public class OpenligadbTest {
 
+    @Ignore
     @Test
     public void testws() throws Exception {
         SportsdataStub stub = new SportsdataStub();

@@ -187,7 +187,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             throw new IllegalArgumentException(error);
         }
 
+        // --------------------------------------------------------------------
         // TODO This works only with a single group per season.
+        // --------------------------------------------------------------------
         Group bundesliga = season.getGroups().iterator().next();
         Optional<GameList> roundAtIndex = roundDao.findRound(season,
                 roundIndex);
