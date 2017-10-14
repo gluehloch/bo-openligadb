@@ -6,7 +6,7 @@
   </properties>
   <body>
 
-    <release version="betoffice-openligadb 1.4.0" date="2017-??-??"
+    <release version="betoffice-openligadb 1.4.0" date="2017-11-14"
       description="Update">
       <action dev="andrewinkler" type="update" date="2017-04-08">
         Java 8.
