@@ -28,31 +28,6 @@
     </resources>
     <plugins>
       <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>src</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>install</phase>
-            <goals>
-              <goal>assembly</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>jaxb2-maven-plugin</artifactId>
-        <version>1.6</version> <executions> <execution> <id>xjc</id> <goals> <goal>xjc</goal>
-        </goals> </execution> </executions> <configuration> <wsdl>true</wsdl> <xmlschema>true</xmlschema>
-        <outputDirectory>target/generated-sources/jaxb</outputDirectory> <packageName>de.betoffice.openligadb</packageName>
-        <schemaDirectory>src/main/xsd</schemaDirectory> <schemaFiles>openligadb.wsdl</schemaFiles>
-        <strict>false</strict> </configuration> </plugin> -->
-
-      <plugin>
         <groupId>org.apache.axis2</groupId>
         <artifactId>axis2-wsdl2code-maven-plugin</artifactId>
         <version>1.6.2</version>
