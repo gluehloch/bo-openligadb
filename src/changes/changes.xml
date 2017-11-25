@@ -7,7 +7,9 @@
   <body>
 
     <!-- Under development -->
-    <release version="betoffice-openligadb 1.5.0" date="2017-??-??"
+    
+    <!-- RELEASED -->
+    <release version="betoffice-openligadb 1.5.0" date="2017-11-25"
       description="Small updates. Not a new version.">
       <action dev="andrewinkler" type="update" date="2017-11-01">
         Dependency updates to parent POMs and betoffice-storage.
