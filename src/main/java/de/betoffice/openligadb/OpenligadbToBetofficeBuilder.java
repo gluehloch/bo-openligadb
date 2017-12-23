@@ -52,7 +52,7 @@ public class OpenligadbToBetofficeBuilder {
         game.setDateTime(match.getMatchDateTime().getTime());
         return game;
     }
-    
+
     /**
      * Updates the match result.
      *

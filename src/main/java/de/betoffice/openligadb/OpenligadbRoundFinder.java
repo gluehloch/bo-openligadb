@@ -95,7 +95,8 @@ public class OpenligadbRoundFinder {
             addNewGetMatchdataByGroupLeagueSaison.setGroupOrderID(groupOrderId);
 
             GetMatchdataByGroupLeagueSaisonResponseDocument matchdataByGroupLeagueSaison = stub
-                    .getMatchdataByGroupLeagueSaison(getMatchdataByGroupLeagueSaison2);
+                    .getMatchdataByGroupLeagueSaison(
+                            getMatchdataByGroupLeagueSaison2);
             GetMatchdataByGroupLeagueSaisonResponse getMatchdataByGroupLeagueSaisonResponse = matchdataByGroupLeagueSaison
                     .getGetMatchdataByGroupLeagueSaisonResponse();
             ArrayOfMatchdata getMatchdataByGroupLeagueSaisonResult = getMatchdataByGroupLeagueSaisonResponse
