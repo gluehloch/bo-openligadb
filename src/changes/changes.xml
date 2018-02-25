@@ -7,7 +7,13 @@
   <body>
 
     <!-- Under development -->
-    
+    <release version="betoffice-openligadb 1.5.1" date="2018-03-??"
+      description="Dependency management.">
+      <action dev="andrewinkler" type="update" date="2018-02-25">
+        Dependency management and project relation.
+      </action>
+    </release>
+
     <!-- RELEASED -->
     <release version="betoffice-openligadb 1.5.0" date="2017-11-25"
       description="Small updates. Not a new version.">
