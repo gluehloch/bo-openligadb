@@ -7,7 +7,13 @@
   <body>
 
     <!-- Under development -->
-    
+    <release version="betoffice-openligadb 1.5.2" date="2018-??-??"
+      description="Dependency management.">
+      <action dev="andrewinkler" type="update" date="2018-03-05">
+        Spring and Hibernate version update.
+      </action>
+    </release>
+
     <!-- RELEASED -->
     <release version="betoffice-openligadb 1.5.1" date="2018-03-03"
       description="Dependency management.">
