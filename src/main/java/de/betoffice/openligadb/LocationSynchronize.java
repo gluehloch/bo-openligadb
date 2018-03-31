@@ -30,10 +30,10 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.awtools.basic.LoggerFactory;
 import de.msiggi.sportsdata.webservices.Matchdata;
 import de.winkler.betoffice.dao.LocationDao;
 import de.winkler.betoffice.storage.Location;
+import de.winkler.betoffice.util.LoggerFactory;
 
 /**
  * Synchronize locations.

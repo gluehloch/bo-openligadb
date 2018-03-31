@@ -29,13 +29,13 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
 
-import de.awtools.basic.LoggerFactory;
 import de.msiggi.sportsdata.webservices.ArrayOfMatchdata;
 import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument;
 import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument.GetMatchdataByGroupLeagueSaison;
 import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonResponseDocument;
 import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonResponseDocument.GetMatchdataByGroupLeagueSaisonResponse;
 import de.msiggi.sportsdata.webservices.Matchdata;
+import de.winkler.betoffice.util.LoggerFactory;
 
 /**
  * Call the openligadb webservice to get all matches of a round.

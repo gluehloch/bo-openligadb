@@ -31,7 +31,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.awtools.basic.LoggerFactory;
 import de.betoffice.openligadb.GoalBuilder;
 import de.betoffice.openligadb.LocationSynchronize;
 import de.betoffice.openligadb.OpenligadbConnectionException;
@@ -54,6 +53,7 @@ import de.winkler.betoffice.storage.Location;
 import de.winkler.betoffice.storage.Player;
 import de.winkler.betoffice.storage.Season;
 import de.winkler.betoffice.storage.Team;
+import de.winkler.betoffice.util.LoggerFactory;
 
 /**
  * The default implementation of {@link OpenligadbUpdateService}.
