@@ -7,6 +7,13 @@
   <body>
 
     <!-- Under development -->
+    <release version="betoffice-openligadb 1.5.3" date="2018-??-??"
+      description="Dependency management.">
+      <action dev="andrewinkler" type="update" date="2018-04-01">
+        Removed awtools-basic and awtools-config from the dependency
+        list.
+      </action>
+    </release>
     
     <!-- RELEASED -->
     <release version="betoffice-openligadb 1.5.2" date="2018-04-01"
