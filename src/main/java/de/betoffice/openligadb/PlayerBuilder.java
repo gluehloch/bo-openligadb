@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2018 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -43,7 +43,7 @@ public class PlayerBuilder {
                             + goal.getGoalGetterID() + "], goalId=["
                             + goal.getGoalID() + "]");
         }
-        boPlayer.setName(goal.getGoalGetterName());
+        boPlayer.setName(StringUtils.trimToNull(goal.getGoalGetterName()));
         boPlayer.setOpenligaid(Long.valueOf(goal.getGoalGetterID()));
         return boPlayer;
     }
