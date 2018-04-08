@@ -43,9 +43,18 @@ public class PlayerBuilder {
                             + goal.getGoalGetterID() + "], goalId=["
                             + goal.getGoalID() + "]");
         }
-        boPlayer.setName(StringUtils.trimToNull(goal.getGoalGetterName()));
+                
+        boPlayer.setName(normalize(goal.getGoalGetterName()));
         boPlayer.setOpenligaid(Long.valueOf(goal.getGoalGetterID()));
         return boPlayer;
+    }
+
+    public static String normalize(String playerName) {
+        String normalized = StringUtils.replace(playerName, "\r\n", " ");
+        normalized = StringUtils.replace(normalized, "\r", " ");
+        normalized = StringUtils.replace(normalized, "\n", " ");
+        normalized = StringUtils.trimToNull(normalized);
+        return normalized;
     }
 
 }
