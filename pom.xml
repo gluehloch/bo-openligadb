@@ -13,7 +13,7 @@
   <groupId>de.betoffice</groupId>
   <artifactId>betoffice-openligadb</artifactId>
   <packaging>jar</packaging>
-  <version>1.5.3</version>
+  <version>1.5.4-SNAPSHOT</version>
   <name>betoffice-openligadb</name>
   <description>Betoffice openligadb connector</description>
 
@@ -85,13 +85,13 @@
     <dependency>
       <groupId>de.winkler.betoffice</groupId>
       <artifactId>betoffice-storage</artifactId>
-      <version>2.6.0</version>
+      <version>2.6.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>de.betoffice</groupId>
       <artifactId>betoffice-testutils</artifactId>
-      <version>0.5.0</version>
+      <version>0.5.1-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
 
