@@ -9,6 +9,15 @@
     <!-- Under development -->
     
     <!-- RELEASED -->
+    <release version="betoffice-openligadb 1.5.4" date="2018-06-06"
+      description="Dependency management.">
+      <action dev="andrewinkler" type="fix" date="2018-06-06">
+        Dependency updates.
+      </action>
+
+    </release>
+    
+    <!-- RELEASED -->
     <release version="betoffice-openligadb 1.5.3" date="2018-05-11"
       description="Dependency management.">
       <action dev="andrewinkler" type="fix" date="2018-04-07">
