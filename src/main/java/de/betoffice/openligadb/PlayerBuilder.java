@@ -23,7 +23,7 @@
 
 package de.betoffice.openligadb;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import de.msiggi.sportsdata.webservices.Goal;
 import de.winkler.betoffice.storage.Player;

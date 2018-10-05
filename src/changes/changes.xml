@@ -7,6 +7,14 @@
   <body>
 
     <!-- Under development -->
+    <release version="betoffice-openligadb 1.5.6" date="2018-??-??"
+      description="Java 10">
+      <action dev="andrewinkler" type="update" date="2018-10-05">
+        Compiled with Java 10.
+      </action>
+    </release>
+    
+    <!-- RELEASED -->
 	<release version="betoffice-openligadb 1.5.5" date="2018-07-12"
       description="Dependency management.">
       <action dev="andrewinkler" type="fix" date="2018-07-08">

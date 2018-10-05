@@ -25,7 +25,7 @@ package de.betoffice.openligadb;
 
 import java.rmi.RemoteException;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
 
