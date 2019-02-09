@@ -266,9 +266,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             if (boLocation.isPresent()) {
                 matchUnderWork.setLocation(boLocation.get());
             } else {
-                Optional<Location> unknwonLocation = locationDao
-                        .findByOpenligaid(Location.UNKNOWN_LOCATION_ID);
-                matchUnderWork.setLocation(unknwonLocation.get());
+                Location unknwonLocation = locationDao
+                        .findById(Location.UNKNOWN_LOCATION_ID);
+                matchUnderWork.setLocation(unknwonLocation);
             }
 
             for (de.msiggi.sportsdata.webservices.Goal goal : match.getGoals()
