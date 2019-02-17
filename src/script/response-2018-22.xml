@@ -1,0 +1,652 @@
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: application/xml; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/8.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Sun, 17 Feb 2019 13:44:45 GMT
+Connection: close
+Content-Length: 19160
+
+<ArrayOfMatch 
+  xmlns:i="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://schemas.datacontract.org/2004/07/OLDB.Spa.Models.Api">
+  <Match>
+    <Goals>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>6631</GoalGetterID>
+        <GoalGetterName>Goretzka</GoalGetterName>
+        <GoalID>76044</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>true</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>1</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>15424</GoalGetterID>
+        <GoalGetterName>Coman</GoalGetterName>
+        <GoalID>76045</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>17</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>1</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>9956</GoalGetterID>
+        <GoalGetterName>Ji</GoalGetterName>
+        <GoalID>76046</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>23</MatchMinute>
+        <ScoreTeam1>2</ScoreTeam1>
+        <ScoreTeam2>1</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>15424</GoalGetterID>
+        <GoalGetterName>Coman</GoalGetterName>
+        <GoalID>76047</GoalID>
+        <IsOvertime>true</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>48</MatchMinute>
+        <ScoreTeam1>2</ScoreTeam1>
+        <ScoreTeam2>2</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>382</GoalGetterID>
+        <GoalGetterName>Alaba</GoalGetterName>
+        <GoalID>76049</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>53</MatchMinute>
+        <ScoreTeam1>2</ScoreTeam1>
+        <ScoreTeam2>3</ScoreTeam2>
+      </Goal>
+    </Goals>
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2019-02-15T22:24:04.207</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location i:nil="true" />
+    <MatchDateTime>2019-02-15T20:30:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-15T19:30:00Z</MatchDateTimeUTC>
+    <MatchID>51315</MatchID>
+    <MatchIsFinished>true</MatchIsFinished>
+    <MatchResults>
+      <MatchResult>
+        <PointsTeam1>2</PointsTeam1>
+        <PointsTeam2>3</PointsTeam2>
+        <ResultDescription>Ergebnis nach Ende der offiziellen Spielzeit</ResultDescription>
+        <ResultID>86053</ResultID>
+        <ResultName>Endergebnis</ResultName>
+        <ResultOrderID>2</ResultOrderID>
+        <ResultTypeID>2</ResultTypeID>
+      </MatchResult>
+      <MatchResult>
+        <PointsTeam1>2</PointsTeam1>
+        <PointsTeam2>2</PointsTeam2>
+        <ResultDescription>Zwischenstand zur Halbzeit</ResultDescription>
+        <ResultID>86054</ResultID>
+        <ResultName>Halbzeit</ResultName>
+        <ResultOrderID>1</ResultOrderID>
+        <ResultTypeID>1</ResultTypeID>
+      </MatchResult>
+    </MatchResults>
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>Augsburg</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/de/thumb/b/b5/Logo_FC_Augsburg.svg/785px-Logo_FC_Augsburg.svg.png</TeamIconUrl>
+      <TeamId>95</TeamId>
+      <TeamName>FC Augsburg</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>FCB</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg/240px-Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg.png</TeamIconUrl>
+      <TeamId>40</TeamId>
+      <TeamName>FC Bayern</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+  <Match>
+    <Goals>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>12749</GoalGetterID>
+        <GoalGetterName>Arnold</GoalGetterName>
+        <GoalID>76069</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>4</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>16906</GoalGetterID>
+        <GoalGetterName>Weghorst</GoalGetterName>
+        <GoalID>76073</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>true</IsPenalty>
+        <MatchMinute>69</MatchMinute>
+        <ScoreTeam1>2</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>9415</GoalGetterID>
+        <GoalGetterName>Knoche</GoalGetterName>
+        <GoalID>76076</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>76</MatchMinute>
+        <ScoreTeam1>3</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+    </Goals>
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2019-02-16T17:23:26.067</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location i:nil="true" />
+    <MatchDateTime>2019-02-16T15:30:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-16T14:30:00Z</MatchDateTimeUTC>
+    <MatchID>51316</MatchID>
+    <MatchIsFinished>true</MatchIsFinished>
+    <MatchResults>
+      <MatchResult>
+        <PointsTeam1>3</PointsTeam1>
+        <PointsTeam2>0</PointsTeam2>
+        <ResultDescription>Ergebnis nach Ende der offiziellen Spielzeit</ResultDescription>
+        <ResultID>86070</ResultID>
+        <ResultName>Endergebnis</ResultName>
+        <ResultOrderID>2</ResultOrderID>
+        <ResultTypeID>2</ResultTypeID>
+      </MatchResult>
+      <MatchResult>
+        <PointsTeam1>1</PointsTeam1>
+        <PointsTeam2>0</PointsTeam2>
+        <ResultDescription>Zwischenstand zur Halbzeit</ResultDescription>
+        <ResultID>86071</ResultID>
+        <ResultName>Halbzeit</ResultName>
+        <ResultOrderID>1</ResultOrderID>
+        <ResultTypeID>1</ResultTypeID>
+      </MatchResult>
+    </MatchResults>
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>VfL Wolfsburg</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Logo-VfL-Wolfsburg.svg/1024px-Logo-VfL-Wolfsburg.svg.png</TeamIconUrl>
+      <TeamId>131</TeamId>
+      <TeamName>VfL Wolfsburg</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>Mainz 05</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Logo_Mainz_05.svg/1099px-Logo_Mainz_05.svg.png</TeamIconUrl>
+      <TeamId>81</TeamId>
+      <TeamName>1. FSV Mainz 05</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+  <Match>
+    <Goals />
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2019-02-16T17:23:18.287</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location i:nil="true" />
+    <MatchDateTime>2019-02-16T15:30:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-16T14:30:00Z</MatchDateTimeUTC>
+    <MatchID>51309</MatchID>
+    <MatchIsFinished>true</MatchIsFinished>
+    <MatchResults>
+      <MatchResult>
+        <PointsTeam1>0</PointsTeam1>
+        <PointsTeam2>0</PointsTeam2>
+        <ResultDescription>Ergebnis nach Ende der offiziellen Spielzeit</ResultDescription>
+        <ResultID>86064</ResultID>
+        <ResultName>Endergebnis</ResultName>
+        <ResultOrderID>2</ResultOrderID>
+        <ResultTypeID>2</ResultTypeID>
+      </MatchResult>
+      <MatchResult>
+        <PointsTeam1>0</PointsTeam1>
+        <PointsTeam2>0</PointsTeam2>
+        <ResultDescription>Zwischenstand zur Halbzeit</ResultDescription>
+        <ResultID>86065</ResultID>
+        <ResultName>Halbzeit</ResultName>
+        <ResultOrderID>1</ResultOrderID>
+        <ResultTypeID>1</ResultTypeID>
+      </MatchResult>
+    </MatchResults>
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>Schalke</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/FC_Schalke_04_Logo.svg/1024px-FC_Schalke_04_Logo.svg.png</TeamIconUrl>
+      <TeamId>9</TeamId>
+      <TeamName>FC Schalke 04</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>Freiburg</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/de/thumb/f/f1/SC-Freiburg_Logo-neu.svg/739px-SC-Freiburg_Logo-neu.svg.png</TeamIconUrl>
+      <TeamId>112</TeamId>
+      <TeamName>SC Freiburg</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+  <Match>
+    <Goals>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>16925</GoalGetterID>
+        <GoalGetterName>Joelinton</GoalGetterName>
+        <GoalID>76067</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>5</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>7180</GoalGetterID>
+        <GoalGetterName>Belfodil</GoalGetterName>
+        <GoalID>76071</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>14</MatchMinute>
+        <ScoreTeam1>2</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>15519</GoalGetterID>
+        <GoalGetterName> Demirbay</GoalGetterName>
+        <GoalID>76077</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>80</MatchMinute>
+        <ScoreTeam1>3</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+    </Goals>
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2019-02-16T17:23:19.77</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location i:nil="true" />
+    <MatchDateTime>2019-02-16T15:30:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-16T14:30:00Z</MatchDateTimeUTC>
+    <MatchID>51310</MatchID>
+    <MatchIsFinished>true</MatchIsFinished>
+    <MatchResults>
+      <MatchResult>
+        <PointsTeam1>3</PointsTeam1>
+        <PointsTeam2>0</PointsTeam2>
+        <ResultDescription>Ergebnis nach Ende der offiziellen Spielzeit</ResultDescription>
+        <ResultID>86066</ResultID>
+        <ResultName>Endergebnis</ResultName>
+        <ResultOrderID>2</ResultOrderID>
+        <ResultTypeID>2</ResultTypeID>
+      </MatchResult>
+      <MatchResult>
+        <PointsTeam1>2</PointsTeam1>
+        <PointsTeam2>0</PointsTeam2>
+        <ResultDescription>Zwischenstand zur Halbzeit</ResultDescription>
+        <ResultID>86067</ResultID>
+        <ResultName>Halbzeit</ResultName>
+        <ResultOrderID>1</ResultOrderID>
+        <ResultTypeID>1</ResultTypeID>
+      </MatchResult>
+    </MatchResults>
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>Hoffenheim</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/6/64/TSG_Logo-Standard_4c.png</TeamIconUrl>
+      <TeamId>123</TeamId>
+      <TeamName>TSG 1899 Hoffenheim</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>Hannover</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Hannover_96_Logo.svg/1162px-Hannover_96_Logo.svg.png</TeamIconUrl>
+      <TeamId>55</TeamId>
+      <TeamName>Hannover 96</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+  <Match>
+    <Goals>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>0</GoalGetterID>
+        <GoalGetterName></GoalGetterName>
+        <GoalID>76066</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute i:nil="true" />
+        <ScoreTeam1>0</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>11523</GoalGetterID>
+        <GoalGetterName> Poulsen</GoalGetterName>
+        <GoalID>76068</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>6</MatchMinute>
+        <ScoreTeam1>0</ScoreTeam1>
+        <ScoreTeam2>1</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>16167</GoalGetterID>
+        <GoalGetterName>Zuber</GoalGetterName>
+        <GoalID>76072</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>16</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>1</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>15215</GoalGetterID>
+        <GoalGetterName>Sabitzer</GoalGetterName>
+        <GoalID>76074</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>68</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>2</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>11523</GoalGetterID>
+        <GoalGetterName> Poulsen</GoalGetterName>
+        <GoalID>76075</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>74</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>3</ScoreTeam2>
+      </Goal>
+    </Goals>
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2019-02-16T17:23:22.147</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location i:nil="true" />
+    <MatchDateTime>2019-02-16T15:30:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-16T14:30:00Z</MatchDateTimeUTC>
+    <MatchID>51312</MatchID>
+    <MatchIsFinished>true</MatchIsFinished>
+    <MatchResults>
+      <MatchResult>
+        <PointsTeam1>1</PointsTeam1>
+        <PointsTeam2>3</PointsTeam2>
+        <ResultDescription>Ergebnis nach Ende der offiziellen Spielzeit</ResultDescription>
+        <ResultID>86068</ResultID>
+        <ResultName>Endergebnis</ResultName>
+        <ResultOrderID>2</ResultOrderID>
+        <ResultTypeID>2</ResultTypeID>
+      </MatchResult>
+      <MatchResult>
+        <PointsTeam1>1</PointsTeam1>
+        <PointsTeam2>1</PointsTeam2>
+        <ResultDescription>Zwischenstand zur Halbzeit</ResultDescription>
+        <ResultID>86069</ResultID>
+        <ResultName>Halbzeit</ResultName>
+        <ResultOrderID>1</ResultOrderID>
+        <ResultTypeID>1</ResultTypeID>
+      </MatchResult>
+    </MatchResults>
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>Stuttgart</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/VfB_Stuttgart_1893_Logo.svg/921px-VfB_Stuttgart_1893_Logo.svg.png</TeamIconUrl>
+      <TeamId>16</TeamId>
+      <TeamName>VfB Stuttgart</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>RBL Leipzig</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/en/thumb/0/04/RB_Leipzig_2014_logo.svg/20px-RB_Leipzig_2014_logo.svg.png</TeamIconUrl>
+      <TeamId>1635</TeamId>
+      <TeamName>RB Leipzig</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+  <Match>
+    <Goals>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>16084</GoalGetterID>
+        <GoalGetterName>Davie Selke</GoalGetterName>
+        <GoalID>76094</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>25</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>0</ScoreTeam2>
+      </Goal>
+      <Goal>
+        <Comment i:nil="true" />
+        <GoalGetterID>309</GoalGetterID>
+        <GoalGetterName>Pizarro</GoalGetterName>
+        <GoalID>76095</GoalID>
+        <IsOvertime>false</IsOvertime>
+        <IsOwnGoal>false</IsOwnGoal>
+        <IsPenalty>false</IsPenalty>
+        <MatchMinute>96</MatchMinute>
+        <ScoreTeam1>1</ScoreTeam1>
+        <ScoreTeam2>1</ScoreTeam2>
+      </Goal>
+    </Goals>
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2019-02-16T20:30:23.65</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location i:nil="true" />
+    <MatchDateTime>2019-02-16T18:30:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-16T17:30:00Z</MatchDateTimeUTC>
+    <MatchID>51314</MatchID>
+    <MatchIsFinished>true</MatchIsFinished>
+    <MatchResults>
+      <MatchResult>
+        <PointsTeam1>1</PointsTeam1>
+        <PointsTeam2>1</PointsTeam2>
+        <ResultDescription>Ergebnis nach Ende der offiziellen Spielzeit</ResultDescription>
+        <ResultID>86086</ResultID>
+        <ResultName>Endergebnis</ResultName>
+        <ResultOrderID>2</ResultOrderID>
+        <ResultTypeID>2</ResultTypeID>
+      </MatchResult>
+      <MatchResult>
+        <PointsTeam1>1</PointsTeam1>
+        <PointsTeam2>0</PointsTeam2>
+        <ResultDescription>Zwischenstand zur Halbzeit</ResultDescription>
+        <ResultID>86087</ResultID>
+        <ResultName>Halbzeit</ResultName>
+        <ResultOrderID>1</ResultOrderID>
+        <ResultTypeID>1</ResultTypeID>
+      </MatchResult>
+    </MatchResults>
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>Hertha</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Hertha_BSC_Logo_2012.svg/2858px-Hertha_BSC_Logo_2012.svg.png</TeamIconUrl>
+      <TeamId>54</TeamId>
+      <TeamName>Hertha BSC</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>Bremen</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/SV-Werder-Bremen-Logo.svg/681px-SV-Werder-Bremen-Logo.svg.png</TeamIconUrl>
+      <TeamId>134</TeamId>
+      <TeamName>Werder Bremen</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+  <Match>
+    <Goals />
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2018-12-22T21:11:01.63</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location i:nil="true" />
+    <MatchDateTime>2019-02-17T15:30:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-17T14:30:00Z</MatchDateTimeUTC>
+    <MatchID>51313</MatchID>
+    <MatchIsFinished>false</MatchIsFinished>
+    <MatchResults />
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>Frankfurt</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Eintracht_Frankfurt_Logo.svg/1024px-Eintracht_Frankfurt_Logo.svg.png</TeamIconUrl>
+      <TeamId>91</TeamId>
+      <TeamName>Eintracht Frankfurt</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>M'gladbach</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_Mönchengladbach_logo.svg/630px-Borussia_Mönchengladbach_logo.svg.png</TeamIconUrl>
+      <TeamId>87</TeamId>
+      <TeamName>Borussia Mönchengladbach</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+  <Match>
+    <Goals />
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2018-12-22T21:10:07.817</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location i:nil="true" />
+    <MatchDateTime>2019-02-17T18:00:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-17T17:00:00Z</MatchDateTimeUTC>
+    <MatchID>51311</MatchID>
+    <MatchIsFinished>false</MatchIsFinished>
+    <MatchResults />
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>Leverkusen</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/de/thumb/f/f7/Bayer_Leverkusen_Logo.svg/1280px-Bayer_Leverkusen_Logo.svg.png</TeamIconUrl>
+      <TeamId>6</TeamId>
+      <TeamName>Bayer Leverkusen</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>Düsseldorf</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Fortuna_D%C3%BCsseldorf.svg/150px-Fortuna_D%C3%BCsseldorf.svg.png</TeamIconUrl>
+      <TeamId>185</TeamId>
+      <TeamName>Fortuna Düsseldorf</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+  <Match>
+    <Goals />
+    <Group>
+      <GroupID>31796</GroupID>
+      <GroupName>22. Spieltag</GroupName>
+      <GroupOrderID>22</GroupOrderID>
+    </Group>
+    <LastUpdateDateTime>2018-12-22T21:10:25.083</LastUpdateDateTime>
+    <LeagueId>4276</LeagueId>
+    <LeagueName>1. Fußball-Bundesliga 2018/2019</LeagueName>
+    <Location>
+      <LocationCity>Nürnberg</LocationCity>
+      <LocationID>1111</LocationID>
+      <LocationStadium>Max-Morlock-Stadion</LocationStadium>
+    </Location>
+    <MatchDateTime>2019-02-18T20:30:00</MatchDateTime>
+    <MatchDateTimeUTC>2019-02-18T19:30:00Z</MatchDateTimeUTC>
+    <MatchID>51317</MatchID>
+    <MatchIsFinished>false</MatchIsFinished>
+    <MatchResults />
+    <NumberOfViewers i:nil="true" />
+    <Team1>
+      <ShortName>Nürnberg</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/1._FC_Nürnberg_logo.svg/1024px-1._FC_Nürnberg_logo.svg.png</TeamIconUrl>
+      <TeamId>79</TeamId>
+      <TeamName>1. FC Nürnberg</TeamName>
+    </Team1>
+    <Team2>
+      <ShortName>BVB</ShortName>
+      <TeamGroupName i:nil="true" />
+      <TeamIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/240px-Borussia_Dortmund_logo.svg.png</TeamIconUrl>
+      <TeamId>7</TeamId>
+      <TeamName>Borussia Dortmund</TeamName>
+    </Team2>
+    <TimeZoneID>W. Europe Standard Time</TimeZoneID>
+  </Match>
+</ArrayOfMatch>
