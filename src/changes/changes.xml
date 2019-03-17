@@ -12,6 +12,9 @@
 			<action dev="andrewinkler" type="update" date="2018-10-05">
 				Compiled with Java 10.
 			</action>
+			<action dev="andrewinkler" type="update" date="2019-03-15">
+				Compiled with Java 11.
+			</action>
 			<action dev="andrewinkler" type="fix" date="2019-02-09">
 				FIX: Seaching for 'unknown location' with the wrong ID.
 			</action>
