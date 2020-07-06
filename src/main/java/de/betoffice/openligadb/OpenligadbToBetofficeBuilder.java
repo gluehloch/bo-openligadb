@@ -23,6 +23,12 @@
 
 package de.betoffice.openligadb;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
 import de.msiggi.sportsdata.webservices.ArrayOfMatchResult;
 import de.msiggi.sportsdata.webservices.MatchResult;
 import de.msiggi.sportsdata.webservices.Matchdata;
@@ -37,11 +43,22 @@ import de.winkler.betoffice.storage.Team;
  */
 public class OpenligadbToBetofficeBuilder {
 
-    public static Game buildGame(Matchdata match, Team boHomeTeam,
-            Team boGuestTeam) {
-
+    public static ZonedDateTime toZonedDateTime(Calendar calendar) {
+        TimeZone timeZone = calendar.getTimeZone();
+        ZoneId zone = timeZone.toZoneId();
+        Date time = calendar.getTime();
+        return time.toInstant().atZone(zone);
+    }
+    
+    public static Game buildGame(Matchdata match, Team boHomeTeam, Team boGuestTeam) {
         Game boMatch = new Game();
-        boMatch.setDateTime(match.getMatchDateTime().getTime());
+        
+        TimeZone timeZone = match.getMatchDateTime().getTimeZone();
+        ZoneId zone = timeZone.toZoneId();
+        Date time = match.getMatchDateTime().getTime();
+        ZonedDateTime zdt = time.toInstant().atZone(zone);
+
+        boMatch.setDateTime(zdt);
         boMatch.setHomeTeam(boHomeTeam);
         boMatch.setGuestTeam(boGuestTeam);
 
@@ -49,7 +66,7 @@ public class OpenligadbToBetofficeBuilder {
     }
 
     public static Game updateGameDate(Game game, Matchdata match) {
-        game.setDateTime(match.getMatchDateTime().getTime());
+        game.setDateTime(toZonedDateTime(match.getMatchDateTime()));
         return game;
     }
 

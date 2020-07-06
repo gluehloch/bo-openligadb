@@ -23,7 +23,7 @@
 
 package de.betoffice.service;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -45,6 +45,7 @@ import de.winkler.betoffice.dao.PlayerDao;
 import de.winkler.betoffice.dao.RoundDao;
 import de.winkler.betoffice.dao.SeasonDao;
 import de.winkler.betoffice.dao.TeamDao;
+import de.winkler.betoffice.service.DateTimeProvider;
 import de.winkler.betoffice.storage.Game;
 import de.winkler.betoffice.storage.GameList;
 import de.winkler.betoffice.storage.Goal;
@@ -106,9 +107,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     private OpenligadbRoundFinder openligadbRoundFinder;
 
     @Autowired
-    public void setOpenligadbRoundFinder(
-            OpenligadbRoundFinder _openligadbRoundFinder) {
-
+    public void setOpenligadbRoundFinder(OpenligadbRoundFinder _openligadbRoundFinder) {
         openligadbRoundFinder = _openligadbRoundFinder;
     }
 
@@ -144,8 +143,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     private LocationSynchronize locationSynchronize;
 
     @Autowired
-    public void setLocationSynchronize(
-            LocationSynchronize _locationSynchronize) {
+    public void setLocationSynchronize(LocationSynchronize _locationSynchronize) {
         locationSynchronize = _locationSynchronize;
     }
 
@@ -156,6 +154,15 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     @Autowired
     public void setPlayerSynchronize(PlayerSynchronize _playerSynchronize) {
         playerSynchronize = _playerSynchronize;
+    }
+    
+    // -- dateTimeProvider ---------------------------------------------------
+
+    private DateTimeProvider dateTimeProvider;
+    
+    @Autowired
+    public void setDateTimeProvider(DateTimeProvider _dateTimeProvider) {
+        dateTimeProvider = _dateTimeProvider;
     }
 
     // ------------------------------------------------------------------------
@@ -291,8 +298,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             matchDao.save(matchUnderWork);
         }
 
-        Date bestRoundDate = roundUnderWork.findBestRoundDate();
-        roundUnderWork.setDateTime(bestRoundDate);
+        LocalDate bestRoundDate = roundUnderWork.findBestRoundDate();
+        roundUnderWork.setDateTime(bestRoundDate.atTime(0, 0).atZone(dateTimeProvider.defaultZoneId()));
         roundDao.save(roundUnderWork);
     }
 
@@ -328,7 +335,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         GameList newRound = new GameList();
         newRound.setGroup(bundesliga);
         newRound.setSeason(season);
-        newRound.setDateTime(new Date()); // Placeholder. Will be set later...
+        newRound.setDateTime(dateTimeProvider.currentDateTime()); // Placeholder. Will be set later...
         season.addGameList(newRound);
         roundDao.save(newRound);
         return newRound;
