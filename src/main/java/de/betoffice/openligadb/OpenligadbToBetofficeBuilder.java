@@ -53,9 +53,9 @@ public class OpenligadbToBetofficeBuilder {
     public static Game buildGame(Matchdata match, Team boHomeTeam, Team boGuestTeam) {
         Game boMatch = new Game();
         
-        TimeZone timeZone = match.getMatchDateTime().getTimeZone();
+        TimeZone timeZone = match.getMatchDateTimeUTC().getTimeZone();
         ZoneId zone = timeZone.toZoneId();
-        Date time = match.getMatchDateTime().getTime();
+        Date time = match.getMatchDateTimeUTC().getTime();
         ZonedDateTime zdt = time.toInstant().atZone(zone);
 
         boMatch.setDateTime(zdt);
@@ -66,7 +66,7 @@ public class OpenligadbToBetofficeBuilder {
     }
 
     public static Game updateGameDate(Game game, Matchdata match) {
-        game.setDateTime(toZonedDateTime(match.getMatchDateTime()));
+        game.setDateTime(toZonedDateTime(match.getMatchDateTimeUTC()));
         return game;
     }
 

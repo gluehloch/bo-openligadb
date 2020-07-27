@@ -7,8 +7,10 @@
 	<body>
 
 		<!-- Under development -->
+
+		<!-- RELEASED -->
 		<release version="betoffice-openligadb 1.5.7"
-			date="2020-07-04" description="ZonedDateTime">
+			date="2020-07-27" description="ZonedDateTime">
 			<action dev="andrewinkler" type="fix" date="2020-07-04">
 				Fix for the date and time problem with timezones.
 			</action>
