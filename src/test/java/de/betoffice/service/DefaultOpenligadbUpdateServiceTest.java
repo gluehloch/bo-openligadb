@@ -23,29 +23,25 @@
 
 package de.betoffice.service;
 
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 /**
  * Test for {@link DefaultOpenligadbUpdateService}.
  *
  * @author Andre Winkler
+ *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "/betoffice-datasource.xml",
-        "/betoffice-persistence.xml", "/test-mysql-piratestest.xml",
-        "/openligadbupdateservice.xml" })
+@SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
 public class DefaultOpenligadbUpdateServiceTest {
 
     @Autowired
     private OpenligadbUpdateService openligadbUpdateService;
 
-    @Ignore
+    @Disabled
     @Test
     @Rollback(false)
     public void testOpenligadbUpdateService() {

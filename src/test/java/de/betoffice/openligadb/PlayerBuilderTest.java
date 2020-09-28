@@ -25,7 +25,7 @@ package de.betoffice.openligadb;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Some player names contain some unusual characters. Theses should be removed.
@@ -36,10 +36,8 @@ public class PlayerBuilderTest {
 
     @Test
     public void testRemoveCarriageReturn() {
-        assertThat(PlayerBuilder.normalize("Andre\rWinkler"))
-                .isEqualTo("Andre Winkler");
-        assertThat(PlayerBuilder.normalize("Andre\r\nWinkler"))
-                .isEqualTo("Andre Winkler");
+        assertThat(PlayerBuilder.normalize("Andre\rWinkler")).isEqualTo("Andre Winkler");
+        assertThat(PlayerBuilder.normalize("Andre\r\nWinkler")).isEqualTo("Andre Winkler");
     }
 
 }

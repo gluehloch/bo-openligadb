@@ -30,8 +30,8 @@ import java.util.Locale;
 
 import org.apache.xmlbeans.XmlCalendar;
 import org.joda.time.DateTime;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test for {@link OpenligadbTimeTransformer}.
@@ -47,7 +47,7 @@ public class OpenligadbTimeTransformerTest {
         assertThat(dt).isEqualTo(new DateTime(2014, 8, 22, 20, 30));
     }
 
-    @Ignore
+    @Disabled
     @Test
     public void testJavaUtilCalendar() {
         Calendar calendar = new XmlCalendar();

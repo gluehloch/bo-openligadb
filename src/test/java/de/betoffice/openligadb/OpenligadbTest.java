@@ -23,8 +23,9 @@
 
 package de.betoffice.openligadb;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import de.msiggi.sportsdata.webservices.ArrayOfGroup;
 import de.msiggi.sportsdata.webservices.GetAvailGroupsDocument;
@@ -38,9 +39,10 @@ import de.msiggi.sportsdata.webservices.Group;
  *
  * @author Andre Winkler
  */
+@SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
 public class OpenligadbTest {
 
-    @Ignore
+    @Disabled
     @Test
     public void testws() throws Exception {
         SportsdataStub stub = new SportsdataStub();
@@ -64,8 +66,7 @@ public class OpenligadbTest {
         Group[] groupArray = getAvailGroupsResult.getGroupArray();
 
         for (Group group : groupArray) {
-            System.out.println("Group: " + group.getGroupID() + ", "
-                    + group.getGroupName());
+            System.out.println("Group: " + group.getGroupID() + ", " + group.getGroupName());
         }
     }
 

@@ -23,9 +23,7 @@
 
 package de.betoffice.openligadb;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -33,13 +31,11 @@ import java.util.Optional;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.jdbc.Work;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import de.betoffice.database.data.DeleteDatabase;
 import de.dbload.Dbload;
@@ -61,10 +57,8 @@ import de.winkler.betoffice.service.MasterDataManagerService;
  *
  * @author Andre Winkler
  */
-@Ignore
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "/betoffice-datasource.xml",
-        "/betoffice-persistence.xml", "/test-mysql-piratestest.xml" })
+@Disabled
+@SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
 public class OpenligadbTeamTest
         extends AbstractTransactionalJUnit4SpringContextTests {
 
@@ -114,7 +108,7 @@ public class OpenligadbTeamTest
         for (Team team : teams) {
             Optional<de.winkler.betoffice.storage.Team> boTeam = masterDataManagerService
                     .findTeamByOpenligaid(team.getTeamID());
-            assertThat(boTeam, notNullValue());
+            assertThat(boTeam).isNotNull();
 
             System.out.println(
                     boTeam.get().getId() + " | " + boTeam.get().getName()
@@ -140,7 +134,7 @@ public class OpenligadbTeamTest
         // "http://localhost:8088/mockSportsdataSoap12", "bl1", "2014", 1);
         Matchdata[] matchdataArray = roundFinder.findMatches("bl1", "2014", 1);
 
-        assertThat(matchdataArray.length, is(9));
+        assertThat(matchdataArray).hasSize(9);
 
         for (Matchdata matchdata : matchdataArray) {
             matchdata.getGroupID();
