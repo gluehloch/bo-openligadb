@@ -8,6 +8,13 @@
 
 		<!-- Under development -->
 
+        <!-- RELEASED -->
+        <release version="betoffice-openligadb 1.5.8" date="2020-10-07" description="ZonedDateTime">
+            <action dev="andrewinkler" type="update" date="2020-10-07">
+                Update to betoffice-storage-2.7.0.
+            </action>
+        </release>
+
 		<!-- RELEASED -->
 		<release version="betoffice-openligadb 1.5.7"
 			date="2020-07-27" description="ZonedDateTime">
