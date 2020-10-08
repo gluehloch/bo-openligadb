@@ -16,7 +16,7 @@ Content-Length: 13185
     "MatchDateTime": "2019-02-15T20:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4276,
-    "LeagueName": "1. Fußball-Bundesliga 2018/2019",
+    "LeagueName": "1. Fussball-Bundesliga 2018/2019",
     "MatchDateTimeUTC": "2019-02-15T19:30:00Z",
     "Group": {
       "GroupName": "22. Spieltag",
@@ -129,7 +129,7 @@ Content-Length: 13185
     "MatchDateTime": "2019-02-16T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4276,
-    "LeagueName": "1. Fußball-Bundesliga 2018/2019",
+    "LeagueName": "1. Fussball-Bundesliga 2018/2019",
     "MatchDateTimeUTC": "2019-02-16T14:30:00Z",
     "Group": {
       "GroupName": "22. Spieltag",
@@ -218,7 +218,7 @@ Content-Length: 13185
     "MatchDateTime": "2019-02-16T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4276,
-    "LeagueName": "1. Fußball-Bundesliga 2018/2019",
+    "LeagueName": "1. Fussball-Bundesliga 2018/2019",
     "MatchDateTimeUTC": "2019-02-16T14:30:00Z",
     "Group": {
       "GroupName": "22. Spieltag",
@@ -270,7 +270,7 @@ Content-Length: 13185
     "MatchDateTime": "2019-02-16T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4276,
-    "LeagueName": "1. Fußball-Bundesliga 2018/2019",
+    "LeagueName": "1. Fussball-Bundesliga 2018/2019",
     "MatchDateTimeUTC": "2019-02-16T14:30:00Z",
     "Group": {
       "GroupName": "22. Spieltag",
@@ -359,7 +359,7 @@ Content-Length: 13185
     "MatchDateTime": "2019-02-16T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4276,
-    "LeagueName": "1. Fußball-Bundesliga 2018/2019",
+    "LeagueName": "1. Fussball-Bundesliga 2018/2019",
     "MatchDateTimeUTC": "2019-02-16T14:30:00Z",
     "Group": {
       "GroupName": "22. Spieltag",
@@ -472,7 +472,7 @@ Content-Length: 13185
     "MatchDateTime": "2019-02-16T18:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4276,
-    "LeagueName": "1. Fußball-Bundesliga 2018/2019",
+    "LeagueName": "1. Fussball-Bundesliga 2018/2019",
     "MatchDateTimeUTC": "2019-02-16T17:30:00Z",
     "Group": {
       "GroupName": "22. Spieltag",
@@ -549,7 +549,7 @@ Content-Length: 13185
     "MatchDateTime": "2019-02-17T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4276,
-    "LeagueName": "1. Fußball-Bundesliga 2018/2019",
+    "LeagueName": "1. Fussball-Bundesliga 2018/2019",
     "MatchDateTimeUTC": "2019-02-17T14:30:00Z",
     "Group": {
       "GroupName": "22. Spieltag",
@@ -565,9 +565,9 @@ Content-Length: 13185
     },
     "Team2": {
       "TeamId": 87,
-      "TeamName": "Borussia Mönchengladbach",
+      "TeamName": "Borussia M�nchengladbach",
       "ShortName": "M'gladbach",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_Mönchengladbach_logo.svg/630px-Borussia_Mönchengladbach_logo.svg.png",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Borussia_M�nchengladbach_logo.svg/630px-Borussia_M�nchengladbach_logo.svg.png",
       "TeamGroupName": null
     },
     "LastUpdateDateTime": "2018-12-22T21:11:01.63",
@@ -615,7 +615,7 @@ Content-Length: 13185
     "MatchDateTime": "2019-02-18T20:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4276,
-    "LeagueName": "1. Fußball-Bundesliga 2018/2019",
+    "LeagueName": "1. Fussball-Bundesliga 2018/2019",
     "MatchDateTimeUTC": "2019-02-18T19:30:00Z",
     "Group": {
       "GroupName": "22. Spieltag",
@@ -642,7 +642,7 @@ Content-Length: 13185
     "Goals": [],
     "Location": {
       "LocationID": 1111,
-      "LocationCity": "Nürnberg",
+      "LocationCity": "N�rnberg",
       "LocationStadium": "Max-Morlock-Stadion"
     },
     "NumberOfViewers": null

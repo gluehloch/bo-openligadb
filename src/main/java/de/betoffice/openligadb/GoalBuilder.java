@@ -34,20 +34,19 @@ import de.winkler.betoffice.storage.enums.GoalType;
  */
 public class GoalBuilder {
 
-    public static Goal build(
-            de.msiggi.sportsdata.webservices.Goal openligadbGoal) {
+    public static Goal build(de.betoffice.openligadb.json.Goal openligadbGoal) {
+        
         Goal boGoal = new Goal();
         boGoal.setOpenligaid(Long.valueOf(openligadbGoal.getGoalID()));
-        boGoal.setMinute(openligadbGoal.getGoalMatchMinute());
-        boGoal.setComment(openligadbGoal.getGoalComment());
-        boGoal.setResult(new GameResult(openligadbGoal.getGoalScoreTeam1(),
-                openligadbGoal.getGoalScoreTeam2()));
+        boGoal.setMinute(openligadbGoal.getMatchMinute());
+        boGoal.setComment(openligadbGoal.getComment().toString());
+        boGoal.setResult(new GameResult(openligadbGoal.getScoreTeam1(), openligadbGoal.getScoreTeam2()));
 
-        if (openligadbGoal.getGoalOvertime()) {
+        if (openligadbGoal.getIsOvertime()) {
             boGoal.setGoalType(GoalType.OVERTIME);
-        } else if (openligadbGoal.getGoalOwnGoal()) {
+        } else if (openligadbGoal.getIsOwnGoal()) {
             boGoal.setGoalType(GoalType.OWNGOAL);
-        } else if (openligadbGoal.getGoalPenalty()) {
+        } else if (openligadbGoal.getIsPenalty()) {
             boGoal.setGoalType(GoalType.PENALTY);
         } else {
             boGoal.setGoalType(GoalType.REGULAR);
