@@ -30,7 +30,7 @@ GET https://tippdiekistebier.de/betoffice-jweb/bo/office/season/list
 ### Liefert einer Meisterschaft inklusive der bekannten Spieltage
 GET https://tippdiekistebier.de/betoffice-jweb/bo/office/season/28
 
-#### Alle Gruppen zu einer Meisterschaft (hier WM 2018). Interessant bei Welt- oder Europameiterschaft.
+#### Alle Gruppen zu einer Meisterschaft (hier WM 2018). Interessant bei Welt- oder Europameisterschaft.
 https://tippdiekistebier.de/betoffice-jweb/bo/office/season/27/group/all
 
 #### Alle Spieltage des Achtelfinals der WM 2018

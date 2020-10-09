@@ -1,0 +1,842 @@
+[
+  {
+    "MatchID": 58603,
+    "MatchDateTime": "2020-10-02T20:30:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-02T18:30:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 80,
+      "TeamName": "1. FC Union Berlin",
+      "ShortName": "Union Berlin",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/1._FC_Union_Berlin_1966_-_1990.gif/320px-1._FC_Union_Berlin_1966_-_1990.gif",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 81,
+      "TeamName": "1. FSV Mainz 05",
+      "ShortName": "FSV Mainz",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Logo_Mainz_05.svg/1099px-Logo_Mainz_05.svg.png",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-02T22:18:35.967",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92260,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 4,
+        "PointsTeam2": 0,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92261,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 1,
+        "PointsTeam2": 0,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [
+      {
+        "GoalID": 84799,
+        "ScoreTeam1": 1,
+        "ScoreTeam2": 0,
+        "MatchMinute": 13,
+        "GoalGetterID": 16255,
+        "GoalGetterName": "Max Kruse",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84801,
+        "ScoreTeam1": 2,
+        "ScoreTeam2": 0,
+        "MatchMinute": 49,
+        "GoalGetterID": 17840,
+        "GoalGetterName": "Marcus Ingvartsen",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84802,
+        "ScoreTeam1": 3,
+        "ScoreTeam2": 0,
+        "MatchMinute": 63,
+        "GoalGetterID": 374,
+        "GoalGetterName": "M. Friedrich",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84803,
+        "ScoreTeam1": 4,
+        "ScoreTeam2": 0,
+        "MatchMinute": 64,
+        "GoalGetterID": 14577,
+        "GoalGetterName": "Joel Pohjanpalo",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      }
+    ],
+    "Location": {
+      "LocationID": 82,
+      "LocationCity": "Berlin",
+      "LocationStadium": "Alte Försterei"
+    },
+    "NumberOfViewers": 4500
+  },
+  {
+    "MatchID": 58596,
+    "MatchDateTime": "2020-10-03T15:30:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-03T13:30:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 7,
+      "TeamName": "Borussia Dortmund",
+      "ShortName": "Dortmund",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/240px-Borussia_Dortmund_logo.svg.png",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 112,
+      "TeamName": "SC Freiburg",
+      "ShortName": "SC Freiburg",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/de/thumb/f/f1/SC-Freiburg_Logo-neu.svg/739px-SC-Freiburg_Logo-neu.svg.png",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-03T17:25:03.557",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92280,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 4,
+        "PointsTeam2": 0,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92281,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 1,
+        "PointsTeam2": 0,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [
+      {
+        "GoalID": 84834,
+        "ScoreTeam1": 1,
+        "ScoreTeam2": 0,
+        "MatchMinute": 31,
+        "GoalGetterID": 17905,
+        "GoalGetterName": "Haaland",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84835,
+        "ScoreTeam1": 2,
+        "ScoreTeam2": 0,
+        "MatchMinute": 47,
+        "GoalGetterID": 12320,
+        "GoalGetterName": "Can",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84838,
+        "ScoreTeam1": 3,
+        "ScoreTeam2": 0,
+        "MatchMinute": 66,
+        "GoalGetterID": 17905,
+        "GoalGetterName": "Haaland",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84842,
+        "ScoreTeam1": 4,
+        "ScoreTeam2": 0,
+        "MatchMinute": 92,
+        "GoalGetterID": 18099,
+        "GoalGetterName": "Passlack",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      }
+    ],
+    "Location": {
+      "LocationID": 184,
+      "LocationCity": "Dortmund",
+      "LocationStadium": "Signal-Iduna-Park"
+    },
+    "NumberOfViewers": 11500
+  },
+  {
+    "MatchID": 58597,
+    "MatchDateTime": "2020-10-03T15:30:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-03T13:30:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 91,
+      "TeamName": "Eintracht Frankfurt",
+      "ShortName": "Frankfurt",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Eintracht_Frankfurt_Logo.svg/1024px-Eintracht_Frankfurt_Logo.svg.png",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 123,
+      "TeamName": "TSG 1899 Hoffenheim",
+      "ShortName": "Hoffenheim",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/TSG_Logo-Standard_4c.png",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-03T17:25:06.117",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92282,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 2,
+        "PointsTeam2": 1,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92283,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 0,
+        "PointsTeam2": 1,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [
+      {
+        "GoalID": 84829,
+        "ScoreTeam1": 0,
+        "ScoreTeam2": 1,
+        "MatchMinute": 18,
+        "GoalGetterID": 14873,
+        "GoalGetterName": "Kramaric",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84836,
+        "ScoreTeam1": 1,
+        "ScoreTeam2": 1,
+        "MatchMinute": 54,
+        "GoalGetterID": 17678,
+        "GoalGetterName": "Kamada",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84839,
+        "ScoreTeam1": 2,
+        "ScoreTeam2": 1,
+        "MatchMinute": 71,
+        "GoalGetterID": 6795,
+        "GoalGetterName": "Dost",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      }
+    ],
+    "Location": null,
+    "NumberOfViewers": null
+  },
+  {
+    "MatchID": 58598,
+    "MatchDateTime": "2020-10-03T15:30:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-03T13:30:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 65,
+      "TeamName": "1. FC Köln",
+      "ShortName": "1. FC Köln",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/FC_Cologne_logo.svg/901px-FC_Cologne_logo.svg.png",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 87,
+      "TeamName": "Borussia Mönchengladbach",
+      "ShortName": "Gladbach",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/8/81/Borussia_Mönchengladbach_logo.svg",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-03T17:25:13.12",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92284,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 1,
+        "PointsTeam2": 3,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92285,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 0,
+        "PointsTeam2": 2,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [
+      {
+        "GoalID": 84827,
+        "ScoreTeam1": 0,
+        "ScoreTeam2": 1,
+        "MatchMinute": 14,
+        "GoalGetterID": 16907,
+        "GoalGetterName": "A.Plea",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84828,
+        "ScoreTeam1": 0,
+        "ScoreTeam2": 2,
+        "MatchMinute": 16,
+        "GoalGetterID": 17738,
+        "GoalGetterName": "Lainer",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84837,
+        "ScoreTeam1": 0,
+        "ScoreTeam2": 3,
+        "MatchMinute": 56,
+        "GoalGetterID": 637,
+        "GoalGetterName": "Stindl",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84841,
+        "ScoreTeam1": 1,
+        "ScoreTeam2": 3,
+        "MatchMinute": 84,
+        "GoalGetterID": 16560,
+        "GoalGetterName": "Rexhbecaj",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      }
+    ],
+    "Location": null,
+    "NumberOfViewers": null
+  },
+  {
+    "MatchID": 58602,
+    "MatchDateTime": "2020-10-03T15:30:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-03T13:30:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 16,
+      "TeamName": "VfB Stuttgart",
+      "ShortName": "Stuttgart",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/VfB_Stuttgart_1893_Logo.svg/921px-VfB_Stuttgart_1893_Logo.svg.png",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 6,
+      "TeamName": "Bayer Leverkusen",
+      "ShortName": "Leverkusen",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/de/thumb/f/f7/Bayer_Leverkusen_Logo.svg/1280px-Bayer_Leverkusen_Logo.svg.png",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-03T17:25:17.497",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92286,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 1,
+        "PointsTeam2": 1,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92287,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 0,
+        "PointsTeam2": 1,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [
+      {
+        "GoalID": 84826,
+        "ScoreTeam1": 0,
+        "ScoreTeam2": 1,
+        "MatchMinute": 7,
+        "GoalGetterID": 14689,
+        "GoalGetterName": "Schick",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": ""
+      },
+      {
+        "GoalID": 84840,
+        "ScoreTeam1": 1,
+        "ScoreTeam2": 1,
+        "MatchMinute": 76,
+        "GoalGetterID": 18082,
+        "GoalGetterName": "Kalajdzic",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      }
+    ],
+    "Location": null,
+    "NumberOfViewers": null
+  },
+  {
+    "MatchID": 58604,
+    "MatchDateTime": "2020-10-03T15:30:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-03T13:30:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 134,
+      "TeamName": "Werder Bremen",
+      "ShortName": "Bremen",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/SV-Werder-Bremen-Logo.svg/681px-SV-Werder-Bremen-Logo.svg.png",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 83,
+      "TeamName": "Arminia Bielefeld",
+      "ShortName": "Bielefeld",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/de/thumb/e/e5/Logo_Arminia_Bielefeld.svg/1024px-Logo_Arminia_Bielefeld.svg.png",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-03T19:59:35.26",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92288,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 1,
+        "PointsTeam2": 0,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92289,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 1,
+        "PointsTeam2": 0,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [
+      {
+        "GoalID": 84833,
+        "ScoreTeam1": 1,
+        "ScoreTeam2": 0,
+        "MatchMinute": 27,
+        "GoalGetterID": 2125,
+        "GoalGetterName": "Bittencourt",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      }
+    ],
+    "Location": null,
+    "NumberOfViewers": null
+  },
+  {
+    "MatchID": 58601,
+    "MatchDateTime": "2020-10-03T18:30:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-03T16:30:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 1635,
+      "TeamName": "RB Leipzig",
+      "ShortName": "RBL",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/0/04/RB_Leipzig_2014_logo.svg/800px-RB_Leipzig_2014_logo.svg.png",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 9,
+      "TeamName": "FC Schalke 04",
+      "ShortName": "Schalke 04",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/FC_Schalke_04_Logo.svg",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-03T20:21:20.303",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92290,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 4,
+        "PointsTeam2": 0,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92291,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 3,
+        "PointsTeam2": 0,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [
+      {
+        "GoalID": 84843,
+        "ScoreTeam1": 1,
+        "ScoreTeam2": 0,
+        "MatchMinute": 31,
+        "GoalGetterID": 18100,
+        "GoalGetterName": "Bozdogan",
+        "IsPenalty": false,
+        "IsOwnGoal": true,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84844,
+        "ScoreTeam1": 2,
+        "ScoreTeam2": 0,
+        "MatchMinute": 35,
+        "GoalGetterID": 17949,
+        "GoalGetterName": "Angelino",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84845,
+        "ScoreTeam1": 3,
+        "ScoreTeam2": 0,
+        "MatchMinute": 45,
+        "GoalGetterID": 10920,
+        "GoalGetterName": "Orban",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84846,
+        "ScoreTeam1": 4,
+        "ScoreTeam2": 0,
+        "MatchMinute": 80,
+        "GoalGetterID": 6761,
+        "GoalGetterName": "Halstenberg",
+        "IsPenalty": true,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      }
+    ],
+    "Location": {
+      "LocationID": 478,
+      "LocationCity": "Leipzig",
+      "LocationStadium": "Red Bull Arena"
+    },
+    "NumberOfViewers": 8500
+  },
+  {
+    "MatchID": 58605,
+    "MatchDateTime": "2020-10-04T15:30:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-04T13:30:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 131,
+      "TeamName": "VfL Wolfsburg",
+      "ShortName": "Wolfsburg",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Logo-VfL-Wolfsburg.svg/1024px-Logo-VfL-Wolfsburg.svg.png",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 95,
+      "TeamName": "FC Augsburg",
+      "ShortName": "Augsburg",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/de/b/b5/Logo_FC_Augsburg.svg",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-04T17:23:45.08",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92313,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 0,
+        "PointsTeam2": 0,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92314,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 0,
+        "PointsTeam2": 0,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [],
+    "Location": null,
+    "NumberOfViewers": null
+  },
+  {
+    "MatchID": 58595,
+    "MatchDateTime": "2020-10-04T18:00:00",
+    "TimeZoneID": "W. Europe Standard Time",
+    "LeagueId": 4442,
+    "LeagueName": "1. Fußball-Bundesliga 2020/2021",
+    "MatchDateTimeUTC": "2020-10-04T16:00:00Z",
+    "Group": {
+      "GroupName": "3. Spieltag",
+      "GroupOrderID": 3,
+      "GroupID": 36488
+    },
+    "Team1": {
+      "TeamId": 40,
+      "TeamName": "FC Bayern",
+      "ShortName": "FC Bayern",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg/240px-Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg.png",
+      "TeamGroupName": null
+    },
+    "Team2": {
+      "TeamId": 54,
+      "TeamName": "Hertha BSC",
+      "ShortName": "Hertha BSC",
+      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Hertha_BSC_Logo_2012.svg/2858px-Hertha_BSC_Logo_2012.svg.png",
+      "TeamGroupName": null
+    },
+    "LastUpdateDateTime": "2020-10-04T19:54:29.01",
+    "MatchIsFinished": true,
+    "MatchResults": [
+      {
+        "ResultID": 92320,
+        "ResultName": "Endergebnis",
+        "PointsTeam1": 4,
+        "PointsTeam2": 3,
+        "ResultOrderID": 1,
+        "ResultTypeID": 2,
+        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "ResultID": 92321,
+        "ResultName": "Halbzeit",
+        "PointsTeam1": 1,
+        "PointsTeam2": 0,
+        "ResultOrderID": 2,
+        "ResultTypeID": 1,
+        "ResultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "Goals": [
+      {
+        "GoalID": 84941,
+        "ScoreTeam1": 1,
+        "ScoreTeam2": 0,
+        "MatchMinute": 40,
+        "GoalGetterID": 14563,
+        "GoalGetterName": "Robert Lewandowski",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84953,
+        "ScoreTeam1": 2,
+        "ScoreTeam2": 0,
+        "MatchMinute": 51,
+        "GoalGetterID": 14563,
+        "GoalGetterName": "Robert Lewandowski",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84961,
+        "ScoreTeam1": 2,
+        "ScoreTeam2": 1,
+        "MatchMinute": 60,
+        "GoalGetterID": 16985,
+        "GoalGetterName": "Jhon Cordoba",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84963,
+        "ScoreTeam1": 2,
+        "ScoreTeam2": 2,
+        "MatchMinute": 71,
+        "GoalGetterID": 16975,
+        "GoalGetterName": "Cunha, M.",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84965,
+        "ScoreTeam1": 3,
+        "ScoreTeam2": 2,
+        "MatchMinute": 85,
+        "GoalGetterID": 14563,
+        "GoalGetterName": "Robert Lewandowski",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84966,
+        "ScoreTeam1": 3,
+        "ScoreTeam2": 3,
+        "MatchMinute": 88,
+        "GoalGetterID": 18185,
+        "GoalGetterName": "Jessic Ngankam",
+        "IsPenalty": false,
+        "IsOwnGoal": false,
+        "IsOvertime": false,
+        "Comment": null
+      },
+      {
+        "GoalID": 84967,
+        "ScoreTeam1": 4,
+        "ScoreTeam2": 3,
+        "MatchMinute": 93,
+        "GoalGetterID": 1478,
+        "GoalGetterName": "Lewandowski",
+        "IsPenalty": true,
+        "IsOwnGoal": false,
+        "IsOvertime": true,
+        "Comment": null
+      }
+    ],
+    "Location": {
+      "LocationID": 34,
+      "LocationCity": "München",
+      "LocationStadium": "Allianz Arena"
+    },
+    "NumberOfViewers": null
+  }
+]

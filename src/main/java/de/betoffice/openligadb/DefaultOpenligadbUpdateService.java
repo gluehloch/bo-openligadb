@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -21,7 +21,7 @@
  * Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
-package de.betoffice.service;
+package de.betoffice.openligadb;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -31,13 +31,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.betoffice.openligadb.GoalBuilder;
-import de.betoffice.openligadb.LocationSynchronize;
-import de.betoffice.openligadb.OpenligadbConnectionException;
-import de.betoffice.openligadb.OpenligadbRoundFinder;
-import de.betoffice.openligadb.OpenligadbToBetofficeBuilder;
-import de.betoffice.openligadb.PlayerSynchronize;
-import de.msiggi.sportsdata.webservices.Matchdata;
+import de.betoffice.openligadb.json.OLDBGoal;
+import de.betoffice.openligadb.json.OLDBMatch;
 import de.winkler.betoffice.dao.GoalDao;
 import de.winkler.betoffice.dao.LocationDao;
 import de.winkler.betoffice.dao.MatchDao;
@@ -66,105 +61,42 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     private static final Logger LOG = LoggerFactory.make();
 
-    // -- teamDao -------------------------------------------------------------
-
-    private TeamDao teamDao;
-
     @Autowired
-    public void setTeamDao(TeamDao _teamDao) {
-        teamDao = _teamDao;
-    }
-
-    // -- seasonDao -----------------------------------------------------------
-
+    private TeamDao teamDao;
+    
+    @Autowired
     private SeasonDao seasonDao;
 
     @Autowired
-    public void setSeasonDao(SeasonDao _seasonDao) {
-        seasonDao = _seasonDao;
-    }
-
-    // -- roundDao ------------------------------------------------------------
-
     private RoundDao roundDao;
 
     @Autowired
-    public void setRoundDao(RoundDao _roundDao) {
-        roundDao = _roundDao;
-    }
-
-    // -- matchDao ------------------------------------------------------------
-
     private MatchDao matchDao;
 
     @Autowired
-    public void setMatchDao(MatchDao _matchDao) {
-        matchDao = _matchDao;
-    }
-
-    // -- openligadbRoundFinder -----------------------------------------------
-
     private OpenligadbRoundFinder openligadbRoundFinder;
 
     @Autowired
-    public void setOpenligadbRoundFinder(OpenligadbRoundFinder _openligadbRoundFinder) {
-        openligadbRoundFinder = _openligadbRoundFinder;
-    }
+    private OpenligadbToBetofficeBuilder openligadbToBetofficeBuilder;
 
-    // -- locationDao ---------------------------------------------------------
-
+    @Autowired
     private LocationDao locationDao;
 
     @Autowired
-    public void setLocationDao(LocationDao _locationDao) {
-        locationDao = _locationDao;
-    }
-
-    // -- playerDao -----------------------------------------------------------
-
     private PlayerDao playerDao;
 
     @Autowired
-    public void setPlayerDao(PlayerDao _playerDao) {
-        playerDao = _playerDao;
-    }
-
-    // -- goalDao -------------------------------------------------------------
-
     private GoalDao goalDao;
 
     @Autowired
-    public void setGoalDao(GoalDao _goalDao) {
-        goalDao = _goalDao;
-    }
-
-    // -- locationSynchronize -------------------------------------------------
-
     private LocationSynchronize locationSynchronize;
 
     @Autowired
-    public void setLocationSynchronize(LocationSynchronize _locationSynchronize) {
-        locationSynchronize = _locationSynchronize;
-    }
-
-    // -- playerSynchronize ---------------------------------------------------
-
     private PlayerSynchronize playerSynchronize;
 
     @Autowired
-    public void setPlayerSynchronize(PlayerSynchronize _playerSynchronize) {
-        playerSynchronize = _playerSynchronize;
-    }
-    
-    // -- dateTimeProvider ---------------------------------------------------
-
     private DateTimeProvider dateTimeProvider;
     
-    @Autowired
-    public void setDateTimeProvider(DateTimeProvider _dateTimeProvider) {
-        dateTimeProvider = _dateTimeProvider;
-    }
-
     // ------------------------------------------------------------------------
 
     @Override
@@ -198,14 +130,13 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         // TODO This works only with a single group per season.
         // --------------------------------------------------------------------
         Group bundesliga = season.getGroups().iterator().next();
-        Optional<GameList> roundAtIndex = roundDao.findRound(season,
-                roundIndex);
+        Optional<GameList> roundAtIndex = roundDao.findRound(season, roundIndex);
 
         GameList roundUnderWork = roundAtIndex.isPresent() ? roundAtIndex.get()
                 : createRound(season, bundesliga);
 
         // The round is persisted. May be i need an update here.
-        Matchdata[] matches = null;
+        OLDBMatch[] matches = null;
         try {
             matches = openligadbRoundFinder.findMatches(
                     season.getChampionshipConfiguration()
@@ -233,9 +164,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         }
 
         if (roundUnderWork.getOpenligaid() == null) {
-            roundUnderWork.setOpenligaid(Long.valueOf(matches[0].getGroupID()));
+            roundUnderWork.setOpenligaid(Long.valueOf(matches[0].getGroup().getGroupID()));
         } else {
-            long openligaGroupid = Long.valueOf(matches[0].getGroupID());
+            long openligaGroupid = Long.valueOf(matches[0].getGroup().getGroupID());
             if (openligaGroupid != roundUnderWork.getOpenligaid()) {
                 String error = String.format(
                         "Openligadb groupId=[%d] and the stored groupId of betoffice GameList [%d] are different.",
@@ -255,39 +186,37 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     seasonId, roundIndex);
         }
 
-        for (Matchdata match : matches) {
-            Team boHomeTeam = findBoTeam(match.getIdTeam1());
-            Team boGuestTeam = findBoTeam(match.getIdTeam2());
+        for (OLDBMatch match : matches) {
+            Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId());
+            Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId());
 
-            Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam,
-                    boGuestTeam);
+            Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
 
             Game matchUnderWork = boMatch.isPresent()
                     ? updateMatch(match, boMatch.get())
                     : createMatch(bundesliga, roundUnderWork, match, boHomeTeam,
                             boGuestTeam);
 
-            Optional<Location> boLocation = locationDao
-                    .findByOpenligaid(match.getLocation().getLocationID());
-
-            if (boLocation.isPresent()) {
-                matchUnderWork.setLocation(boLocation.get());
+            if (match.getLocation() != null) {
+                Optional<Location> boLocation = locationDao.findByOpenligaid(match.getLocation().getLocationID());
+    
+                if (boLocation.isPresent()) {
+                    matchUnderWork.setLocation(boLocation.get());
+                } else {
+                    Location unknwonLocation = locationDao.findById(Location.UNKNOWN_LOCATION_ID);
+                    matchUnderWork.setLocation(unknwonLocation);
+                }
             } else {
-                Location unknwonLocation = locationDao
-                        .findById(Location.UNKNOWN_LOCATION_ID);
+                Location unknwonLocation = locationDao.findById(Location.UNKNOWN_LOCATION_ID);
                 matchUnderWork.setLocation(unknwonLocation);
             }
 
-            for (de.OLDBGoal.sportsdata.webservices.Goal goal : match.getGoals()
-                    .getGoalArray()) {
-
-                Optional<Goal> boGoal = goalDao
-                        .findByOpenligaid(goal.getGoalID());
+            for (OLDBGoal goal : match.getGoals()) {
+                Optional<Goal> boGoal = goalDao.findByOpenligaid(goal.getGoalID());
 
                 if (!boGoal.isPresent()) {
                     Goal goalUnderWork = GoalBuilder.build(goal);
-                    Optional<Player> boPlayer = playerDao
-                            .findByOpenligaid(goal.getGoalGetterID());
+                    Optional<Player> boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
                     goalUnderWork.setGame(matchUnderWork);
                     matchUnderWork.addGoal(goalUnderWork);
                     goalUnderWork.setPlayer(boPlayer.get());
@@ -303,31 +232,30 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         roundDao.save(roundUnderWork);
     }
 
-    private Game updateMatch(Matchdata match, Game matchUnderWork) {
+    private Game updateMatch(OLDBMatch match, Game matchUnderWork) {
         if (matchUnderWork.getOpenligaid() == null) {
             matchUnderWork.setOpenligaid(Long.valueOf(match.getMatchID()));
-        } else if (matchUnderWork.getOpenligaid() != match.getMatchID()) {
+        } else if (matchUnderWork.getOpenligaid() != match.getMatchID().longValue()) {
             String error = String.format(
                     "Openligadb matchId=[%d] and stored matchId of betoffice game [%d] are different.",
                     match.getMatchID(), matchUnderWork.getOpenligaid());
             LOG.error(error);
             throw new IllegalStateException(error);
         }
-        OpenligadbToBetofficeBuilder.updateGameDate(matchUnderWork, match);
-        OpenligadbToBetofficeBuilder.updateGameResult(matchUnderWork, match);
+        openligadbToBetofficeBuilder.updateGameDate(matchUnderWork, match);
+        openligadbToBetofficeBuilder.updateGameResult(matchUnderWork, match);
         return matchUnderWork;
     }
 
     private Game createMatch(Group bundesliga, GameList roundUnderWork,
-            Matchdata match, Team boHomeTeam, Team boGuestTeam) {
+            OLDBMatch match, Team boHomeTeam, Team boGuestTeam) {
 
-        Game newMatch = OpenligadbToBetofficeBuilder.buildGame(match,
-                boHomeTeam, boGuestTeam);
+        Game newMatch = openligadbToBetofficeBuilder.buildGame(match, boHomeTeam, boGuestTeam);
         newMatch.setGroup(bundesliga);
         newMatch.setOpenligaid(Long.valueOf(match.getMatchID()));
         matchDao.save(newMatch);
         roundUnderWork.addGame(newMatch);
-        OpenligadbToBetofficeBuilder.updateGameResult(newMatch, match);
+        openligadbToBetofficeBuilder.updateGameResult(newMatch, match);
         return newMatch;
     }
 

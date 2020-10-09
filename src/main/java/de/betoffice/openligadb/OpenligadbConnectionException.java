@@ -33,7 +33,7 @@ public class OpenligadbConnectionException extends Exception {
 
     private static final long serialVersionUID = -4548631401619185205L;
 
-    public OpenligadbConnectionException(String message, Exception ex) {
+    public OpenligadbConnectionException(String message, Throwable ex) {
         super(message, ex);
     }
 

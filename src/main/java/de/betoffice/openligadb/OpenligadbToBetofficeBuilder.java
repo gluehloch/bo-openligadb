@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -23,12 +23,11 @@
 
 package de.betoffice.openligadb;
 
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import de.betoffice.openligadb.json.OLDBMatch;
 import de.betoffice.openligadb.json.OLDBMatchResult;
@@ -41,22 +40,20 @@ import de.winkler.betoffice.storage.Team;
  *
  * @author Andre Winkler
  */
+@Component
 public class OpenligadbToBetofficeBuilder {
 
-    public static ZonedDateTime toZonedDateTime(Calendar calendar) {
-        TimeZone timeZone = calendar.getTimeZone();
-        ZoneId zone = timeZone.toZoneId();
-        Date time = calendar.getTime();
-        return time.toInstant().atZone(zone);
+    private final DateTimeService dateTimeService;
+
+    @Autowired
+    public OpenligadbToBetofficeBuilder(DateTimeService dateTimeService) {
+        this.dateTimeService = dateTimeService;
     }
 
-    public static Game buildGame(OLDBMatch match, Team boHomeTeam, Team boGuestTeam) {
+    public Game buildGame(OLDBMatch match, Team boHomeTeam, Team boGuestTeam) {
         Game boMatch = new Game();
 
-        TimeZone timeZone = match.getMatchDateTimeUTC().getTimeZone();
-        ZoneId zone = timeZone.toZoneId();
-        Date time = match.getMatchDateTimeUTC().getTime();
-        ZonedDateTime zdt = time.toInstant().atZone(zone);
+        ZonedDateTime zdt = dateTimeService.toDate(match.getMatchDateTime());
 
         boMatch.setDateTime(zdt);
         boMatch.setHomeTeam(boHomeTeam);
@@ -65,8 +62,8 @@ public class OpenligadbToBetofficeBuilder {
         return boMatch;
     }
 
-    public static Game updateGameDate(Game game, OLDBMatch match) {
-        game.setDateTime(toZonedDateTime(match.getMatchDateTimeUTC()));
+    public Game updateGameDate(Game game, OLDBMatch match) {
+        game.setDateTime(dateTimeService.toDate(match.getMatchDateTime()));
         return game;
     }
 
@@ -79,7 +76,7 @@ public class OpenligadbToBetofficeBuilder {
      *            The openligadb match
      * @return The updated betoffice match
      */
-    public static Game updateGameResult(Game game, OLDBMatch matchData) {
+    public Game updateGameResult(Game game, OLDBMatch matchData) {
         game.setPlayed(matchData.getMatchIsFinished());
 
         List<OLDBMatchResult> matchResults = matchData.getMatchResults();

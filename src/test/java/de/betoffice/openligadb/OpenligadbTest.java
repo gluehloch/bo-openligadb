@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -25,14 +25,10 @@ package de.betoffice.openligadb;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import de.msiggi.sportsdata.webservices.ArrayOfGroup;
-import de.msiggi.sportsdata.webservices.GetAvailGroupsDocument;
-import de.msiggi.sportsdata.webservices.GetAvailGroupsDocument.GetAvailGroups;
-import de.msiggi.sportsdata.webservices.GetAvailGroupsResponseDocument;
-import de.msiggi.sportsdata.webservices.GetAvailGroupsResponseDocument.GetAvailGroupsResponse;
-import de.msiggi.sportsdata.webservices.Group;
+import de.betoffice.openligadb.json.OLDBMatch;
 
 /**
  * Team finder test.
@@ -41,32 +37,16 @@ import de.msiggi.sportsdata.webservices.Group;
  */
 @SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
 public class OpenligadbTest {
-
+ 
+    @Autowired
+    private OpenligadbRoundFinder openligadbRoundFinder;
+    
     @Disabled
     @Test
     public void testws() throws Exception {
-        SportsdataStub stub = new SportsdataStub();
-
-        GetAvailGroups getAvailGroups = GetAvailGroups.Factory.newInstance();
-        getAvailGroups.setLeagueSaison("2014");
-        getAvailGroups.setLeagueShortcut("bl1");
-
-        GetAvailGroupsDocument getAvailGroupsDocument = GetAvailGroupsDocument.Factory
-                .newInstance();
-        getAvailGroupsDocument.setGetAvailGroups(getAvailGroups);
-
-        GetAvailGroupsResponseDocument getAvailGroupsResponseDocument = stub
-                .getAvailGroups(getAvailGroupsDocument);
-
-        GetAvailGroupsResponse getAvailGroupsResponse = getAvailGroupsResponseDocument
-                .getGetAvailGroupsResponse();
-        ArrayOfGroup getAvailGroupsResult = getAvailGroupsResponse
-                .getGetAvailGroupsResult();
-
-        OLDBGroup[] groupArray = getAvailGroupsResult.getGroupArray();
-
-        for (OLDBGroup group : groupArray) {
-            System.out.println("Group: " + group.getGroupID() + ", " + group.getGroupName());
+        OLDBMatch[] matches = openligadbRoundFinder.findMatches("bl1", "2020", 1);
+        for (OLDBMatch match : matches) {
+            System.out.println("Match: " + match);
         }
     }
 

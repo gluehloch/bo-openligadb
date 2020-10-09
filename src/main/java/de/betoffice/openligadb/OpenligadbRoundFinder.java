@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -23,23 +23,18 @@
 
 package de.betoffice.openligadb;
 
-import java.rmi.RemoteException;
-
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 import de.betoffice.openligadb.json.OLDBMatch;
-import de.msiggi.sportsdata.webservices.ArrayOfMatchdata;
-import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument;
-import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument.GetMatchdataByGroupLeagueSaison;
-import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonResponseDocument;
-import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonResponseDocument.GetMatchdataByGroupLeagueSaisonResponse;
-import de.msiggi.sportsdata.webservices.Matchdata;
 import de.winkler.betoffice.util.LoggerFactory;
 
 /**
  * Call the openligadb webservice to get all matches of a round.
+ *
+ * Example: {@code https://www.openligadb.de/api/getmatchdata/bl1}
  *
  * @author Andre Winkler
  */
@@ -48,11 +43,11 @@ public class OpenligadbRoundFinder {
 
     private static final Logger LOG = LoggerFactory.make();
 
-    private String webserviceUrl;
+    @Autowired
+    private APIUrl apiUrl;
 
-    public void setWebserviceUrl(String _webserviceUrl) {
-        webserviceUrl = _webserviceUrl;
-    }
+    @Autowired
+    private RestTemplate restTemplate;
 
     // ------------------------------------------------------------------------
 
@@ -60,8 +55,8 @@ public class OpenligadbRoundFinder {
      * Find all matches of specfic league and group.
      *
      * @param webserviceUrl
-     *            The URL of openligadb´s websevice. If empty then take the
-     *            default URL.
+     *            The URL of openligadb´s websevice. If empty then take the default
+     *            URL.
      * @param leagueShortcut
      *            The openligadb league shortcut id.
      * @param leagueSeason
@@ -74,39 +69,16 @@ public class OpenligadbRoundFinder {
      * @throws OpenligadbConnectionException
      *             Connection and/or openligadb internal server problems
      */
-    public OLDBMatch[] findMatches(String leagueShortcut, String leagueSeason, int groupOrderId) throws OpenligadbConnectionException {
+    public OLDBMatch[] findMatches(String leagueShortcut, String leagueSeason, int groupOrderId)
+            throws OpenligadbConnectionException {
 
         try {
-            SportsdataStub stub = new SportsdataStub(webserviceUrl);
-            if (StringUtils.isEmpty(webserviceUrl)) {
-                stub = new SportsdataStub();
-            } else {
-                stub = new SportsdataStub(webserviceUrl);
-            }
-
-            GetMatchdataByGroupLeagueSaisonDocument getMatchdataByGroupLeagueSaison2 = GetMatchdataByGroupLeagueSaisonDocument.Factory
-                    .newInstance();
-            GetMatchdataByGroupLeagueSaison addNewGetMatchdataByGroupLeagueSaison = getMatchdataByGroupLeagueSaison2
-                    .addNewGetMatchdataByGroupLeagueSaison();
-
-            addNewGetMatchdataByGroupLeagueSaison
-                    .setLeagueShortcut(leagueShortcut);
-            addNewGetMatchdataByGroupLeagueSaison.setLeagueSaison(leagueSeason);
-            addNewGetMatchdataByGroupLeagueSaison.setGroupOrderID(groupOrderId);
-
-            GetMatchdataByGroupLeagueSaisonResponseDocument matchdataByGroupLeagueSaison = stub
-                    .getMatchdataByGroupLeagueSaison(
-                            getMatchdataByGroupLeagueSaison2);
-            GetMatchdataByGroupLeagueSaisonResponse getMatchdataByGroupLeagueSaisonResponse = matchdataByGroupLeagueSaison
-                    .getGetMatchdataByGroupLeagueSaisonResponse();
-            ArrayOfMatchdata getMatchdataByGroupLeagueSaisonResult = getMatchdataByGroupLeagueSaisonResponse
-                    .getGetMatchdataByGroupLeagueSaisonResult();
-            Matchdata[] matchdataArray = getMatchdataByGroupLeagueSaisonResult
-                    .getMatchdataArray();
-            return matchdataArray;
-        } catch (RemoteException ex) {
-            LOG.error("There is a problem with the openligadb webservice. "
-                    + "I catched a RemoteException: {}", ex.getMessage());
+            String url = apiUrl.getMatchData(leagueShortcut, leagueSeason, groupOrderId);
+            OLDBMatch[] matches = restTemplate.getForObject(url, OLDBMatch[].class);
+            return matches;
+        } catch (Throwable ex) {
+            LOG.error("There is a problem with the openligadb REST API. "
+                    + "I catched a Exception: {}", ex.getMessage());
             throw new OpenligadbConnectionException(ex.getMessage(), ex);
         }
     }

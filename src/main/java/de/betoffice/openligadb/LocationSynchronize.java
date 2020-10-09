@@ -65,7 +65,7 @@ public class LocationSynchronize {
     public void sync(OLDBMatch match) {
         LOG.info("Location sync: {}:{}", new Object[] { match.getTeam1().getTeamName(), match.getTeam2().getTeamName() });
 
-        if (match.getLocation().getLocationID() == 0) {
+        if (match.getLocation() == null || match.getLocation().getLocationID() == 0) {
 
             LOG.info(
                     "The match with openligadb ID=[{}] does not define a knwon "
