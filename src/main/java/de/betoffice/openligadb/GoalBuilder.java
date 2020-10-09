@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -23,6 +23,7 @@
 
 package de.betoffice.openligadb;
 
+import de.betoffice.openligadb.json.OLDBGoal;
 import de.winkler.betoffice.storage.GameResult;
 import de.winkler.betoffice.storage.Goal;
 import de.winkler.betoffice.storage.enums.GoalType;
@@ -34,8 +35,7 @@ import de.winkler.betoffice.storage.enums.GoalType;
  */
 public class GoalBuilder {
 
-    public static Goal build(de.betoffice.openligadb.json.Goal openligadbGoal) {
-        
+    public static Goal build(OLDBGoal openligadbGoal) {
         Goal boGoal = new Goal();
         boGoal.setOpenligaid(Long.valueOf(openligadbGoal.getGoalID()));
         boGoal.setMinute(openligadbGoal.getMatchMinute());

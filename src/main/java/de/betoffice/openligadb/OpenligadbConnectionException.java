@@ -1,7 +1,7 @@
 /*
  * ============================================================================
  * Project betoffice-openligadb
- * Copyright (c) 2000-2014 by Andre Winkler. All rights reserved.
+ * Copyright (c) 2000-2020 by Andre Winkler. All rights reserved.
  * ============================================================================
  *          GNU GENERAL PUBLIC LICENSE
  *  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION

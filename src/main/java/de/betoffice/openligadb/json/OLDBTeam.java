@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.*;
         "TeamIconUrl",
         "TeamGroupName"
 })
-public class Team1 {
+public class OLDBTeam {
 
     @JsonProperty("TeamId")
     private Integer teamId;

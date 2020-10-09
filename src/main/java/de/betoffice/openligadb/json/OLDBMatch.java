@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.*;
         "Location",
         "NumberOfViewers"
 })
-public class Match {
+public class OLDBMatch {
 
     @JsonProperty("MatchID")
     private Integer matchID;
@@ -39,21 +39,21 @@ public class Match {
     @JsonProperty("MatchDateTimeUTC")
     private String matchDateTimeUTC;
     @JsonProperty("Group")
-    private Group group;
+    private OLDBGroup group;
     @JsonProperty("Team1")
-    private Team1 team1;
+    private OLDBTeam team1;
     @JsonProperty("Team2")
-    private Team2 team2;
+    private OLDBTeam team2;
     @JsonProperty("LastUpdateDateTime")
     private String lastUpdateDateTime;
     @JsonProperty("MatchIsFinished")
     private Boolean matchIsFinished;
     @JsonProperty("MatchResults")
-    private List<MatchResult> matchResults = null;
+    private List<OLDBMatchResult> matchResults = null;
     @JsonProperty("Goals")
-    private List<Goal> goals = null;
+    private List<OLDBGoal> goals = null;
     @JsonProperty("Location")
-    private Location location;
+    private OLDBLocation location;
     @JsonProperty("NumberOfViewers")
     private Object numberOfViewers;
     @JsonIgnore
@@ -120,32 +120,32 @@ public class Match {
     }
 
     @JsonProperty("Group")
-    public Group getGroup() {
+    public OLDBGroup getGroup() {
         return group;
     }
 
     @JsonProperty("Group")
-    public void setGroup(Group group) {
+    public void setGroup(OLDBGroup group) {
         this.group = group;
     }
 
     @JsonProperty("Team1")
-    public Team1 getTeam1() {
+    public OLDBTeam getTeam1() {
         return team1;
     }
 
     @JsonProperty("Team1")
-    public void setTeam1(Team1 team1) {
+    public void setTeam1(OLDBTeam team1) {
         this.team1 = team1;
     }
 
     @JsonProperty("Team2")
-    public Team2 getTeam2() {
+    public OLDBTeam getTeam2() {
         return team2;
     }
 
     @JsonProperty("Team2")
-    public void setTeam2(Team2 team2) {
+    public void setTeam2(OLDBTeam team2) {
         this.team2 = team2;
     }
 
@@ -170,32 +170,32 @@ public class Match {
     }
 
     @JsonProperty("MatchResults")
-    public List<MatchResult> getMatchResults() {
+    public List<OLDBMatchResult> getMatchResults() {
         return matchResults;
     }
 
     @JsonProperty("MatchResults")
-    public void setMatchResults(List<MatchResult> matchResults) {
+    public void setMatchResults(List<OLDBMatchResult> matchResults) {
         this.matchResults = matchResults;
     }
 
     @JsonProperty("Goals")
-    public List<Goal> getGoals() {
+    public List<OLDBGoal> getGoals() {
         return goals;
     }
 
     @JsonProperty("Goals")
-    public void setGoals(List<Goal> goals) {
+    public void setGoals(List<OLDBGoal> goals) {
         this.goals = goals;
     }
 
     @JsonProperty("Location")
-    public Location getLocation() {
+    public OLDBLocation getLocation() {
         return location;
     }
 
     @JsonProperty("Location")
-    public void setLocation(Location location) {
+    public void setLocation(OLDBLocation location) {
         this.location = location;
     }
 

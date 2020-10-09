@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.*;
         "IsOvertime",
         "Comment"
 })
-public class Goal {
+public class OLDBGoal {
 
     @JsonProperty("GoalID")
     private Integer goalID;

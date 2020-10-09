@@ -278,7 +278,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 matchUnderWork.setLocation(unknwonLocation);
             }
 
-            for (de.msiggi.sportsdata.webservices.Goal goal : match.getGoals()
+            for (de.OLDBGoal.sportsdata.webservices.Goal goal : match.getGoals()
                     .getGoalArray()) {
 
                 Optional<Goal> boGoal = goalDao

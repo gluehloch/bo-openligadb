@@ -29,6 +29,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
 
+import de.betoffice.openligadb.json.OLDBMatch;
 import de.msiggi.sportsdata.webservices.ArrayOfMatchdata;
 import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument;
 import de.msiggi.sportsdata.webservices.GetMatchdataByGroupLeagueSaisonDocument.GetMatchdataByGroupLeagueSaison;
@@ -73,8 +74,7 @@ public class OpenligadbRoundFinder {
      * @throws OpenligadbConnectionException
      *             Connection and/or openligadb internal server problems
      */
-    public Matchdata[] findMatches(String leagueShortcut, String leagueSeason,
-            int groupOrderId) throws OpenligadbConnectionException {
+    public OLDBMatch[] findMatches(String leagueShortcut, String leagueSeason, int groupOrderId) throws OpenligadbConnectionException {
 
         try {
             SportsdataStub stub = new SportsdataStub(webserviceUrl);

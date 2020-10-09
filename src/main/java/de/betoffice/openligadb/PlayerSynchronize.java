@@ -30,8 +30,8 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.msiggi.sportsdata.webservices.Goal;
-import de.msiggi.sportsdata.webservices.Matchdata;
+import de.betoffice.openligadb.json.OLDBGoal;
+import de.betoffice.openligadb.json.OLDBMatch;
 import de.winkler.betoffice.dao.PlayerDao;
 import de.winkler.betoffice.storage.Player;
 import de.winkler.betoffice.util.LoggerFactory;
@@ -57,18 +57,18 @@ public class PlayerSynchronize {
 
     // ------------------------------------------------------------------------
 
-    public void sync(Matchdata[] matches) {
-        for (Matchdata match : matches) {
+    public void sync(OLDBMatch[] matches) {
+        for (OLDBMatch match : matches) {
             sync(match);
         }
     }
 
-    public void sync(Matchdata match) {
+    public void sync(OLDBMatch match) {
         LOG.info("Player/Goalgetter sync: {} - {}",
-                new Object[] { match.getNameTeam1(), match.getNameTeam2() });
+                new Object[] { match.getTeam1().getTeamName(), match.getTeam2().getTeamName() });
 
-        for (Goal goal : match.getGoals().getGoalArray()) {
-
+        for (OLDBGoal goal : match.getGoals()) {
+            
             if (goal.getGoalGetterID() == 0) {
 
                 LOG.info(
@@ -91,8 +91,7 @@ public class PlayerSynchronize {
 
             } else {
 
-                Optional<Player> player = playerDao
-                        .findByOpenligaid(goal.getGoalGetterID());
+                Optional<Player> player = playerDao.findByOpenligaid(goal.getGoalGetterID());
 
                 if (!player.isPresent()) {
 
@@ -113,7 +112,7 @@ public class PlayerSynchronize {
         }
     }
 
-    private boolean isEqual(Player boPlayer, Goal goal) {
+    private boolean isEqual(Player boPlayer, OLDBGoal goal) {
         return StringUtils.equalsIgnoreCase(boPlayer.getName(),
                 goal.getGoalGetterName());
     }

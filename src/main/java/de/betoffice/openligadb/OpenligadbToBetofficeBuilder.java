@@ -27,11 +27,11 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
-import de.msiggi.sportsdata.webservices.ArrayOfMatchResult;
-import de.msiggi.sportsdata.webservices.MatchResult;
-import de.msiggi.sportsdata.webservices.Matchdata;
+import de.betoffice.openligadb.json.OLDBMatch;
+import de.betoffice.openligadb.json.OLDBMatchResult;
 import de.winkler.betoffice.storage.Game;
 import de.winkler.betoffice.storage.GameResult;
 import de.winkler.betoffice.storage.Team;
@@ -49,10 +49,10 @@ public class OpenligadbToBetofficeBuilder {
         Date time = calendar.getTime();
         return time.toInstant().atZone(zone);
     }
-    
-    public static Game buildGame(Matchdata match, Team boHomeTeam, Team boGuestTeam) {
+
+    public static Game buildGame(OLDBMatch match, Team boHomeTeam, Team boGuestTeam) {
         Game boMatch = new Game();
-        
+
         TimeZone timeZone = match.getMatchDateTimeUTC().getTimeZone();
         ZoneId zone = timeZone.toZoneId();
         Date time = match.getMatchDateTimeUTC().getTime();
@@ -65,7 +65,7 @@ public class OpenligadbToBetofficeBuilder {
         return boMatch;
     }
 
-    public static Game updateGameDate(Game game, Matchdata match) {
+    public static Game updateGameDate(Game game, OLDBMatch match) {
         game.setDateTime(toZonedDateTime(match.getMatchDateTimeUTC()));
         return game;
     }
@@ -79,21 +79,18 @@ public class OpenligadbToBetofficeBuilder {
      *            The openligadb match
      * @return The updated betoffice match
      */
-    public static Game updateGameResult(Game game, Matchdata matchData) {
+    public static Game updateGameResult(Game game, OLDBMatch matchData) {
         game.setPlayed(matchData.getMatchIsFinished());
 
-        ArrayOfMatchResult matchResults = matchData.getMatchResults();
-        for (MatchResult matchResult : matchResults.getMatchResultArray()) {
-            switch (matchResult.getResultTypeId()) {
+        List<OLDBMatchResult> matchResults = matchData.getMatchResults();
+        for (OLDBMatchResult matchResult : matchResults) {
+            switch (matchResult.getResultTypeID()) {
             case 1: // nach 45 Minuten
-                GameResult result = new GameResult(
-                        matchResult.getPointsTeam1(),
-                        matchResult.getPointsTeam2());
+                GameResult result = GameResult.of(matchResult.getPointsTeam1(), matchResult.getPointsTeam2());
                 game.setHalfTimeGoals(result);
                 break;
             case 2: // nach 90 Minuten
-                game.setResult(matchResult.getPointsTeam1(),
-                        matchResult.getPointsTeam2());
+                game.setResult(matchResult.getPointsTeam1(), matchResult.getPointsTeam2());
                 break;
             default: // Undefined!
                 break;

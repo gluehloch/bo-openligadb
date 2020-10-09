@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.*;
         "ResultTypeID",
         "ResultDescription"
 })
-public class MatchResult {
+public class OLDBMatchResult {
 
     @JsonProperty("ResultID")
     private Integer resultID;

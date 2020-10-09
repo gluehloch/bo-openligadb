@@ -104,8 +104,8 @@ public class OpenligadbTeamTest
         ArrayOfTeam getTeamsByLeagueSaisonResult = teamsByLeagueSaison
                 .getGetTeamsByLeagueSaisonResponse()
                 .getGetTeamsByLeagueSaisonResult();
-        Team[] teams = getTeamsByLeagueSaisonResult.getTeamArray();
-        for (Team team : teams) {
+        OLDBTeam[] teams = getTeamsByLeagueSaisonResult.getTeamArray();
+        for (OLDBTeam team : teams) {
             Optional<de.winkler.betoffice.storage.Team> boTeam = masterDataManagerService
                     .findTeamByOpenligaid(team.getTeamID());
             assertThat(boTeam).isNotNull();
@@ -142,17 +142,17 @@ public class OpenligadbTeamTest
             matchdata.getIdTeam2();
             matchdata.getMatchIsFinished();
             ArrayOfMatchResult matchResults = matchdata.getMatchResults();
-            for (MatchResult matchResult : matchResults.getMatchResultArray()) {
+            for (OLDBMatchResult matchResult : matchResults.getMatchResultArray()) {
                 matchResult.getResultTypeId(); // 2: Nach 90 Minuten // 1: Nach
                                                // 45 Minuten
                 matchResult.getPointsTeam1(); // Tore Heimmannschaft
                 matchResult.getPointsTeam2(); // Tore Gastmannschaft
             }
-            Location location = matchdata.getLocation();
+            OLDBLocation location = matchdata.getLocation();
             location.getLocationID();
 
             ArrayOfGoal goals = matchdata.getGoals();
-            for (Goal goal : goals.getGoalArray()) {
+            for (OLDBGoal goal : goals.getGoalArray()) {
                 de.winkler.betoffice.storage.Goal boGoal = new de.winkler.betoffice.storage.Goal();
                 boGoal.getOpenligaid();
 

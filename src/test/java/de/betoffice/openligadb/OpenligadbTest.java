@@ -63,9 +63,9 @@ public class OpenligadbTest {
         ArrayOfGroup getAvailGroupsResult = getAvailGroupsResponse
                 .getGetAvailGroupsResult();
 
-        Group[] groupArray = getAvailGroupsResult.getGroupArray();
+        OLDBGroup[] groupArray = getAvailGroupsResult.getGroupArray();
 
-        for (Group group : groupArray) {
+        for (OLDBGroup group : groupArray) {
             System.out.println("Group: " + group.getGroupID() + ", " + group.getGroupName());
         }
     }

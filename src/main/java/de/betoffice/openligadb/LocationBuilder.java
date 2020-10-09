@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -23,7 +23,7 @@
 
 package de.betoffice.openligadb;
 
-import de.msiggi.sportsdata.webservices.Matchdata;
+import de.betoffice.openligadb.json.OLDBMatch;
 import de.winkler.betoffice.storage.Location;
 
 /**
@@ -40,10 +40,9 @@ public class LocationBuilder {
      *            An openligadb match
      * @return a betoffice location
      */
-    public static Location build(Matchdata match) {
+    public static Location build(OLDBMatch match) {
         Location boLocation = new Location();
-        boLocation.setOpenligaid(Long.valueOf(match.getLocation()
-                .getLocationID()));
+        boLocation.setOpenligaid(Long.valueOf(match.getLocation().getLocationID()));
         boLocation.setCity(match.getLocation().getLocationCity());
         boLocation.setName(match.getLocation().getLocationStadium());
         boLocation.setGeodat(null);

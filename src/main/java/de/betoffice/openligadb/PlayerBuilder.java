@@ -25,7 +25,7 @@ package de.betoffice.openligadb;
 
 import org.apache.commons.lang3.StringUtils;
 
-import de.msiggi.sportsdata.webservices.Goal;
+import de.betoffice.openligadb.json.OLDBGoal;
 import de.winkler.betoffice.storage.Player;
 
 /**
@@ -35,7 +35,7 @@ import de.winkler.betoffice.storage.Player;
  */
 public class PlayerBuilder {
 
-    public static Player build(Goal goal) {
+    public static Player build(OLDBGoal goal) {
         Player boPlayer = new Player();
         if (StringUtils.isEmpty(goal.getGoalGetterName())) {
             throw new IllegalArgumentException(

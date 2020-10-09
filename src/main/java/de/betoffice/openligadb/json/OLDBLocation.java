@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.*;
         "LocationCity",
         "LocationStadium"
 })
-public class Location {
+public class OLDBLocation {
 
     @JsonProperty("LocationID")
     private Integer locationID;

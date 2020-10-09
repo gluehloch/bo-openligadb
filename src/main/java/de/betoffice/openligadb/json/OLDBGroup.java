@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.*;
         "GroupOrderID",
         "GroupID"
 })
-public class Group {
+public class OLDBGroup {
 
     @JsonProperty("GroupName")
     private String groupName;

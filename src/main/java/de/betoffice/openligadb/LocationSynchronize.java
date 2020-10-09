@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -30,7 +30,7 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.msiggi.sportsdata.webservices.Matchdata;
+import de.betoffice.openligadb.json.OLDBMatch;
 import de.winkler.betoffice.dao.LocationDao;
 import de.winkler.betoffice.storage.Location;
 import de.winkler.betoffice.util.LoggerFactory;
@@ -56,15 +56,14 @@ public class LocationSynchronize {
 
     // ------------------------------------------------------------------------
 
-    public void sync(Matchdata[] matches) {
-        for (Matchdata match : matches) {
+    public void sync(OLDBMatch[] matches) {
+        for (OLDBMatch match : matches) {
             sync(match);
         }
     }
 
-    public void sync(Matchdata match) {
-        LOG.info("Location sync: {}:{}",
-                new Object[] { match.getNameTeam1(), match.getNameTeam2() });
+    public void sync(OLDBMatch match) {
+        LOG.info("Location sync: {}:{}", new Object[] { match.getTeam1().getTeamName(), match.getTeam2().getTeamName() });
 
         if (match.getLocation().getLocationID() == 0) {
 
@@ -105,7 +104,7 @@ public class LocationSynchronize {
         }
     }
 
-    private boolean isEqual(Location boLocation, Matchdata match) {
+    private boolean isEqual(Location boLocation, OLDBMatch match) {
         boolean name = StringUtils.equalsIgnoreCase(boLocation.getName(),
                 match.getLocation().getLocationStadium());
         boolean city = StringUtils.equalsIgnoreCase(boLocation.getCity(),
