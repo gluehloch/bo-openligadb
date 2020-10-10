@@ -145,8 +145,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                             .getOpenligaLeagueSeason(),
                     roundIndex + 1);
         } catch (OpenligadbConnectionException ex) {
-            LOG.error("Aborting the update process! {}", ex.getMessage(),
-                    ex.getCause());
+            LOG.error("Aborting the update process! {}", ex.getMessage(), ex.getCause());
             return;
         }
 
