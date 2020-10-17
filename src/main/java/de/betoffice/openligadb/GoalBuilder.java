@@ -39,7 +39,7 @@ public class GoalBuilder {
         Goal boGoal = new Goal();
         boGoal.setOpenligaid(Long.valueOf(openligadbGoal.getGoalID()));
         boGoal.setMinute(openligadbGoal.getMatchMinute());
-        boGoal.setComment(openligadbGoal.getComment().toString());
+        boGoal.setComment(openligadbGoal.getComment() == null ? null : openligadbGoal.getComment().toString());
         boGoal.setResult(new GameResult(openligadbGoal.getScoreTeam1(), openligadbGoal.getScoreTeam2()));
 
         if (openligadbGoal.getIsOvertime()) {

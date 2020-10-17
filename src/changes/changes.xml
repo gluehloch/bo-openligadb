@@ -11,6 +11,13 @@
 		<!-- RELEASED -->
         <release version="betoffice-openligadb 1.6.0" date="2020-10-11" description="From WSDL to REST/JSON.">
             <action dev="andrewinkler" type="update" date="2020-10-11">
+                GoalBuilder#build.java:42 NullPointerException.
+            </action>
+        </release>
+        		
+		<!-- RELEASED -->
+        <release version="betoffice-openligadb 1.6.0" date="2020-10-11" description="From WSDL to REST/JSON.">
+            <action dev="andrewinkler" type="update" date="2020-10-11">
                 Dropped WSDL service client and moved to REST/JSON as a client for openligadb.
                 Update to betoffice-storage-2.7.1.
             </action>
