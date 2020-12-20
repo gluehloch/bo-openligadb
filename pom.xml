@@ -14,7 +14,7 @@
 	<groupId>de.betoffice</groupId>
 	<artifactId>betoffice-openligadb</artifactId>
 	<packaging>jar</packaging>
-	<version>1.6.1</version>
+	<version>1.6.2</version>
 	<name>betoffice-openligadb</name>
 	<description>Betoffice openligadb connector</description>
 

@@ -120,8 +120,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
         Season season = seasonDao.findById(seasonId);
         if (season == null) {
-            String error = String.format("No season defined for id=[%s]",
-                    seasonId);
+            String error = String.format("No season defined for id=[%s]", seasonId);
             LOG.error(error);
             throw new IllegalArgumentException(error);
         }
@@ -139,10 +138,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         OLDBMatch[] matches = null;
         try {
             matches = openligadbRoundFinder.findMatches(
-                    season.getChampionshipConfiguration()
-                            .getOpenligaLeagueShortcut(),
-                    season.getChampionshipConfiguration()
-                            .getOpenligaLeagueSeason(),
+                    season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
+                    season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
                     roundIndex + 1);
         } catch (OpenligadbConnectionException ex) {
             LOG.error("Aborting the update process! {}", ex.getMessage(), ex.getCause());
@@ -153,10 +150,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             String error = String.format(
                     "Aborting the update process! "
                             + "No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
-                    season.getChampionshipConfiguration()
-                            .getOpenligaLeagueShortcut(),
-                    season.getChampionshipConfiguration()
-                            .getOpenligaLeagueSeason(),
+                    season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
+                    season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
                     roundIndex + 1);
             LOG.error(error);
             return;
@@ -188,17 +183,19 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         for (OLDBMatch match : matches) {
             Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId());
             Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId());
+            
+            boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());
+            boGuestTeam.setLogo(match.getTeam2().getTeamIconUrl());
 
             Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
 
             Game matchUnderWork = boMatch.isPresent()
                     ? updateMatch(match, boMatch.get())
-                    : createMatch(bundesliga, roundUnderWork, match, boHomeTeam,
-                            boGuestTeam);
+                    : createMatch(bundesliga, roundUnderWork, match, boHomeTeam, boGuestTeam);
 
             if (match.getLocation() != null) {
                 Optional<Location> boLocation = locationDao.findByOpenligaid(match.getLocation().getLocationID());
-    
+
                 if (boLocation.isPresent()) {
                     matchUnderWork.setLocation(boLocation.get());
                 } else {

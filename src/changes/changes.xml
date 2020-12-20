@@ -9,7 +9,14 @@
 		<!-- Under development -->
 		
 		<!-- RELEASED -->
-        <release version="betoffice-openligadb 1.6.0" date="2020-10-11" description="From WSDL to REST/JSON.">
+        <release version="betoffice-openligadb 1.6.2" date="2020-12-20" description="Team Logo">
+            <action dev="andrewinkler" type="update" date="2020-12-20">
+                Update team logo.
+            </action>
+        </release>
+		
+		<!-- RELEASED -->
+        <release version="betoffice-openligadb 1.6.1" date="2020-10-11" description="From WSDL to REST/JSON.">
             <action dev="andrewinkler" type="update" date="2020-10-11">
                 GoalBuilder#build.java:42 NullPointerException.
             </action>
