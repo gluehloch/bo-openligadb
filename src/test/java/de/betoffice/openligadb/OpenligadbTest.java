@@ -41,10 +41,10 @@ public class OpenligadbTest {
     @Autowired
     private OpenligadbRoundFinder openligadbRoundFinder;
     
-    @Disabled
+    //@Disabled
     @Test
     public void testws() throws Exception {
-        OLDBMatch[] matches = openligadbRoundFinder.findMatches("bl1", "2020", 1);
+        OLDBMatch[] matches = openligadbRoundFinder.findMatches("uefa-em-2020", "2020", 1);
         for (OLDBMatch match : matches) {
             System.out.println("Match: " + match);
         }
