@@ -128,6 +128,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         // --------------------------------------------------------------------
         // TODO This works only with a single group per season.
         // --------------------------------------------------------------------
+        // Fuer openligadb ist die Vorrunde ein Spieltag:
+        // https://www.openligadb.de/api/getmatchdata/uefa-em-2020/2020/1
+        // Liefert eine Liste mit allen Spielen der Vorrunde.
         Group bundesliga = season.getGroups().iterator().next();
         Optional<GameList> roundAtIndex = roundDao.findRound(season, roundIndex);
 
