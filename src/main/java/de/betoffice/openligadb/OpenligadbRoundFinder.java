@@ -54,9 +54,6 @@ public class OpenligadbRoundFinder {
     /**
      * Find all matches of specfic league and group.
      *
-     * @param webserviceUrl
-     *            The URL of openligadb´s websevice. If empty then take the default
-     *            URL.
      * @param leagueShortcut
      *            The openligadb league shortcut id.
      * @param leagueSeason
