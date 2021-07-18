@@ -7,7 +7,7 @@
 	<body>
 
 		<!-- Under development -->
-		<release version="betoffice-openligadb 1.6.3" date="2021-??-??" description="JDK 16">
+		<release version="betoffice-openligadb 1.6.3" date="2021-07-18" description="JDK 16">
             <action dev="andrewinkler" type="update" date="2021-06-13">
                 Update to JDK 16 and some dependencies (spring).
             </action>
