@@ -27,6 +27,8 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 import org.slf4j.Logger;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,9 +63,11 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     private static final Logger LOG = LoggerFactory.make();
 
+    private static final Marker MARKER = MarkerFactory.getMarker("OpenligadbUpdateService");
+
     @Autowired
     private TeamDao teamDao;
-    
+
     @Autowired
     private SeasonDao seasonDao;
 
@@ -96,7 +100,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     @Autowired
     private DateTimeProvider dateTimeProvider;
-    
+
     // ------------------------------------------------------------------------
 
     @Override
@@ -212,12 +216,24 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
             for (OLDBGoal goal : match.getGoals()) {
                 Optional<Goal> boGoal = goalDao.findByOpenligaid(goal.getGoalID());
+                Optional<Player> boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
 
-                if (!boGoal.isPresent()) {
-                    Goal goalUnderWork = GoalBuilder.build(goal);
-                    Optional<Player> boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
-                    goalUnderWork.setGame(matchUnderWork);
-                    matchUnderWork.addGoal(goalUnderWork);
+                if (boPlayer.isEmpty()) {
+                    LOG.warn(MARKER, "Spieler zu einem Tor nicht gefunden. Das Tor wird nicht abgespeichert. Spiel: "
+                            + match.getMatchDateTimeUTC()
+                            + " / "
+                            + match.getTeam1().getShortName()
+                            + ":"
+                            + match.getTeam2().getShortName());
+                } else {
+                    Goal goalUnderWork = null;
+                    if (boGoal.isPresent()) {
+                        goalUnderWork = GoalBuilder.update(goal, boGoal.get());
+                    } else {
+                        goalUnderWork = GoalBuilder.build(goal);
+                        goalUnderWork.setGame(matchUnderWork);
+                        matchUnderWork.addGoal(goalUnderWork);
+                    }
                     goalUnderWork.setPlayer(boPlayer.get());
                     goalDao.save(goalUnderWork);
                 }
