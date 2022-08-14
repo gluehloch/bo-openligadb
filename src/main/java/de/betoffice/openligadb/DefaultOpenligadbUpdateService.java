@@ -229,13 +229,25 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     Goal goalUnderWork = null;
                     if (boGoal.isPresent()) {
                         goalUnderWork = GoalBuilder.update(goal, boGoal.get());
+                        goalUnderWork.setPlayer(boPlayer.get());
+                        goalDao.save(goalUnderWork);                        
                     } else {
-                        goalUnderWork = GoalBuilder.build(goal);
-                        goalUnderWork.setGame(matchUnderWork);
-                        matchUnderWork.addGoal(goalUnderWork);
+                        if (goal.getMatchMinute() == null) {
+                            LOG.warn(MARKER, "Die Spielminute ist gleich 'null'. Das Tor wird nicht gespeichert. Spiel: "
+                                    + match.getMatchDateTimeUTC()
+                                    + " / "
+                                    + match.getTeam1().getShortName()
+                                    + ":"
+                                    + match.getTeam2().getShortName());
+                        } else {
+                            goalUnderWork = GoalBuilder.build(goal);
+                            goalUnderWork.setGame(matchUnderWork);
+                            matchUnderWork.addGoal(goalUnderWork);
+                            goalUnderWork.setPlayer(boPlayer.get());
+                            goalDao.save(goalUnderWork);                            
+                        }
                     }
-                    goalUnderWork.setPlayer(boPlayer.get());
-                    goalDao.save(goalUnderWork);
+
                 }
             }
 
