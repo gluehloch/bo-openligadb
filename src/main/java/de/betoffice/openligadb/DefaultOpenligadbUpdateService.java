@@ -213,6 +213,10 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 Location unknwonLocation = locationDao.findById(Location.UNKNOWN_LOCATION_ID);
                 matchUnderWork.setLocation(unknwonLocation);
             }
+            
+            // TODO Vor Update alle Tore entfernen und neu anlagen?
+            // matchUnderWork.removeAllGoals();
+            // matchDao.save(matchUnderWork);
 
             for (OLDBGoal goal : match.getGoals()) {
                 Optional<Goal> boGoal = goalDao.findByOpenligaid(goal.getGoalID());
