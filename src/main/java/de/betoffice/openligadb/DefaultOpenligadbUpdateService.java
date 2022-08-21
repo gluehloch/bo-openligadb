@@ -256,7 +256,6 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                             goalDao.save(goalUnderWork);                            
                         }
                     }
-
                 }
             }
 
