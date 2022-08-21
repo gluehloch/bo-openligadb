@@ -12,6 +12,9 @@
 				Issue: OpenligaDB API liefert nicht gegebene Tore aus. Diese sind mit der Minutenangabe
 				'null' versehen. Diese Angaben werden in betoffice nicht gespeichert.
 			</action>
+			<action dev="andrewinkler" type="add" date="2022-08-21" description="UPDATE">
+			    Adding WireMock for some stubbing of OpenligaDB.
+			</action> 
 		</release>
 
 		<!-- RELEASED -->

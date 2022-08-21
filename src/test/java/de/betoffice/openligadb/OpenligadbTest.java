@@ -54,6 +54,19 @@ public class OpenligadbTest {
             return Integer.valueOf(4711);
         });
     }
+    
+    @Test
+    void testXxx1() throws Exception {
+        openligadbRoundFinder.getApiUrl().setOpenligadbUrl("http://localhost:9001");
+        Result<OLDBMatch[],OpenligadbException> findMatches = openligadbRoundFinder.findMatches("bl1", "2022", 1);
+
+        findMatches.map(oldbMatches -> {
+            for (OLDBMatch match : oldbMatches) {
+                System.out.println("Match: " + match.getTeam1().getTeamName() + ":" +  match.getTeam2().getTeamName() + " " + match.getMatchResults().toString());
+            }
+            return Integer.valueOf(4711);
+        });
+    }    
 
     @Test
     void testXxx() {
@@ -66,5 +79,5 @@ public class OpenligadbTest {
             System.out.println("Match: " + match.getTeam1().getTeamName() + ":" +  match.getTeam2().getTeamName() + " " + match.getMatchResults().toString());
         }
     }
-    
+
 }
