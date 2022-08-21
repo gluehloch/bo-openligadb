@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2022 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -27,6 +27,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.web.client.RestTemplate;
 
 import de.betoffice.openligadb.json.OLDBMatch;
 
@@ -43,11 +44,27 @@ public class OpenligadbTest {
     
     @Disabled
     @Test
-    public void testws() throws Exception {
-        OLDBMatch[] matches = openligadbRoundFinder.findMatches("uefa-em-2020", "2020", 1);
+    void testws() throws Exception {
+        Result<OLDBMatch[],OpenligadbException> findMatches = openligadbRoundFinder.findMatches("uefa-em-2020", "2020", 1);
+
+        findMatches.map(oldbMatches -> {
+            for (OLDBMatch match : oldbMatches) {
+                System.out.println("Match: " + match.getTeam1().getTeamName() + ":" +  match.getTeam2().getTeamName() + " " + match.getMatchResults().toString());
+            }
+            return Integer.valueOf(4711);
+        });
+    }
+
+    @Test
+    void testXxx() {
+        APIUrl apiUrl = new APIUrl();
+        apiUrl.setOpenligadbUrl("http://localhost:9001");
+        RestTemplate restTemplate = new RestTemplate();
+        OLDBMatch[] matches = restTemplate.getForObject(apiUrl.getMatchData("bl1", "2022", 1), OLDBMatch[].class);
+
         for (OLDBMatch match : matches) {
             System.out.println("Match: " + match.getTeam1().getTeamName() + ":" +  match.getTeam2().getTeamName() + " " + match.getMatchResults().toString());
         }
     }
-
+    
 }

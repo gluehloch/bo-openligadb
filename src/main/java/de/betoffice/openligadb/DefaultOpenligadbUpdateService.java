@@ -142,16 +142,21 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 : createRound(season, bundesliga);
 
         // The round is persisted. May be i need an update here.
-        OLDBMatch[] matches = null;
+        Result<OLDBMatch[],OpenligadbException> matches = null;
         try {
             matches = openligadbRoundFinder.findMatches(
                     season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
                     season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
                     roundIndex + 1);
-        } catch (OpenligadbConnectionException ex) {
+        } catch (OpenligadbException ex) {
             LOG.error("Aborting the update process! {}", ex.getMessage(), ex.getCause());
             return;
         }
+        
+        Result<Object,OpenligadbException> map = matches.map(t -> {
+            int length = t.length;
+            return t.toString();
+            }).orElseThrow();
 
         if (matches == null || matches.length == 0) {
             String error = String.format(

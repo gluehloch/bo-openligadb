@@ -1,7 +1,7 @@
 /*
  * ============================================================================
  * Project betoffice-openligadb
- * Copyright (c) 2000-2020 by Andre Winkler. All rights reserved.
+ * Copyright (c) 2000-2022 by Andre Winkler. All rights reserved.
  * ============================================================================
  *          GNU GENERAL PUBLIC LICENSE
  *  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
@@ -29,11 +29,11 @@ package de.betoffice.openligadb;
  *
  * @author Andre Winkler
  */
-public class OpenligadbConnectionException extends Exception {
+public class OpenligadbException extends Exception {
 
     private static final long serialVersionUID = -4548631401619185205L;
 
-    public OpenligadbConnectionException(String message, Throwable ex) {
+    public OpenligadbException(String message, Throwable ex) {
         super(message, ex);
     }
 

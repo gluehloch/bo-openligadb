@@ -1,0 +1,115 @@
+{
+    "matchID": 63869,
+    "matchDateTime": "2022-08-07T17:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4562,
+    "leagueName": "1. Fußball-Bundesliga 2022/2023",
+    "leagueSeason": 2022,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-08-07T15:30:00Z",
+    "group": {
+      "groupName": "1. Spieltag",
+      "groupOrderID": 1,
+      "groupID": 39881
+    },
+    "team1": {
+      "teamId": 65,
+      "teamName": "1. FC Köln",
+      "shortName": "Köln",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/FC_Cologne_logo.svg/1200px-FC_Cologne_logo.svg.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 9,
+      "teamName": "FC Schalke 04",
+      "shortName": "Schalke",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/FC_Schalke_04_Logo.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-08-07T20:34:59.85",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 98459,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 98460,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 95099,
+        "scoreTeam1": 0,
+        "scoreTeam2": 0,
+        "matchMinute": null,
+        "goalGetterID": 18196,
+        "goalGetterName": "Zalazar",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 95100,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 49,
+        "goalGetterID": 19305,
+        "goalGetterName": "L.Kilian",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 95101,
+        "scoreTeam1": 2,
+        "scoreTeam2": 0,
+        "matchMinute": 65,
+        "goalGetterID": 18731,
+        "goalGetterName": "F. Kainz",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 95102,
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchMinute": 76,
+        "goalGetterID": 18968,
+        "goalGetterName": "M. Bülter",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 95103,
+        "scoreTeam1": 3,
+        "scoreTeam2": 1,
+        "matchMinute": 80,
+        "goalGetterID": 16424,
+        "goalGetterName": "Schwolow",
+        "isPenalty": false,
+        "isOwnGoal": true,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  }
