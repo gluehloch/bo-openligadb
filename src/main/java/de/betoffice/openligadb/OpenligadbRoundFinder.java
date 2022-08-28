@@ -110,4 +110,5 @@ public class OpenligadbRoundFinder {
     public APIUrl getApiUrl() {
         return apiUrl;
     }
+
 }
