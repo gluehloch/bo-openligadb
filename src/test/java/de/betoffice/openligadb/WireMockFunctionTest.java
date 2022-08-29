@@ -3,13 +3,14 @@ package de.betoffice.openligadb;
 import static com.github.tomakehurst.wiremock.client.WireMock.options;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import com.github.tomakehurst.wiremock.matching.UrlPattern;
 import com.github.tomakehurst.wiremock.stubbing.StubMapping;
 
 /*
 import com.github.tomakehurst.wiremock.client.WireMock;
 */
-@WireMock
+@WireMockTest
 public class WireMockFunctionTest {
 
     void xxx() {
