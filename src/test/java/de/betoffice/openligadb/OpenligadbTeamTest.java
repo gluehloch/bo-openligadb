@@ -23,11 +23,8 @@
 
 package de.betoffice.openligadb;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Optional;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.jdbc.Work;
@@ -58,7 +55,6 @@ public class OpenligadbTeamTest
     private MasterDataManagerService masterDataManagerService;
 
     public void prepareDatabase(final Class<?> clazz) {
-        // deleteDatabase();
         sessionFactory.getCurrentSession().doWork(new Work() {
             @Override
             public void execute(Connection connection) throws SQLException {
@@ -76,35 +72,6 @@ public class OpenligadbTeamTest
                 Dbload.read(connection, this.getClass(), "bo_team.dat");
             }
         });
-//
-//        SportsdataStub stub = new SportsdataStub(
-//                "http://localhost:8088/mockSportsdataSoap12");
-//        GetTeamsByLeagueSaisonDocument getTeamsByLeagueSaison42 = GetTeamsByLeagueSaisonDocument.Factory
-//                .newInstance();
-//        GetTeamsByLeagueSaison getTeamsByLeagueSaison = GetTeamsByLeagueSaison.Factory
-//                .newInstance();
-//        getTeamsByLeagueSaison.setLeagueSaison("2014");
-//        getTeamsByLeagueSaison.setLeagueShortcut("bl1");
-//        getTeamsByLeagueSaison42
-//                .setGetTeamsByLeagueSaison(getTeamsByLeagueSaison);
-//        GetTeamsByLeagueSaisonResponseDocument teamsByLeagueSaison = stub
-//                .getTeamsByLeagueSaison(getTeamsByLeagueSaison42);
-//
-//        ArrayOfTeam getTeamsByLeagueSaisonResult = teamsByLeagueSaison
-//                .getGetTeamsByLeagueSaisonResponse()
-//                .getGetTeamsByLeagueSaisonResult();
-//        OLDBTeam[] teams = getTeamsByLeagueSaisonResult.getTeamArray();
-//        for (OLDBTeam team : teams) {
-//            Optional<de.winkler.betoffice.storage.Team> boTeam = masterDataManagerService
-//                    .findTeamByOpenligaid(team.getTeamID());
-//            assertThat(boTeam).isNotNull();
-//
-//            System.out.println(
-//                    boTeam.get().getId() + " | " + boTeam.get().getName()
-//                            + " | " + boTeam.get().getLongName() + " | "
-//                            + boTeam.get().getTeamType().ordinal() + " | "
-//                            + boTeam.get().getOpenligaid());
-//        }
     }
 
     @Test
@@ -117,45 +84,6 @@ public class OpenligadbTeamTest
                         "bo_bundesliga_2014.dat");
             }
         });
-
-//        OpenligadbRoundFinder roundFinder = new OpenligadbRoundFinder();
-//        // Matchdata[] matchdataArray = roundFinder.findMatches(
-//        // "http://localhost:8088/mockSportsdataSoap12", "bl1", "2014", 1);
-//        Matchdata[] matchdataArray = roundFinder.findMatches("bl1", "2014", 1);
-//
-//        assertThat(matchdataArray).hasSize(9);
-//
-//        for (Matchdata matchdata : matchdataArray) {
-//            matchdata.getGroupID();
-//            matchdata.getIdTeam1();
-//            matchdata.getIdTeam2();
-//            matchdata.getMatchIsFinished();
-//            ArrayOfMatchResult matchResults = matchdata.getMatchResults();
-//            for (OLDBMatchResult matchResult : matchResults.getMatchResultArray()) {
-//                matchResult.getResultTypeId(); // 2: Nach 90 Minuten // 1: Nach
-//                                               // 45 Minuten
-//                matchResult.getPointsTeam1(); // Tore Heimmannschaft
-//                matchResult.getPointsTeam2(); // Tore Gastmannschaft
-//            }
-//            OLDBLocation location = matchdata.getLocation();
-//            location.getLocationID();
-//
-//            ArrayOfGoal goals = matchdata.getGoals();
-//            for (OLDBGoal goal : goals.getGoalArray()) {
-//                de.winkler.betoffice.storage.Goal boGoal = new de.winkler.betoffice.storage.Goal();
-//                boGoal.getOpenligaid();
-//
-//                goal.getGoalID();
-//                goal.getGoalComment();
-//                goal.getGoalMatchMinute();
-//                goal.getGoalGetterName();
-//                goal.getGoalOvertime();
-//                goal.getGoalOwnGoal();
-//                goal.getGoalPenalty();
-//                goal.getGoalScoreTeam1(); // Tore Heimmanschaft
-//                goal.getGoalScoreTeam2(); // Tore Gastmannschaft
-//            }
-//        }
     }
 
 }
