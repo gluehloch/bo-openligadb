@@ -96,7 +96,7 @@ public class OpenligadbRoundFinder {
                 return matches;
             } catch (RestClientException ex) {
                 LOG.error("There is a problem with the openligadb REST API. "
-                        + "I catched a Exception: {}", ex.getMessage());
+                        + "I catched an exception: {}", ex.getMessage());
                 throw new OpenligadbException(ex.getMessage(), ex);
             }
         }
