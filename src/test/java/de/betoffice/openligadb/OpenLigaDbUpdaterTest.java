@@ -45,7 +45,8 @@ public class OpenLigaDbUpdaterTest {
 	}
 
 	@Test
-	void openLigaDbUpdate() throws OpenligadbException {
+	void openLigaDbUpdate() throws Exception {
+		OpenLigaDbMock.prepare();
 		openligadbRoundFinder.setApiUrl(OpenLigaDbMock.prepareApiUrl());
 		Result<OLDBMatch[],OpenligadbException> matches = openligadbRoundFinder.findMatches("bl1", "2022", 1);
 
