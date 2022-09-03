@@ -13,7 +13,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.web.client.RestTemplate;
@@ -28,49 +27,67 @@ import de.betoffice.openligadb.json.OLDBMatch;
 @SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
 public class WireMockFunctionTest {
 
-	CloseableHttpClient client;
+	private static final String DEFAULT_CHARSET = "UTF-8";
+
+	private CloseableHttpClient client;
+	private RestTemplate restTemplate;
 
 	@Test
-    void wireMockServerStartResetStop() throws Exception {
-	    client = HttpClientBuilder.create()
-	    	      .useSystemProperties() // This must be enabled for auto proxy config
-	    	      .build();
-		InputStream resourceAsStream = this.getClass().getResourceAsStream("/bundesliga-2022-01.json");
-		String responseAsString = IOUtils.toString(resourceAsStream, "UTF-8");
+	void wireMockServerStartResetStop() throws Exception {
+		client = prepareClient();
+		prepareWireMockResponse();
+
+		String content = getContent("http://localhost:9096/getmatchdata/bl1/2022/1");
+		System.out.println(content);
 		
-		// UrlPattern urlPattern = UrlPattern.fromOneOf(null, null, null, null);
-        // StubMapping stubMapping = options(urlPattern).withPort(8089).build();
-        
-        stubFor(get("/static-dsl").willReturn(ok()));
-        stubFor(get("/getmatchdata/bl1/2022/1").willReturn(ok(responseAsString).withHeader("Content-Type", "application/json")));
+		APIUrl apiUrl = new APIUrl();
+		apiUrl.setOpenligadbUrl("http://localhost:9096");
 
-        //WireMockServer wireMockServer = new WireMockServer();
-        //wireMockServer.start();
-        String content = getContent("http://localhost:9096/getmatchdata/bl1/2022/1");
-        System.out.println(content);
+		restTemplate = prepareRestTemplate();
 
-        APIUrl apiUrl = new APIUrl();
-        apiUrl.setOpenligadbUrl("http://localhost:9001");
+		getAndPrintMatches(apiUrl, "bl1", "2022", 1);
+		getAndPrintMatches(apiUrl, "bl1", "2020", 3);
+	}
+	
+	private void getAndPrintMatches(APIUrl apiUrl, String leagueShortCur, String year, int round) {
+		OLDBMatch[] matches = restTemplate.getForObject(apiUrl.getMatchData(leagueShortCur, year, round), OLDBMatch[].class);
+		for (OLDBMatch match : matches) {
+			System.out.println("Match: " + match.getTeam1().getTeamName() + ":" + match.getTeam2().getTeamName() + " "
+					+ match.getMatchResults().toString());
+		}		
+	}
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+	private void prepareWireMockResponse() throws Exception {
+		InputStream bundesliga_2022_01 = this.getClass().getResourceAsStream("/bundesliga-2022-01.json");
+		String bundesliga_2022_01_asJson = IOUtils.toString(bundesliga_2022_01, DEFAULT_CHARSET);
 
-        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        converter.setObjectMapper(objectMapper);
+		InputStream bundesliga_2020_03 = this.getClass().getResourceAsStream("/bundesliga-2020-03.json");
+		String bundesliga_2020_03_asJson = IOUtils.toString(bundesliga_2020_03, DEFAULT_CHARSET);
 
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getMessageConverters().add(0, converter);        
-        
-        OLDBMatch[] matches = restTemplate.getForObject("http://localhost:9096/getmatchdata/bl1/2022/1",
-                OLDBMatch[].class);
-        for (OLDBMatch match : matches) {
-            System.out.println("Match: " + match.getTeam1().getTeamName() + ":" + match.getTeam2().getTeamName() + " "
-                    + match.getMatchResults().toString());
-        }        
-        
-        //wireMockServer.resetAll();
-        //wireMockServer.stop();
-    }
+		stubFor(get("/static-dsl").willReturn(ok()));
+		stubFor(get("/getmatchdata/bl1/2022/1")
+				.willReturn(ok(bundesliga_2022_01_asJson).withHeader("Content-Type", "application/json")));
+		stubFor(get("/getmatchdata/bl1/2020/3")
+				.willReturn(ok(bundesliga_2020_03_asJson).withHeader("Content-Type", "application/json")));
+	}
+
+	private RestTemplate prepareRestTemplate() {
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+
+		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
+		converter.setObjectMapper(objectMapper);
+
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.getMessageConverters().add(0, converter);
+
+		return restTemplate;
+	}
+
+	private CloseableHttpClient prepareClient() {
+		return HttpClientBuilder.create().useSystemProperties() // This must be enabled for auto proxy config
+				.build();
+	}
 
 	private String getContent(String url) throws Exception {
 		try (CloseableHttpResponse response = client.execute(new HttpGet(url))) {
