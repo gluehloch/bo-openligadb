@@ -40,7 +40,7 @@ public class OpenLigaDbUpdaterTest {
 
 	@Autowired
 	private OpenligadbRoundFinder openligadbRoundFinder;
-	
+
 	@BeforeEach
 	void before() throws Exception {
 		OpenLigaDbMock.prepare();
@@ -49,19 +49,44 @@ public class OpenLigaDbUpdaterTest {
 
 	@Test
 	void openLigaDbUpdate() throws Exception {
-		Result<OLDBMatch[],OpenligadbException> matches = openligadbRoundFinder.findMatches("bl1", "2022", 1);
+		Result<OLDBMatch[], OpenligadbException> matches = openligadbRoundFinder.findMatches("bl1", "2022", 1);
 
-        matches.map(oldbMatches -> {
-        	assertThat(oldbMatches).hasSize(9);
-        	assertThat(oldbMatches[0].getTeam1().getTeamName()).isEqualTo("Eintracht Frankfurt");
-        	assertThat(oldbMatches[0].getTeam2().getTeamName()).isEqualTo("FC Bayern München");
+		matches.map(oldbMatches -> {
+			for (OLDBMatch match : oldbMatches) {
+				System.out.println("Match: " + match.getTeam1().getTeamName() + ":" + match.getTeam2().getTeamName()
+						+ " " + match.getMatchResults().toString());
+			}
 
-            for (OLDBMatch match : oldbMatches) {
-                System.out.println("Match: " + match.getTeam1().getTeamName() + ":" + match.getTeam2().getTeamName()
-                        + " " + match.getMatchResults().toString());
-            }
-            return 0;
-        }).orElseThrow();
+			assertThat(oldbMatches).hasSize(9);
+			assertThat(oldbMatches[0].getTeam1().getTeamName()).isEqualTo("Eintracht Frankfurt");
+			assertThat(oldbMatches[0].getTeam2().getTeamName()).isEqualTo("FC Bayern München");
+
+			assertThat(oldbMatches[1].getTeam1().getTeamName()).isEqualTo("FC Augsburg");
+			assertThat(oldbMatches[1].getTeam2().getTeamName()).isEqualTo("SC Freiburg");
+
+			assertThat(oldbMatches[2].getTeam1().getTeamName()).isEqualTo("VfL Bochum");
+			assertThat(oldbMatches[2].getTeam2().getTeamName()).isEqualTo("1. FSV Mainz 05");
+
+			assertThat(oldbMatches[3].getTeam1().getTeamName()).isEqualTo("Borussia Mönchengladbach");
+			assertThat(oldbMatches[3].getTeam2().getTeamName()).isEqualTo("TSG 1899 Hoffenheim");
+
+			assertThat(oldbMatches[4].getTeam1().getTeamName()).isEqualTo("1. FC Union Berlin");
+			assertThat(oldbMatches[4].getTeam2().getTeamName()).isEqualTo("Hertha BSC");
+
+			assertThat(oldbMatches[5].getTeam1().getTeamName()).isEqualTo("VfL Wolfsburg");
+			assertThat(oldbMatches[5].getTeam2().getTeamName()).isEqualTo("Werder Bremen");
+
+			assertThat(oldbMatches[6].getTeam1().getTeamName()).isEqualTo("Borussia Dortmund");
+			assertThat(oldbMatches[6].getTeam2().getTeamName()).isEqualTo("Bayer Leverkusen");
+
+			assertThat(oldbMatches[7].getTeam1().getTeamName()).isEqualTo("VfB Stuttgart");
+			assertThat(oldbMatches[7].getTeam2().getTeamName()).isEqualTo("RB Leipzig");
+			
+			assertThat(oldbMatches[8].getTeam1().getTeamName()).isEqualTo("1. FC Köln");
+			assertThat(oldbMatches[8].getTeam2().getTeamName()).isEqualTo("FC Schalke 04");			
+
+			return 0;
+		}).orElseThrow();
 	}
-	
+
 }
