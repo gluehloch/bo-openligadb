@@ -4,7 +4,7 @@
     "MatchDateTime": "2022-08-05T20:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-05T18:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -20,7 +20,7 @@
     },
     "Team2": {
       "TeamId": 40,
-      "TeamName": "FC Bayern M¸nchen",
+      "TeamName": "FC Bayern M√ºnchen",
       "ShortName": "Bayern",
       "TeamIconUrl": "https://i.imgur.com/jJEsJrj.png",
       "TeamGroupName": null
@@ -157,7 +157,7 @@
     "MatchDateTime": "2022-08-06T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-06T13:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -258,7 +258,7 @@
     "MatchDateTime": "2022-08-06T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-06T13:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -320,7 +320,7 @@
         "ScoreTeam2": 1,
         "MatchMinute": 39,
         "GoalGetterID": 18602,
-        "GoalGetterName": "K. Stˆger",
+        "GoalGetterName": "K. St√∂ger",
         "IsPenalty": false,
         "IsOwnGoal": false,
         "IsOvertime": false,
@@ -347,7 +347,7 @@
     "MatchDateTime": "2022-08-06T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-06T13:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -356,7 +356,7 @@
     },
     "Team1": {
       "TeamId": 87,
-      "TeamName": "Borussia Mˆnchengladbach",
+      "TeamName": "Borussia M√∂nchengladbach",
       "ShortName": "Gladbach",
       "TeamIconUrl": "https://i.imgur.com/KSIk0Eu.png",
       "TeamGroupName": null
@@ -448,7 +448,7 @@
     "MatchDateTime": "2022-08-06T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-06T13:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -549,7 +549,7 @@
     "MatchDateTime": "2022-08-06T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-06T13:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -611,7 +611,7 @@
         "ScoreTeam2": 1,
         "MatchMinute": 21,
         "GoalGetterID": 18661,
-        "GoalGetterName": "N. F¸llkrug",
+        "GoalGetterName": "N. F√ºllkrug",
         "IsPenalty": false,
         "IsOwnGoal": false,
         "IsOvertime": false,
@@ -650,7 +650,7 @@
     "MatchDateTime": "2022-08-06T18:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-06T16:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -715,7 +715,7 @@
     "MatchDateTime": "2022-08-07T15:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-07T13:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -792,7 +792,7 @@
     "MatchDateTime": "2022-08-07T17:30:00",
     "TimeZoneID": "W. Europe Standard Time",
     "LeagueId": 4562,
-    "LeagueName": "1. Fuﬂball-Bundesliga 2022/2023",
+    "LeagueName": "1. Fu√üball-Bundesliga 2022/2023",
     "MatchDateTimeUTC": "2022-08-07T15:30:00Z",
     "Group": {
       "GroupName": "1. Spieltag",
@@ -801,8 +801,8 @@
     },
     "Team1": {
       "TeamId": 65,
-      "TeamName": "1. FC Kˆln",
-      "ShortName": "Kˆln",
+      "TeamName": "1. FC K√∂ln",
+      "ShortName": "K√∂ln",
       "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/FC_Cologne_logo.svg/1200px-FC_Cologne_logo.svg.png",
       "TeamGroupName": null
     },
@@ -878,7 +878,7 @@
         "ScoreTeam2": 1,
         "MatchMinute": 76,
         "GoalGetterID": 18968,
-        "GoalGetterName": "M. B¸lter",
+        "GoalGetterName": "M. B√∂lter",
         "IsPenalty": false,
         "IsOwnGoal": false,
         "IsOvertime": false,
