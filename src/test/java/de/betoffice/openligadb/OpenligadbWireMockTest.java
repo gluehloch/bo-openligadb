@@ -23,6 +23,7 @@
 
 package de.betoffice.openligadb;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -31,6 +32,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import de.betoffice.openligadb.json.OLDBMatch;
 
@@ -39,8 +41,9 @@ import de.betoffice.openligadb.json.OLDBMatch;
  *
  * @author Andre Winkler
  */
+@WireMockTest(httpPort = 9096)
 @SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-public class OpenligadbTest {
+public class OpenligadbWireMockTest {
 
     @Autowired
     private OpenligadbRoundFinder openligadbRoundFinder;
@@ -48,8 +51,13 @@ public class OpenligadbTest {
     @Autowired
     private RestTemplate restTemplate;
 
+	@BeforeEach
+	void before() throws Exception {
+		OpenLigaDbMock.prepare();
+	}
+
     @Test
-    void testws() throws Exception {
+    void uefa_em2020_01() throws Exception {
         Result<OLDBMatch[], OpenligadbException> findMatches = openligadbRoundFinder.findMatches("uefa-em-2020", "2020",
                 1);
 
@@ -63,8 +71,8 @@ public class OpenligadbTest {
     }
 
     @Test
-    void testXxx1() throws Exception {
-        openligadbRoundFinder.getApiUrl().setOpenligadbUrl("http://localhost:9001");
+    void bundeliga2022_01_with_apiurl() throws Exception {
+        openligadbRoundFinder.getApiUrl().setOpenligadbUrl("http://localhost:9096");
         Result<OLDBMatch[], OpenligadbException> findMatches = openligadbRoundFinder.findMatches("bl1", "2022", 1);
 
         findMatches.map(oldbMatches -> {
@@ -77,9 +85,9 @@ public class OpenligadbTest {
     }
     
     @Test
-    void testXxx() {
+    void bundesliga2022_01_with_apiurl_and_objectmapper() {
         APIUrl apiUrl = new APIUrl();
-        apiUrl.setOpenligadbUrl("http://localhost:9001");
+        apiUrl.setOpenligadbUrl("http://localhost:9096");
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
@@ -100,7 +108,7 @@ public class OpenligadbTest {
 
     @Test
     void bundesliga2022_01() {
-        OLDBMatch[] matches = restTemplate.getForObject("http://localhost:9001/getmatchdata/bl1/2022/1",
+        OLDBMatch[] matches = restTemplate.getForObject("http://localhost:9096/getmatchdata/bl1/2022/1",
                 OLDBMatch[].class);
         for (OLDBMatch match : matches) {
             System.out.println("Match: " + match.getTeam1().getTeamName() + ":" + match.getTeam2().getTeamName() + " "
@@ -110,7 +118,7 @@ public class OpenligadbTest {
 
     @Test
     void bundesliga2020_03() {
-        OLDBMatch[] matches = restTemplate.getForObject("http://localhost:9001/getmatchdata/bl1/2020/3",
+        OLDBMatch[] matches = restTemplate.getForObject("http://localhost:9096/getmatchdata/bl1/2020/3",
                 OLDBMatch[].class);
         for (OLDBMatch match : matches) {
             System.out.println("Match: " + match.getTeam1().getTeamName() + ":" + match.getTeam2().getTeamName() + " "

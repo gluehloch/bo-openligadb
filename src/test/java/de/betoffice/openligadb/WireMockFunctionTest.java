@@ -5,13 +5,12 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
@@ -24,8 +23,8 @@ public class WireMockFunctionTest {
 	private CloseableHttpClient client;
 	private RestTemplate restTemplate;
 
-	@BeforeAll
-	static void before() throws Exception {
+	@BeforeEach
+	void before() throws Exception {
 		OpenLigaDbMock.prepare();
 	}
 
@@ -56,8 +55,6 @@ public class WireMockFunctionTest {
 
 	private RestTemplate prepareRestTemplate() {
 		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
-
 		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
 		converter.setObjectMapper(objectMapper);
 

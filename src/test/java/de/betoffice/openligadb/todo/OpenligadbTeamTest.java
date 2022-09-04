@@ -21,7 +21,7 @@
  * Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
-package de.betoffice.openligadb;
+package de.betoffice.openligadb.todo;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -39,7 +39,7 @@ import de.dbload.Dbload;
 import de.winkler.betoffice.service.MasterDataManagerService;
 
 /**
- * Checks, if all teams of 'Bundesliga 2014/2015' are find by their openliga ID.
+ * Checks, if all teams of 'Bundesliga 2014/2015' are able to find by their openliga ID.
  *
  * @author Andre Winkler
  */

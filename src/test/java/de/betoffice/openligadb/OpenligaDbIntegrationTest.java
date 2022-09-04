@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2022 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -23,45 +23,37 @@
 
 package de.betoffice.openligadb;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import com.github.tomakehurst.wiremock.junit5.WireMockTest;
-
 import de.betoffice.openligadb.json.OLDBMatch;
 
-@WireMockTest(httpPort = 9096)
+/**
+ * Dieser Test wird in der Regel nicht automatisiert augerufen. Mit diesem Test wird
+ * der produktive Endpunkt von OpenLigaDB getestet.
+ *
+ * @author Andre Winkler
+ */
+@Disabled
 @SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-public class OpenLigaDbUpdaterTest {
+public class OpenligaDbIntegrationTest {
 
 	@Autowired
 	private OpenligadbRoundFinder openligadbRoundFinder;
-	
-	@BeforeEach
-	void before() throws Exception {
-		OpenLigaDbMock.prepare();
-		openligadbRoundFinder.setApiUrl(OpenLigaDbMock.prepareApiUrl());
-	}
 
-	@Test
-	void openLigaDbUpdate() throws Exception {
-		Result<OLDBMatch[],OpenligadbException> matches = openligadbRoundFinder.findMatches("bl1", "2022", 1);
+    @Test
+    void openligaDbEndpointValidation() throws Exception {
+        Result<OLDBMatch[], OpenligadbException> findMatches = openligadbRoundFinder.findMatches("bl1", "2022", 1);
 
-        matches.map(oldbMatches -> {
-        	assertThat(oldbMatches).hasSize(9);
-        	assertThat(oldbMatches[0].getTeam1().getTeamName()).isEqualTo("Eintracht Frankfurt");
-        	assertThat(oldbMatches[0].getTeam2().getTeamName()).isEqualTo("FC Bayern München");
-
+        findMatches.map(oldbMatches -> {
             for (OLDBMatch match : oldbMatches) {
                 System.out.println("Match: " + match.getTeam1().getTeamName() + ":" + match.getTeam2().getTeamName()
                         + " " + match.getMatchResults().toString());
             }
-            return 0;
-        }).orElseThrow();
-	}
-	
+            return Integer.valueOf(4711);
+        });
+    }
+
 }

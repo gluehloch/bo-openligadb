@@ -1,4 +1,4 @@
-package de.betoffice.openligadb;
+package de.betoffice.openligadb.misc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +13,10 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+@Disabled
 public class HttpClientTest {
 
     @Test

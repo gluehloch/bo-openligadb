@@ -42,18 +42,26 @@ public class OpenLigaDbMock {
 	private static final String DEFAULT_CHARSET = "UTF-8";
 	private static final String MOCK_API_URL = "http://localhost:9096";
 
+	private OpenLigaDbMock() {
+	}
+
 	public static void prepare() throws IOException {
 		InputStream bundesliga_2022_01 = OpenLigaDbMock.class.getResourceAsStream("/bundesliga-2022-01.json");
 		String bundesliga_2022_01_asJson = IOUtils.toString(bundesliga_2022_01, DEFAULT_CHARSET);
 
 		InputStream bundesliga_2020_03 = OpenLigaDbMock.class.getResourceAsStream("/bundesliga-2020-03.json");
 		String bundesliga_2020_03_asJson = IOUtils.toString(bundesliga_2020_03, DEFAULT_CHARSET);
+		
+		InputStream emuefa_2020_01 = OpenLigaDbMock.class.getResourceAsStream("/uefa-em-2020-01.json");
+		String emuefa_2020_01_asJson = IOUtils.toString(emuefa_2020_01, DEFAULT_CHARSET);
 
 		stubFor(get("/static-dsl").willReturn(ok()));
 		stubFor(get("/getmatchdata/bl1/2022/1")
 				.willReturn(ok(bundesliga_2022_01_asJson).withHeader("Content-Type", "application/json")));
 		stubFor(get("/getmatchdata/bl1/2020/3")
-				.willReturn(ok(bundesliga_2020_03_asJson).withHeader("Content-Type", "application/json")));		
+				.willReturn(ok(bundesliga_2020_03_asJson).withHeader("Content-Type", "application/json")));
+		stubFor(get("/getmatchdata/uefa-em-2020/2020/1")
+				.willReturn(ok(emuefa_2020_01_asJson).withHeader("Content-Type", "application/json")));
 	}
 
 	public static APIUrl prepareApiUrl() {
@@ -61,5 +69,5 @@ public class OpenLigaDbMock {
 		apiUrl.setOpenligadbUrl(MOCK_API_URL);
 		return apiUrl;
 	}
-	
+
 }
