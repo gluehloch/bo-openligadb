@@ -36,7 +36,7 @@ import de.betoffice.openligadb.json.OLDBMatch;
 
 @WireMockTest(httpPort = 9096)
 @SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-public class OpenLigaDbUpdaterTest {
+public class OpenligadbRoundFinderWireMockTest {
 
 	@Autowired
 	private OpenligadbRoundFinder openligadbRoundFinder;

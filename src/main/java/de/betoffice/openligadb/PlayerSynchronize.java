@@ -113,8 +113,7 @@ public class PlayerSynchronize {
     }
 
     private boolean isEqual(Player boPlayer, OLDBGoal goal) {
-        return StringUtils.equalsIgnoreCase(boPlayer.getName(),
-                goal.getGoalGetterName());
+        return StringUtils.equalsIgnoreCase(boPlayer.getName(), StringUtils.trimToEmpty(goal.getGoalGetterName()));
     }
 
 }
