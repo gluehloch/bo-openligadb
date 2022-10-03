@@ -47,24 +47,8 @@ import de.winkler.betoffice.storage.enums.TeamType;
  * Test case for {@link DefaultOpenligadbUpdateService}.
  */
 @WireMockTest(httpPort = 9096)
-@SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
+@SpringJUnitConfig(locations = { "/betoffice-dev-properties.xml", "/betoffice.xml" })
 public class DefaultOpenligadbUpdateServiceTest {
-
-	private static final ZonedDateTime DATE_15_09_2010 = ZonedDateTime
-			.of(LocalDateTime.of(LocalDate.of(2010, 9, 15), LocalTime.of(0, 0)), ZoneId.of("Europe/Berlin"));
-	private static final ZonedDateTime DATE_08_09_2010 = ZonedDateTime
-			.of(LocalDateTime.of(LocalDate.of(2010, 9, 8), LocalTime.of(0, 0)), ZoneId.of("Europe/Berlin"));
-	private static final ZonedDateTime DATE_01_09_2010 = ZonedDateTime
-			.of(LocalDateTime.of(LocalDate.of(2010, 9, 9), LocalTime.of(0, 0)), ZoneId.of("Europe/Berlin"));
-
-	private TeamRef rwe;
-	private TeamRef schalke;
-	private TeamRef burghausen;
-	private TeamRef hsv;
-
-	private GroupTypeRef bundesliga_1;
-
-	private SeasonRef buli_2010;
 
 	@Autowired
 	private BetofficeApi betofficeApi;
@@ -81,32 +65,7 @@ public class DefaultOpenligadbUpdateServiceTest {
 
 	@Test
 	void updateMatchDay() {
-		createSeason();
-		// TODO openligadbUpdateService.
-	}
-
-	private SeasonRef createSeason() {
-		betofficeApi.groupType("1. Bundesliga");
-
-		rwe = betofficeApi.team("RWE", "Rot-Weiss-Essen").result();
-		schalke = betofficeApi.team("S04", "Schalke 04").result();
-		burghausen = betofficeApi.team("Wacker", "Wacker Burghausen").result();
-		hsv = betofficeApi.team("HSV", "Hamburger SV").result();
-		
-		buli_2010 = betofficeApi.season("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
-
-    	betofficeApi.group(buli_2010, bundesliga_1);
-
-        betofficeApi.addTeam(buli_2010, bundesliga_1, hsv);
-        betofficeApi.addTeam(buli_2010, bundesliga_1, schalke);
-        betofficeApi.addTeam(buli_2010, bundesliga_1, burghausen);
-        betofficeApi.addTeam(buli_2010, bundesliga_1, rwe);
-
-    	betofficeApi.round(buli_2010, bundesliga_1, DATE_01_09_2010);
-    	betofficeApi.round(buli_2010, bundesliga_1, DATE_08_09_2010);
-    	betofficeApi.round(buli_2010, bundesliga_1, DATE_15_09_2010);
-		
-		return buli_2010;
+		openligadbUpdateService.createOrUpdateRound(33, 0);
 	}
 
 }
