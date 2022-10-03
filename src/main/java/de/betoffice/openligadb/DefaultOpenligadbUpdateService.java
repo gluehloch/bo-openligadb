@@ -138,7 +138,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         Group bundesliga = season.getGroups().iterator().next();
         Optional<GameList> roundAtIndex = roundDao.findRound(season, roundIndex);
 
-        GameList roundUnderWork = roundAtIndex.isPresent() ? roundAtIndex.get()
+        GameList roundUnderWork = roundAtIndex.isPresent()
+                ? roundAtIndex.get()
                 : createRound(season, bundesliga);
 
         // The round is persisted. May be i need an update here.
@@ -170,7 +171,6 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             
             locationSynchronize.sync(oldbMatches);
             playerSynchronize.sync(oldbMatches);
-
             
             for (OLDBMatch match : oldbMatches) {
                 Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId());
