@@ -200,7 +200,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 }
                 
                 // TODO Vor Update alle Tore entfernen und neu anlagen?
-                matchUnderWork.removeAllGoals();
+                goalDao.deleteAll(matchUnderWork);
                 matchDao.save(matchUnderWork);
 
                 for (OLDBGoal goal : match.getGoals()) {
