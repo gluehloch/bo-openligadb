@@ -88,12 +88,12 @@ public class DefaultOpenligadbUpdateServiceTest {
 	private SeasonRef createSeason() {
 		betofficeApi.groupType("1. Bundesliga");
 
-		rwe = betofficeApi.team("RWE", "Rot-Weiss-Essen");
-		schalke = betofficeApi.team("S04", "Schalke 04");
-		burghausen = betofficeApi.team("Wacker", "Wacker Burghausen");
-		hsv = betofficeApi.team("HSV", "Hamburger SV");
+		rwe = betofficeApi.team("RWE", "Rot-Weiss-Essen").result();
+		schalke = betofficeApi.team("S04", "Schalke 04").result();
+		burghausen = betofficeApi.team("Wacker", "Wacker Burghausen").result();
+		hsv = betofficeApi.team("HSV", "Hamburger SV").result();
 		
-		buli_2010 = betofficeApi.season("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB);
+		buli_2010 = betofficeApi.season("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
 
     	betofficeApi.group(buli_2010, bundesliga_1);
 
@@ -102,7 +102,7 @@ public class DefaultOpenligadbUpdateServiceTest {
         betofficeApi.addTeam(buli_2010, bundesliga_1, burghausen);
         betofficeApi.addTeam(buli_2010, bundesliga_1, rwe);
         
-        buli_2010 = betofficeApi.addTeam(buli_2010, bundesliga_1,  rwe);        
+        buli_2010 = betofficeApi.addTeam(buli_2010, bundesliga_1, rwe).result();        
 
     	betofficeApi.round(buli_2010, bundesliga_1, DATE_01_09_2010);
     	betofficeApi.round(buli_2010, bundesliga_1, DATE_08_09_2010);
