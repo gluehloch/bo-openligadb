@@ -47,24 +47,8 @@ import de.winkler.betoffice.storage.enums.TeamType;
  * Test case for {@link DefaultOpenligadbUpdateService}.
  */
 @WireMockTest(httpPort = 9096)
-@SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
+@SpringJUnitConfig(locations = { "/betoffice-dev-properties.xml", "/betoffice.xml" })
 public class DefaultOpenligadbUpdateServiceTest {
-
-	private static final ZonedDateTime DATE_15_09_2010 = ZonedDateTime
-			.of(LocalDateTime.of(LocalDate.of(2010, 9, 15), LocalTime.of(0, 0)), ZoneId.of("Europe/Berlin"));
-	private static final ZonedDateTime DATE_08_09_2010 = ZonedDateTime
-			.of(LocalDateTime.of(LocalDate.of(2010, 9, 8), LocalTime.of(0, 0)), ZoneId.of("Europe/Berlin"));
-	private static final ZonedDateTime DATE_01_09_2010 = ZonedDateTime
-			.of(LocalDateTime.of(LocalDate.of(2010, 9, 9), LocalTime.of(0, 0)), ZoneId.of("Europe/Berlin"));
-
-	private TeamRef rwe;
-	private TeamRef schalke;
-	private TeamRef burghausen;
-	private TeamRef hsv;
-
-	private GroupTypeRef bundesliga_1;
-
-	private SeasonRef buli_2010;
 
 	@Autowired
 	private BetofficeApi betofficeApi;
@@ -76,16 +60,18 @@ public class DefaultOpenligadbUpdateServiceTest {
 	void before() throws Exception {
 		OpenLigaDbMock.prepare();
 		// openligadbUpdateService.a
-
 		// openligadbRoundFinder.setApiUrl(OpenLigaDbMock.prepareApiUrl());
 	}
 
 	@Test
 	void updateMatchDay() {
-		createSeason();
+		// No need to crate test scene. We use copy of production database.
+		// createSeason();
+		openligadbUpdateService.createOrUpdateRound(33, 0);
 	}
 
-	private SeasonRef createSeason() {
+	private void /*SeasonRef*/ createSeason() {
+		/*
 		betofficeApi.groupType("1. Bundesliga");
 
 		rwe = betofficeApi.team("RWE", "Rot-Weiss-Essen").result();
@@ -109,6 +95,7 @@ public class DefaultOpenligadbUpdateServiceTest {
     	betofficeApi.round(buli_2010, bundesliga_1, DATE_15_09_2010);
 		
 		return buli_2010;
+		 */
 	}
 
 }
