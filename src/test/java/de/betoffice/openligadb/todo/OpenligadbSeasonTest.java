@@ -29,9 +29,6 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-import de.betoffice.openligadb.DefaultOpenligadbUpdateService;
-import de.betoffice.openligadb.OpenLigaDbMock;
-import de.betoffice.openligadb.OpenligadbUpdateService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +36,8 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
+import de.betoffice.openligadb.DefaultOpenligadbUpdateService;
+import de.betoffice.openligadb.OpenligadbUpdateService;
 import de.betoffice.wrapper.api.BetofficeApi;
 import de.betoffice.wrapper.api.GroupTypeRef;
 import de.betoffice.wrapper.api.SeasonRef;
@@ -89,12 +88,12 @@ class OpenligadbSeasonTest {
     }
 
     private SeasonRef createSeason() {
-        betofficeApi.groupType("1. Bundesliga");
+        GroupTypeRef bundesligaRef = betofficeApi.groupType("1. Bundesliga").result();
 
-        rwe = betofficeApi.team("RWE", "Rot-Weiss-Essen").result();
-        schalke = betofficeApi.team("S04", "Schalke 04").result();
+        rwe        = betofficeApi.team("RWE", "Rot-Weiss-Essen").result();
+        schalke    = betofficeApi.team("S04", "Schalke 04").result();
         burghausen = betofficeApi.team("Wacker", "Wacker Burghausen").result();
-        hsv = betofficeApi.team("HSV", "Hamburger SV").result();
+        hsv        = betofficeApi.team("HSV", "Hamburger SV").result();
 
         buli_2010 = betofficeApi.season("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
 
