@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2022 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -51,6 +51,14 @@ public class GoalBuilder {
         } else {
             boGoal.setGoalType(GoalType.REGULAR);
         }
+        return boGoal;
+    }
+
+    public static Goal update(OLDBGoal openligadbGoal, Goal boGoal) {
+        boGoal.setMinute(openligadbGoal.getMatchMinute());
+        boGoal.setComment(openligadbGoal.getComment() == null ? null : openligadbGoal.getComment().toString());
+        boGoal.setResult(new GameResult(openligadbGoal.getScoreTeam1(), openligadbGoal.getScoreTeam2()));
+        boGoal.setPlayer(null);
         return boGoal;
     }
 

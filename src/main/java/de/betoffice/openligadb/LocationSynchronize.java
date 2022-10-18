@@ -78,9 +78,9 @@ public class LocationSynchronize {
             LOG.info(
                     "The location with openligadb ID=[{}] contains null values. "
                             + " city=[{}], stadium=[{}]",
-                    new Object[] { match.getLocation().getLocationID(),
-                            match.getLocation().getLocationCity(),
-                            match.getLocation().getLocationStadium() });
+                    match.getLocation().getLocationID(),
+                    match.getLocation().getLocationCity(),
+                    match.getLocation().getLocationStadium());
         } else {
 
             Optional<Location> location = locationDao
@@ -96,10 +96,11 @@ public class LocationSynchronize {
                 LOG.info(
                         "Location problem: openligadb ID=[{}], name=[{}], city=[{}] is not equal to "
                                 + "betoffice location name=[{}], city=[{}].",
-                        new Object[] { match.getLocation().getLocationID(),
-                                match.getLocation().getLocationStadium(),
-                                location.get().getName(),
-                                location.get().getCity() });
+                        match.getLocation().getLocationID(),
+                        match.getLocation().getLocationStadium(),
+                        match.getLocation().getLocationCity(),
+                        location.get().getName(),
+                        location.get().getCity());
             }
         }
     }

@@ -25,11 +25,11 @@
         </encoder>
     </appender>
 
-    <logger name="org.hibernate.SQL" level="debug" additivity="false">
+    <logger name="org.hibernate.SQL" level="error" additivity="false">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </logger>
-    <logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">
+    <logger name="org.hibernate.type.descriptor.sql" level="error" additivity="false">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
     </logger>

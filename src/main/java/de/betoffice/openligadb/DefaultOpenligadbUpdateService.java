@@ -27,6 +27,8 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 import org.slf4j.Logger;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,9 +63,11 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     private static final Logger LOG = LoggerFactory.make();
 
+    private static final Marker MARKER = MarkerFactory.getMarker("OpenligadbUpdateService");
+
     @Autowired
     private TeamDao teamDao;
-    
+
     @Autowired
     private SeasonDao seasonDao;
 
@@ -96,7 +100,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     @Autowired
     private DateTimeProvider dateTimeProvider;
-    
+
     // ------------------------------------------------------------------------
 
     @Override
@@ -134,102 +138,128 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         Group bundesliga = season.getGroups().iterator().next();
         Optional<GameList> roundAtIndex = roundDao.findRound(season, roundIndex);
 
-        GameList roundUnderWork = roundAtIndex.isPresent() ? roundAtIndex.get()
+        GameList roundUnderWork = roundAtIndex.isPresent()
+                ? roundAtIndex.get()
                 : createRound(season, bundesliga);
 
         // The round is persisted. May be i need an update here.
-        OLDBMatch[] matches = null;
+        Result<OLDBMatch[],OpenligadbException> matches = openligadbRoundFinder.findMatches(
+                    season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
+                    season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
+                    roundIndex + 1);
+        
         try {
-            matches = openligadbRoundFinder.findMatches(
-                    season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
-                    season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
-                    roundIndex + 1);
-        } catch (OpenligadbConnectionException ex) {
-            LOG.error("Aborting the update process! {}", ex.getMessage(), ex.getCause());
-            return;
-        }
+        	OLDBMatch[] oldbMatches = matches.map(t -> t).orElseThrow();
 
-        if (matches == null || matches.length == 0) {
-            String error = String.format(
-                    "Aborting the update process! "
-                            + "No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
-                    season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
-                    season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
-                    roundIndex + 1);
-            LOG.error(error);
-            return;
-        }
-
-        if (roundUnderWork.getOpenligaid() == null) {
-            roundUnderWork.setOpenligaid(Long.valueOf(matches[0].getGroup().getGroupID()));
-        } else {
-            long openligaGroupid = Long.valueOf(matches[0].getGroup().getGroupID());
-            if (openligaGroupid != roundUnderWork.getOpenligaid()) {
-                String error = String.format(
-                        "Openligadb groupId=[%d] and the stored groupId of betoffice GameList [%d] are different.",
-                        openligaGroupid, roundUnderWork.getOpenligaid());
-                LOG.error(error);
-                throw new IllegalStateException(error);
+            if (oldbMatches == null || oldbMatches.length == 0) {
+            	LOG.error(toErrorMessage(roundIndex, season));
+                return;
             }
-        }
-
-        locationSynchronize.sync(matches);
-        playerSynchronize.sync(matches);
-
-        if (matches.length == 0) {
-            LOG.info(
-                    "The openligadb has no matches for betoffice! "
-                            + "season id=[{}], roundIndex=[{}]",
-                    seasonId, roundIndex);
-        }
-
-        for (OLDBMatch match : matches) {
-            Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId());
-            Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId());
             
-            boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());
-            boGuestTeam.setLogo(match.getTeam2().getTeamIconUrl());
+            if (roundUnderWork.getOpenligaid() == null) {
+                roundUnderWork.setOpenligaid(Long.valueOf(oldbMatches[0].getGroup().getGroupID()));
+            } else {
+                long openligaGroupid = Long.valueOf(oldbMatches[0].getGroup().getGroupID());
+                if (openligaGroupid != roundUnderWork.getOpenligaid()) {
+                    String error = String.format(
+                            "Openligadb groupId=[%d] and the stored groupId of betoffice GameList [%d] are different.",
+                            openligaGroupid, roundUnderWork.getOpenligaid());
+                    LOG.error(error);
+                    throw new IllegalStateException(error);
+                }
+            }
+            
+            locationSynchronize.sync(oldbMatches);
+            playerSynchronize.sync(oldbMatches);
+            
+            for (OLDBMatch match : oldbMatches) {
+                Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId());
+                Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId());
+                
+                boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());
+                boGuestTeam.setLogo(match.getTeam2().getTeamIconUrl());
 
-            Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
+                Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
 
-            Game matchUnderWork = boMatch.isPresent()
-                    ? updateMatch(match, boMatch.get())
-                    : createMatch(bundesliga, roundUnderWork, match, boHomeTeam, boGuestTeam);
+                Game matchUnderWork = boMatch.isPresent()
+                        ? updateMatch(match, boMatch.get())
+                        : createMatch(bundesliga, roundUnderWork, match, boHomeTeam, boGuestTeam);
 
-            if (match.getLocation() != null) {
-                Optional<Location> boLocation = locationDao.findByOpenligaid(match.getLocation().getLocationID());
+                if (match.getLocation() != null) {
+                    Optional<Location> boLocation = locationDao.findByOpenligaid(match.getLocation().getLocationID());
 
-                if (boLocation.isPresent()) {
-                    matchUnderWork.setLocation(boLocation.get());
+                    if (boLocation.isPresent()) {
+                        matchUnderWork.setLocation(boLocation.get());
+                    } else {
+                        Location unknwonLocation = locationDao.findById(Location.UNKNOWN_LOCATION_ID);
+                        matchUnderWork.setLocation(unknwonLocation);
+                    }
                 } else {
                     Location unknwonLocation = locationDao.findById(Location.UNKNOWN_LOCATION_ID);
                     matchUnderWork.setLocation(unknwonLocation);
                 }
-            } else {
-                Location unknwonLocation = locationDao.findById(Location.UNKNOWN_LOCATION_ID);
-                matchUnderWork.setLocation(unknwonLocation);
-            }
+                
+                // TODO Vor Update alle Tore entfernen und neu anlagen?
+                goalDao.deleteAll(matchUnderWork);
+                matchDao.save(matchUnderWork);
 
-            for (OLDBGoal goal : match.getGoals()) {
-                Optional<Goal> boGoal = goalDao.findByOpenligaid(goal.getGoalID());
-
-                if (!boGoal.isPresent()) {
-                    Goal goalUnderWork = GoalBuilder.build(goal);
+                for (OLDBGoal goal : match.getGoals()) {
+                    Optional<Goal> boGoal = goalDao.findByOpenligaid(goal.getGoalID());
                     Optional<Player> boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
-                    goalUnderWork.setGame(matchUnderWork);
-                    matchUnderWork.addGoal(goalUnderWork);
-                    goalUnderWork.setPlayer(boPlayer.get());
-                    goalDao.save(goalUnderWork);
-                }
-            }
 
-            matchDao.save(matchUnderWork);
+                    if (boPlayer.isEmpty()) {
+                        LOG.warn(MARKER, "Spieler zu einem Tor nicht gefunden. Das Tor wird nicht abgespeichert. Spiel: "
+                                + match.getMatchDateTimeUTC()
+                                + " / "
+                                + match.getTeam1().getShortName()
+                                + ":"
+                                + match.getTeam2().getShortName());
+                    } else {
+                        Goal goalUnderWork = null;
+                        if (boGoal.isPresent()) {
+                            goalUnderWork = GoalBuilder.update(goal, boGoal.get());
+                            goalUnderWork.setPlayer(boPlayer.get());
+                            goalDao.save(goalUnderWork);                        
+                        } else {
+                            if (goal.getMatchMinute() == null) {
+                                LOG.warn(MARKER, "Die Spielminute ist gleich 'null'. Das Tor wird nicht gespeichert. Spiel: "
+                                        + match.getMatchDateTimeUTC()
+                                        + " / "
+                                        + match.getTeam1().getShortName()
+                                        + ":"
+                                        + match.getTeam2().getShortName());
+                            } else {
+                                goalUnderWork = GoalBuilder.build(goal);
+                                goalUnderWork.setGame(matchUnderWork);
+                                matchUnderWork.addGoal(goalUnderWork);
+                                goalUnderWork.setPlayer(boPlayer.get());
+                                goalDao.save(goalUnderWork);                            
+                            }
+                        }
+                    }
+                }
+
+                matchDao.save(matchUnderWork);
+            }            
+            
+        } catch (Exception ex) {
+            LOG.error(toErrorMessage(roundIndex, season), ex.getCause());
+            return;
         }
 
         LocalDate bestRoundDate = roundUnderWork.findBestRoundDate();
         roundUnderWork.setDateTime(bestRoundDate.atTime(0, 0).atZone(dateTimeProvider.defaultZoneId()));
         roundDao.save(roundUnderWork);
     }
+
+	private String toErrorMessage(int roundIndex, Season season) {
+		return String.format(
+		        "Aborting the update process! "
+		                + "No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
+		        season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
+		        season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
+		        roundIndex + 1);
+	}
 
     private Game updateMatch(OLDBMatch match, Game matchUnderWork) {
         if (matchUnderWork.getOpenligaid() == null) {

@@ -7,6 +7,15 @@
 	<body>
 
 		<!-- Under development -->
+		<release version="betoffice-openligadb 1.6.5" date="2022-08-09" description="FIX">
+			<action dev="andrewinkler" type="fix" date="2022-08-09">
+				Issue: OpenligaDB API liefert nicht gegebene Tore aus. Diese sind mit der Minutenangabe
+				'null' versehen. Diese Angaben werden in betoffice nicht gespeichert.
+			</action>
+			<action dev="andrewinkler" type="add" date="2022-08-21" description="UPDATE">
+			    Adding WireMock for some stubbing of OpenligaDB.
+			</action> 
+		</release>
 
 		<!-- RELEASED -->
 		<release version="betoffice-openligadb 1.6.4" date="2021-12-24" description="Update dependencies">

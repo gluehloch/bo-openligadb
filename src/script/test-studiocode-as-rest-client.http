@@ -7,7 +7,11 @@
 
 
 ### Als JSON Respose
-POST http://www.openligadb.de/api/getmatchdata/bl1/2018/22 HTTP/1.1
+GET http://www.openligadb.de/api/getmatchdata/bl1/2018/22 HTTP/1.1
+Accept: content-type: application/json
+
+###
+GET http://www.openligadb.de/api/getmatchdata/bl1/2022/1 HTTP/1.1
 Accept: content-type: application/json
 
 ###
@@ -19,7 +23,7 @@ GET https://www.openligadb.de/api/getavailableteams/uefa-em-2020/2020
 Accept: content-type: application/json
 
 ### Als XML Response
-POST http://www.openligadb.de/api/getmatchdata/bl1/2018/22 HTTP/1.1
+GET http://www.openligadb.de/api/getmatchdata/bl1/2018/22 HTTP/1.1
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
 Accept-Language: de,en-US;q=0.7,en;q=0.3
 Accept-Encoding: gzip, deflate, br

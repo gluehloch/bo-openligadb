@@ -23,7 +23,7 @@
 
 package de.betoffice.openligadb;
 
-import org.springframework.stereotype.Component;
+import java.util.Objects;
 
 /**
  * Holds some URLs to access the OpenligaDB REST API.
@@ -32,13 +32,14 @@ import org.springframework.stereotype.Component;
  * 
  * @author Andre Winkler
  */
-@Component
 public class APIUrl {
 
-    /** Default URL Prefix. */
-    private String openligadbUrl = "https://www.openligadb.de/api/";
+    private static final String OPENLIGADB_URL = "https://www.openligadb.de/api/";
 
-    public void setOpenligadbUrl(String apiUrl) {
+    /** Default URL Prefix. */
+    private String openligadbUrl = OPENLIGADB_URL;
+
+    protected void setOpenligadbUrl(String apiUrl) {
         this.openligadbUrl = apiUrl;
     }
 
@@ -47,6 +48,10 @@ public class APIUrl {
     }
 
     public String getMatchData(String openligadbShortcut, String year, int roundIndex) {
+    	if (roundIndex < 1) {
+    		throw new IllegalArgumentException("OpenligaDB: roundIndex must be greater than 0.");
+    	}
+    	
         StringBuilder sb = new StringBuilder(getOpenligadbUrl());
         sb.append("/getmatchdata/").append(openligadbShortcut).append("/").append(year).append("/").append(roundIndex);
         return sb.toString();
