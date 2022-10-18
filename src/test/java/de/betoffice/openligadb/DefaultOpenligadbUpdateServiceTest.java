@@ -30,6 +30,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -46,6 +47,7 @@ import de.winkler.betoffice.storage.enums.TeamType;
 /**
  * Test case for {@link DefaultOpenligadbUpdateService}.
  */
+@Disabled
 @WireMockTest(httpPort = 9096)
 @SpringJUnitConfig(locations = { "/betoffice-dev-properties.xml", "/betoffice.xml" })
 public class DefaultOpenligadbUpdateServiceTest {
