@@ -88,25 +88,25 @@ class OpenligadbSeasonTest {
     }
 
     private SeasonRef createSeason() {
-        GroupTypeRef bundesligaRef = betofficeApi.groupType("1. Bundesliga").result();
+        GroupTypeRef bundesligaRef = betofficeApi.postGroupType("1. Bundesliga").result();
 
-        rwe        = betofficeApi.team("RWE", "Rot-Weiss-Essen").result();
-        schalke    = betofficeApi.team("S04", "Schalke 04").result();
-        burghausen = betofficeApi.team("Wacker", "Wacker Burghausen").result();
-        hsv        = betofficeApi.team("HSV", "Hamburger SV").result();
+        rwe        = betofficeApi.postTeam("RWE", "Rot-Weiss-Essen").result();
+        schalke    = betofficeApi.postTeam("S04", "Schalke 04").result();
+        burghausen = betofficeApi.postTeam("Wacker", "Wacker Burghausen").result();
+        hsv        = betofficeApi.postTeam("HSV", "Hamburger SV").result();
 
-        buli_2010 = betofficeApi.season("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
+        buli_2010 = betofficeApi.postSeason("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
 
-        betofficeApi.group(buli_2010, bundesliga_1);
+        betofficeApi.addGroup(buli_2010, bundesliga_1);
 
         betofficeApi.addTeam(buli_2010, bundesliga_1, hsv);
         betofficeApi.addTeam(buli_2010, bundesliga_1, schalke);
         betofficeApi.addTeam(buli_2010, bundesliga_1, burghausen);
         betofficeApi.addTeam(buli_2010, bundesliga_1, rwe);
 
-        betofficeApi.round(buli_2010, bundesliga_1, DATE_01_09_2010);
-        betofficeApi.round(buli_2010, bundesliga_1, DATE_08_09_2010);
-        betofficeApi.round(buli_2010, bundesliga_1, DATE_15_09_2010);
+        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_01_09_2010);
+        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_08_09_2010);
+        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_15_09_2010);
 
         return buli_2010;
     }
