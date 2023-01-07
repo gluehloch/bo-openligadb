@@ -6,13 +6,13 @@
     <parent>
         <groupId>de.winkler.betoffice</groupId>
         <artifactId>betoffice-maven-parent</artifactId>
-        <version>1.13.0</version>
+        <version>1.13.1</version>
     </parent>
 
     <groupId>de.betoffice</groupId>
     <artifactId>betoffice-openligadb</artifactId>
     <packaging>jar</packaging>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.0.0</version>
     <name>betoffice-openligadb</name>
     <description>Betoffice openligadb connector</description>
 
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>de.winkler.betoffice</groupId>
             <artifactId>betoffice-storage</artifactId>
-            <version>3.0.0-SNAPSHOT</version>
+            <version>3.0.0</version>
             <scope>compile</scope>
         </dependency>
 
@@ -60,19 +60,19 @@
         <dependency>
             <groupId>de.betoffice</groupId>
             <artifactId>betoffice-testutils</artifactId>
-            <version>1.2.0-SNAPSHOT</version>
+            <version>1.2.1</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-            <version>2.6.2</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>3.0.6</version>
+			<scope>test</scope>
+		</dependency>
         <dependency>
             <groupId>de.betoffice.wrapper</groupId>
             <artifactId>betoffice-wrapper</artifactId>
-            <version>0.2.0-SNAPSHOT</version>
+            <version>0.2.0</version>
             <scope>test</scope>
         </dependency>
 
