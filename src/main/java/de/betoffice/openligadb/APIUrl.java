@@ -23,8 +23,6 @@
 
 package de.betoffice.openligadb;
 
-import java.util.Objects;
-
 /**
  * Holds some URLs to access the OpenligaDB REST API.
  * 
@@ -34,7 +32,7 @@ import java.util.Objects;
  */
 public class APIUrl {
 
-    private static final String OPENLIGADB_URL = "https://www.openligadb.de/api/";
+    private static final String OPENLIGADB_URL = "https://www.openligadb.de/api";
 
     /** Default URL Prefix. */
     private String openligadbUrl = OPENLIGADB_URL;

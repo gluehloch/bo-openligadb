@@ -92,6 +92,10 @@ public class OpenligadbRoundFinder {
         public OLDBMatch[] get() throws OpenligadbException {
             try {
                 String url = apiUrl.getMatchData(leagueShortcut, leagueSeason, roundIndex);
+
+                LOG.info("Starting openligadb request: " + url);
+
+                
                 OLDBMatch[] matches = restTemplate.getForObject(url, OLDBMatch[].class);
                 return matches;
             } catch (RestClientException ex) {
