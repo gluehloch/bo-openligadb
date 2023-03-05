@@ -7,138 +7,138 @@ import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "GoalID",
-        "ScoreTeam1",
-        "ScoreTeam2",
-        "MatchMinute",
-        "GoalGetterID",
-        "GoalGetterName",
-        "IsPenalty",
-        "IsOwnGoal",
-        "IsOvertime",
-        "Comment"
+        "goalID",
+        "scoreTeam1",
+        "scoreTeam2",
+        "matchMinute",
+        "goalGetterID",
+        "goalGetterName",
+        "isPenalty",
+        "isOwnGoal",
+        "isOvertime",
+        "comment"
 })
 public class OLDBGoal {
 
-    @JsonProperty("GoalID")
+    @JsonProperty("goalID")
     private Integer goalID;
-    @JsonProperty("ScoreTeam1")
+    @JsonProperty("scoreTeam1")
     private Integer scoreTeam1;
-    @JsonProperty("ScoreTeam2")
+    @JsonProperty("scoreTeam2")
     private Integer scoreTeam2;
-    @JsonProperty("MatchMinute")
+    @JsonProperty("matchMinute")
     private Integer matchMinute;
-    @JsonProperty("GoalGetterID")
+    @JsonProperty("goalGetterID")
     private Integer goalGetterID;
-    @JsonProperty("GoalGetterName")
+    @JsonProperty("goalGetterName")
     private String goalGetterName;
-    @JsonProperty("IsPenalty")
+    @JsonProperty("isPenalty")
     private Boolean isPenalty;
-    @JsonProperty("IsOwnGoal")
+    @JsonProperty("isOwnGoal")
     private Boolean isOwnGoal;
-    @JsonProperty("IsOvertime")
+    @JsonProperty("isOvertime")
     private Boolean isOvertime;
-    @JsonProperty("Comment")
+    @JsonProperty("comment")
     private Object comment;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("GoalID")
+    @JsonProperty("goalID")
     public Integer getGoalID() {
         return goalID;
     }
 
-    @JsonProperty("GoalID")
+    @JsonProperty("goalID")
     public void setGoalID(Integer goalID) {
         this.goalID = goalID;
     }
 
-    @JsonProperty("ScoreTeam1")
+    @JsonProperty("scoreTeam1")
     public Integer getScoreTeam1() {
         return scoreTeam1;
     }
 
-    @JsonProperty("ScoreTeam1")
+    @JsonProperty("scoreTeam1")
     public void setScoreTeam1(Integer scoreTeam1) {
         this.scoreTeam1 = scoreTeam1;
     }
 
-    @JsonProperty("ScoreTeam2")
+    @JsonProperty("scoreTeam2")
     public Integer getScoreTeam2() {
         return scoreTeam2;
     }
 
-    @JsonProperty("ScoreTeam2")
+    @JsonProperty("scoreTeam2")
     public void setScoreTeam2(Integer scoreTeam2) {
         this.scoreTeam2 = scoreTeam2;
     }
 
-    @JsonProperty("MatchMinute")
+    @JsonProperty("matchMinute")
     public Integer getMatchMinute() {
         return matchMinute;
     }
 
-    @JsonProperty("MatchMinute")
+    @JsonProperty("matchMinute")
     public void setMatchMinute(Integer matchMinute) {
         this.matchMinute = matchMinute;
     }
 
-    @JsonProperty("GoalGetterID")
+    @JsonProperty("goalGetterID")
     public Integer getGoalGetterID() {
         return goalGetterID;
     }
 
-    @JsonProperty("GoalGetterID")
+    @JsonProperty("goalGetterID")
     public void setGoalGetterID(Integer goalGetterID) {
         this.goalGetterID = goalGetterID;
     }
 
-    @JsonProperty("GoalGetterName")
+    @JsonProperty("goalGetterName")
     public String getGoalGetterName() {
         return goalGetterName;
     }
 
-    @JsonProperty("GoalGetterName")
+    @JsonProperty("goalGetterName")
     public void setGoalGetterName(String goalGetterName) {
         this.goalGetterName = goalGetterName;
     }
 
-    @JsonProperty("IsPenalty")
+    @JsonProperty("isPenalty")
     public Boolean getIsPenalty() {
         return isPenalty;
     }
 
-    @JsonProperty("IsPenalty")
+    @JsonProperty("isPenalty")
     public void setIsPenalty(Boolean isPenalty) {
         this.isPenalty = isPenalty;
     }
 
-    @JsonProperty("IsOwnGoal")
+    @JsonProperty("isOwnGoal")
     public Boolean getIsOwnGoal() {
         return isOwnGoal;
     }
 
-    @JsonProperty("IsOwnGoal")
+    @JsonProperty("isOwnGoal")
     public void setIsOwnGoal(Boolean isOwnGoal) {
         this.isOwnGoal = isOwnGoal;
     }
 
-    @JsonProperty("IsOvertime")
+    @JsonProperty("isOvertime")
     public Boolean getIsOvertime() {
         return isOvertime;
     }
 
-    @JsonProperty("IsOvertime")
+    @JsonProperty("isOvertime")
     public void setIsOvertime(Boolean isOvertime) {
         this.isOvertime = isOvertime;
     }
 
-    @JsonProperty("Comment")
+    @JsonProperty("comment")
     public Object getComment() {
         return comment;
     }
 
-    @JsonProperty("Comment")
+    @JsonProperty("comment")
     public void setComment(Object comment) {
         this.comment = comment;
     }

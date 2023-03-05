@@ -7,47 +7,47 @@ import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "LocationID",
-        "LocationCity",
-        "LocationStadium"
+        "locationID",
+        "locationCity",
+        "locationStadium"
 })
 public class OLDBLocation {
 
-    @JsonProperty("LocationID")
+    @JsonProperty("locationID")
     private Integer locationID;
-    @JsonProperty("LocationCity")
+    @JsonProperty("locationCity")
     private String locationCity;
-    @JsonProperty("LocationStadium")
+    @JsonProperty("locationStadium")
     private String locationStadium;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("LocationID")
+    @JsonProperty("locationID")
     public Integer getLocationID() {
         return locationID;
     }
 
-    @JsonProperty("LocationID")
+    @JsonProperty("locationID")
     public void setLocationID(Integer locationID) {
         this.locationID = locationID;
     }
 
-    @JsonProperty("LocationCity")
+    @JsonProperty("locationCity")
     public String getLocationCity() {
         return locationCity;
     }
 
-    @JsonProperty("LocationCity")
+    @JsonProperty("locationCity")
     public void setLocationCity(String locationCity) {
         this.locationCity = locationCity;
     }
 
-    @JsonProperty("LocationStadium")
+    @JsonProperty("locationStadium")
     public String getLocationStadium() {
         return locationStadium;
     }
 
-    @JsonProperty("LocationStadium")
+    @JsonProperty("locationStadium")
     public void setLocationStadium(String locationStadium) {
         this.locationStadium = locationStadium;
     }

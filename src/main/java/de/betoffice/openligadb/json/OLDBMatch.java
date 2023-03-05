@@ -8,203 +8,203 @@ import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "MatchID",
-        "MatchDateTime",
-        "TimeZoneID",
-        "LeagueId",
-        "LeagueName",
-        "MatchDateTimeUTC",
-        "Group",
-        "Team1",
-        "Team2",
-        "LastUpdateDateTime",
-        "MatchIsFinished",
-        "MatchResults",
-        "Goals",
-        "Location",
-        "NumberOfViewers"
+        "matchID",
+        "matchDateTime",
+        "timeZoneID",
+        "leagueId",
+        "leagueName",
+        "matchDateTimeUTC",
+        "group",
+        "team1",
+        "team2",
+        "lastUpdateDateTime",
+        "matchIsFinished",
+        "matchResults",
+        "goals",
+        "location",
+        "numberOfViewers"
 })
 public class OLDBMatch {
 
-    @JsonProperty("MatchID")
+    @JsonProperty("matchID")
     private Integer matchID;
-    @JsonProperty("MatchDateTime")
+    @JsonProperty("matchDateTime")
     private String matchDateTime;
-    @JsonProperty("TimeZoneID")
+    @JsonProperty("timeZoneID")
     private String timeZoneID;
-    @JsonProperty("LeagueId")
+    @JsonProperty("leagueId")
     private Integer leagueId;
-    @JsonProperty("LeagueName")
+    @JsonProperty("leagueName")
     private String leagueName;
-    @JsonProperty("MatchDateTimeUTC")
+    @JsonProperty("matchDateTimeUTC")
     private String matchDateTimeUTC;
-    @JsonProperty("Group")
+    @JsonProperty("group")
     private OLDBGroup group;
-    @JsonProperty("Team1")
+    @JsonProperty("team1")
     private OLDBTeam team1;
-    @JsonProperty("Team2")
+    @JsonProperty("team2")
     private OLDBTeam team2;
-    @JsonProperty("LastUpdateDateTime")
+    @JsonProperty("lastUpdateDateTime")
     private String lastUpdateDateTime;
-    @JsonProperty("MatchIsFinished")
+    @JsonProperty("matchIsFinished")
     private Boolean matchIsFinished;
-    @JsonProperty("MatchResults")
+    @JsonProperty("matchResults")
     private List<OLDBMatchResult> matchResults = null;
-    @JsonProperty("Goals")
+    @JsonProperty("goals")
     private List<OLDBGoal> goals = null;
-    @JsonProperty("Location")
+    @JsonProperty("location")
     private OLDBLocation location;
-    @JsonProperty("NumberOfViewers")
+    @JsonProperty("numberOfViewers")
     private Object numberOfViewers;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("MatchID")
+    @JsonProperty("matchID")
     public Integer getMatchID() {
         return matchID;
     }
 
-    @JsonProperty("MatchID")
+    @JsonProperty("matchID")
     public void setMatchID(Integer matchID) {
         this.matchID = matchID;
     }
 
-    @JsonProperty("MatchDateTime")
+    @JsonProperty("matchDateTime")
     public String getMatchDateTime() {
         return matchDateTime;
     }
 
-    @JsonProperty("MatchDateTime")
+    @JsonProperty("matchDateTime")
     public void setMatchDateTime(String matchDateTime) {
         this.matchDateTime = matchDateTime;
     }
 
-    @JsonProperty("TimeZoneID")
+    @JsonProperty("timeZoneID")
     public String getTimeZoneID() {
         return timeZoneID;
     }
 
-    @JsonProperty("TimeZoneID")
+    @JsonProperty("timeZoneID")
     public void setTimeZoneID(String timeZoneID) {
         this.timeZoneID = timeZoneID;
     }
 
-    @JsonProperty("LeagueId")
+    @JsonProperty("leagueId")
     public Integer getLeagueId() {
         return leagueId;
     }
 
-    @JsonProperty("LeagueId")
+    @JsonProperty("leagueId")
     public void setLeagueId(Integer leagueId) {
         this.leagueId = leagueId;
     }
 
-    @JsonProperty("LeagueName")
+    @JsonProperty("leagueName")
     public String getLeagueName() {
         return leagueName;
     }
 
-    @JsonProperty("LeagueName")
+    @JsonProperty("leagueName")
     public void setLeagueName(String leagueName) {
         this.leagueName = leagueName;
     }
 
-    @JsonProperty("MatchDateTimeUTC")
+    @JsonProperty("matchDateTimeUTC")
     public String getMatchDateTimeUTC() {
         return matchDateTimeUTC;
     }
 
-    @JsonProperty("MatchDateTimeUTC")
+    @JsonProperty("matchDateTimeUTC")
     public void setMatchDateTimeUTC(String matchDateTimeUTC) {
         this.matchDateTimeUTC = matchDateTimeUTC;
     }
 
-    @JsonProperty("Group")
+    @JsonProperty("group")
     public OLDBGroup getGroup() {
         return group;
     }
 
-    @JsonProperty("Group")
+    @JsonProperty("group")
     public void setGroup(OLDBGroup group) {
         this.group = group;
     }
 
-    @JsonProperty("Team1")
+    @JsonProperty("team1")
     public OLDBTeam getTeam1() {
         return team1;
     }
 
-    @JsonProperty("Team1")
+    @JsonProperty("team1")
     public void setTeam1(OLDBTeam team1) {
         this.team1 = team1;
     }
 
-    @JsonProperty("Team2")
+    @JsonProperty("team2")
     public OLDBTeam getTeam2() {
         return team2;
     }
 
-    @JsonProperty("Team2")
+    @JsonProperty("team2")
     public void setTeam2(OLDBTeam team2) {
         this.team2 = team2;
     }
 
-    @JsonProperty("LastUpdateDateTime")
+    @JsonProperty("lastUpdateDateTime")
     public String getLastUpdateDateTime() {
         return lastUpdateDateTime;
     }
 
-    @JsonProperty("LastUpdateDateTime")
+    @JsonProperty("lastUpdateDateTime")
     public void setLastUpdateDateTime(String lastUpdateDateTime) {
         this.lastUpdateDateTime = lastUpdateDateTime;
     }
 
-    @JsonProperty("MatchIsFinished")
+    @JsonProperty("matchIsFinished")
     public Boolean getMatchIsFinished() {
         return matchIsFinished;
     }
 
-    @JsonProperty("MatchIsFinished")
+    @JsonProperty("matchIsFinished")
     public void setMatchIsFinished(Boolean matchIsFinished) {
         this.matchIsFinished = matchIsFinished;
     }
 
-    @JsonProperty("MatchResults")
+    @JsonProperty("matchResults")
     public List<OLDBMatchResult> getMatchResults() {
         return matchResults;
     }
 
-    @JsonProperty("MatchResults")
+    @JsonProperty("matchResults")
     public void setMatchResults(List<OLDBMatchResult> matchResults) {
         this.matchResults = matchResults;
     }
 
-    @JsonProperty("Goals")
+    @JsonProperty("goals")
     public List<OLDBGoal> getGoals() {
         return goals;
     }
 
-    @JsonProperty("Goals")
+    @JsonProperty("goals")
     public void setGoals(List<OLDBGoal> goals) {
         this.goals = goals;
     }
 
-    @JsonProperty("Location")
+    @JsonProperty("location")
     public OLDBLocation getLocation() {
         return location;
     }
 
-    @JsonProperty("Location")
+    @JsonProperty("location")
     public void setLocation(OLDBLocation location) {
         this.location = location;
     }
 
-    @JsonProperty("NumberOfViewers")
+    @JsonProperty("numberOfViewers")
     public Object getNumberOfViewers() {
         return numberOfViewers;
     }
 
-    @JsonProperty("NumberOfViewers")
+    @JsonProperty("numberOfViewers")
     public void setNumberOfViewers(Object numberOfViewers) {
         this.numberOfViewers = numberOfViewers;
     }

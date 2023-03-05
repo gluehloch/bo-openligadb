@@ -7,99 +7,99 @@ import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "ResultID",
-        "ResultName",
-        "PointsTeam1",
-        "PointsTeam2",
-        "ResultOrderID",
-        "ResultTypeID",
-        "ResultDescription"
+        "resultID",
+        "resultName",
+        "pointsTeam1",
+        "pointsTeam2",
+        "resultOrderID",
+        "resultTypeID",
+        "resultDescription"
 })
 public class OLDBMatchResult {
 
-    @JsonProperty("ResultID")
+    @JsonProperty("resultID")
     private Integer resultID;
-    @JsonProperty("ResultName")
+    @JsonProperty("resultName")
     private String resultName;
-    @JsonProperty("PointsTeam1")
+    @JsonProperty("pointsTeam1")
     private Integer pointsTeam1;
-    @JsonProperty("PointsTeam2")
+    @JsonProperty("pointsTeam2")
     private Integer pointsTeam2;
-    @JsonProperty("ResultOrderID")
+    @JsonProperty("resultOrderID")
     private Integer resultOrderID;
-    @JsonProperty("ResultTypeID")
+    @JsonProperty("resultTypeID")
     private Integer resultTypeID;
-    @JsonProperty("ResultDescription")
+    @JsonProperty("resultDescription")
     private String resultDescription;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("ResultID")
+    @JsonProperty("resultID")
     public Integer getResultID() {
         return resultID;
     }
 
-    @JsonProperty("ResultID")
+    @JsonProperty("resultID")
     public void setResultID(Integer resultID) {
         this.resultID = resultID;
     }
 
-    @JsonProperty("ResultName")
+    @JsonProperty("resultName")
     public String getResultName() {
         return resultName;
     }
 
-    @JsonProperty("ResultName")
+    @JsonProperty("resultName")
     public void setResultName(String resultName) {
         this.resultName = resultName;
     }
 
-    @JsonProperty("PointsTeam1")
+    @JsonProperty("pointsTeam1")
     public Integer getPointsTeam1() {
         return pointsTeam1;
     }
 
-    @JsonProperty("PointsTeam1")
+    @JsonProperty("pointsTeam1")
     public void setPointsTeam1(Integer pointsTeam1) {
         this.pointsTeam1 = pointsTeam1;
     }
 
-    @JsonProperty("PointsTeam2")
+    @JsonProperty("pointsTeam2")
     public Integer getPointsTeam2() {
         return pointsTeam2;
     }
 
-    @JsonProperty("PointsTeam2")
+    @JsonProperty("pointsTeam2")
     public void setPointsTeam2(Integer pointsTeam2) {
         this.pointsTeam2 = pointsTeam2;
     }
 
-    @JsonProperty("ResultOrderID")
+    @JsonProperty("resultOrderID")
     public Integer getResultOrderID() {
         return resultOrderID;
     }
 
-    @JsonProperty("ResultOrderID")
+    @JsonProperty("resultOrderID")
     public void setResultOrderID(Integer resultOrderID) {
         this.resultOrderID = resultOrderID;
     }
 
-    @JsonProperty("ResultTypeID")
+    @JsonProperty("resultTypeID")
     public Integer getResultTypeID() {
         return resultTypeID;
     }
 
-    @JsonProperty("ResultTypeID")
+    @JsonProperty("resultTypeID")
     public void setResultTypeID(Integer resultTypeID) {
         this.resultTypeID = resultTypeID;
     }
 
-    @JsonProperty("ResultDescription")
+    @JsonProperty("resultDescription")
     public String getResultDescription() {
         return resultDescription;
     }
 
-    @JsonProperty("ResultDescription")
+    @JsonProperty("resultDescription")
     public void setResultDescription(String resultDescription) {
         this.resultDescription = resultDescription;
     }

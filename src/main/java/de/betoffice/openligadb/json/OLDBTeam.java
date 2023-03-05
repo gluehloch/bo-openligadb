@@ -7,73 +7,73 @@ import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "TeamId",
-        "TeamName",
-        "ShortName",
-        "TeamIconUrl",
-        "TeamGroupName"
+        "teamId",
+        "teamName",
+        "shortName",
+        "teamIconUrl",
+        "teamGroupName"
 })
 public class OLDBTeam {
 
-    @JsonProperty("TeamId")
+    @JsonProperty("teamId")
     private Integer teamId;
-    @JsonProperty("TeamName")
+    @JsonProperty("teamName")
     private String teamName;
-    @JsonProperty("ShortName")
+    @JsonProperty("shortName")
     private String shortName;
-    @JsonProperty("TeamIconUrl")
+    @JsonProperty("teamIconUrl")
     private String teamIconUrl;
-    @JsonProperty("TeamGroupName")
+    @JsonProperty("teamGroupName")
     private Object teamGroupName;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("TeamId")
+    @JsonProperty("teamId")
     public Integer getTeamId() {
         return teamId;
     }
 
-    @JsonProperty("TeamId")
+    @JsonProperty("teamId")
     public void setTeamId(Integer teamId) {
         this.teamId = teamId;
     }
 
-    @JsonProperty("TeamName")
+    @JsonProperty("teamName")
     public String getTeamName() {
         return teamName;
     }
 
-    @JsonProperty("TeamName")
+    @JsonProperty("teamName")
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
 
-    @JsonProperty("ShortName")
+    @JsonProperty("shortName")
     public String getShortName() {
         return shortName;
     }
 
-    @JsonProperty("ShortName")
+    @JsonProperty("shortName")
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
 
-    @JsonProperty("TeamIconUrl")
+    @JsonProperty("teamIconUrl")
     public String getTeamIconUrl() {
         return teamIconUrl;
     }
 
-    @JsonProperty("TeamIconUrl")
+    @JsonProperty("teamIconUrl")
     public void setTeamIconUrl(String teamIconUrl) {
         this.teamIconUrl = teamIconUrl;
     }
 
-    @JsonProperty("TeamGroupName")
+    @JsonProperty("teamGroupName")
     public Object getTeamGroupName() {
         return teamGroupName;
     }
 
-    @JsonProperty("TeamGroupName")
+    @JsonProperty("teamGroupName")
     public void setTeamGroupName(Object teamGroupName) {
         this.teamGroupName = teamGroupName;
     }

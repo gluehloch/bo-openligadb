@@ -7,47 +7,47 @@ import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "GroupName",
-        "GroupOrderID",
-        "GroupID"
+        "groupName",
+        "ggroupOrderID",
+        "groupID"
 })
 public class OLDBGroup {
 
-    @JsonProperty("GroupName")
+    @JsonProperty("groupName")
     private String groupName;
-    @JsonProperty("GroupOrderID")
+    @JsonProperty("groupOrderID")
     private Integer groupOrderID;
-    @JsonProperty("GroupID")
+    @JsonProperty("groupID")
     private Integer groupID;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("GroupName")
+    @JsonProperty("groupName")
     public String getGroupName() {
         return groupName;
     }
 
-    @JsonProperty("GroupName")
+    @JsonProperty("groupName")
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
 
-    @JsonProperty("GroupOrderID")
+    @JsonProperty("groupOrderID")
     public Integer getGroupOrderID() {
         return groupOrderID;
     }
 
-    @JsonProperty("GroupOrderID")
+    @JsonProperty("groupOrderID")
     public void setGroupOrderID(Integer groupOrderID) {
         this.groupOrderID = groupOrderID;
     }
 
-    @JsonProperty("GroupID")
+    @JsonProperty("groupID")
     public Integer getGroupID() {
         return groupID;
     }
 
-    @JsonProperty("GroupID")
+    @JsonProperty("groupID")
     public void setGroupID(Integer groupID) {
         this.groupID = groupID;
     }
