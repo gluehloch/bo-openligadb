@@ -1,3172 +1,3244 @@
 [
   {
-    "MatchID": 60595,
-    "MatchDateTime": "2021-06-11T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-11T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60595,
+    "matchDateTime": "2021-06-11T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-11T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 153,
-      "TeamName": "Türkei",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/200px-Flag_of_Turkey.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team1": {
+      "teamId": 153,
+      "teamName": "TÃ¼rkei",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/200px-Flag_of_Turkey.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 145,
-      "TeamName": "Italien",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/20px-Flag_of_Italy.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team2": {
+      "teamId": 145,
+      "teamName": "Italien",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/20px-Flag_of_Italy.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-12T17:11:23.3",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-12T17:11:23.3",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94691,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 3,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94691,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 3,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94692,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94692,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89065,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 53,
-        "GoalGetterID": 18811,
-        "GoalGetterName": "Merih Demiral",
-        "IsPenalty": false,
-        "IsOwnGoal": true,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89067,
+        "scoreTeam1": 0,
+        "scoreTeam2": 3,
+        "matchMinute": 79,
+        "goalGetterID": 15973,
+        "goalGetterName": "Lorenzo Insigne",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89066,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 2,
-        "MatchMinute": 66,
-        "GoalGetterID": 18202,
-        "GoalGetterName": "Ciro Immobile",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89066,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": 66,
+        "goalGetterID": 18202,
+        "goalGetterName": "Ciro Immobile",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89067,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 3,
-        "MatchMinute": 79,
-        "GoalGetterID": 15973,
-        "GoalGetterName": "Lorenzo Insigne",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89065,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 53,
+        "goalGetterID": 18811,
+        "goalGetterName": "Merih Demiral",
+        "isPenalty": false,
+        "isOwnGoal": true,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 378,
-      "LocationCity": "Rom",
-      "LocationStadium": "Stadio Olimpico"
+    "location": {
+      "locationID": 378,
+      "locationCity": "Rom",
+      "locationStadium": "Stadio Olimpico"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60596,
-    "MatchDateTime": "2021-06-12T15:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-12T13:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60596,
+    "matchDateTime": "2021-06-12T15:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-12T13:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 5101,
-      "TeamName": "Wales",
-      "ShortName": "WAL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Wales_%281959%E2%80%93present%29.svg/20px-Flag_of_Wales_%281959%E2%80%93present%29.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team1": {
+      "teamId": 5101,
+      "teamName": "Wales",
+      "shortName": "WAL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Wales_%281959%E2%80%93present%29.svg/20px-Flag_of_Wales_%281959%E2%80%93present%29.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 38,
-      "TeamName": "Schweiz",
-      "ShortName": "CHE",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Civil_Ensign_of_Switzerland_%28Pantone%29.svg/23px-Civil_Ensign_of_Switzerland_%28Pantone%29.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team2": {
+      "teamId": 38,
+      "teamName": "Schweiz",
+      "shortName": "CHE",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Civil_Ensign_of_Switzerland_%28Pantone%29.svg/23px-Civil_Ensign_of_Switzerland_%28Pantone%29.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-12T17:12:07.807",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-12T17:12:07.807",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94695,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94695,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94696,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94696,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89068,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 49,
-        "GoalGetterID": 16135,
-        "GoalGetterName": "Breel Embolo",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89070,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 74,
+        "goalGetterID": 18808,
+        "goalGetterName": "Kieffer Moore",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89070,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 74,
-        "GoalGetterID": 18808,
-        "GoalGetterName": "Kieffer Moore",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89068,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 49,
+        "goalGetterID": 16135,
+        "goalGetterName": "Breel Embolo",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1303,
-      "LocationCity": "Baku",
-      "LocationStadium": "Baku Nationalstadion"
+    "location": {
+      "locationID": 1303,
+      "locationCity": "Baku",
+      "locationStadium": "Baku Nationalstadion"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60597,
-    "MatchDateTime": "2021-06-12T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-12T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60597,
+    "matchDateTime": "2021-06-12T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-12T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 758,
-      "TeamName": "Dänemark",
-      "ShortName": "DNK",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team1": {
+      "teamId": 758,
+      "teamName": "DÃ¤nemark",
+      "shortName": "DNK",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 2425,
-      "TeamName": "Finnland",
-      "ShortName": "FIN",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/200px-Flag_of_Finland.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team2": {
+      "teamId": 2425,
+      "teamName": "Finnland",
+      "shortName": "FIN",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/200px-Flag_of_Finland.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-13T10:41:27.73",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-13T10:41:27.73",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94699,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94699,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94700,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94700,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89078,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 59,
-        "GoalGetterID": 14577,
-        "GoalGetterName": "Joel Pohjanpalo",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89078,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 59,
+        "goalGetterID": 14577,
+        "goalGetterName": "Joel Pohjanpalo",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 380,
-      "LocationCity": "Kopenhagen",
-      "LocationStadium": "Parken Stadion"
+    "location": {
+      "locationID": 380,
+      "locationCity": "Kopenhagen",
+      "locationStadium": "Parken Stadion"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60599,
-    "MatchDateTime": "2021-06-12T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-12T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60599,
+    "matchDateTime": "2021-06-12T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-12T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 2673,
-      "TeamName": "Belgien",
-      "ShortName": "BEL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team1": {
+      "teamId": 2673,
+      "teamName": "Belgien",
+      "shortName": "BEL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 150,
-      "TeamName": "Russland",
-      "ShortName": "RUS",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/20px-Flag_of_Russia.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team2": {
+      "teamId": 150,
+      "teamName": "Russland",
+      "shortName": "RUS",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/20px-Flag_of_Russia.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-13T10:45:03.803",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-13T10:45:03.803",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94703,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 3,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94703,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94704,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 2,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94704,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 2,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89079,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 10,
-        "GoalGetterID": 14352,
-        "GoalGetterName": "Romelu Lukaku",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89079,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 10,
+        "goalGetterID": 14352,
+        "goalGetterName": "Romelu Lukaku",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89080,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 0,
-        "MatchMinute": 34,
-        "GoalGetterID": 16848,
-        "GoalGetterName": "Thomas Meunier",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89081,
+        "scoreTeam1": 3,
+        "scoreTeam2": 0,
+        "matchMinute": 88,
+        "goalGetterID": 14352,
+        "goalGetterName": "Romelu Lukaku",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89081,
-        "ScoreTeam1": 3,
-        "ScoreTeam2": 0,
-        "MatchMinute": 88,
-        "GoalGetterID": 14352,
-        "GoalGetterName": "Romelu Lukaku",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89080,
+        "scoreTeam1": 2,
+        "scoreTeam2": 0,
+        "matchMinute": 34,
+        "goalGetterID": 16848,
+        "goalGetterName": "Thomas Meunier",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 865,
-      "LocationCity": "St. Petersburg",
-      "LocationStadium": "Petrowski"
+    "location": {
+      "locationID": 865,
+      "locationCity": "St. Petersburg",
+      "locationStadium": "Petrowski"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60600,
-    "MatchDateTime": "2021-06-13T15:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-13T13:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60600,
+    "matchDateTime": "2021-06-13T15:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-13T13:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 755,
-      "TeamName": "England",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/18px-Flag_of_England.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team1": {
+      "teamId": 755,
+      "teamName": "England",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/18px-Flag_of_England.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 146,
-      "TeamName": "Kroatien",
-      "ShortName": "HRV",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team2": {
+      "teamId": 146,
+      "teamName": "Kroatien",
+      "shortName": "HRV",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-13T18:38:58.597",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-13T18:38:58.597",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94709,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94709,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94710,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94710,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89085,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 59,
-        "GoalGetterID": 17056,
-        "GoalGetterName": "Raheem Sterling",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89085,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 59,
+        "goalGetterID": 17056,
+        "goalGetterName": "Raheem Sterling",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1288,
-      "LocationCity": "London",
-      "LocationStadium": "Wembley"
+    "location": {
+      "locationID": 1288,
+      "locationCity": "London",
+      "locationStadium": "Wembley"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60601,
-    "MatchDateTime": "2021-06-13T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-13T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60601,
+    "matchDateTime": "2021-06-13T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-13T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 37,
-      "TeamName": "Österreich",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/200px-Flag_of_Austria.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team1": {
+      "teamId": 37,
+      "teamName": "Ã–sterreich",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/200px-Flag_of_Austria.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 2006,
-      "TeamName": "Nordmazedonien",
-      "ShortName": "MKD",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/640px-Flag_of_North_Macedonia.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team2": {
+      "teamId": 2006,
+      "teamName": "Nordmazedonien",
+      "shortName": "MKD",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/640px-Flag_of_North_Macedonia.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-14T07:46:49.57",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-14T07:46:49.57",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94711,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 3,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94711,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94712,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94712,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89086,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 18,
-        "GoalGetterID": 18672,
-        "GoalGetterName": "S. Lainer",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89096,
+        "scoreTeam1": 3,
+        "scoreTeam2": 1,
+        "matchMinute": 89,
+        "goalGetterID": 17141,
+        "goalGetterName": "Marko Arnautovic",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89087,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 28,
-        "GoalGetterID": 1919,
-        "GoalGetterName": "Goran Pandev",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89095,
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchMinute": 78,
+        "goalGetterID": 14578,
+        "goalGetterName": "Michael Gregoritsch",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89095,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 1,
-        "MatchMinute": 78,
-        "GoalGetterID": 14578,
-        "GoalGetterName": "Michael Gregoritsch",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89087,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 28,
+        "goalGetterID": 1919,
+        "goalGetterName": "Goran Pandev",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89096,
-        "ScoreTeam1": 3,
-        "ScoreTeam2": 1,
-        "MatchMinute": 89,
-        "GoalGetterID": 17141,
-        "GoalGetterName": "Marko Arnautovic",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89086,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 18,
+        "goalGetterID": 18672,
+        "goalGetterName": "S. Lainer",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1308,
-      "LocationCity": "Bukarest",
-      "LocationStadium": "Arena Nationala"
+    "location": {
+      "locationID": 1308,
+      "locationCity": "Bukarest",
+      "locationStadium": "Arena Nationala"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60602,
-    "MatchDateTime": "2021-06-13T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-13T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60602,
+    "matchDateTime": "2021-06-13T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-13T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 147,
-      "TeamName": "Niederlande",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team1": {
+      "teamId": 147,
+      "teamName": "Niederlande",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 2004,
-      "TeamName": "Ukraine",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/20px-Flag_of_Ukraine.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team2": {
+      "teamId": 2004,
+      "teamName": "Ukraine",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/20px-Flag_of_Ukraine.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-14T07:46:57.32",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-14T07:46:57.32",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94715,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 3,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94715,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94716,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94716,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89097,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 52,
-        "GoalGetterID": 17176,
-        "GoalGetterName": "Georginio Wijnaldum",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89100,
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchMinute": 75,
+        "goalGetterID": 18818,
+        "goalGetterName": "A. Yarmolenko",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89099,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 0,
-        "MatchMinute": 58,
-        "GoalGetterID": 18224,
-        "GoalGetterName": "Wout Weghorst",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89101,
+        "scoreTeam1": 2,
+        "scoreTeam2": 2,
+        "matchMinute": 79,
+        "goalGetterID": 18819,
+        "goalGetterName": "R. Yaremchuk",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89100,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 1,
-        "MatchMinute": 75,
-        "GoalGetterID": 18818,
-        "GoalGetterName": "A. Yarmolenko",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89102,
+        "scoreTeam1": 3,
+        "scoreTeam2": 2,
+        "matchMinute": 85,
+        "goalGetterID": 18820,
+        "goalGetterName": "D. Dumfries",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89101,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 2,
-        "MatchMinute": 79,
-        "GoalGetterID": 18819,
-        "GoalGetterName": "R. Yaremchuk",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89097,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 52,
+        "goalGetterID": 17176,
+        "goalGetterName": "Georginio Wijnaldum",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89102,
-        "ScoreTeam1": 3,
-        "ScoreTeam2": 2,
-        "MatchMinute": 85,
-        "GoalGetterID": 18820,
-        "GoalGetterName": "D. Dumfries",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89099,
+        "scoreTeam1": 2,
+        "scoreTeam2": 0,
+        "matchMinute": 58,
+        "goalGetterID": 18224,
+        "goalGetterName": "Wout Weghorst",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1309,
-      "LocationCity": "Amsterdam",
-      "LocationStadium": "Johan-Cruyff-Arena"
+    "location": {
+      "locationID": 1309,
+      "locationCity": "Amsterdam",
+      "locationStadium": "Johan-Cruyff-Arena"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60603,
-    "MatchDateTime": "2021-06-14T15:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-14T13:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60603,
+    "matchDateTime": "2021-06-14T15:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-14T13:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 5271,
-      "TeamName": "Schottland",
-      "ShortName": "SCT",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/1024px-Flag_of_Scotland.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team1": {
+      "teamId": 5271,
+      "teamName": "Schottland",
+      "shortName": "SCT",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/1024px-Flag_of_Scotland.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 4203,
-      "TeamName": "Tschechische Rep.",
-      "ShortName": "",
-      "TeamIconUrl": "https://www.openligadb.de/images/teamicons/Tschechien.gif",
-      "TeamGroupName": "Gruppe D"
+    "team2": {
+      "teamId": 4203,
+      "teamName": "Tschechische Rep.",
+      "shortName": "",
+      "teamIconUrl": "https://www.openligadb.de/images/teamicons/Tschechien.gif",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-16T11:02:59.703",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-16T11:02:59.703",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94843,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94843,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94844,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94844,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89238,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 42,
-        "GoalGetterID": 18331,
-        "GoalGetterName": "P. Schick",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89238,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 42,
+        "goalGetterID": 18331,
+        "goalGetterName": "P. Schick",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89239,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 2,
-        "MatchMinute": 52,
-        "GoalGetterID": 18331,
-        "GoalGetterName": "P. Schick",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89239,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": 52,
+        "goalGetterID": 18331,
+        "goalGetterName": "P. Schick",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1310,
-      "LocationCity": "Glasgow",
-      "LocationStadium": "Hampden Park"
+    "location": {
+      "locationID": 1310,
+      "locationCity": "Glasgow",
+      "locationStadium": "Hampden Park"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60604,
-    "MatchDateTime": "2021-06-14T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-14T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60604,
+    "matchDateTime": "2021-06-14T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-14T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 1410,
-      "TeamName": "Polen",
-      "ShortName": "POL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team1": {
+      "teamId": 1410,
+      "teamName": "Polen",
+      "shortName": "POL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 763,
-      "TeamName": "Slowakei",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/20px-Flag_of_Slovakia.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team2": {
+      "teamId": 763,
+      "teamName": "Slowakei",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/20px-Flag_of_Slovakia.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-16T11:04:16.973",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-16T11:04:16.973",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94845,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94845,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94846,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94846,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89240,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 18,
-        "GoalGetterID": 18825,
-        "GoalGetterName": "W. Szczesny",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89241,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 46,
+        "goalGetterID": 18823,
+        "goalGetterName": "K. Linetty",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89241,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 46,
-        "GoalGetterID": 18823,
-        "GoalGetterName": "K. Linetty",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89242,
+        "scoreTeam1": 1,
+        "scoreTeam2": 2,
+        "matchMinute": 69,
+        "goalGetterID": 18824,
+        "goalGetterName": "M. Å kriniar",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89242,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 2,
-        "MatchMinute": 69,
-        "GoalGetterID": 18824,
-        "GoalGetterName": "M. Škriniar",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89240,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 18,
+        "goalGetterID": 18825,
+        "goalGetterName": "W. Szczesny",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 865,
-      "LocationCity": "St. Petersburg",
-      "LocationStadium": "Petrowski"
+    "location": {
+      "locationID": 865,
+      "locationCity": "St. Petersburg",
+      "locationStadium": "Petrowski"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60605,
-    "MatchDateTime": "2021-06-14T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-14T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60605,
+    "matchDateTime": "2021-06-14T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-14T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 170,
-      "TeamName": "Spanien",
-      "ShortName": "ESP",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team1": {
+      "teamId": 170,
+      "teamName": "Spanien",
+      "shortName": "ESP",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 151,
-      "TeamName": "Schweden",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/200px-Flag_of_Sweden.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team2": {
+      "teamId": 151,
+      "teamName": "Schweden",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/200px-Flag_of_Sweden.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-16T10:58:23.223",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-16T10:58:23.223",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94847,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94847,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94848,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94848,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [],
-    "Location": {
-      "LocationID": 52,
-      "LocationCity": "",
-      "LocationStadium": ""
+    "goals": [],
+    "location": {
+      "locationID": 52,
+      "locationCity": "",
+      "locationStadium": ""
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60606,
-    "MatchDateTime": "2021-06-15T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-15T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60606,
+    "matchDateTime": "2021-06-15T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-15T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 1395,
-      "TeamName": "Ungarn",
-      "ShortName": "HUN",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/23px-Flag_of_Hungary.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team1": {
+      "teamId": 1395,
+      "teamName": "Ungarn",
+      "shortName": "HUN",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/23px-Flag_of_Hungary.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 149,
-      "TeamName": "Portugal",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team2": {
+      "teamId": 149,
+      "teamName": "Portugal",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-16T10:59:48.35",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-16T10:59:48.35",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94879,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 3,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94879,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 3,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94880,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94880,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89257,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 84,
-        "GoalGetterID": 16099,
-        "GoalGetterName": "Raphael Guerreiro",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89257,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 84,
+        "goalGetterID": 16099,
+        "goalGetterName": "Raphael Guerreiro",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89258,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 2,
-        "MatchMinute": 87,
-        "GoalGetterID": 1945,
-        "GoalGetterName": "Cristiano Ronaldo",
-        "IsPenalty": true,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89258,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": 87,
+        "goalGetterID": 1945,
+        "goalGetterName": "Cristiano Ronaldo",
+        "isPenalty": true,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89259,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 3,
-        "MatchMinute": 92,
-        "GoalGetterID": 1945,
-        "GoalGetterName": "Cristiano Ronaldo",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": true,
-        "Comment": null
+        "goalID": 89259,
+        "scoreTeam1": 0,
+        "scoreTeam2": 3,
+        "matchMinute": 92,
+        "goalGetterID": 1945,
+        "goalGetterName": "Cristiano Ronaldo",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": true,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1313,
-      "LocationCity": "Budapest",
-      "LocationStadium": "Puskás Aréna"
+    "location": {
+      "locationID": 1313,
+      "locationCity": "Budapest",
+      "locationStadium": "PuskÃ¡s ArÃ©na"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60607,
-    "MatchDateTime": "2021-06-15T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-15T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60607,
+    "matchDateTime": "2021-06-15T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-15T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 144,
-      "TeamName": "Frankreich",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team1": {
+      "teamId": 144,
+      "teamName": "Frankreich",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 139,
-      "TeamName": "Deutschland",
-      "ShortName": "DE",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team2": {
+      "teamId": 139,
+      "teamName": "Deutschland",
+      "shortName": "DE",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-16T11:51:23.397",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-16T11:51:23.397",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94881,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94881,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94882,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94882,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89261,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 20,
-        "GoalGetterID": 15967,
-        "GoalGetterName": "Hummels, Mats",
-        "IsPenalty": false,
-        "IsOwnGoal": true,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89261,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 20,
+        "goalGetterID": 15967,
+        "goalGetterName": "Hummels, Mats",
+        "isPenalty": false,
+        "isOwnGoal": true,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 491,
-      "LocationCity": "München",
-      "LocationStadium": "Alianz Arena"
+    "location": {
+      "locationID": 491,
+      "locationCity": "MÃ¼nchen",
+      "locationStadium": "Alianz Arena"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60608,
-    "MatchDateTime": "2021-06-16T15:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-16T13:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60608,
+    "matchDateTime": "2021-06-16T15:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-16T13:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 2425,
-      "TeamName": "Finnland",
-      "ShortName": "FIN",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/200px-Flag_of_Finland.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team1": {
+      "teamId": 2425,
+      "teamName": "Finnland",
+      "shortName": "FIN",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/200px-Flag_of_Finland.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 150,
-      "TeamName": "Russland",
-      "ShortName": "RUS",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/20px-Flag_of_Russia.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team2": {
+      "teamId": 150,
+      "teamName": "Russland",
+      "shortName": "RUS",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/20px-Flag_of_Russia.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-16T19:41:27.967",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-16T19:41:27.967",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94887,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94887,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94888,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94888,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89264,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 47,
-        "GoalGetterID": 18830,
-        "GoalGetterName": "A. Miranchuk",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89264,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 47,
+        "goalGetterID": 18830,
+        "goalGetterName": "A. Miranchuk",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 865,
-      "LocationCity": "St. Petersburg",
-      "LocationStadium": "Petrowski"
+    "location": {
+      "locationID": 865,
+      "locationCity": "St. Petersburg",
+      "locationStadium": "Petrowski"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60609,
-    "MatchDateTime": "2021-06-16T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-16T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60609,
+    "matchDateTime": "2021-06-16T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-16T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 153,
-      "TeamName": "Türkei",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/200px-Flag_of_Turkey.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team1": {
+      "teamId": 153,
+      "teamName": "TÃ¼rkei",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/200px-Flag_of_Turkey.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 5101,
-      "TeamName": "Wales",
-      "ShortName": "WAL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Wales_%281959%E2%80%93present%29.svg/20px-Flag_of_Wales_%281959%E2%80%93present%29.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team2": {
+      "teamId": 5101,
+      "teamName": "Wales",
+      "shortName": "WAL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Wales_%281959%E2%80%93present%29.svg/20px-Flag_of_Wales_%281959%E2%80%93present%29.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-16T20:05:11.967",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-16T20:05:11.967",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94889,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94889,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94890,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94890,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89265,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 42,
-        "GoalGetterID": 344,
-        "GoalGetterName": "Aaron Ramsey",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89267,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": 95,
+        "goalGetterID": 18832,
+        "goalGetterName": "C. Roberts",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89267,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 2,
-        "MatchMinute": 95,
-        "GoalGetterID": 18832,
-        "GoalGetterName": "C. Roberts",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89265,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 42,
+        "goalGetterID": 344,
+        "goalGetterName": "Aaron Ramsey",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1303,
-      "LocationCity": "Baku",
-      "LocationStadium": "Baku Nationalstadion"
+    "location": {
+      "locationID": 1303,
+      "locationCity": "Baku",
+      "locationStadium": "Baku Nationalstadion"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60610,
-    "MatchDateTime": "2021-06-16T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-16T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60610,
+    "matchDateTime": "2021-06-16T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-16T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 145,
-      "TeamName": "Italien",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/20px-Flag_of_Italy.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team1": {
+      "teamId": 145,
+      "teamName": "Italien",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/20px-Flag_of_Italy.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 38,
-      "TeamName": "Schweiz",
-      "ShortName": "CHE",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Civil_Ensign_of_Switzerland_%28Pantone%29.svg/23px-Civil_Ensign_of_Switzerland_%28Pantone%29.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team2": {
+      "teamId": 38,
+      "teamName": "Schweiz",
+      "shortName": "CHE",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Civil_Ensign_of_Switzerland_%28Pantone%29.svg/23px-Civil_Ensign_of_Switzerland_%28Pantone%29.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-17T17:39:44.573",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-17T17:39:44.573",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94893,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 3,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94893,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94894,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94894,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89271,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 26,
-        "GoalGetterID": 18833,
-        "GoalGetterName": "M. Locatelli",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89271,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 26,
+        "goalGetterID": 18833,
+        "goalGetterName": "M. Locatelli",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89272,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 0,
-        "MatchMinute": 52,
-        "GoalGetterID": 18833,
-        "GoalGetterName": "M. Locatelli",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89272,
+        "scoreTeam1": 2,
+        "scoreTeam2": 0,
+        "matchMinute": 52,
+        "goalGetterID": 18833,
+        "goalGetterName": "M. Locatelli",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89273,
-        "ScoreTeam1": 3,
-        "ScoreTeam2": 0,
-        "MatchMinute": 89,
-        "GoalGetterID": 18806,
-        "GoalGetterName": "C. Immobile",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89273,
+        "scoreTeam1": 3,
+        "scoreTeam2": 0,
+        "matchMinute": 89,
+        "goalGetterID": 18806,
+        "goalGetterName": "C. Immobile",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 378,
-      "LocationCity": "Rom",
-      "LocationStadium": "Stadio Olimpico"
+    "location": {
+      "locationID": 378,
+      "locationCity": "Rom",
+      "locationStadium": "Stadio Olimpico"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60611,
-    "MatchDateTime": "2021-06-17T15:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-17T13:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60611,
+    "matchDateTime": "2021-06-17T15:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-17T13:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 2004,
-      "TeamName": "Ukraine",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/20px-Flag_of_Ukraine.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team1": {
+      "teamId": 2004,
+      "teamName": "Ukraine",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/20px-Flag_of_Ukraine.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 2006,
-      "TeamName": "Nordmazedonien",
-      "ShortName": "MKD",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/640px-Flag_of_North_Macedonia.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team2": {
+      "teamId": 2006,
+      "teamName": "Nordmazedonien",
+      "shortName": "MKD",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/640px-Flag_of_North_Macedonia.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-17T17:39:30.64",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-17T17:39:30.64",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94897,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 2,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94897,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 2,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94898,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 2,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94898,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 2,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89277,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89277,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89278,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 0,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89278,
+        "scoreTeam1": 2,
+        "scoreTeam2": 0,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89279,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89279,
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1308,
-      "LocationCity": "Bukarest",
-      "LocationStadium": "Arena Nationala"
+    "location": {
+      "locationID": 1308,
+      "locationCity": "Bukarest",
+      "locationStadium": "Arena Nationala"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60612,
-    "MatchDateTime": "2021-06-17T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-17T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60612,
+    "matchDateTime": "2021-06-17T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-17T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 758,
-      "TeamName": "Dänemark",
-      "ShortName": "DNK",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team1": {
+      "teamId": 758,
+      "teamName": "DÃ¤nemark",
+      "shortName": "DNK",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 2673,
-      "TeamName": "Belgien",
-      "ShortName": "BEL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team2": {
+      "teamId": 2673,
+      "teamName": "Belgien",
+      "shortName": "BEL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-18T10:35:17.053",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-18T10:35:17.053",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94903,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94903,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94904,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94904,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89285,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 55,
-        "GoalGetterID": 16052,
-        "GoalGetterName": "Thorgan Hazard",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89292,
+        "scoreTeam1": 1,
+        "scoreTeam2": 2,
+        "matchMinute": 70,
+        "goalGetterID": 7405,
+        "goalGetterName": "Kevin De Bruyne",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89288,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 2,
-        "GoalGetterID": 14513,
-        "GoalGetterName": " Poulsen, Yussuf",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89288,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 2,
+        "goalGetterID": 14513,
+        "goalGetterName": " Poulsen, Yussuf",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89292,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 2,
-        "MatchMinute": 70,
-        "GoalGetterID": 7405,
-        "GoalGetterName": "Kevin De Bruyne",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89285,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 55,
+        "goalGetterID": 16052,
+        "goalGetterName": "Thorgan Hazard",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 380,
-      "LocationCity": "Kopenhagen",
-      "LocationStadium": "Parken Stadion"
+    "location": {
+      "locationID": 380,
+      "locationCity": "Kopenhagen",
+      "locationStadium": "Parken Stadion"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60613,
-    "MatchDateTime": "2021-06-17T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-17T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60613,
+    "matchDateTime": "2021-06-17T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-17T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 147,
-      "TeamName": "Niederlande",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team1": {
+      "teamId": 147,
+      "teamName": "Niederlande",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 37,
-      "TeamName": "Österreich",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/200px-Flag_of_Austria.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team2": {
+      "teamId": 37,
+      "teamName": "Ã–sterreich",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/200px-Flag_of_Austria.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-18T10:33:38.267",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-18T10:33:38.267",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94905,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 2,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94905,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 2,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94906,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94906,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89289,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 11,
-        "GoalGetterID": 14311,
-        "GoalGetterName": "Memphis Depay",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89289,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 11,
+        "goalGetterID": 14311,
+        "goalGetterName": "Memphis Depay",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89291,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 0,
-        "MatchMinute": 67,
-        "GoalGetterID": 18820,
-        "GoalGetterName": "D. Dumfries",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89291,
+        "scoreTeam1": 2,
+        "scoreTeam2": 0,
+        "matchMinute": 67,
+        "goalGetterID": 18820,
+        "goalGetterName": "D. Dumfries",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1309,
-      "LocationCity": "Amsterdam",
-      "LocationStadium": "Johan-Cruyff-Arena"
+    "location": {
+      "locationID": 1309,
+      "locationCity": "Amsterdam",
+      "locationStadium": "Johan-Cruyff-Arena"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60614,
-    "MatchDateTime": "2021-06-18T15:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-18T13:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60614,
+    "matchDateTime": "2021-06-18T15:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-18T13:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 151,
-      "TeamName": "Schweden",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/200px-Flag_of_Sweden.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team1": {
+      "teamId": 151,
+      "teamName": "Schweden",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/200px-Flag_of_Sweden.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 763,
-      "TeamName": "Slowakei",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/20px-Flag_of_Slovakia.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team2": {
+      "teamId": 763,
+      "teamName": "Slowakei",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/20px-Flag_of_Slovakia.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-18T16:51:27.263",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-18T16:51:27.263",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94911,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94911,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94912,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94912,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89298,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 77,
-        "GoalGetterID": 16078,
-        "GoalGetterName": "Emil Forsberg",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89298,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 77,
+        "goalGetterID": 16078,
+        "goalGetterName": "Emil Forsberg",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 865,
-      "LocationCity": "St. Petersburg",
-      "LocationStadium": "Petrowski"
+    "location": {
+      "locationID": 865,
+      "locationCity": "St. Petersburg",
+      "locationStadium": "Petrowski"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60615,
-    "MatchDateTime": "2021-06-18T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-18T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60615,
+    "matchDateTime": "2021-06-18T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-18T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 146,
-      "TeamName": "Kroatien",
-      "ShortName": "HRV",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team1": {
+      "teamId": 146,
+      "teamName": "Kroatien",
+      "shortName": "HRV",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 4203,
-      "TeamName": "Tschechische Rep.",
-      "ShortName": "",
-      "TeamIconUrl": "https://www.openligadb.de/images/teamicons/Tschechien.gif",
-      "TeamGroupName": "Gruppe D"
+    "team2": {
+      "teamId": 4203,
+      "teamName": "Tschechische Rep.",
+      "shortName": "",
+      "teamIconUrl": "https://www.openligadb.de/images/teamicons/Tschechien.gif",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-19T10:33:13.527",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-19T10:33:13.527",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94917,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94917,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94918,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94918,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89301,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 37,
-        "GoalGetterID": 18331,
-        "GoalGetterName": "P. Schick",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89301,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 37,
+        "goalGetterID": 18331,
+        "goalGetterName": "P. Schick",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89303,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 47,
-        "GoalGetterID": 18839,
-        "GoalGetterName": "I. Perišic",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89303,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 47,
+        "goalGetterID": 18839,
+        "goalGetterName": "I. PeriÅ¡ic",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1310,
-      "LocationCity": "Glasgow",
-      "LocationStadium": "Hampden Park"
+    "location": {
+      "locationID": 1310,
+      "locationCity": "Glasgow",
+      "locationStadium": "Hampden Park"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60616,
-    "MatchDateTime": "2021-06-18T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-18T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60616,
+    "matchDateTime": "2021-06-18T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-18T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 755,
-      "TeamName": "England",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/18px-Flag_of_England.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team1": {
+      "teamId": 755,
+      "teamName": "England",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/18px-Flag_of_England.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 5271,
-      "TeamName": "Schottland",
-      "ShortName": "SCT",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/1024px-Flag_of_Scotland.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team2": {
+      "teamId": 5271,
+      "teamName": "Schottland",
+      "shortName": "SCT",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/1024px-Flag_of_Scotland.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-19T10:33:48.55",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-19T10:33:48.55",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94919,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94919,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94920,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94920,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [],
-    "Location": {
-      "LocationID": 410,
-      "LocationCity": "London",
-      "LocationStadium": "Wembley Stadium"
+    "goals": [],
+    "location": {
+      "locationID": 410,
+      "locationCity": "London",
+      "locationStadium": "Wembley Stadium"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60617,
-    "MatchDateTime": "2021-06-19T15:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-19T13:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60617,
+    "matchDateTime": "2021-06-19T15:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-19T13:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 1395,
-      "TeamName": "Ungarn",
-      "ShortName": "HUN",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/23px-Flag_of_Hungary.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team1": {
+      "teamId": 1395,
+      "teamName": "Ungarn",
+      "shortName": "HUN",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/23px-Flag_of_Hungary.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 144,
-      "TeamName": "Frankreich",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team2": {
+      "teamId": 144,
+      "teamName": "Frankreich",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-20T08:52:12.407",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-20T08:52:12.407",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94928,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94928,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94929,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94929,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89317,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 47,
-        "GoalGetterID": 18840,
-        "GoalGetterName": "A. Fiola",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89317,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 47,
+        "goalGetterID": 18840,
+        "goalGetterName": "A. Fiola",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89318,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 66,
-        "GoalGetterID": 15851,
-        "GoalGetterName": "Antoine Griezmann",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89318,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 66,
+        "goalGetterID": 15851,
+        "goalGetterName": "Antoine Griezmann",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1313,
-      "LocationCity": "Budapest",
-      "LocationStadium": "Puskás Aréna"
+    "location": {
+      "locationID": 1313,
+      "locationCity": "Budapest",
+      "locationStadium": "PuskÃ¡s ArÃ©na"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60618,
-    "MatchDateTime": "2021-06-19T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-19T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60618,
+    "matchDateTime": "2021-06-19T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-19T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 149,
-      "TeamName": "Portugal",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team1": {
+      "teamId": 149,
+      "teamName": "Portugal",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 139,
-      "TeamName": "Deutschland",
-      "ShortName": "DE",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team2": {
+      "teamId": 139,
+      "teamName": "Deutschland",
+      "shortName": "DE",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-20T08:54:47.827",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-20T08:54:47.827",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94930,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 2,
-        "PointsTeam2": 4,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94930,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 2,
+        "pointsTeam2": 4,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94931,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 2,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94931,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 2,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89319,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 15,
-        "GoalGetterID": 1945,
-        "GoalGetterName": "Cristiano Ronaldo",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89319,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 15,
+        "goalGetterID": 1945,
+        "goalGetterName": "Cristiano Ronaldo",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89320,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 35,
-        "GoalGetterID": 18844,
-        "GoalGetterName": "R. Dias",
-        "IsPenalty": false,
-        "IsOwnGoal": true,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89321,
+        "scoreTeam1": 1,
+        "scoreTeam2": 2,
+        "matchMinute": 39,
+        "goalGetterID": 18618,
+        "goalGetterName": "R. Guerreiro",
+        "isPenalty": false,
+        "isOwnGoal": true,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89321,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 2,
-        "MatchMinute": 39,
-        "GoalGetterID": 18618,
-        "GoalGetterName": "R. Guerreiro",
-        "IsPenalty": false,
-        "IsOwnGoal": true,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89324,
+        "scoreTeam1": 2,
+        "scoreTeam2": 4,
+        "matchMinute": 67,
+        "goalGetterID": 17381,
+        "goalGetterName": "Diego Jota",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89322,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 3,
-        "MatchMinute": 51,
-        "GoalGetterID": 18843,
-        "GoalGetterName": "K. Havertz",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89322,
+        "scoreTeam1": 1,
+        "scoreTeam2": 3,
+        "matchMinute": 51,
+        "goalGetterID": 18843,
+        "goalGetterName": "K. Havertz",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89323,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 4,
-        "MatchMinute": 60,
-        "GoalGetterID": 18845,
-        "GoalGetterName": "R. Gosens",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89320,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 35,
+        "goalGetterID": 18844,
+        "goalGetterName": "R. Dias",
+        "isPenalty": false,
+        "isOwnGoal": true,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89324,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 4,
-        "MatchMinute": 67,
-        "GoalGetterID": 17381,
-        "GoalGetterName": "Diego Jota",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89323,
+        "scoreTeam1": 1,
+        "scoreTeam2": 4,
+        "matchMinute": 60,
+        "goalGetterID": 18845,
+        "goalGetterName": "R. Gosens",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 34,
-      "LocationCity": "München",
-      "LocationStadium": "Allianz Arena"
+    "location": {
+      "locationID": 34,
+      "locationCity": "MÃ¼nchen",
+      "locationStadium": "Allianz Arena"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60619,
-    "MatchDateTime": "2021-06-19T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-19T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60619,
+    "matchDateTime": "2021-06-19T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-19T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 170,
-      "TeamName": "Spanien",
-      "ShortName": "ESP",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team1": {
+      "teamId": 170,
+      "teamName": "Spanien",
+      "shortName": "ESP",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 1410,
-      "TeamName": "Polen",
-      "ShortName": "POL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team2": {
+      "teamId": 1410,
+      "teamName": "Polen",
+      "shortName": "POL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-20T08:55:52.273",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-20T08:55:52.273",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94932,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94932,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94933,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94933,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89325,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 25,
-        "GoalGetterID": 15872,
-        "GoalGetterName": "Alvaro Morata",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89326,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 54,
+        "goalGetterID": 14563,
+        "goalGetterName": "Robert Lewandowski",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89326,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 54,
-        "GoalGetterID": 14563,
-        "GoalGetterName": "Robert Lewandowski",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89325,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 25,
+        "goalGetterID": 15872,
+        "goalGetterName": "Alvaro Morata",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": null,
-    "NumberOfViewers": null
+    "location": null,
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60620,
-    "MatchDateTime": "2021-06-20T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-20T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60620,
+    "matchDateTime": "2021-06-20T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-20T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 145,
-      "TeamName": "Italien",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/20px-Flag_of_Italy.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team1": {
+      "teamId": 145,
+      "teamName": "Italien",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/20px-Flag_of_Italy.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 5101,
-      "TeamName": "Wales",
-      "ShortName": "WAL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Wales_%281959%E2%80%93present%29.svg/20px-Flag_of_Wales_%281959%E2%80%93present%29.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team2": {
+      "teamId": 5101,
+      "teamName": "Wales",
+      "shortName": "WAL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Wales_%281959%E2%80%93present%29.svg/20px-Flag_of_Wales_%281959%E2%80%93present%29.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-21T07:02:41.837",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-21T07:02:41.837",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94938,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94938,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94939,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94939,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89332,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 39,
-        "GoalGetterID": 18850,
-        "GoalGetterName": "M. Pessina",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89332,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 39,
+        "goalGetterID": 18850,
+        "goalGetterName": "M. Pessina",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 378,
-      "LocationCity": "Rom",
-      "LocationStadium": "Stadio Olimpico"
+    "location": {
+      "locationID": 378,
+      "locationCity": "Rom",
+      "locationStadium": "Stadio Olimpico"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60621,
-    "MatchDateTime": "2021-06-20T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-20T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60621,
+    "matchDateTime": "2021-06-20T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-20T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 38,
-      "TeamName": "Schweiz",
-      "ShortName": "CHE",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Civil_Ensign_of_Switzerland_%28Pantone%29.svg/23px-Civil_Ensign_of_Switzerland_%28Pantone%29.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team1": {
+      "teamId": 38,
+      "teamName": "Schweiz",
+      "shortName": "CHE",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Civil_Ensign_of_Switzerland_%28Pantone%29.svg/23px-Civil_Ensign_of_Switzerland_%28Pantone%29.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 153,
-      "TeamName": "Türkei",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/200px-Flag_of_Turkey.svg.png",
-      "TeamGroupName": "Gruppe A"
+    "team2": {
+      "teamId": 153,
+      "teamName": "TÃ¼rkei",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/200px-Flag_of_Turkey.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-21T07:08:26.83",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-21T07:08:26.83",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94940,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 3,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94940,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94941,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94941,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89333,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 6,
-        "GoalGetterID": 16214,
-        "GoalGetterName": " Haris Seferovic",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89335,
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchMinute": 62,
+        "goalGetterID": 18851,
+        "goalGetterName": "I. Kahveci",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89334,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 0,
-        "MatchMinute": 26,
-        "GoalGetterID": 11374,
-        "GoalGetterName": "Xherdan Shaqiri",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89334,
+        "scoreTeam1": 2,
+        "scoreTeam2": 0,
+        "matchMinute": 26,
+        "goalGetterID": 11374,
+        "goalGetterName": "Xherdan Shaqiri",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89335,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 1,
-        "MatchMinute": 62,
-        "GoalGetterID": 18851,
-        "GoalGetterName": "I. Kahveci",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89337,
+        "scoreTeam1": 3,
+        "scoreTeam2": 1,
+        "matchMinute": 68,
+        "goalGetterID": 11383,
+        "goalGetterName": "Shaqiri, Xherdan",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89337,
-        "ScoreTeam1": 3,
-        "ScoreTeam2": 1,
-        "MatchMinute": 68,
-        "GoalGetterID": 11383,
-        "GoalGetterName": "Shaqiri, Xherdan",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89333,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 6,
+        "goalGetterID": 16214,
+        "goalGetterName": " Haris Seferovic",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1303,
-      "LocationCity": "Baku",
-      "LocationStadium": "Baku Nationalstadion"
+    "location": {
+      "locationID": 1303,
+      "locationCity": "Baku",
+      "locationStadium": "Baku Nationalstadion"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60622,
-    "MatchDateTime": "2021-06-21T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-21T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60622,
+    "matchDateTime": "2021-06-21T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-21T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 2006,
-      "TeamName": "Nordmazedonien",
-      "ShortName": "MKD",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/640px-Flag_of_North_Macedonia.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team1": {
+      "teamId": 2006,
+      "teamName": "Nordmazedonien",
+      "shortName": "MKD",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_North_Macedonia.svg/640px-Flag_of_North_Macedonia.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 147,
-      "TeamName": "Niederlande",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team2": {
+      "teamId": 147,
+      "teamName": "Niederlande",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/20px-Flag_of_the_Netherlands.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-21T20:32:26.467",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-21T20:32:26.467",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94950,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 3,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94950,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 3,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94951,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94951,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89351,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89351,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89352,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 2,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89352,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89353,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 3,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89353,
+        "scoreTeam1": 0,
+        "scoreTeam2": 3,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1309,
-      "LocationCity": "Amsterdam",
-      "LocationStadium": "Johan-Cruyff-Arena"
+    "location": {
+      "locationID": 1309,
+      "locationCity": "Amsterdam",
+      "locationStadium": "Johan-Cruyff-Arena"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60623,
-    "MatchDateTime": "2021-06-21T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-21T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60623,
+    "matchDateTime": "2021-06-21T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-21T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 2004,
-      "TeamName": "Ukraine",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/20px-Flag_of_Ukraine.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team1": {
+      "teamId": 2004,
+      "teamName": "Ukraine",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/20px-Flag_of_Ukraine.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 37,
-      "TeamName": "Österreich",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/200px-Flag_of_Austria.svg.png",
-      "TeamGroupName": "Gruppe C"
+    "team2": {
+      "teamId": 37,
+      "teamName": "Ã–sterreich",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/200px-Flag_of_Austria.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-21T20:33:14.377",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-21T20:33:14.377",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94952,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94952,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94953,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94953,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89354,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89354,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1308,
-      "LocationCity": "Bukarest",
-      "LocationStadium": "Arena Nationala"
+    "location": {
+      "locationID": 1308,
+      "locationCity": "Bukarest",
+      "locationStadium": "Arena Nationala"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60624,
-    "MatchDateTime": "2021-06-21T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-21T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60624,
+    "matchDateTime": "2021-06-21T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-21T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 150,
-      "TeamName": "Russland",
-      "ShortName": "RUS",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/20px-Flag_of_Russia.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team1": {
+      "teamId": 150,
+      "teamName": "Russland",
+      "shortName": "RUS",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/20px-Flag_of_Russia.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 758,
-      "TeamName": "Dänemark",
-      "ShortName": "DNK",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team2": {
+      "teamId": 758,
+      "teamName": "DÃ¤nemark",
+      "shortName": "DNK",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/20px-Flag_of_Denmark.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-21T22:54:31.043",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-21T22:54:31.043",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94958,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 1,
-        "PointsTeam2": 4,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94958,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 4,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94959,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 3,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94959,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 3,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89363,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 38,
-        "GoalGetterID": 18860,
-        "GoalGetterName": "M. Damsgaard",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89366,
+        "scoreTeam1": 1,
+        "scoreTeam2": 2,
+        "matchMinute": 70,
+        "goalGetterID": 16767,
+        "goalGetterName": "Artem Dzyuba",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89364,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 2,
-        "MatchMinute": 59,
-        "GoalGetterID": 14513,
-        "GoalGetterName": " Poulsen, Yussuf",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89364,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": 59,
+        "goalGetterID": 14513,
+        "goalGetterName": " Poulsen, Yussuf",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89365,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 3,
-        "MatchMinute": 79,
-        "GoalGetterID": 18863,
-        "GoalGetterName": "A. Christensen",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89363,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 38,
+        "goalGetterID": 18860,
+        "goalGetterName": "M. Damsgaard",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89366,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 2,
-        "MatchMinute": 70,
-        "GoalGetterID": 16767,
-        "GoalGetterName": "Artem Dzyuba",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89365,
+        "scoreTeam1": 1,
+        "scoreTeam2": 3,
+        "matchMinute": 79,
+        "goalGetterID": 18863,
+        "goalGetterName": "A. Christensen",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89368,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 4,
-        "MatchMinute": 82,
-        "GoalGetterID": 18864,
-        "GoalGetterName": "J. Maehle",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89368,
+        "scoreTeam1": 1,
+        "scoreTeam2": 4,
+        "matchMinute": 82,
+        "goalGetterID": 18864,
+        "goalGetterName": "J. Maehle",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 380,
-      "LocationCity": "Kopenhagen",
-      "LocationStadium": "Parken Stadion"
+    "location": {
+      "locationID": 380,
+      "locationCity": "Kopenhagen",
+      "locationStadium": "Parken Stadion"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60625,
-    "MatchDateTime": "2021-06-21T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-21T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60625,
+    "matchDateTime": "2021-06-21T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-21T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 2425,
-      "TeamName": "Finnland",
-      "ShortName": "FIN",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/200px-Flag_of_Finland.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team1": {
+      "teamId": 2425,
+      "teamName": "Finnland",
+      "shortName": "FIN",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/200px-Flag_of_Finland.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 2673,
-      "TeamName": "Belgien",
-      "ShortName": "BEL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png",
-      "TeamGroupName": "Gruppe B"
+    "team2": {
+      "teamId": 2673,
+      "teamName": "Belgien",
+      "shortName": "BEL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_Belgium_%28civil%29.svg/20px-Flag_of_Belgium_%28civil%29.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-21T22:56:17.55",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-21T22:56:17.55",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94960,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94960,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94961,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94961,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89369,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 74,
-        "GoalGetterID": 18252,
-        "GoalGetterName": "Hradecky",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": "Eigentor"
+        "goalID": 89370,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": 81,
+        "goalGetterID": 18812,
+        "goalGetterName": "R. Lukaku",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89370,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 2,
-        "MatchMinute": 81,
-        "GoalGetterID": 18812,
-        "GoalGetterName": "R. Lukaku",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89369,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 74,
+        "goalGetterID": 18252,
+        "goalGetterName": "Hradecky",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": "Eigentor"
       }
     ],
-    "Location": {
-      "LocationID": 865,
-      "LocationCity": "St. Petersburg",
-      "LocationStadium": "Petrowski"
+    "location": {
+      "locationID": 865,
+      "locationCity": "St. Petersburg",
+      "locationStadium": "Petrowski"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60626,
-    "MatchDateTime": "2021-06-22T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-22T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60626,
+    "matchDateTime": "2021-06-22T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-22T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 4203,
-      "TeamName": "Tschechische Rep.",
-      "ShortName": "",
-      "TeamIconUrl": "https://www.openligadb.de/images/teamicons/Tschechien.gif",
-      "TeamGroupName": "Gruppe D"
+    "team1": {
+      "teamId": 4203,
+      "teamName": "Tschechische Rep.",
+      "shortName": "",
+      "teamIconUrl": "https://www.openligadb.de/images/teamicons/Tschechien.gif",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 755,
-      "TeamName": "England",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/18px-Flag_of_England.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team2": {
+      "teamId": 755,
+      "teamName": "England",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/18px-Flag_of_England.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-23T08:18:00.62",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-23T08:18:00.62",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94968,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94968,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94969,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94969,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89379,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89379,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1288,
-      "LocationCity": "London",
-      "LocationStadium": "Wembley"
+    "location": {
+      "locationID": 1288,
+      "locationCity": "London",
+      "locationStadium": "Wembley"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60627,
-    "MatchDateTime": "2021-06-22T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-22T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60627,
+    "matchDateTime": "2021-06-22T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-22T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 146,
-      "TeamName": "Kroatien",
-      "ShortName": "HRV",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team1": {
+      "teamId": 146,
+      "teamName": "Kroatien",
+      "shortName": "HRV",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/20px-Flag_of_Croatia.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 5271,
-      "TeamName": "Schottland",
-      "ShortName": "SCT",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/1024px-Flag_of_Scotland.svg.png",
-      "TeamGroupName": "Gruppe D"
+    "team2": {
+      "teamId": 5271,
+      "teamName": "Schottland",
+      "shortName": "SCT",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/1024px-Flag_of_Scotland.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-23T08:18:53.573",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-23T08:18:53.573",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94970,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 3,
-        "PointsTeam2": 1,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94970,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94971,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94971,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89380,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89380,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89381,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89381,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89382,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89382,
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89383,
-        "ScoreTeam1": 3,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89383,
+        "scoreTeam1": 3,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1310,
-      "LocationCity": "Glasgow",
-      "LocationStadium": "Hampden Park"
+    "location": {
+      "locationID": 1310,
+      "locationCity": "Glasgow",
+      "locationStadium": "Hampden Park"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60628,
-    "MatchDateTime": "2021-06-23T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-23T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60628,
+    "matchDateTime": "2021-06-23T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-23T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 763,
-      "TeamName": "Slowakei",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/20px-Flag_of_Slovakia.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team1": {
+      "teamId": 763,
+      "teamName": "Slowakei",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/20px-Flag_of_Slovakia.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 170,
-      "TeamName": "Spanien",
-      "ShortName": "ESP",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team2": {
+      "teamId": 170,
+      "teamName": "Spanien",
+      "shortName": "ESP",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/20px-Flag_of_Spain.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-23T20:14:38.563",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-23T20:14:38.563",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94976,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 0,
-        "PointsTeam2": 5,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94976,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 5,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94977,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 2,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94977,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 2,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89399,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89399,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89400,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 2,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89400,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89401,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 3,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89401,
+        "scoreTeam1": 0,
+        "scoreTeam2": 3,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89402,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 4,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89402,
+        "scoreTeam1": 0,
+        "scoreTeam2": 4,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89403,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 5,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89403,
+        "scoreTeam1": 0,
+        "scoreTeam2": 5,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": null,
-    "NumberOfViewers": null
+    "location": null,
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60629,
-    "MatchDateTime": "2021-06-23T18:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-23T16:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60629,
+    "matchDateTime": "2021-06-23T18:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-23T16:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 151,
-      "TeamName": "Schweden",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/200px-Flag_of_Sweden.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team1": {
+      "teamId": 151,
+      "teamName": "Schweden",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Sweden.svg/200px-Flag_of_Sweden.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 1410,
-      "TeamName": "Polen",
-      "ShortName": "POL",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png",
-      "TeamGroupName": "Gruppe E"
+    "team2": {
+      "teamId": 1410,
+      "teamName": "Polen",
+      "shortName": "POL",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/23px-Flag_of_Poland.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-23T20:13:47.017",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-23T20:13:47.017",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94978,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 3,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94978,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94979,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 0,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94979,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89394,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89394,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89395,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 0,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89395,
+        "scoreTeam1": 2,
+        "scoreTeam2": 0,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89396,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 1,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89396,
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89397,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 2,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89397,
+        "scoreTeam1": 2,
+        "scoreTeam2": 2,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89398,
-        "ScoreTeam1": 3,
-        "ScoreTeam2": 2,
-        "MatchMinute": null,
-        "GoalGetterID": 0,
-        "GoalGetterName": "",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89398,
+        "scoreTeam1": 3,
+        "scoreTeam2": 2,
+        "matchMinute": null,
+        "goalGetterID": 0,
+        "goalGetterName": "",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 865,
-      "LocationCity": "St. Petersburg",
-      "LocationStadium": "Petrowski"
+    "location": {
+      "locationID": 865,
+      "locationCity": "St. Petersburg",
+      "locationStadium": "Petrowski"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60630,
-    "MatchDateTime": "2021-06-23T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-23T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60630,
+    "matchDateTime": "2021-06-23T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-23T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 139,
-      "TeamName": "Deutschland",
-      "ShortName": "DE",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team1": {
+      "teamId": 139,
+      "teamName": "Deutschland",
+      "shortName": "DE",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/20px-Flag_of_Germany.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 1395,
-      "TeamName": "Ungarn",
-      "ShortName": "HUN",
-      "TeamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/23px-Flag_of_Hungary.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team2": {
+      "teamId": 1395,
+      "teamName": "Ungarn",
+      "shortName": "HUN",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Flag_of_Hungary.svg/23px-Flag_of_Hungary.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-24T08:19:36.91",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-24T08:19:36.91",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94984,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 2,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94984,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 2,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94985,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 0,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94985,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89412,
-        "ScoreTeam1": 0,
-        "ScoreTeam2": 1,
-        "MatchMinute": 11,
-        "GoalGetterID": 18726,
-        "GoalGetterName": "A. Szalai",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89415,
+        "scoreTeam1": 2,
+        "scoreTeam2": 2,
+        "matchMinute": 84,
+        "goalGetterID": 18648,
+        "goalGetterName": "L. Goretzka",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89413,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 66,
-        "GoalGetterID": 18843,
-        "GoalGetterName": "K. Havertz",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89414,
+        "scoreTeam1": 1,
+        "scoreTeam2": 2,
+        "matchMinute": 68,
+        "goalGetterID": 18876,
+        "goalGetterName": "A. SchÃ¤fer",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89414,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 2,
-        "MatchMinute": 68,
-        "GoalGetterID": 18876,
-        "GoalGetterName": "A. Schäfer",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89413,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 66,
+        "goalGetterID": 18843,
+        "goalGetterName": "K. Havertz",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89415,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 2,
-        "MatchMinute": 84,
-        "GoalGetterID": 18648,
-        "GoalGetterName": "L. Goretzka",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89412,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 11,
+        "goalGetterID": 18726,
+        "goalGetterName": "A. Szalai",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 178,
-      "LocationCity": "München",
-      "LocationStadium": "Allianz-Arena"
+    "location": {
+      "locationID": 178,
+      "locationCity": "MÃ¼nchen",
+      "locationStadium": "Allianz-Arena"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   },
   {
-    "MatchID": 60631,
-    "MatchDateTime": "2021-06-23T21:00:00",
-    "TimeZoneID": "W. Europe Standard Time",
-    "LeagueId": 4487,
-    "LeagueName": "UEFA Europameisterschaft 2020",
-    "MatchDateTimeUTC": "2021-06-23T19:00:00Z",
-    "Group": {
-      "GroupName": "Gruppenphase",
-      "GroupOrderID": 1,
-      "GroupID": 37823
+    "matchID": 60631,
+    "matchDateTime": "2021-06-23T21:00:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4487,
+    "leagueName": "UEFA Europameisterschaft 2020",
+    "leagueSeason": 2020,
+    "leagueShortcut": "uefa-em-2020",
+    "matchDateTimeUTC": "2021-06-23T19:00:00Z",
+    "group": {
+      "groupName": "Gruppenphase",
+      "groupOrderID": 1,
+      "groupID": 37823
     },
-    "Team1": {
-      "TeamId": 149,
-      "TeamName": "Portugal",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team1": {
+      "teamId": 149,
+      "teamName": "Portugal",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/20px-Flag_of_Portugal.svg.png",
+      "teamGroupName": null
     },
-    "Team2": {
-      "TeamId": 144,
-      "TeamName": "Frankreich",
-      "ShortName": "",
-      "TeamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png",
-      "TeamGroupName": "Gruppe F"
+    "team2": {
+      "teamId": 144,
+      "teamName": "Frankreich",
+      "shortName": "",
+      "teamIconUrl": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/20px-Flag_of_France.svg.png",
+      "teamGroupName": null
     },
-    "LastUpdateDateTime": "2021-06-24T08:20:58.86",
-    "MatchIsFinished": true,
-    "MatchResults": [
+    "lastUpdateDateTime": "2021-06-24T08:20:58.86",
+    "matchIsFinished": true,
+    "matchResults": [
       {
-        "ResultID": 94986,
-        "ResultName": "Endergebnis",
-        "PointsTeam1": 2,
-        "PointsTeam2": 2,
-        "ResultOrderID": 1,
-        "ResultTypeID": 2,
-        "ResultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+        "resultID": 94986,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 2,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
       },
       {
-        "ResultID": 94987,
-        "ResultName": "Halbzeit",
-        "PointsTeam1": 1,
-        "PointsTeam2": 1,
-        "ResultOrderID": 2,
-        "ResultTypeID": 1,
-        "ResultDescription": "Zwischenstand zur Halbzeit"
+        "resultID": 94987,
+        "resultName": "Halbzeit",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": "Zwischenstand zur Halbzeit"
       }
     ],
-    "Goals": [
+    "goals": [
       {
-        "GoalID": 89416,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 0,
-        "MatchMinute": 30,
-        "GoalGetterID": 18829,
-        "GoalGetterName": "C. Ronaldo",
-        "IsPenalty": true,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89416,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 30,
+        "goalGetterID": 18829,
+        "goalGetterName": "C. Ronaldo",
+        "isPenalty": true,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89417,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 1,
-        "MatchMinute": 47,
-        "GoalGetterID": 18875,
-        "GoalGetterName": "K. Benzema",
-        "IsPenalty": true,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89419,
+        "scoreTeam1": 2,
+        "scoreTeam2": 2,
+        "matchMinute": 60,
+        "goalGetterID": 18829,
+        "goalGetterName": "C. Ronaldo",
+        "isPenalty": true,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89418,
-        "ScoreTeam1": 1,
-        "ScoreTeam2": 2,
-        "MatchMinute": 47,
-        "GoalGetterID": 18875,
-        "GoalGetterName": "K. Benzema",
-        "IsPenalty": false,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89417,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 47,
+        "goalGetterID": 18875,
+        "goalGetterName": "K. Benzema",
+        "isPenalty": true,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       },
       {
-        "GoalID": 89419,
-        "ScoreTeam1": 2,
-        "ScoreTeam2": 2,
-        "MatchMinute": 60,
-        "GoalGetterID": 18829,
-        "GoalGetterName": "C. Ronaldo",
-        "IsPenalty": true,
-        "IsOwnGoal": false,
-        "IsOvertime": false,
-        "Comment": null
+        "goalID": 89418,
+        "scoreTeam1": 1,
+        "scoreTeam2": 2,
+        "matchMinute": 47,
+        "goalGetterID": 18875,
+        "goalGetterName": "K. Benzema",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
       }
     ],
-    "Location": {
-      "LocationID": 1313,
-      "LocationCity": "Budapest",
-      "LocationStadium": "Puskás Aréna"
+    "location": {
+      "locationID": 1313,
+      "locationCity": "Budapest",
+      "locationStadium": "PuskÃ¡s ArÃ©na"
     },
-    "NumberOfViewers": null
+    "numberOfViewers": null
   }
 ]
