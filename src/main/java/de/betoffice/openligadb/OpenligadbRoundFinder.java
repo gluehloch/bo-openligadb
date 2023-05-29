@@ -95,7 +95,6 @@ public class OpenligadbRoundFinder {
 
                 LOG.info("Starting openligadb request: " + url);
 
-                
                 OLDBMatch[] matches = restTemplate.getForObject(url, OLDBMatch[].class);
                 return matches;
             } catch (RestClientException ex) {
