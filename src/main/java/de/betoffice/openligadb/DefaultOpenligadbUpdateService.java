@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2024 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -199,9 +199,16 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     matchUnderWork.setLocation(unknwonLocation);
                 }
                 
-                // TODO Vor Update alle Tore entfernen und neu anlagen?
+                // TODO Vor Update alle Tore entfernen und neu anlagen? Persist or Update?
                 goalDao.deleteAll(matchUnderWork);
-                matchDao.save(matchUnderWork);
+                boMatch.ifPresentOrElse(matchDao::update, () -> matchDao.persist(matchUnderWork));
+                /*
+                if (boMatch.isPresent()) {
+                	matchDao.update(matchUnderWork);
+                } else {
+                	matchDao.persist(matchUnderWork);
+                }
+                */
 
                 for (OLDBGoal goal : match.getGoals()) {
                     Optional<Goal> boGoal = goalDao.findByOpenligaid(goal.getGoalID());
