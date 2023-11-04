@@ -208,7 +208,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 } else {
                 	matchDao.persist(matchUnderWork);
                 }
-                */
+                */	
 
                 for (OLDBGoal goal : match.getGoals()) {
                     Optional<Goal> boGoal = goalDao.findByOpenligaid(goal.getGoalID());
