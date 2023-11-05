@@ -31,7 +31,6 @@ import java.time.ZonedDateTime;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import de.winkler.betoffice.service.DateTimeProvider;
 
@@ -40,11 +39,9 @@ public class DateTimeServiceTest {
     @Test
     @DisplayName("OpenLigaDB parse match date and time")
     void dateTimeService() {
-        DateTimeProvider dateTimeProvider = Mockito.mock(DateTimeProvider.class);
-        Mockito.when(dateTimeProvider.defaultZoneId()).thenReturn(ZoneId.of("Europe/Berlin"));
-        
+        DateTimeProvider dateTimeProvider = new DateTimeProviderDummy();
         DateTimeService dateTimeService = new DateTimeService(dateTimeProvider);
-        
+
         ZonedDateTime zonedDateTime = dateTimeService.toDate("2020-10-02T20:30:00");
         assertThat(zonedDateTime.getZone()).isEqualTo(ZoneId.of("Europe/Berlin"));
         assertThat(zonedDateTime.getHour()).isEqualTo(20);
@@ -53,6 +50,18 @@ public class DateTimeServiceTest {
         assertThat(zonedDateTime.getYear()).isEqualTo(2020);
         assertThat(zonedDateTime.getMonth()).isEqualTo(Month.OCTOBER);
         assertThat(zonedDateTime.getDayOfMonth()).isEqualTo(2);
+    }
+
+    private class DateTimeProviderDummy implements DateTimeProvider {
+        @Override
+        public ZoneId defaultZoneId() {
+            return ZoneId.of("Europe/Berlin");
+        }
+
+        @Override
+        public ZonedDateTime currentDateTime() {
+            return ZonedDateTime.of(2020, 10, 2, 20, 30, 0, 0, defaultZoneId());
+        }
     }
 
 }

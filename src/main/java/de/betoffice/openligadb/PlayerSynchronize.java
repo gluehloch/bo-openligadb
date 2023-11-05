@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2014 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2023 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -87,7 +87,7 @@ public class PlayerSynchronize {
                 player.setName("TODO: Find my name!");
                 player.setVorname("John");
                 player.setOpenligaid(Long.valueOf(goal.getGoalGetterID()));
-                playerDao.save(player);
+                playerDao.persist(player);
 
             } else {
 
@@ -96,7 +96,7 @@ public class PlayerSynchronize {
                 if (!player.isPresent()) {
 
                     Player newPlayer = PlayerBuilder.build(goal);
-                    playerDao.save(newPlayer);
+                    playerDao.update(newPlayer);
 
                 } else if (!isEqual(player.get(), goal)) {
 

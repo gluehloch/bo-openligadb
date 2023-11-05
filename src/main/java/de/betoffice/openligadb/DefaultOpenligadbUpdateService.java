@@ -226,7 +226,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                         if (boGoal.isPresent()) {
                             goalUnderWork = GoalBuilder.update(goal, boGoal.get());
                             goalUnderWork.setPlayer(boPlayer.get());
-                            goalDao.save(goalUnderWork);                        
+                            goalDao.persist(goalUnderWork);
                         } else {
                             if (goal.getMatchMinute() == null) {
                                 LOG.warn(MARKER, "Die Spielminute ist gleich 'null'. Das Tor wird nicht gespeichert. Spiel: "
@@ -240,13 +240,13 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                                 goalUnderWork.setGame(matchUnderWork);
                                 matchUnderWork.addGoal(goalUnderWork);
                                 goalUnderWork.setPlayer(boPlayer.get());
-                                goalDao.save(goalUnderWork);                            
+                                goalDao.update(goalUnderWork);
                             }
                         }
                     }
                 }
 
-                matchDao.save(matchUnderWork);
+                matchDao.update(matchUnderWork);
             }            
             
         } catch (Exception ex) {
@@ -256,7 +256,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
         LocalDate bestRoundDate = roundUnderWork.findBestRoundDate();
         roundUnderWork.setDateTime(bestRoundDate.atTime(0, 0).atZone(dateTimeProvider.defaultZoneId()));
-        roundDao.save(roundUnderWork);
+        roundDao.update(roundUnderWork);
     }
 
 	private String toErrorMessage(int roundIndex, Season season) {
@@ -289,7 +289,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         Game newMatch = openligadbToBetofficeBuilder.buildGame(match, boHomeTeam, boGuestTeam);
         newMatch.setGroup(bundesliga);
         newMatch.setOpenligaid(Long.valueOf(match.getMatchID()));
-        matchDao.save(newMatch);
+        matchDao.persist(newMatch);
         roundUnderWork.addGame(newMatch);
         openligadbToBetofficeBuilder.updateGameResult(newMatch, match);
         return newMatch;
@@ -301,7 +301,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         newRound.setSeason(season);
         newRound.setDateTime(dateTimeProvider.currentDateTime()); // Placeholder. Will be set later...
         season.addGameList(newRound);
-        roundDao.save(newRound);
+        roundDao.persist(newRound);
         return newRound;
     }
 

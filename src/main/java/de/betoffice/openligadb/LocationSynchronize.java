@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2023 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -89,7 +89,7 @@ public class LocationSynchronize {
             if (!location.isPresent()) {
 
                 Location matchLocation = LocationBuilder.build(match);
-                locationDao.save(matchLocation);
+                locationDao.persist(matchLocation);
 
             } else if (!isEqual(location.get(), match)) {
 

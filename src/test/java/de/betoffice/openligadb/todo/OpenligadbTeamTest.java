@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2023 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -36,7 +36,6 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 
 import de.betoffice.database.data.DeleteDatabase;
 import de.dbload.Dbload;
-import de.winkler.betoffice.service.MasterDataManagerService;
 
 /**
  * Checks, if all teams of 'Bundesliga 2014/2015' are able to find by their openliga ID.
@@ -50,9 +49,6 @@ public class OpenligadbTeamTest
 
     @Autowired
     private SessionFactory sessionFactory;
-
-    @Autowired
-    private MasterDataManagerService masterDataManagerService;
 
     public void prepareDatabase(final Class<?> clazz) {
         sessionFactory.getCurrentSession().doWork(new Work() {
