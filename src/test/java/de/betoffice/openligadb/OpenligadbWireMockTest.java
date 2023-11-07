@@ -32,6 +32,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import de.betoffice.openligadb.json.OLDBMatch;
@@ -89,8 +90,7 @@ public class OpenligadbWireMockTest {
         APIUrl apiUrl = new APIUrl();
         apiUrl.setOpenligadbUrl("http://localhost:9096");
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+        ObjectMapper objectMapper = JsonMapper.builder().configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true).build();
 
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setObjectMapper(objectMapper);
