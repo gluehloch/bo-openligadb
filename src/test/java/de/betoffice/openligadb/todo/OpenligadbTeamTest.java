@@ -44,8 +44,7 @@ import de.dbload.Dbload;
  */
 @Disabled
 @SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-public class OpenligadbTeamTest
-        extends AbstractTransactionalJUnit4SpringContextTests {
+public class OpenligadbTeamTest extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Autowired
     private SessionFactory sessionFactory;
