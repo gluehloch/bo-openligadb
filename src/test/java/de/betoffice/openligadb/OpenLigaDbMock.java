@@ -63,6 +63,8 @@ public class OpenLigaDbMock {
                 .willReturn(ok(bundesliga_2022_01_asJson).withHeader("Content-Type", "application/json")));
         stubFor(get("/getmatchdata/bl1/2020/3")
                 .willReturn(ok(bundesliga_2020_03_asJson).withHeader("Content-Type", "application/json")));
+        stubFor(get("/getmatchdata/bl1/2023/12")
+                .willReturn(ok(bundesliga_2023_12_asJson).withHeader("Content-Type", "application/json")));
         stubFor(get("/getmatchdata/uefa-em-2020/2020/1")
                 .willReturn(ok(emuefa_2020_01_asJson).withHeader("Content-Type", "application/json")));
     }

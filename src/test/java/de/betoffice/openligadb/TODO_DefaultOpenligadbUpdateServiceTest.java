@@ -23,83 +23,71 @@
 
 package de.betoffice.openligadb;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
-import de.betoffice.openligadb.DefaultOpenligadbUpdateService;
-import de.betoffice.openligadb.OpenligadbUpdateService;
 import de.betoffice.wrapper.api.BetofficeApi;
-import de.betoffice.wrapper.api.GroupTypeRef;
-import de.betoffice.wrapper.api.SeasonRef;
-import de.betoffice.wrapper.api.TeamRef;
-import de.winkler.betoffice.storage.enums.SeasonType;
-import de.winkler.betoffice.storage.enums.TeamType;
 
 /**
  * Test case for {@link DefaultOpenligadbUpdateService}.
  */
-@Disabled
 @WireMockTest(httpPort = 9096)
 @SpringJUnitConfig(locations = { "/betoffice-dev-properties.xml", "/betoffice.xml" })
 public class TODO_DefaultOpenligadbUpdateServiceTest {
 
-	@Autowired
-	private BetofficeApi betofficeApi;
-	
-	@Autowired
-	private OpenligadbUpdateService openligadbUpdateService;
+    @Autowired
+    private BetofficeApi betofficeApi;
 
-	@BeforeEach
-	void before() throws Exception {
-		OpenLigaDbMock.prepare();
-		// openligadbUpdateService.a
-		// openligadbRoundFinder.setApiUrl(OpenLigaDbMock.prepareApiUrl());
-	}
+    @Autowired
+    private OpenligadbRoundFinder openligadbRoundFinder;
 
-	@Test
-	void updateMatchDay() {
-		// No need to crate test scene. We use copy of production database.
-		// createSeason();
-		openligadbUpdateService.createOrUpdateRound(33, 0);
-	}
+    @Autowired
+    private OpenligadbUpdateService openligadbUpdateService;
 
-	private void /*SeasonRef*/ createSeason() {
-		/*
-		betofficeApi.groupType("1. Bundesliga");
+    @BeforeEach
+    void before() throws Exception {
+        OpenLigaDbMock.prepare();
+        openligadbRoundFinder.setApiUrl(OpenLigaDbMock.prepareApiUrl());
+    }
 
-		rwe = betofficeApi.team("RWE", "Rot-Weiss-Essen").result();
-		schalke = betofficeApi.team("S04", "Schalke 04").result();
-		burghausen = betofficeApi.team("Wacker", "Wacker Burghausen").result();
-		hsv = betofficeApi.team("HSV", "Hamburger SV").result();
-		
-		buli_2010 = betofficeApi.season("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
+    @Test
+    void updateMatchDay() {
+        // No need to crate test scene. We use copy of production database.
+        // createSeason();
+        // Season ID und Round-Index are confusing...
+        openligadbUpdateService.createOrUpdateRound(35, 11);
+    }
 
-    	betofficeApi.group(buli_2010, bundesliga_1);
-
+    private void /*SeasonRef*/ createSeason() {
+        /*
+        betofficeApi.groupType("1. Bundesliga");
+        
+        rwe = betofficeApi.team("RWE", "Rot-Weiss-Essen").result();
+        schalke = betofficeApi.team("S04", "Schalke 04").result();
+        burghausen = betofficeApi.team("Wacker", "Wacker Burghausen").result();
+        hsv = betofficeApi.team("HSV", "Hamburger SV").result();
+        
+        buli_2010 = betofficeApi.season("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
+        
+        betofficeApi.group(buli_2010, bundesliga_1);
+        
         betofficeApi.addTeam(buli_2010, bundesliga_1, hsv);
         betofficeApi.addTeam(buli_2010, bundesliga_1, schalke);
         betofficeApi.addTeam(buli_2010, bundesliga_1, burghausen);
         betofficeApi.addTeam(buli_2010, bundesliga_1, rwe);
         
         buli_2010 = betofficeApi.addTeam(buli_2010, bundesliga_1, rwe).result();        
-
-    	betofficeApi.round(buli_2010, bundesliga_1, DATE_01_09_2010);
-    	betofficeApi.round(buli_2010, bundesliga_1, DATE_08_09_2010);
-    	betofficeApi.round(buli_2010, bundesliga_1, DATE_15_09_2010);
-		
-		return buli_2010;
-		 */
-	}
+        
+        betofficeApi.round(buli_2010, bundesliga_1, DATE_01_09_2010);
+        betofficeApi.round(buli_2010, bundesliga_1, DATE_08_09_2010);
+        betofficeApi.round(buli_2010, bundesliga_1, DATE_15_09_2010);
+        
+        return buli_2010;
+         */
+    }
 
 }
