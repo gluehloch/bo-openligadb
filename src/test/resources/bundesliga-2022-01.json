@@ -22,7 +22,7 @@
     },
     "team2": {
       "teamId": 40,
-      "teamName": "FC Bayern München",
+      "teamName": "FC Bayern MÃ¼nchen",
       "shortName": "Bayern",
       "teamIconUrl": "https://i.imgur.com/jJEsJrj.png",
       "teamGroupName": null
@@ -364,7 +364,7 @@
     },
     "team1": {
       "teamId": 87,
-      "teamName": "Borussia Mönchengladbach",
+      "teamName": "Borussia MÃ¶nchengladbach",
       "shortName": "Gladbach",
       "teamIconUrl": "https://i.imgur.com/KSIk0Eu.png",
       "teamGroupName": null
@@ -623,7 +623,7 @@
         "scoreTeam2": 1,
         "matchMinute": 21,
         "goalGetterID": 18661,
-        "goalGetterName": "N. Füllkrug",
+        "goalGetterName": "N. Fï¿½llkrug",
         "isPenalty": false,
         "isOwnGoal": false,
         "isOvertime": false,
@@ -819,8 +819,8 @@
     },
     "team1": {
       "teamId": 65,
-      "teamName": "1. FC Köln",
-      "shortName": "Köln",
+      "teamName": "1. FC KÃ¶ln",
+      "shortName": "KÃ¶ln",
       "teamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/FC_Cologne_logo.svg/1200px-FC_Cologne_logo.svg.png",
       "teamGroupName": null
     },
