@@ -37,7 +37,7 @@ public class APIUrl {
     /** Default URL Prefix. */
     private String openligadbUrl = OPENLIGADB_URL;
 
-    protected void setOpenligadbUrl(String apiUrl) {
+    void setOpenligadbUrl(String apiUrl) {
         this.openligadbUrl = apiUrl;
     }
 

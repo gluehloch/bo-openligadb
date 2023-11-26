@@ -21,7 +21,7 @@
  * Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
-package de.betoffice.openligadb.todo;
+package de.betoffice.openligadb;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -38,7 +38,6 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
 import de.betoffice.openligadb.DefaultOpenligadbUpdateService;
-import de.betoffice.openligadb.OpenLigaDbMock;
 import de.betoffice.openligadb.OpenligadbUpdateService;
 import de.betoffice.wrapper.api.BetofficeApi;
 import de.betoffice.wrapper.api.GroupTypeRef;
@@ -53,7 +52,7 @@ import de.winkler.betoffice.storage.enums.TeamType;
 @Disabled
 @WireMockTest(httpPort = 9096)
 @SpringJUnitConfig(locations = { "/betoffice-dev-properties.xml", "/betoffice.xml" })
-public class DefaultOpenligadbUpdateServiceTest {
+public class TODO_DefaultOpenligadbUpdateServiceTest {
 
 	@Autowired
 	private BetofficeApi betofficeApi;

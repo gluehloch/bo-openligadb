@@ -21,7 +21,7 @@
  * Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
-package de.betoffice.openligadb.todo;
+package de.betoffice.openligadb;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -44,7 +44,7 @@ import de.dbload.Dbload;
  */
 @Disabled
 @SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-public class OpenligadbTeamTest
+public class TODO_OpenligadbTeamTest
         extends AbstractTransactionalJUnit4SpringContextTests {
 
     @Autowired
