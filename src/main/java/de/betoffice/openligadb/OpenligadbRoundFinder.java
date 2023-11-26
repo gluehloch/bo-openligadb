@@ -78,7 +78,11 @@ public class OpenligadbRoundFinder {
         private final String leagueSeason;
         private final int roundIndex;
 
-        OpenligaRoundFinder(APIUrl apiUrl, RestTemplate restTemplate, String leagueShortcut, String leagueSeason,
+        OpenligaRoundFinder(
+                APIUrl apiUrl,
+                RestTemplate restTemplate,
+                String leagueShortcut,
+                String leagueSeason,
                 int roundIndex) {
 
             this.apiUrl = apiUrl;

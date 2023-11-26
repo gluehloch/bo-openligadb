@@ -21,7 +21,7 @@
  * Place, Suite 330, Boston, MA 02111-1307 USA
  */
 
-package de.betoffice.openligadb.todo;
+package de.betoffice.openligadb;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -30,14 +30,13 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
-import de.betoffice.openligadb.DefaultOpenligadbUpdateService;
-import de.betoffice.openligadb.OpenligadbUpdateService;
 import de.betoffice.wrapper.api.BetofficeApi;
 import de.betoffice.wrapper.api.GroupTypeRef;
 import de.betoffice.wrapper.api.SeasonRef;
@@ -48,9 +47,10 @@ import de.winkler.betoffice.storage.enums.TeamType;
 /**
  * Test case for {@link DefaultOpenligadbUpdateService}.
  */
+@Disabled
 @WireMockTest(httpPort = 9096)
 @SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-class OpenligadbSeasonTest {
+class TODO_OpenligadbSeasonTest {
 
     private static final ZonedDateTime DATE_15_09_2010 = ZonedDateTime
             .of(LocalDateTime.of(LocalDate.of(2010, 9, 15), LocalTime.of(0, 0)), ZoneId.of("Europe/Berlin"));
@@ -72,18 +72,21 @@ class OpenligadbSeasonTest {
     private BetofficeApi betofficeApi;
 
     @Autowired
+    private OpenligadbRoundFinder openligadbRoundFinder;
+    
+    @Autowired
     private OpenligadbUpdateService openligadbUpdateService;
 
     @BeforeEach
     void before() throws Exception {
-        // OpenLigaDbMock.prepare();
-        // openligadbUpdateService.a
-        // openligadbRoundFinder.setApiUrl(OpenLigaDbMock.prepareApiUrl());
+        OpenLigaDbMock.prepare();
+        openligadbRoundFinder.setApiUrl(OpenLigaDbMock.prepareApiUrl());
     }
 
     @Test
     void updateMatchDay() {
         createSeason();
+        // TODO Keine passenden Testdaten!!!
         // openligadbUpdateService.createOrUpdateRound();
     }
 
