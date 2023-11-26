@@ -46,10 +46,10 @@ public class APIUrl {
     }
 
     public String getMatchData(String openligadbShortcut, String year, int roundIndex) {
-    	if (roundIndex < 1) {
-    		throw new IllegalArgumentException("OpenligaDB: roundIndex must be greater than 0.");
-    	}
-    	
+        if (roundIndex < 1) {
+            throw new IllegalArgumentException("OpenligaDB: roundIndex must be greater than 0.");
+        }
+
         StringBuilder sb = new StringBuilder(getOpenligadbUrl());
         sb.append("/getmatchdata/").append(openligadbShortcut).append("/").append(year).append("/").append(roundIndex);
         return sb.toString();

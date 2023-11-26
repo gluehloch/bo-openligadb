@@ -201,14 +201,13 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 
                 // TODO Vor Update alle Tore entfernen und neu anlagen? Persist or Update?
                 goalDao.deleteAll(matchUnderWork);
+
                 boMatch.ifPresentOrElse(matchDao::update, () -> matchDao.persist(matchUnderWork));
-                /*
                 if (boMatch.isPresent()) {
                 	matchDao.update(matchUnderWork);
                 } else {
                 	matchDao.persist(matchUnderWork);
                 }
-                */	
 
                 for (OLDBGoal goal : match.getGoals()) {
                     Optional<Goal> boGoal = goalDao.findByOpenligaid(goal.getGoalID());
