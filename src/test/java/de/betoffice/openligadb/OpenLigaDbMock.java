@@ -51,6 +51,9 @@ public class OpenLigaDbMock {
 
         InputStream bundesliga_2020_03 = OpenLigaDbMock.class.getResourceAsStream("/bundesliga-2020-03.json");
         String bundesliga_2020_03_asJson = IOUtils.toString(bundesliga_2020_03, DEFAULT_CHARSET);
+        
+        InputStream bundesliga_2023_12 = OpenLigaDbMock.class.getResourceAsStream("/bundesliga-2023-12.json");
+        String bundesliga_2023_12_asJson = IOUtils.toString(bundesliga_2023_12, DEFAULT_CHARSET);
 
         InputStream emuefa_2020_01 = OpenLigaDbMock.class.getResourceAsStream("/uefa-em-2020-01.json");
         String emuefa_2020_01_asJson = IOUtils.toString(emuefa_2020_01, DEFAULT_CHARSET);
