@@ -259,12 +259,12 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     }
 
 	private String toErrorMessage(int roundIndex, Season season) {
-		return String.format(
-		        "Aborting the update process! "
-		                + "No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
-		        season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
-		        season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
-		        roundIndex + 1);
+        return String.format(
+                "Aborting the update process! "
+                    + "No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
+                    season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
+                    season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
+                    roundIndex + 1);
 	}
 
     private Game updateMatch(OLDBMatch match, Game matchUnderWork) {
