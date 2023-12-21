@@ -7,7 +7,9 @@
     <body>
 
         <!-- Under development -->
-        <release version="betoffice-openligadb 3.0.1" date="2023-01-??" description="Community Edition / Bugfix">
+        
+        <!-- RELEASED -->
+        <release version="betoffice-openligadb 3.0.1" date="2023-12-21" description="Community Edition / Bugfix">
             <action dev="andrewinkler" type="update" date="2023-01-12">
                 betoffice-storage 3.0.1 / JDK 21 / Hibernate 6 / Spring 6
             </action>
