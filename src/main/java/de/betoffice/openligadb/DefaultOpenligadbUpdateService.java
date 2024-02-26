@@ -132,7 +132,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         // --------------------------------------------------------------------
         // TODO This works only with a single group per season.
         // --------------------------------------------------------------------
-        // Fuer openligadb ist die Vorrunde ein Spieltag:
+        // In OpenLigaDB entspricht die 'group' einem Spieltag. Die 'groupOrderID' dem Index des Spieltags in betoffice.
+        // D.h. für Weltmeisterschaften oder Europameisterschaften gibt es kein Konstrukt für einen Gruppe (z.B. Gruppe A).
+        // Diese Informationen müssten ggf. händisch hinzugefügt werden.
         // https://www.openligadb.de/api/getmatchdata/uefa-em-2020/2020/1
         // Liefert eine Liste mit allen Spielen der Vorrunde.
         Group bundesliga = season.getGroups().iterator().next();
@@ -147,7 +149,6 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
                     season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
                     roundIndex + 1);
-        
         try {
         	OLDBMatch[] oldbMatches = matches.map(t -> t).orElseThrow();
 
