@@ -58,7 +58,7 @@ import de.winkler.betoffice.util.LoggerFactory;
  *
  * @author Andre Winkler
  */
-@Service("openligadbUpdateService")
+@Service
 public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     private static final Logger LOG = LoggerFactory.make();

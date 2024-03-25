@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2023 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2024 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -31,8 +31,6 @@ import org.hibernate.jdbc.Work;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 import de.betoffice.database.data.DeleteDatabase;
 import de.dbload.Dbload;
@@ -43,8 +41,7 @@ import de.dbload.Dbload;
  * @author Andre Winkler
  */
 @Disabled
-@SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-public class TODO_OpenligadbTeamTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class TODO_OpenligadbTeamTest extends AbstractSpringTestCase {
 
     @Autowired
     private SessionFactory sessionFactory;

@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2022 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2024 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -24,9 +24,9 @@
 package de.betoffice.openligadb;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
@@ -36,8 +36,7 @@ import de.betoffice.wrapper.api.BetofficeApi;
  * Test case for {@link DefaultOpenligadbUpdateService}.
  */
 @WireMockTest(httpPort = 9096)
-@SpringJUnitConfig(locations = { "/betoffice-dev-properties.xml", "/betoffice.xml" })
-public class TODO_DefaultOpenligadbUpdateServiceTest {
+public class TODO_DefaultOpenligadbUpdateServiceTest extends AbstractSpringTestCase {
 
     @Autowired
     private BetofficeApi betofficeApi;
@@ -54,6 +53,7 @@ public class TODO_DefaultOpenligadbUpdateServiceTest {
         openligadbRoundFinder.setApiUrl(OpenLigaDbMock.prepareApiUrl());
     }
 
+    @Disabled
     @Test
     void updateMatchDay() {
         // No need to crate test scene. We use copy of production database.

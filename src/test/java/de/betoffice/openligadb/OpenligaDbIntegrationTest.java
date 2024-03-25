@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2022 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2024 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -26,7 +26,6 @@ package de.betoffice.openligadb;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import de.betoffice.openligadb.json.OLDBMatch;
 
@@ -37,8 +36,7 @@ import de.betoffice.openligadb.json.OLDBMatch;
  * @author Andre Winkler
  */
 @Disabled
-@SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-public class OpenligaDbIntegrationTest {
+public class OpenligaDbIntegrationTest extends AbstractSpringTestCase {
 
 	@Autowired
 	private OpenligadbRoundFinder openligadbRoundFinder;

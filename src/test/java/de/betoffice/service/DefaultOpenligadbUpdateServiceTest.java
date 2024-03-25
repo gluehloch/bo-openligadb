@@ -27,8 +27,8 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+import de.betoffice.openligadb.AbstractSpringTestCase;
 import de.betoffice.openligadb.DefaultOpenligadbUpdateService;
 import de.betoffice.openligadb.OpenligadbUpdateService;
 
@@ -38,8 +38,7 @@ import de.betoffice.openligadb.OpenligadbUpdateService;
  * @author Andre Winkler
  *
  */
-@SpringJUnitConfig(locations = { "/betoffice-test-properties.xml", "/betoffice.xml" })
-public class DefaultOpenligadbUpdateServiceTest {
+public class DefaultOpenligadbUpdateServiceTest extends AbstractSpringTestCase {
 
     @Autowired
     private OpenligadbUpdateService openligadbUpdateService;
