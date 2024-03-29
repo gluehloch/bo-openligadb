@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2024 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -33,12 +33,10 @@ public interface OpenligadbUpdateService {
     /**
      * Start round and match update from openligadb.
      *
-     * @see #createOrUpdateRound(long, int)
+     * @see              #createOrUpdateRound(long, int)
      *
-     * @param seasonId
-     *            season id
-     * @param roundIndex
-     *            round index (0..N-1)
+     * @param seasonId   season id
+     * @param roundIndex round index (0..N-1)
      */
     @Deprecated
     public void updateRound(long seasonId, int roundIndex);
@@ -46,10 +44,8 @@ public interface OpenligadbUpdateService {
     /**
      * Start round and match update from openligadb.
      *
-     * @param seasonId
-     *            season id
-     * @param roundIndex
-     *            round index (0..N-1)
+     * @param seasonId   season id
+     * @param roundIndex round index (0..N-1)
      */
     public void createOrUpdateRound(long seasonId, int roundIndex);
 
