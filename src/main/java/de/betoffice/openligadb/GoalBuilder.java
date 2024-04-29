@@ -38,7 +38,7 @@ public class GoalBuilder {
     public static Goal build(OLDBGoal openligadbGoal) {
         Goal boGoal = new Goal();
         boGoal.setOpenligaid(Long.valueOf(openligadbGoal.getGoalID()));
-        boGoal.setMinute(openligadbGoal.getMatchMinute() == null ? -1 : openligadbGoal.getMatchMinute());
+        setMinuteOrDefault(openligadbGoal, boGoal);
         boGoal.setComment(openligadbGoal.getComment() == null ? null : openligadbGoal.getComment().toString());
         boGoal.setResult(new GameResult(openligadbGoal.getScoreTeam1(), openligadbGoal.getScoreTeam2()));
 
@@ -55,11 +55,15 @@ public class GoalBuilder {
     }
 
     public static Goal update(OLDBGoal openligadbGoal, Goal boGoal) {
-        boGoal.setMinute(openligadbGoal.getMatchMinute());
+    	setMinuteOrDefault(openligadbGoal, boGoal);
         boGoal.setComment(openligadbGoal.getComment() == null ? null : openligadbGoal.getComment().toString());
         boGoal.setResult(new GameResult(openligadbGoal.getScoreTeam1(), openligadbGoal.getScoreTeam2()));
         boGoal.setPlayer(null);
         return boGoal;
     }
 
+    private static void setMinuteOrDefault(OLDBGoal oldbGoal, Goal boGoal) {
+    	boGoal.setMinute(oldbGoal.getMatchMinute() == null ? -1 : oldbGoal.getMatchMinute());
+    }
+    
 }
