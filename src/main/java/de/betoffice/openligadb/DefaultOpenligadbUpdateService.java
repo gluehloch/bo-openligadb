@@ -129,14 +129,16 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             throw new IllegalArgumentException(error);
         }
 
+        //
         // --------------------------------------------------------------------
         // TODO This works only with a single group per season.
         // --------------------------------------------------------------------
         // In OpenLigaDB entspricht die 'group' einem Spieltag. Die 'groupOrderID' dem Index des Spieltags in betoffice.
-        // D.h. für Weltmeisterschaften oder Europameisterschaften gibt es kein Konstrukt für einen Gruppe (z.B. Gruppe A).
+        // D.h. für Weltmeisterschaften oder Europameisterschaften gibt es kein Konstrukt für eine Gruppe (z.B. Gruppe A).
         // Diese Informationen müssten ggf. händisch hinzugefügt werden.
         // https://www.openligadb.de/api/getmatchdata/uefa-em-2020/2020/1
         // Liefert eine Liste mit allen Spielen der Vorrunde.
+        //
         Group bundesliga = season.getGroups().iterator().next();
         Optional<GameList> roundAtIndex = roundDao.findRound(season, roundIndex);
 
@@ -227,21 +229,20 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                             goalUnderWork = GoalBuilder.update(goal, boGoal.get());
                             goalUnderWork.setPlayer(boPlayer.get());
                             goalDao.persist(goalUnderWork);
-                        } else {
+                        } else {                        	
                             if (goal.getMatchMinute() == null) {
-                                LOG.warn(MARKER, "Die Spielminute ist gleich 'null'. Das Tor wird nicht gespeichert. Spiel: "
+                                LOG.warn(MARKER, "Die Spielminute ist gleich 'null'. Das Tor wird trotzdem gespeichert: "
                                         + match.getMatchDateTimeUTC()
                                         + " / "
                                         + match.getTeam1().getShortName()
                                         + ":"
                                         + match.getTeam2().getShortName());
-                            } else {
-                                goalUnderWork = GoalBuilder.build(goal);
-                                goalUnderWork.setGame(matchUnderWork);
-                                matchUnderWork.addGoal(goalUnderWork);
-                                goalUnderWork.setPlayer(boPlayer.get());
-                                goalDao.update(goalUnderWork);
                             }
+                            goalUnderWork = GoalBuilder.build(goal);
+                            goalUnderWork.setGame(matchUnderWork);
+                            matchUnderWork.addGoal(goalUnderWork);
+                            goalUnderWork.setPlayer(boPlayer.get());
+                            goalDao.update(goalUnderWork);
                         }
                     }
                 }
