@@ -7,9 +7,11 @@
     <body>
 
         <!-- Under development -->
-        <release version="betoffice-openligadb 3.0.2" date="2024-??-??" description="Tipp Form Enhancements">
-            <action dev="andrewinkler" type="update" date="2024-03-??">
-                Update to betoffice-storage-3.0.3
+
+        <!-- RELEASED -->
+        <release version="betoffice-openligadb 3.1.0" date="2024-04-29" description="Tipp Form Enhancements">
+            <action dev="andrewinkler" type="update" date="2024-04-29">
+                Update to betoffice-storage-3.1.0
             </action> 
         </release>
 
