@@ -147,18 +147,18 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 : createRound(season, someGroup);
 
         // The round is persisted. May be i need an update here.
-        Result<OLDBMatch[],OpenligadbException> matches = openligadbRoundFinder.findMatches(
-                    season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
-                    season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
-                    roundIndex + 1);
+        Result<OLDBMatch[], OpenligadbException> matches = openligadbRoundFinder.findMatches(
+                season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
+                season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
+                roundIndex + 1);
         try {
-        	OLDBMatch[] oldbMatches = matches.map(t -> t).orElseThrow();
+            OLDBMatch[] oldbMatches = matches.map(t -> t).orElseThrow();
 
             if (oldbMatches == null || oldbMatches.length == 0) {
-            	LOG.error(toErrorMessage(roundIndex, season));
+                LOG.error(toErrorMessage(roundIndex, season));
                 return;
             }
-            
+
             if (roundUnderWork.getOpenligaid() == null) {
                 roundUnderWork.setOpenligaid(Long.valueOf(oldbMatches[0].getGroup().getGroupID()));
             } else {
@@ -171,14 +171,13 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     throw new IllegalStateException(error);
                 }
             }
-            
+
             locationSynchronize.sync(oldbMatches);
             playerSynchronize.sync(oldbMatches);
-            
+
             for (OLDBMatch match : oldbMatches) {
                 Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId(), match.getTeam1().getTeamName());
                 Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId(), match.getTeam2().getTeamName());
-                
                 boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());
                 boGuestTeam.setLogo(match.getTeam2().getTeamIconUrl());
 
@@ -201,15 +200,15 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     Location unknwonLocation = locationDao.findById(Location.UNKNOWN_LOCATION_ID);
                     matchUnderWork.setLocation(unknwonLocation);
                 }
-                
+
                 // TODO Vor Update alle Tore entfernen und neu anlagen? Persist or Update?
                 goalDao.deleteAll(matchUnderWork);
 
                 boMatch.ifPresentOrElse(matchDao::update, () -> matchDao.persist(matchUnderWork));
                 if (boMatch.isPresent()) {
-                	matchDao.update(matchUnderWork);
+                    matchDao.update(matchUnderWork);
                 } else {
-                	matchDao.persist(matchUnderWork);
+                    matchDao.persist(matchUnderWork);
                 }
 
                 for (OLDBGoal goal : match.getGoals()) {
@@ -217,26 +216,28 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     Optional<Player> boPlayer = playerDao.findByOpenligaid(goal.getGoalGetterID());
 
                     if (boPlayer.isEmpty()) {
-                        LOG.warn(MARKER, "Spieler zu einem Tor nicht gefunden. Das Tor wird nicht abgespeichert. Spiel: "
-                                + match.getMatchDateTimeUTC()
-                                + " / "
-                                + match.getTeam1().getShortName()
-                                + ":"
-                                + match.getTeam2().getShortName());
+                        LOG.warn(MARKER,
+                                "Spieler zu einem Tor nicht gefunden. Das Tor wird nicht abgespeichert. Spiel: "
+                                        + match.getMatchDateTimeUTC()
+                                        + " / "
+                                        + match.getTeam1().getShortName()
+                                        + ":"
+                                        + match.getTeam2().getShortName());
                     } else {
                         Goal goalUnderWork = null;
                         if (boGoal.isPresent()) {
                             goalUnderWork = GoalBuilder.update(goal, boGoal.get());
                             goalUnderWork.setPlayer(boPlayer.get());
                             goalDao.persist(goalUnderWork);
-                        } else {                        	
+                        } else {
                             if (goal.getMatchMinute() == null) {
-                                LOG.warn(MARKER, "Die Spielminute ist gleich 'null'. Das Tor wird trotzdem gespeichert: "
-                                        + match.getMatchDateTimeUTC()
-                                        + " / "
-                                        + match.getTeam1().getShortName()
-                                        + ":"
-                                        + match.getTeam2().getShortName());
+                                LOG.warn(MARKER,
+                                        "Die Spielminute ist gleich 'null'. Das Tor wird trotzdem gespeichert: "
+                                                + match.getMatchDateTimeUTC()
+                                                + " / "
+                                                + match.getTeam1().getShortName()
+                                                + ":"
+                                                + match.getTeam2().getShortName());
                             }
                             goalUnderWork = GoalBuilder.build(goal);
                             goalUnderWork.setGame(matchUnderWork);
@@ -248,8 +249,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 }
 
                 matchDao.update(matchUnderWork);
-            }            
-            
+            }
+
         } catch (Exception ex) {
             LOG.error(toErrorMessage(roundIndex, season), ex.getCause());
             return;
@@ -260,14 +261,14 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         roundDao.update(roundUnderWork);
     }
 
-	private String toErrorMessage(int roundIndex, Season season) {
+    private String toErrorMessage(int roundIndex, Season season) {
         return String.format(
                 "Aborting the update process! "
-                    + "No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
-                    season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
-                    season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
-                    roundIndex + 1);
-	}
+                        + "No matches found for LeagueShortcut=[%s], LeagueSeason=[%s], groupOrderId=[%d]",
+                season.getChampionshipConfiguration().getOpenligaLeagueShortcut(),
+                season.getChampionshipConfiguration().getOpenligaLeagueSeason(),
+                roundIndex + 1);
+    }
 
     private Game updateMatch(OLDBMatch match, Game matchUnderWork) {
         if (matchUnderWork.getOpenligaid() == null) {
@@ -314,15 +315,15 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     teamName, openligaTeamId);
             LOG.info(error);
             boHomeTeam = teamDao.findByName(teamName);
-            boHomeTeam.ifPresent(t -> {
+            boHomeTeam.ifPresentOrElse(t -> {
                 t.setOpenligaid(openligaTeamId);
-                LOG.info(String.format("Updated team [%s] with opendligadb id [%d]", teamName, openligaTeamId));
+                LOG.info(String.format("Updated team [%s] with openligadb id [%d]", teamName, openligaTeamId));
+            }, () -> {
+                LOG.error(String.format("Unable to find openligadb id for team [%s]", teamName));
             });
-            if (boHomeTeam.isEmpty()) {
-                LOG.error(String.format("Unable to find opendliga id for team [%s]", teamName));
-            }
         }
-        return boHomeTeam.get();
+        return boHomeTeam.orElseThrow(() -> new IllegalArgumentException(
+                String.format("Unable to find team [%s] with openligadb id [%d", teamName, openligaTeamId)));
     }
 
 }

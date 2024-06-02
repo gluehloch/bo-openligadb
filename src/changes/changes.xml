@@ -7,6 +7,13 @@
     <body>
 
         <!-- Under development -->
+        <release version="betoffice-openligadb 3.2.0" date="2024-06-02" description="Prepare EM 2024 / Update round and game with OpenLigaDB">
+            <action dev="andrewinkler" type="update" date="2024-06-02">
+                Update openligadb team ID.
+            </action> 
+        </release>
+
+        <!-- RELEASED -->
         <release version="betoffice-openligadb 3.1.1" date="2024-04-29" description="Bugfix: opendligadb minutes">
             <action dev="andrewinkler" type="fix" date="2024-04-29">
                 Openligadb goal minutes can be null.
