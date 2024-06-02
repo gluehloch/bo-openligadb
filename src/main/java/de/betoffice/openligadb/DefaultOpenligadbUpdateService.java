@@ -139,12 +139,12 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         // https://www.openligadb.de/api/getmatchdata/uefa-em-2020/2020/1
         // Liefert eine Liste mit allen Spielen der Vorrunde.
         //
-        Group bundesliga = season.getGroups().iterator().next();
+        Group someGroup = season.getGroups().iterator().next();
         Optional<GameList> roundAtIndex = roundDao.findRound(season, roundIndex);
 
         GameList roundUnderWork = roundAtIndex.isPresent()
                 ? roundAtIndex.get()
-                : createRound(season, bundesliga);
+                : createRound(season, someGroup);
 
         // The round is persisted. May be i need an update here.
         Result<OLDBMatch[],OpenligadbException> matches = openligadbRoundFinder.findMatches(
@@ -176,8 +176,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             playerSynchronize.sync(oldbMatches);
             
             for (OLDBMatch match : oldbMatches) {
-                Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId());
-                Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId());
+                Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId(), match.getTeam1().getTeamName());
+                Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId(), match.getTeam2().getTeamName());
                 
                 boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());
                 boGuestTeam.setLogo(match.getTeam2().getTeamIconUrl());
@@ -186,7 +186,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
                 Game matchUnderWork = boMatch.isPresent()
                         ? updateMatch(match, boMatch.get())
-                        : createMatch(bundesliga, roundUnderWork, match, boHomeTeam, boGuestTeam);
+                        : createMatch(someGroup, roundUnderWork, match, boHomeTeam, boGuestTeam);
 
                 if (match.getLocation() != null) {
                     Optional<Location> boLocation = locationDao.findByOpenligaid(match.getLocation().getLocationID());
@@ -296,9 +296,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         return newMatch;
     }
 
-    private GameList createRound(Season season, Group bundesliga) {
+    private GameList createRound(Season season, Group group) {
         GameList newRound = new GameList();
-        newRound.setGroup(bundesliga);
+        newRound.setGroup(group);
         newRound.setSeason(season);
         newRound.setDateTime(dateTimeProvider.currentDateTime()); // Placeholder. Will be set later...
         season.addGameList(newRound);
@@ -306,14 +306,21 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         return newRound;
     }
 
-    private Team findBoTeam(long openligaTeamId) {
+    private Team findBoTeam(long openligaTeamId, String teamName) {
         Optional<Team> boHomeTeam = teamDao.findByOpenligaid(openligaTeamId);
         if (!boHomeTeam.isPresent()) {
             String error = String.format(
-                    "I did not a find a betoffice team for the openligadb team id [%d].",
-                    openligaTeamId);
-            LOG.error(error);
-            throw new IllegalStateException(error);
+                    "I did not a find a betoffice team [%s] with the openligadb team id [%d].",
+                    teamName, openligaTeamId);
+            LOG.info(error);
+            boHomeTeam = teamDao.findByName(teamName);
+            boHomeTeam.ifPresent(t -> {
+                t.setOpenligaid(openligaTeamId);
+                LOG.info(String.format("Updated team [%s] with opendligadb id [%d]", teamName, openligaTeamId));
+            });
+            if (boHomeTeam.isEmpty()) {
+                LOG.error(String.format("Unable to find opendliga id for team [%s]", teamName));
+            }
         }
         return boHomeTeam.get();
     }
