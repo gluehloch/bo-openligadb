@@ -30,16 +30,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
-import de.betoffice.wrapper.api.BetofficeApi;
-
 /**
  * Test case for {@link DefaultOpenligadbUpdateService}.
  */
 @WireMockTest(httpPort = 9096)
 public class TODO_DefaultOpenligadbUpdateServiceTest extends AbstractSpringTestCase {
 
-    @Autowired
-    private BetofficeApi betofficeApi;
+//    @Autowired
+//    private BetofficeApi betofficeApi;
 
     @Autowired
     private OpenligadbRoundFinder openligadbRoundFinder;

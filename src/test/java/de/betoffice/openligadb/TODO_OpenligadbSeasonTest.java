@@ -36,10 +36,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
-import de.betoffice.wrapper.api.BetofficeApi;
-import de.betoffice.wrapper.api.GroupTypeRef;
-import de.betoffice.wrapper.api.SeasonRef;
-import de.betoffice.wrapper.api.TeamRef;
 import de.winkler.betoffice.storage.enums.SeasonType;
 import de.winkler.betoffice.storage.enums.TeamType;
 
@@ -57,17 +53,17 @@ class TODO_OpenligadbSeasonTest extends AbstractSpringTestCase {
     private static final ZonedDateTime DATE_01_09_2010 = ZonedDateTime
             .of(LocalDateTime.of(LocalDate.of(2010, 9, 9), LocalTime.of(0, 0)), ZoneId.of("Europe/Berlin"));
 
-    private TeamRef rwe;
-    private TeamRef schalke;
-    private TeamRef burghausen;
-    private TeamRef hsv;
-
-    private GroupTypeRef bundesliga_1;
-
-    private SeasonRef buli_2010;
-
-    @Autowired
-    private BetofficeApi betofficeApi;
+//    private TeamRef rwe;
+//    private TeamRef schalke;
+//    private TeamRef burghausen;
+//    private TeamRef hsv;
+//
+//    private GroupTypeRef bundesliga_1;
+//
+//    private SeasonRef buli_2010;
+//
+//    @Autowired
+//    private BetofficeApi betofficeApi;
 
     @Autowired
     private OpenligadbRoundFinder openligadbRoundFinder;
@@ -83,33 +79,33 @@ class TODO_OpenligadbSeasonTest extends AbstractSpringTestCase {
 
     @Test
     void updateMatchDay() {
-        createSeason();
+        // createSeason();
         // TODO Keine passenden Testdaten!!!
         // openligadbUpdateService.createOrUpdateRound();
     }
 
-    private SeasonRef createSeason() {
-        GroupTypeRef bundesligaRef = betofficeApi.createGroupType("1. Bundesliga").result();
-
-        rwe        = betofficeApi.createTeam("RWE", "Rot-Weiss-Essen", TeamType.DFB).result();
-        schalke    = betofficeApi.createTeam("S04", "Schalke 04", TeamType.DFB).result();
-        burghausen = betofficeApi.createTeam("Wacker", "Wacker Burghausen", TeamType.DFB).result();
-        hsv        = betofficeApi.createTeam("HSV", "Hamburger SV", TeamType.DFB).result();
-
-        buli_2010 = betofficeApi.createSeason("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
-
-        betofficeApi.addGroup(buli_2010, bundesliga_1);
-
-        betofficeApi.addTeam(buli_2010, bundesliga_1, hsv);
-        betofficeApi.addTeam(buli_2010, bundesliga_1, schalke);
-        betofficeApi.addTeam(buli_2010, bundesliga_1, burghausen);
-        betofficeApi.addTeam(buli_2010, bundesliga_1, rwe);
-
-        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_01_09_2010);
-        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_08_09_2010);
-        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_15_09_2010);
-
-        return buli_2010;
-    }
+//    private SeasonRef createSeason() {
+//        GroupTypeRef bundesligaRef = betofficeApi.createGroupType("1. Bundesliga").result();
+//
+//        rwe        = betofficeApi.createTeam("RWE", "Rot-Weiss-Essen", TeamType.DFB).result();
+//        schalke    = betofficeApi.createTeam("S04", "Schalke 04", TeamType.DFB).result();
+//        burghausen = betofficeApi.createTeam("Wacker", "Wacker Burghausen", TeamType.DFB).result();
+//        hsv        = betofficeApi.createTeam("HSV", "Hamburger SV", TeamType.DFB).result();
+//
+//        buli_2010 = betofficeApi.createSeason("Bundesliga 2010/2011", "2010/2011", SeasonType.LEAGUE, TeamType.DFB).result();
+//
+//        betofficeApi.addGroup(buli_2010, bundesliga_1);
+//
+//        betofficeApi.addTeam(buli_2010, bundesliga_1, hsv);
+//        betofficeApi.addTeam(buli_2010, bundesliga_1, schalke);
+//        betofficeApi.addTeam(buli_2010, bundesliga_1, burghausen);
+//        betofficeApi.addTeam(buli_2010, bundesliga_1, rwe);
+//
+//        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_01_09_2010);
+//        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_08_09_2010);
+//        betofficeApi.addRound(buli_2010, bundesliga_1, DATE_15_09_2010);
+//
+//        return buli_2010;
+//    }
 
 }
