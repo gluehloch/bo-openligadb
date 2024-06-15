@@ -26,6 +26,7 @@ package de.betoffice.openligadb;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
@@ -178,8 +179,14 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             for (OLDBMatch match : oldbMatches) {
                 Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId(), match.getTeam1().getTeamName());
                 Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId(), match.getTeam2().getTeamName());
-                boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());
-                boGuestTeam.setLogo(match.getTeam2().getTeamIconUrl());
+                
+                // Logo aus OpenLigaDB nur übernehmen, wenn wir nicht bereits eins vergeben haben!
+                if (StringUtils.isBlank(boHomeTeam.getLogo())) {
+                    boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());
+                }
+                if (StringUtils.isBlank(boGuestTeam.getLogo())) {
+                    boGuestTeam.setLogo(match.getTeam2().getTeamIconUrl());
+                }
 
                 Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
 
