@@ -10,6 +10,9 @@
         <release version="betoffice-openligadb 3.2.0" date="2024-06-02" description="Prepare EM 2024 / Update round and game with OpenLigaDB">
             <action dev="andrewinkler" type="update" date="2024-06-02">
                 Update openligadb team ID.
+            </action>
+            <action dev="andrewinkler" type="update" date="2024-07-06">
+                Copy openligadb overtime and penalty goals to the game.
             </action> 
         </release>
 

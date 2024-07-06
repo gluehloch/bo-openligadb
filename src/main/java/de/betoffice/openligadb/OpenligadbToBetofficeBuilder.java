@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2020 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2024 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -70,24 +70,32 @@ public class OpenligadbToBetofficeBuilder {
     /**
      * Updates the match result.
      *
-     * @param game
-     *            The betoffice match
-     * @param matchData
-     *            The openligadb match
-     * @return The updated betoffice match
+     * @param  game      The betoffice match
+     * @param  matchData The openligadb match
+     * @return           The updated betoffice match
      */
     public Game updateGameResult(Game game, OLDBMatch matchData) {
         game.setPlayed(matchData.getMatchIsFinished());
 
         List<OLDBMatchResult> matchResults = matchData.getMatchResults();
         for (OLDBMatchResult matchResult : matchResults) {
+            final GameResult result = GameResult.of(matchResult.getPointsTeam1(), matchResult.getPointsTeam2());
             switch (matchResult.getResultTypeID()) {
             case 1: // nach 45 Minuten
-                GameResult result = GameResult.of(matchResult.getPointsTeam1(), matchResult.getPointsTeam2());
                 game.setHalfTimeGoals(result);
                 break;
             case 2: // nach 90 Minuten
-                game.setResult(matchResult.getPointsTeam1(), matchResult.getPointsTeam2());
+                game.setResult(result);
+                break;
+            case 3: // ??? TODO Unbekannt
+                break;
+            case 4: // Nach Verlängerung
+                game.setOverTimeGoals(result);
+                game.setKo(true);
+                break;
+            case 5: // Nach Elfmeterschiessen
+                game.setPenaltyGoals(result);
+                game.setKo(true);
                 break;
             default: // Undefined!
                 break;
