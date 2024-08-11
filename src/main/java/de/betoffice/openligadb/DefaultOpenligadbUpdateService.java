@@ -320,7 +320,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             String error = String.format(
                     "I did not a find a betoffice team [%s] with the openligadb team id [%d].",
                     teamName, openligaTeamId);
-            LOG.info(error);
+            LOG.warn(error);
             boHomeTeam = teamDao.findByName(teamName);
             boHomeTeam.ifPresentOrElse(t -> {
                 t.setOpenligaid(openligaTeamId);
