@@ -36,9 +36,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 
-import de.winkler.betoffice.storage.enums.SeasonType;
-import de.winkler.betoffice.storage.enums.TeamType;
-
 /**
  * Test case for {@link DefaultOpenligadbUpdateService}.
  */

@@ -32,7 +32,7 @@ import java.time.ZonedDateTime;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import de.winkler.betoffice.service.DateTimeProvider;
+import de.betoffice.storage.time.DateTimeProvider;
 
 public class DateTimeServiceTest {
 

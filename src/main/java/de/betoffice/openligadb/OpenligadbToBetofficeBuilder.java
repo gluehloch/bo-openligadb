@@ -31,9 +31,9 @@ import org.springframework.stereotype.Component;
 
 import de.betoffice.openligadb.json.OLDBMatch;
 import de.betoffice.openligadb.json.OLDBMatchResult;
-import de.winkler.betoffice.storage.Game;
-import de.winkler.betoffice.storage.GameResult;
-import de.winkler.betoffice.storage.Team;
+import de.betoffice.storage.season.entity.Game;
+import de.betoffice.storage.season.entity.GameResult;
+import de.betoffice.storage.team.entity.Team;
 
 /**
  * Creates from openligadb data a betoffice player.

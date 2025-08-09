@@ -34,11 +34,10 @@ import java.util.TimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.winkler.betoffice.service.DateTimeProvider;
+import de.betoffice.storage.time.DateTimeProvider;
 
 /**
- * Transforms date time from/to string. OpenligaDB supports two different time
- * formats:
+ * Transforms date time from/to string. OpenligaDB supports two different time formats:
  * <ul>
  * <li>"MatchDateTime": "2020-10-02T20:30:00"</li>
  * <li>"TimeZoneID": "W. Europe Standard Time"</li>
@@ -62,8 +61,8 @@ public class DateTimeService {
     /**
      * Transforms a date-time string to ZonedDateTime. The expected TimeZone is Europe/Berlin.
      *
-     * @param matchDateTime Expected TimeZone is 'Europe/Berlin' or 'W. Europe Standard Time'.
-     * @return {@link ZonedDateTime}
+     * @param  matchDateTime Expected TimeZone is 'Europe/Berlin' or 'W. Europe Standard Time'.
+     * @return               {@link ZonedDateTime}
      */
     public ZonedDateTime toDate(String matchDateTime) {
         ZoneId defaultZoneId = dateTimeProvider.defaultZoneId();

@@ -31,9 +31,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import de.betoffice.openligadb.json.OLDBMatch;
-import de.winkler.betoffice.dao.LocationDao;
-import de.winkler.betoffice.storage.Location;
-import de.winkler.betoffice.util.LoggerFactory;
+import de.betoffice.storage.season.LocationDao;
+import de.betoffice.storage.season.entity.Location;
+import de.betoffice.util.LoggerFactory;
 
 /**
  * Synchronize locations.
@@ -63,7 +63,8 @@ public class LocationSynchronize {
     }
 
     public void sync(OLDBMatch match) {
-        LOG.info("Location sync: {}:{}", new Object[] { match.getTeam1().getTeamName(), match.getTeam2().getTeamName() });
+        LOG.info("Location sync: {}:{}",
+                new Object[] { match.getTeam1().getTeamName(), match.getTeam2().getTeamName() });
 
         if (match.getLocation() == null || match.getLocation().getLocationID() == 0) {
 

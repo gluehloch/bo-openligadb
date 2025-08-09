@@ -6,8 +6,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import de.winkler.betoffice.conf.PersistenceJPAConfiguration;
-import de.winkler.betoffice.conf.TestPropertiesConfiguration;
+import de.betoffice.conf.PersistenceJPAConfiguration;
+import de.betoffice.conf.TestPropertiesConfiguration;
 
 @ActiveProfiles(profiles = "test")
 @ExtendWith(SpringExtension.class)

@@ -32,9 +32,9 @@ import org.springframework.stereotype.Component;
 
 import de.betoffice.openligadb.json.OLDBGoal;
 import de.betoffice.openligadb.json.OLDBMatch;
-import de.winkler.betoffice.dao.PlayerDao;
-import de.winkler.betoffice.storage.Player;
-import de.winkler.betoffice.util.LoggerFactory;
+import de.betoffice.storage.season.PlayerDao;
+import de.betoffice.storage.season.entity.Player;
+import de.betoffice.util.LoggerFactory;
 
 /**
  * Synchronize the players
@@ -68,7 +68,7 @@ public class PlayerSynchronize {
                 new Object[] { match.getTeam1().getTeamName(), match.getTeam2().getTeamName() });
 
         for (OLDBGoal goal : match.getGoals()) {
-            
+
             if (goal.getGoalGetterID() == 0) {
 
                 LOG.info(
