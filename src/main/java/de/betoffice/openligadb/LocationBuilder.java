@@ -24,7 +24,7 @@
 package de.betoffice.openligadb;
 
 import de.betoffice.openligadb.json.OLDBMatch;
-import de.winkler.betoffice.storage.Location;
+import de.betoffice.storage.season.entity.Location;
 
 /**
  * Builds a betoffice {@link Location}.
@@ -36,9 +36,8 @@ public class LocationBuilder {
     /**
      * Create from an openligadb match a betoffice location object.
      *
-     * @param match
-     *            An openligadb match
-     * @return a betoffice location
+     * @param  match An openligadb match
+     * @return       a betoffice location
      */
     public static Location build(OLDBMatch match) {
         Location boLocation = new Location();

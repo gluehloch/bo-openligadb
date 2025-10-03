@@ -31,7 +31,7 @@ import org.springframework.web.client.RestTemplate;
 
 import de.betoffice.openligadb.Result.CheckedSupplier;
 import de.betoffice.openligadb.json.OLDBMatch;
-import de.winkler.betoffice.util.LoggerFactory;
+import de.betoffice.util.LoggerFactory;
 
 /**
  * Call the openligadb webservice to get all matches of a round.
@@ -51,16 +51,15 @@ public class OpenligadbRoundFinder {
     private RestTemplate restTemplate;
 
     // ------------------------------------------------------------------------
-   
+
     /**
      * Find all matches of specfic league and group.
      *
-     * @param  leagueShortcut      The openligadb league shortcut id.
-     * @param  leagueSeason        The openligadb leagueSeason id.
-     * @param  roundIndex          The openligadb round index. The equivalent of betoffice round index. Betoffice round
-     *                                 index has a range from 0 to N-1. The (openligadb) roundIndex has a range from 1
-     *                                 to N.
-     * @return                     An array of matches for this group or an exception
+     * @param  leagueShortcut The openligadb league shortcut id.
+     * @param  leagueSeason   The openligadb leagueSeason id.
+     * @param  roundIndex     The openligadb round index. The equivalent of betoffice round index. Betoffice round index
+     *                            has a range from 0 to N-1. The (openligadb) roundIndex has a range from 1 to N.
+     * @return                An array of matches for this group or an exception
      */
     public Result<OLDBMatch[], OpenligadbException> findMatches(String leagueShortcut, String leagueSeason,
             int roundIndex) {
@@ -113,7 +112,7 @@ public class OpenligadbRoundFinder {
     public void setApiUrl(APIUrl apiUrl) {
         this.apiUrl = apiUrl;
     }
-    
+
     public APIUrl getApiUrl() {
         return apiUrl;
     }

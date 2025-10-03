@@ -36,23 +36,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 import de.betoffice.openligadb.json.OLDBGoal;
 import de.betoffice.openligadb.json.OLDBMatch;
-import de.winkler.betoffice.dao.GoalDao;
-import de.winkler.betoffice.dao.LocationDao;
-import de.winkler.betoffice.dao.MatchDao;
-import de.winkler.betoffice.dao.PlayerDao;
-import de.winkler.betoffice.dao.RoundDao;
-import de.winkler.betoffice.dao.SeasonDao;
-import de.winkler.betoffice.dao.TeamDao;
-import de.winkler.betoffice.service.DateTimeProvider;
-import de.winkler.betoffice.storage.Game;
-import de.winkler.betoffice.storage.GameList;
-import de.winkler.betoffice.storage.Goal;
-import de.winkler.betoffice.storage.Group;
-import de.winkler.betoffice.storage.Location;
-import de.winkler.betoffice.storage.Player;
-import de.winkler.betoffice.storage.Season;
-import de.winkler.betoffice.storage.Team;
-import de.winkler.betoffice.util.LoggerFactory;
+import de.betoffice.storage.season.GoalDao;
+import de.betoffice.storage.season.LocationDao;
+import de.betoffice.storage.season.MatchDao;
+import de.betoffice.storage.season.PlayerDao;
+import de.betoffice.storage.season.RoundDao;
+import de.betoffice.storage.season.SeasonDao;
+import de.betoffice.storage.season.entity.Game;
+import de.betoffice.storage.season.entity.GameList;
+import de.betoffice.storage.season.entity.Goal;
+import de.betoffice.storage.season.entity.Group;
+import de.betoffice.storage.season.entity.Location;
+import de.betoffice.storage.season.entity.Player;
+import de.betoffice.storage.season.entity.Season;
+import de.betoffice.storage.team.TeamDao;
+import de.betoffice.storage.team.entity.Team;
+import de.betoffice.storage.time.DateTimeProvider;
+import de.betoffice.util.LoggerFactory;
 
 /**
  * The default implementation of {@link OpenligadbUpdateService}.
@@ -179,7 +179,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             for (OLDBMatch match : oldbMatches) {
                 Team boHomeTeam = findBoTeam(match.getTeam1().getTeamId(), match.getTeam1().getTeamName());
                 Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId(), match.getTeam2().getTeamName());
-                
+
                 // Logo aus OpenLigaDB nur übernehmen, wenn wir nicht bereits eins vergeben haben!
                 if (StringUtils.isBlank(boHomeTeam.getLogo())) {
                     boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());

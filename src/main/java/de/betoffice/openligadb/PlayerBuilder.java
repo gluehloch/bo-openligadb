@@ -26,7 +26,7 @@ package de.betoffice.openligadb;
 import org.apache.commons.lang3.StringUtils;
 
 import de.betoffice.openligadb.json.OLDBGoal;
-import de.winkler.betoffice.storage.Player;
+import de.betoffice.storage.season.entity.Player;
 
 /**
  * Builds a betoffice {@link Player}.

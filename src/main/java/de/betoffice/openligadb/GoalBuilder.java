@@ -24,9 +24,9 @@
 package de.betoffice.openligadb;
 
 import de.betoffice.openligadb.json.OLDBGoal;
-import de.winkler.betoffice.storage.GameResult;
-import de.winkler.betoffice.storage.Goal;
-import de.winkler.betoffice.storage.enums.GoalType;
+import de.betoffice.storage.season.GoalType;
+import de.betoffice.storage.season.entity.GameResult;
+import de.betoffice.storage.season.entity.Goal;
 
 /**
  * Builds a {@link Goal} from an openligadb goal.
