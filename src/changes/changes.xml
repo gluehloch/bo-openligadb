@@ -5,9 +5,10 @@
         <author email="andre.winkler@web.de">Andre Winkler</author>
     </properties>
     <body>
-
         <!-- Under development -->
-        <release version="betoffice-openligadb 3.2.0" date="2024-06-02" description="Prepare EM 2024 / Update round and game with OpenLigaDB">
+
+        <!-- RELEASED -->
+        <release version="betoffice-openligadb 3.2.0" date="2025-11-08" description="Prepare EM 2024 / Update round and game with OpenLigaDB / JDK 25">
             <action dev="andrewinkler" type="update" date="2024-06-02">
                 Update openligadb team ID.
             </action>
