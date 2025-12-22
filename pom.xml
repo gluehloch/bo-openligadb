@@ -8,13 +8,13 @@
     <parent>
         <groupId>de.winkler.betoffice</groupId>
         <artifactId>betoffice-maven-parent</artifactId>
-        <version>1.15.0</version>
+        <version>1.15.1</version>
     </parent>
 
     <groupId>de.betoffice</groupId>
     <artifactId>betoffice-openligadb</artifactId>
     <packaging>jar</packaging>
-    <version>3.2.0</version>
+    <version>3.2.1-SNAPSHOT</version>
     <name>betoffice-openligadb</name>
     <description>Betoffice openligadb connector</description>
 
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>de.winkler.betoffice</groupId>
             <artifactId>betoffice-storage</artifactId>
-            <version>3.2.0</version>
+            <version>3.2.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
@@ -51,7 +51,7 @@
         <dependency>
             <groupId>de.betoffice</groupId>
             <artifactId>betoffice-testutils</artifactId>
-            <version>1.4.1</version>
+            <version>1.4.2-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
