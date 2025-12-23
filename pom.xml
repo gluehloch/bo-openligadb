@@ -20,7 +20,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>de.winkler.betoffice</groupId>
+            <groupId>de.betoffice</groupId>
             <artifactId>betoffice-storage</artifactId>
             <version>3.2.1-SNAPSHOT</version>
             <scope>compile</scope>
