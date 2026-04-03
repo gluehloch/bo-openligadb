@@ -8,6 +8,13 @@
         <!-- Under development -->
 
         <!-- RELEASED -->
+        <release version="betoffice-openligadb 3.2.1" date="2026-03-04" description="Spring 7. Hibernate 7.">
+            <action dev="andrewinkler" type="update" date="2026-01-01">
+                Update to Jackson 3.
+            </action>
+        </release>
+
+        <!-- RELEASED -->
         <release version="betoffice-openligadb 3.2.0" date="2025-11-08" description="Prepare EM 2024 / Update round and game with OpenLigaDB / JDK 25">
             <action dev="andrewinkler" type="update" date="2024-06-02">
                 Update openligadb team ID.
