@@ -1,6 +1,6 @@
 /*
  * ============================================================================
- * Project betoffice-openligadb Copyright (c) 2000-2024 by Andre Winkler. All
+ * Project betoffice-openligadb Copyright (c) 2000-2026 by Andre Winkler. All
  * rights reserved.
  * ============================================================================
  * GNU GENERAL PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND
@@ -49,6 +49,7 @@ import de.betoffice.storage.season.entity.Group;
 import de.betoffice.storage.season.entity.Location;
 import de.betoffice.storage.season.entity.Player;
 import de.betoffice.storage.season.entity.Season;
+import de.betoffice.storage.team.TeamAliasDao;
 import de.betoffice.storage.team.TeamDao;
 import de.betoffice.storage.team.entity.Team;
 import de.betoffice.storage.time.DateTimeProvider;
@@ -68,6 +69,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     @Autowired
     private TeamDao teamDao;
+
+    @Autowired
+    private TeamAliasDao teamAliasDao;
 
     @Autowired
     private SeasonDao seasonDao;
@@ -261,7 +265,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             }
 
         } catch (Exception ex) {
-            LOG.error(toErrorMessage(roundIndex, season), ex.getCause());
+            LOG.error(toErrorMessage(roundIndex, season), ex);
             return;
         }
 
@@ -318,21 +322,33 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
     private Team findBoTeam(long openligaTeamId, String teamName) {
         Optional<Team> boHomeTeam = teamDao.findByOpenligaid(openligaTeamId);
-        if (!boHomeTeam.isPresent()) {
-            String error = String.format(
-                    "I did not a find a betoffice team [%s] with the openligadb team id [%d].",
-                    teamName, openligaTeamId);
-            LOG.warn(error);
-            boHomeTeam = teamDao.findByName(teamName);
-            boHomeTeam.ifPresentOrElse(t -> {
-                t.setOpenligaid(openligaTeamId);
-                LOG.info(String.format("Updated team [%s] with openligadb id [%d]", teamName, openligaTeamId));
-            }, () -> {
-                LOG.error(String.format("Unable to find openligadb id for team [%s]", teamName));
-            });
+        if (boHomeTeam.isPresent()) {
+            return boHomeTeam.get();
         }
-        return boHomeTeam.orElseThrow(() -> new IllegalArgumentException(
-                String.format("Unable to find team [%s] with openligadb id [%d", teamName, openligaTeamId)));
+
+        LOG.warn(String.format(
+                "I did not a find a betoffice team [%s] with the openligadb team id [%d].",
+                teamName, openligaTeamId));
+
+        boHomeTeam = teamDao.findByName(teamName);
+        if (boHomeTeam.isPresent()) {
+            Team t = boHomeTeam.get();
+            t.setOpenligaid(openligaTeamId);
+            LOG.info(String.format("Updated team [%s] with openligadb id [%d]", teamName, openligaTeamId));
+            return t;
+        }
+
+        LOG.warn(String.format("Unable to betoffice team with name [%s]", teamName));
+        
+        Optional<Team> aliasTeam = teamAliasDao.findByAliasName(teamName);
+        if (aliasTeam.isPresent()) {
+            Team t = aliasTeam.get();
+            t.setOpenligaid(openligaTeamId);
+            LOG.info(String.format("Updated team [%s] with openligadb id [%d]", teamName, openligaTeamId));
+            return t;
+        }
+
+        throw new IllegalArgumentException(String.format("Unable to find team [%s] with openligadb id [%d]", teamName, openligaTeamId));
     }
 
 }
