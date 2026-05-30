@@ -187,11 +187,25 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 Team boGuestTeam = findBoTeam(match.getTeam2().getTeamId(), match.getTeam2().getTeamName());
 
                 // Logo aus OpenLigaDB nur übernehmen, wenn wir nicht bereits eins vergeben haben!
+                // Das gleiche für shortName und xshortName.
+                // Es könnte sein, dass die Daten in OpenLigaDB unvollständig sind. Dann würden wir uns ggf. wichtige Informationen überschreiben.
                 if (StringUtils.isBlank(boHomeTeam.getLogo())) {
                     boHomeTeam.setLogo(match.getTeam1().getTeamIconUrl());
                 }
                 if (StringUtils.isBlank(boGuestTeam.getLogo())) {
                     boGuestTeam.setLogo(match.getTeam2().getTeamIconUrl());
+                }
+                if (StringUtils.isBlank(boHomeTeam.getShortName())) {
+                    boHomeTeam.setShortName(match.getTeam1().getShortName());
+                }
+                if (StringUtils.isBlank(boGuestTeam.getShortName())) {
+                    boGuestTeam.setShortName(match.getTeam2().getShortName());
+                }
+                if (StringUtils.isBlank(boHomeTeam.getXshortName())) {
+                    boHomeTeam.setName(match.getTeam1().getShortName());
+                }
+                if (StringUtils.isBlank(boGuestTeam.getXshortName())) {
+                    boGuestTeam.setName(match.getTeam2().getShortName());
                 }
 
                 Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
@@ -339,7 +353,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         }
 
         LOG.warn(String.format("Unable to betoffice team with name [%s]", teamName));
-        
+
         Optional<Team> aliasTeam = teamAliasDao.findByAliasName(teamName);
         if (aliasTeam.isPresent()) {
             Team t = aliasTeam.get();
@@ -348,7 +362,8 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             return t;
         }
 
-        throw new IllegalArgumentException(String.format("Unable to find team [%s] with openligadb id [%d]", teamName, openligaTeamId));
+        throw new IllegalArgumentException(
+                String.format("Unable to find team [%s] with openligadb id [%d]", teamName, openligaTeamId));
     }
 
 }
