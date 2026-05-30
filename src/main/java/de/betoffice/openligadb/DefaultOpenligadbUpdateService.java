@@ -134,7 +134,9 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         // --------------------------------------------------------------------
         // TODO This works only with a single group per season.
         // --------------------------------------------------------------------
+        // 
         // In OpenLigaDB entspricht die 'group' einem Spieltag. Die 'groupOrderID' dem Index des Spieltags in betoffice.
+        //
         // D.h. für Weltmeisterschaften oder Europameisterschaften gibt es kein Konstrukt für eine Gruppe (z.B. Gruppe A).
         // Diese Informationen müssten ggf. händisch hinzugefügt werden.
         // https://www.openligadb.de/api/getmatchdata/uefa-em-2020/2020/1
