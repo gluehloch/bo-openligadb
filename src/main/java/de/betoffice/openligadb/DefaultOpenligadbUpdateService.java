@@ -25,6 +25,7 @@ package de.betoffice.openligadb;
 
 import java.time.LocalDate;
 import java.util.Optional;
+import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -42,6 +43,7 @@ import de.betoffice.storage.season.MatchDao;
 import de.betoffice.storage.season.PlayerDao;
 import de.betoffice.storage.season.RoundDao;
 import de.betoffice.storage.season.SeasonDao;
+import de.betoffice.storage.season.SeasonType;
 import de.betoffice.storage.season.entity.Game;
 import de.betoffice.storage.season.entity.GameList;
 import de.betoffice.storage.season.entity.Goal;
@@ -134,24 +136,11 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             throw new IllegalArgumentException(error);
         }
 
-        //
-        // --------------------------------------------------------------------
-        // TODO This works only with a single group per season.
-        // --------------------------------------------------------------------
-        // 
-        // In OpenLigaDB entspricht die 'group' einem Spieltag. Die 'groupOrderID' dem Index des Spieltags in betoffice.
-        //
-        // D.h. für Weltmeisterschaften oder Europameisterschaften gibt es kein Konstrukt für eine Gruppe (z.B. Gruppe A).
-        // Diese Informationen müssten ggf. händisch hinzugefügt werden.
-        // https://www.openligadb.de/api/getmatchdata/uefa-em-2020/2020/1
-        // Liefert eine Liste mit allen Spielen der Vorrunde.
-        //
-        Group someGroup = season.getGroups().iterator().next();
         Optional<GameList> roundAtIndex = roundDao.findRound(season, roundIndex);
 
         GameList roundUnderWork = roundAtIndex.isPresent()
                 ? roundAtIndex.get()
-                : createRound(season, someGroup);
+                : createRound(season, season.getGroups().stream().findFirst().orElseThrow());
 
         // The round is persisted. May be i need an update here.
         Result<OLDBMatch[], OpenligadbException> matches = openligadbRoundFinder.findMatches(
@@ -202,17 +191,17 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                     boGuestTeam.setShortName(match.getTeam2().getShortName());
                 }
                 if (StringUtils.isBlank(boHomeTeam.getXshortName())) {
-                    boHomeTeam.setName(match.getTeam1().getShortName());
+                    boHomeTeam.setXshortName(match.getTeam1().getShortName());
                 }
                 if (StringUtils.isBlank(boGuestTeam.getXshortName())) {
-                    boGuestTeam.setName(match.getTeam2().getShortName());
+                    boGuestTeam.setXshortName(match.getTeam2().getShortName());
                 }
 
                 Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
 
                 Game matchUnderWork = boMatch.isPresent()
                         ? updateMatch(match, boMatch.get())
-                        : createMatch(someGroup, roundUnderWork, match, boHomeTeam, boGuestTeam);
+                        : createMatch(findGroup(season, boHomeTeam, boGuestTeam), roundUnderWork, match, boHomeTeam, boGuestTeam);
 
                 if (match.getLocation() != null) {
                     Optional<Location> boLocation = locationDao.findByOpenligaid(match.getLocation().getLocationID());
@@ -286,6 +275,45 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         LocalDate bestRoundDate = roundUnderWork.findBestRoundDate();
         roundUnderWork.setDateTime(bestRoundDate.atTime(0, 0).atZone(dateTimeProvider.defaultZoneId()));
         roundDao.update(roundUnderWork);
+    }
+
+    public Group findGroup(Season season, Team homeTeam, Team guestTeam) {
+        //
+        // --------------------------------------------------------------------
+        // TODO This works only with a single group per season.
+        // --------------------------------------------------------------------
+        // 
+        // In OpenLigaDB entspricht die 'group' einem Spieltag. Die 'groupOrderID' dem Index des Spieltags in betoffice.
+        //
+        // D.h. für Weltmeisterschaften oder Europameisterschaften gibt es kein Konstrukt für eine Gruppe (z.B. Gruppe A).
+        // Diese Informationen müssten ggf. händisch hinzugefügt werden.
+        // https://www.openligadb.de/api/getmatchdata/uefa-em-2020/2020/1
+        // Liefert eine Liste mit allen Spielen der Vorrunde.
+        //
+        Group someGroup = null;
+
+        switch (season.getMode()) {
+        case SeasonType.LEAGUE:
+            // Liga Meisterschaft besteht i.d.R immer nur aus einer Liga. Z.B. die 1. Bundesliga.
+            someGroup = season.getGroups().stream().findFirst().orElseThrow();
+            break;
+        case SeasonType.EC:
+        case SeasonType.WC:
+            Set<Group> groups = season.getGroups();
+            for (Group group : groups) {
+                boolean homeTeamFound = group.getTeams().stream().anyMatch(t -> t.getId() == homeTeam.getId());
+                boolean guestTeamFound = group.getTeams().stream().anyMatch(t -> t.getId() == guestTeam.getId());
+                if (homeTeamFound && guestTeamFound) {
+                    someGroup = group;
+                    break;
+                }
+            }
+            break;
+        default:
+            throw new IllegalStateException("Unsupported championship mode: " + season.getMode());
+        }
+        
+        return someGroup;
     }
 
     private String toErrorMessage(int roundIndex, Season season) {
