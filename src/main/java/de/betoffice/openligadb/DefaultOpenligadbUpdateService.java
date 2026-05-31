@@ -312,7 +312,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         default:
             throw new IllegalStateException("Unsupported championship mode: " + season.getMode());
         }
-        
+
         return someGroup;
     }
 
