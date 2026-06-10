@@ -299,6 +299,10 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             break;
         case SeasonType.EC:
         case SeasonType.WC:
+            // Regel für die Vorrunde. Für die KO Runde funktioniert diese Regel nicht.
+            //
+            // TODO: Wie kann ich erkennen, dass es sich hier nicht mehr um die Gruppenphase handelt?
+            //
             Set<Group> groups = season.getGroups();
             for (Group group : groups) {
                 boolean homeTeamFound = group.getTeams().stream().anyMatch(t -> t.getId() == homeTeam.getId());
