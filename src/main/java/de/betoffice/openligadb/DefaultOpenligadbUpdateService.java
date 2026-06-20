@@ -37,6 +37,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import de.betoffice.openligadb.json.OLDBGoal;
 import de.betoffice.openligadb.json.OLDBMatch;
+import de.betoffice.storage.group.GroupTypeEnum;
 import de.betoffice.storage.season.GoalDao;
 import de.betoffice.storage.season.LocationDao;
 import de.betoffice.storage.season.MatchDao;
@@ -199,9 +200,17 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
 
                 Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
 
-                Game matchUnderWork = boMatch.isPresent()
-                        ? updateMatch(match, boMatch.get())
-                        : createMatch(findGroup(season, boHomeTeam, boGuestTeam), roundUnderWork, match, boHomeTeam, boGuestTeam);
+                Game matchUnderWork = boMatch
+                        .map(m -> updateMatch(match, m))
+                        .orElseGet(() -> {
+                            final var groupx = findGroup(season, roundUnderWork, boHomeTeam, boGuestTeam);
+                            return createMatch(
+                                    groupx,
+                                    roundUnderWork,
+                                    match,
+                                    boHomeTeam,
+                                    boGuestTeam);
+                        });
 
                 if (match.getLocation() != null) {
                     Optional<Location> boLocation = locationDao.findByOpenligaid(match.getLocation().getLocationID());
@@ -277,7 +286,7 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
         roundDao.update(roundUnderWork);
     }
 
-    public Group findGroup(Season season, Team homeTeam, Team guestTeam) {
+    public Group findGroup(Season season, GameList round, Team homeTeam, Team guestTeam) {
         //
         // --------------------------------------------------------------------
         // TODO This works only with a single group per season.
@@ -299,18 +308,20 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             break;
         case SeasonType.EC:
         case SeasonType.WC:
-            // Regel für die Vorrunde. Für die KO Runde funktioniert diese Regel nicht.
-            //
-            // TODO: Wie kann ich erkennen, dass es sich hier nicht mehr um die Gruppenphase handelt?
-            //
-            Set<Group> groups = season.getGroups();
-            for (Group group : groups) {
-                boolean homeTeamFound = group.getTeams().stream().anyMatch(t -> t.getId() == homeTeam.getId());
-                boolean guestTeamFound = group.getTeams().stream().anyMatch(t -> t.getId() == guestTeam.getId());
-                if (homeTeamFound && guestTeamFound) {
-                    someGroup = group;
-                    break;
+            if (round.getGroup().getGroupType().getType().equals(GroupTypeEnum.PRELIMINARY_ROUND)) {
+                // Vorrunde
+                final Set<Group> groups = season.getGroups();
+                for (Group group : groups) {
+                    boolean homeTeamFound = group.getTeams().stream().anyMatch(t -> t.getId() == homeTeam.getId());
+                    boolean guestTeamFound = group.getTeams().stream().anyMatch(t -> t.getId() == guestTeam.getId());
+                    if (homeTeamFound && guestTeamFound) {
+                        someGroup = group;
+                        break;
+                    }
                 }
+            } else {
+                // KO Runde
+                return round.getGroup();
             }
             break;
         default:
