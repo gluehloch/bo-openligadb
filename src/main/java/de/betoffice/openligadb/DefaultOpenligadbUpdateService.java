@@ -378,18 +378,18 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
     }
 
     private Team findBoTeam(long openligaTeamId, String teamName) {
-        Optional<Team> boHomeTeam = teamDao.findByOpenligaid(openligaTeamId);
-        if (boHomeTeam.isPresent()) {
-            return boHomeTeam.get();
+        Optional<Team> team = teamDao.findByOpenligaid(openligaTeamId);
+        if (team.isPresent()) {
+            return team.get();
         }
 
         LOG.warn(String.format(
                 "I did not a find a betoffice team [%s] with the openligadb team id [%d].",
                 teamName, openligaTeamId));
 
-        boHomeTeam = teamDao.findByName(teamName);
-        if (boHomeTeam.isPresent()) {
-            Team t = boHomeTeam.get();
+        team = teamDao.findByName(teamName);
+        if (team.isPresent()) {
+            Team t = team.get();
             t.setOpenligaid(openligaTeamId);
             LOG.info(String.format("Updated team [%s] with openligadb id [%d]", teamName, openligaTeamId));
             return t;
@@ -405,6 +405,13 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             return t;
         }
 
+        Optional<Team> unknownTeam = teamDao.findByName(Team.NOCH_NICHT_VERFUEGBAR);
+        if (unknownTeam.isPresent()) {
+            Team t = unknownTeam.get();
+            LOG.info(String.format("Currently the match team is not known. So we take as replacement [%s].", t.getName()));
+            return t;
+        }
+        
         throw new IllegalArgumentException(
                 String.format("Unable to find team [%s] with openligadb id [%d]", teamName, openligaTeamId));
     }
