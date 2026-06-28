@@ -199,6 +199,16 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
                 }
 
                 Optional<Game> boMatch = matchDao.find(roundUnderWork, boHomeTeam, boGuestTeam);
+                if (boMatch.isEmpty()) {
+                    boMatch = matchDao.findByOpenligadbId(match.getMatchID());
+                    if (boMatch.isPresent()) {
+                        LOG.warn(
+                                "Found a match with the same openligadb id=[{}] but different teams. This is not allowed. Please check the data in openligadb.",
+                                match.getMatchID());
+                        
+                        // TODO ACHTUNG: Wenn sich die Mannschaften geändert haben, wird das hier nich aktualisiert!!!
+                    }
+                }
 
                 Game matchUnderWork = boMatch
                         .map(m -> updateMatch(match, m))
