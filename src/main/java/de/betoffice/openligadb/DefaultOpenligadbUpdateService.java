@@ -355,10 +355,13 @@ public class DefaultOpenligadbUpdateService implements OpenligadbUpdateService {
             matchUnderWork.setOpenligaid(Long.valueOf(match.getMatchID()));
         } else if (matchUnderWork.getOpenligaid() != match.getMatchID().longValue()) {
             String error = String.format(
-                    "Openligadb matchId=[%d] and stored matchId of betoffice game [%d] are different.",
-                    match.getMatchID(), matchUnderWork.getOpenligaid());
-            LOG.error(error);
-            throw new IllegalStateException(error);
+                    "Openligadb matchId=[%d] and stored matchId of betoffice game [%d] are different. %s : %s",
+                    match.getMatchID(), 
+                    matchUnderWork.getOpenligaid(), 
+                    matchUnderWork.getHomeTeam().getName(), 
+                    matchUnderWork.getGuestTeam().getName());
+            LOG.info(error);
+            matchUnderWork.setOpenligaid(Long.valueOf(match.getMatchID()));
         }
         openligadbToBetofficeBuilder.updateGameDate(matchUnderWork, match);
         openligadbToBetofficeBuilder.updateGameResult(matchUnderWork, match);
